@@ -1204,3 +1204,20 @@ public Result getDataById(@PathVariable String id){
 }
 ```
 
+
+
+
+
+
+
+
+
+# 十八、seata未完待续
+
+分布式事务解决
+
+![image-20200920144733912](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20200920144741.png)
+
+![image-20200920145226711](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20200920145226.png)
+
+![image-20200920145605594](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20200920145605.png)
