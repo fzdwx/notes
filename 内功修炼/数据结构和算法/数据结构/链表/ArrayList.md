@@ -689,3 +689,38 @@ public abstract class AbstractList<T> implements List<T> {
 }
 ```
 
+
+
+
+
+# 9.动态缩容
+
+```java
+/**
+ * Trim capacity. 动态缩容
+ * 不需要缩容的情况：
+ * 1.实用的空间超过总容量的一半
+ * 2.使用的空间小于默认的容量
+ * 
+ * size：已经使用的容量
+ * capacity：总容量
+ */
+private void trimCapacity() {
+    int oldCapacity = elements.length;
+    int newCapacity = (oldCapacity >> 1) ;
+    if (size >= newCapacity || oldCapacity <= DEFAULT_CAPACITY) {
+        return;
+    }
+
+    //缩容
+    Object[] newElements = new Object[newCapacity ];
+    for (int i = 0; i < size; i++) {
+        newElements[i] = elements[i];
+    }
+
+    //引用
+    elements = (T[]) newElements;
+    System.out.println(oldCapacity + "缩容 " + newCapacity);
+}
+```
+
