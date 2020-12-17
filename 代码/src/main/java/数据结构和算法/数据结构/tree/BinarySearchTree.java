@@ -154,7 +154,8 @@ public class BinarySearchTree<T> implements BinaryTreeInfo {
     }
 
     public void clear() {
-
+        root = null;
+        size = 0;
     }
 
     public void add(T element) {
@@ -241,7 +242,7 @@ public class BinarySearchTree<T> implements BinaryTreeInfo {
         } else {     // n0  直接删除
             if (node.parent.left == node) {
                 node.parent.left = null;
-            } else if (node.parent.right == node){
+            } else if (node.parent.right == node) {
                 node.parent.right = null;
             }
         }
@@ -249,8 +250,8 @@ public class BinarySearchTree<T> implements BinaryTreeInfo {
         size--;
     }
 
-    public void contains(T element) {
-
+    public boolean contains(T element) {
+        return getNodeUseIteration(element) != null;
     }
 
     public int height(int num) {
