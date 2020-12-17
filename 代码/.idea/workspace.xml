@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4a9550ed-74e3-411f-9a39-f3f2f002ca4b" name="默认的" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit3 Test Class" />
+        <option value="TestNG Test Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="JUnit4 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../jdk-8/src.zip!/java/util/ArrayList.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$PROJECT_DIR$/../../../jdk-8/src.zip!/java/util/Arrays.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="JupyterTrust" id="e87d2562-cb4c-443b-9004-07cc024fa906" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="D:\Java\tool\apache-maven-3.6.3-bin\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hdhC0jsbcufICB5U9GsAMLo03R" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.TestNG" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="模块" />
+    <property name="project.structure.proportion" value="0.1507799" />
+    <property name="project.structure.side.proportion" value="0.21489161" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\project\myproject\work\src\main\java\数据结构和算法\数据结构\tree" />
+      <recent name="D:\Java\project\myproject\work\src\main\resources" />
+      <recent name="D:\Java\project\myproject\work\src\main\java\设计模式\创建者模式\工厂模式\实际使用" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="FizzOrBuzz" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="数据结构和算法.数据结构" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="数据结构和算法.数据结构.list.linked" />
+      <recent name="数据结构和算法.数据结构.List" />
+      <recent name="修炼.数据结构和算法.数据结构.List" />
+      <recent name="FizzOrBuzz" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="设计模式.创建者模式.原型模式.深克隆" />
+      <recent name="设计模式.创建者模式.工厂模式.抽象工厂" />
+      <recent name="设计模式.创建者模式.工厂模式.工厂方法模式" />
+      <recent name="设计模式.创建者模式.工厂模式.简单工厂模式" />
+      <recent name="数据结构和算法.数据结构.list.linked.Ring" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <myKeys>
+      <visibility group="Gradle tasks" flag="true" />
+      <visibility group="Grunt tasks" flag="true" />
+      <visibility group="Gulp tasks" flag="true" />
+      <visibility group="Maven goals" flag="true" />
+      <visibility group="Node.js" flag="true" />
+      <visibility group="Recent projects" flag="true" />
+      <visibility group="Run configurations" flag="true" />
+      <visibility group="npm" flag="true" />
+      <visibility group="yarn" flag="true" />
+    </myKeys>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="Application" />
+        <option value="CucumberJavaRunConfigurationType" />
+        <option value="JUnit" />
+        <option value="JarApplication" />
+        <option value="TestNG" />
+        <option value="XSLT" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="应用程序.Main (2)">
+    <configuration name="计算二叉树的高度" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.刷题.树.二叉树.计算二叉树的高度" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.刷题.树.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.tree.Main" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.数据结构.tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.创建者模式.原型模式.深克隆.Main" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="设计模式.创建者模式.原型模式.深克隆.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.创建者模式.建造者模式.builder.Main" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="设计模式.创建者模式.建造者模式.builder.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleCoffeeFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.创建者模式.工厂模式.实际使用.SimpleCoffeeFactory" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="设计模式.创建者模式.工厂模式.实际使用.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="应用程序.Main (2)" />
+      <item itemvalue="应用程序.Main (4)" />
+      <item itemvalue="应用程序.SimpleCoffeeFactory" />
+      <item itemvalue="应用程序.计算二叉树的高度" />
+      <item itemvalue="应用程序.Main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.Main (2)" />
+        <item itemvalue="应用程序.Main" />
+        <item itemvalue="应用程序.计算二叉树的高度" />
+        <item itemvalue="应用程序.SimpleCoffeeFactory" />
+        <item itemvalue="应用程序.Main (4)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\pdd20\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4a9550ed-74e3-411f-9a39-f3f2f002ca4b" name="默认的" comment="" />
+      <created>1600346746098</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600346746098</updated>
+      <workItem from="1600346747817" duration="1020000" />
+      <workItem from="1600395553065" duration="14453000" />
+      <workItem from="1600520350465" duration="506000" />
+      <workItem from="1600659293721" duration="542000" />
+      <workItem from="1600659862635" duration="12551000" />
+      <workItem from="1600762964855" duration="2704000" />
+      <workItem from="1600765734435" duration="13479000" />
+      <workItem from="1600822573617" duration="682000" />
+      <workItem from="1600823316643" duration="16172000" />
+      <workItem from="1600906966613" duration="26381000" />
+      <workItem from="1601004060579" duration="16216000" />
+      <workItem from="1601091884494" duration="18647000" />
+      <workItem from="1601175200152" duration="4120000" />
+      <workItem from="1601185745139" duration="7756000" />
+      <workItem from="1601268289818" duration="1694000" />
+      <workItem from="1601270025497" duration="8886000" />
+      <workItem from="1601347641540" duration="4642000" />
+      <workItem from="1601382522939" duration="3509000" />
+      <workItem from="1601423797820" duration="10866000" />
+      <workItem from="1601443616964" duration="2359000" />
+      <workItem from="1601454144397" duration="101000" />
+      <workItem from="1601473955833" duration="2127000" />
+      <workItem from="1601512077960" duration="31595000" />
+      <workItem from="1601601548724" duration="8258000" />
+      <workItem from="1601632232854" duration="6891000" />
+      <workItem from="1601689748960" duration="15318000" />
+      <workItem from="1601778740333" duration="5697000" />
+      <workItem from="1601816836499" duration="1650000" />
+      <workItem from="1601862590793" duration="6134000" />
+      <workItem from="1601950920259" duration="207000" />
+      <workItem from="1601951156751" duration="46000" />
+      <workItem from="1601951251757" duration="20000" />
+      <workItem from="1601951291380" duration="464000" />
+      <workItem from="1601951778572" duration="21671000" />
+      <workItem from="1602125634309" duration="4407000" />
+      <workItem from="1602570116216" duration="1775000" />
+      <workItem from="1602646125963" duration="5170000" />
+      <workItem from="1603850242596" duration="3032000" />
+      <workItem from="1603853719336" duration="318000" />
+      <workItem from="1603854103836" duration="20000" />
+      <workItem from="1603854144340" duration="564000" />
+      <workItem from="1603854735736" duration="258000" />
+      <workItem from="1603855014674" duration="40000" />
+      <workItem from="1603855257759" duration="2125000" />
+      <workItem from="1603870047817" duration="2094000" />
+      <workItem from="1607650766563" duration="1313000" />
+      <workItem from="1607735262119" duration="4038000" />
+      <workItem from="1607741388875" duration="1904000" />
+      <workItem from="1607745117792" duration="3580000" />
+      <workItem from="1607753690640" duration="105000" />
+      <workItem from="1607753824114" duration="2066000" />
+      <workItem from="1607824348858" duration="228000" />
+      <workItem from="1607826536617" duration="110000" />
+      <workItem from="1607831113654" duration="6770000" />
+      <workItem from="1607841888504" duration="723000" />
+      <workItem from="1607847344867" duration="4195000" />
+      <workItem from="1607910533842" duration="1547000" />
+      <workItem from="1607912124779" duration="5496000" />
+      <workItem from="1607918260569" duration="1162000" />
+      <workItem from="1607919476530" duration="3320000" />
+      <workItem from="1607929750245" duration="5538000" />
+      <workItem from="1607940182037" duration="10000" />
+      <workItem from="1607994871949" duration="5446000" />
+      <workItem from="1608019709705" duration="3779000" />
+      <workItem from="1608084048661" duration="14619000" />
+      <workItem from="1608099325439" duration="663000" />
+      <workItem from="1608104953985" duration="2687000" />
+      <workItem from="1608171973090" duration="6149000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../jdk-8/src.zip!/java/util/HashMap.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.2.8.RELEASE/spring-beans-5.2.8.RELEASE-sources.jar!/org/springframework/beans/factory/support/AbstractBeanFactory.java</url>
+          <line>1945</line>
+          <properties class="org.springframework.beans.factory.support.AbstractBeanFactory" method="createBean">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="8" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/数据结构和算法/刷题/队列/_用栈实现队列.java" line="19">
+        <watch expression="q" language="JAVA" />
+      </inline-watch>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
