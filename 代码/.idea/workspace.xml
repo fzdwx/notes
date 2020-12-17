@@ -146,19 +146,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.tree.Main" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.数据结构.tree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="设计模式.创建者模式.原型模式.深克隆.Main" />
       <module name="work" />
@@ -178,6 +165,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="设计模式.创建者模式.建造者模式.builder.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.tree.Main" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.数据结构.tree.二叉树.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
