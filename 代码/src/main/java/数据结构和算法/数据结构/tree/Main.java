@@ -20,7 +20,7 @@ public class Main {
             bTree.add(i);
         }
         BinaryTrees.println(bTree);
-        Node<Integer> node = bTree.getNodeForElement(11);
+        Node<Integer> node = bTree.getNodeForElement(12);
         System.out.println(bTree.predecessor(node));
     }
 

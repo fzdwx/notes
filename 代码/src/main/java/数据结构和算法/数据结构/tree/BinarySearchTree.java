@@ -288,12 +288,42 @@ public class BinarySearchTree<T> implements BinaryTreeInfo {
     }
 
     /**
+     * 得到节点使用迭代
+     *
+     * @param element 元素
+     * @return {@link Node<T>}
+     */
+    private Node<T> getNodeUseIteration(T element) {
+        if (element == null || root == null) {
+            return null;
+        }
+
+        Node<T> temp = this.root;
+        while (temp != null) {
+            Integer d = compare(element, temp.element);
+            if (d == 0) {
+                return temp;   // 返回节点
+            }
+            if (d > 0) {
+                temp =temp.right;
+            }else {
+                temp = temp.left;
+            }
+        }
+        return null;
+    }
+
+    /**
      * 得到节点使用递归
      *
      * @param element 元素
      * @return {@link Node<T>}
      */
     private Node<T> getNodeUseRecursive(T element) {
+        if (element == null || root == null) {
+            return null;
+        }
+
         ArrayList<Node<T>> list = new ArrayList<>();
         inorderTraversal(new Visitor<T>() {
             @Override
@@ -305,6 +335,7 @@ public class BinarySearchTree<T> implements BinaryTreeInfo {
                 return false;
             }
         });
+
         // 添加判断
         return list.size() > 0 ? list.get(0) : null;
     }
