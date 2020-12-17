@@ -1,6 +1,6 @@
 package 数据结构和算法.刷题.树.二叉树;
 
-import 数据结构和算法.数据结构.tree.BinarySearchTree;
+import 数据结构和算法.数据结构.tree.二叉树.BinarySearchTree;
 import 数据结构和算法.数据结构.tree.printer.BinaryTrees;
 
 import java.util.Random;

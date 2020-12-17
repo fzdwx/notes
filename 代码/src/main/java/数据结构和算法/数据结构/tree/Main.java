@@ -2,6 +2,7 @@ package 数据结构和算法.数据结构.tree;
 
 
 import 数据结构和算法.数据结构.tree.printer.BinaryTrees;
+import 数据结构和算法.数据结构.tree.二叉树.BinarySearchTree;
 
 import java.util.Random;
 
@@ -33,7 +34,7 @@ public class Main {
             for (int i = 0; i < 10; i++) {
                 bTree.add(random.nextInt(5));
             }
-            if (bTree.isComplete2()) {
+            if (bTree.isComplete()) {
                 BinaryTrees.println(bTree);
                 flag = false;
             }
