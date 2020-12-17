@@ -277,19 +277,36 @@ public class BinarySearchTree<T> implements BinaryTreeInfo {
         return true;
     }
 
+    /**
+     * 获得元素的节点
+     *
+     * @param element 元素
+     * @return {@link Node<T>}
+     */
     public Node<T> getNodeForElement(T element) {
+        return getNodeUseRecursive(element);
+    }
+
+    /**
+     * 得到节点使用递归
+     *
+     * @param element 元素
+     * @return {@link Node<T>}
+     */
+    private Node<T> getNodeUseRecursive(T element) {
         ArrayList<Node<T>> list = new ArrayList<>();
         inorderTraversal(new Visitor<T>() {
             @Override
             public boolean visit(Node<T> node) {
                 if (node.element == element) {
-                   list.add(node);
-                   return true;
+                    list.add(node);
+                    return true;
                 }
                 return false;
             }
         });
-        return list.get(0);
+        // 添加判断
+        return list.size() > 0 ? list.get(0) : null;
     }
 
     /**
