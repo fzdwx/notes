@@ -1,9 +1,9 @@
 package com.mj;
 
-import java.util.Comparator;
-
 import com.mj.heap.BinaryHeap;
 import com.mj.printer.BinaryTrees;
+
+import java.util.Comparator;
 
 public class Main {
 	

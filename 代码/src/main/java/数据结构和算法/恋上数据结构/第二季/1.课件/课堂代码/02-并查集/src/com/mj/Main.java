@@ -2,13 +2,7 @@ package com.mj;
 
 import com.mj.tools.Asserts;
 import com.mj.tools.Times;
-import com.mj.union.GenericUnionFind;
-import com.mj.union.UnionFind;
-import com.mj.union.UnionFind_QU_R;
-import com.mj.union.UnionFind_QU_R_PC;
-import com.mj.union.UnionFind_QU_R_PH;
-import com.mj.union.UnionFind_QU_R_PS;
-import com.mj.union.UnionFind_QU_S;
+import com.mj.union.*;
 
 public class Main {
 	static final int count = 1000000;

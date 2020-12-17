@@ -1,15 +1,11 @@
 package com.mj;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.mj.file.Files;
-import com.mj.printer.BinaryTreeInfo;
 import com.mj.printer.BinaryTrees;
 import com.mj.tree.AVLTree;
 import com.mj.tree.BST;
-import com.mj.tree.BinaryTree;
-import com.mj.tree.BinaryTree.Visitor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("unused")
 public class Main {

@@ -1,11 +1,11 @@
 package com.mj.map;
 
+import com.mj.printer.BinaryTreeInfo;
+import com.mj.printer.BinaryTrees;
+
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
-
-import com.mj.printer.BinaryTreeInfo;
-import com.mj.printer.BinaryTrees;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class HashMap<K, V> implements Map<K, V> {

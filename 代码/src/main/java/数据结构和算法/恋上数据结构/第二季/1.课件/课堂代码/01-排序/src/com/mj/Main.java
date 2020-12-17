@@ -1,19 +1,11 @@
 package com.mj;
 
-import java.util.Arrays;
-
-import com.mj.sort.CountingSort;
-import com.mj.sort.RadixSort;
 import com.mj.sort.Sort;
-import com.mj.sort.cmp.BubbleSort3;
-import com.mj.sort.cmp.HeapSort;
-import com.mj.sort.cmp.InsertionSort3;
-import com.mj.sort.cmp.MergeSort;
-import com.mj.sort.cmp.QuickSort;
-import com.mj.sort.cmp.SelectionSort;
-import com.mj.sort.cmp.ShellSort;
+import com.mj.sort.cmp.*;
 import com.mj.tools.Asserts;
 import com.mj.tools.Integers;
+
+import java.util.Arrays;
 
 @SuppressWarnings({"rawtypes", "unchecked", "unused"})
 public class Main {

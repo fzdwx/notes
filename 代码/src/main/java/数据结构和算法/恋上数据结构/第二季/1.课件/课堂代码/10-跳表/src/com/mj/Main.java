@@ -1,9 +1,9 @@
 package com.mj;
 
-import java.util.TreeMap;
-
 import com.mj.tools.Asserts;
 import com.mj.tools.Times;
+
+import java.util.TreeMap;
 
 public class Main {
 

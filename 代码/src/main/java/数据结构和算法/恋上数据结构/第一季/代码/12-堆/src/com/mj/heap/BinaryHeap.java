@@ -1,8 +1,8 @@
 package com.mj.heap;
 
-import java.util.Comparator;
-
 import com.mj.printer.BinaryTreeInfo;
+
+import java.util.Comparator;
 
 /**
  * 二叉堆（最大堆）

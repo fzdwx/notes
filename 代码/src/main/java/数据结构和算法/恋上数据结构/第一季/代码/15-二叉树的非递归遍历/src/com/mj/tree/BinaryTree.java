@@ -1,10 +1,10 @@
 package com.mj.tree;
 
+import com.mj.printer.BinaryTreeInfo;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
-
-import com.mj.printer.BinaryTreeInfo;
 
 @SuppressWarnings("unchecked")
 public class BinaryTree<E> implements BinaryTreeInfo {

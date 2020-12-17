@@ -1,13 +1,7 @@
 package com.mj;
 
-import java.util.Comparator;
-
-import com.mj.file.Files;
-import com.mj.printer.BinaryTreeInfo;
 import com.mj.printer.BinaryTrees;
 import com.mj.tree.BST;
-import com.mj.tree.BinaryTree;
-import com.mj.tree.BinaryTree.Visitor;
 
 @SuppressWarnings("unused")
 public class Main {

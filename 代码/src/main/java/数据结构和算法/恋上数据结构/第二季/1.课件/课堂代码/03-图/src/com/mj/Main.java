@@ -1,14 +1,14 @@
 package com.mj;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import com.mj.graph.Graph;
 import com.mj.graph.Graph.EdgeInfo;
 import com.mj.graph.Graph.PathInfo;
 import com.mj.graph.Graph.WeightManager;
 import com.mj.graph.ListGraph;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Main {
 	static WeightManager<Double> weightManager = new WeightManager<Double>() {
