@@ -2,161 +2,11 @@
 
 
 
-~~~
-<link  type="text/css" rel="stylesheet" href="http://files.cnblogs.com/files/miangao/maodian.css">
-<script src="http://files.cnblogs.com/files/miangao/maodian.js"></script>
-<script src="http://files.cnblogs.com/files/miangao/bootstrap.min.js"></script>
-
-
-
-<script type="text/javascript">
-      //以下是锚点JS
-      var a = $(document);
-      a.ready(function() {
-        var b = $('body'),
-          d = 'sideToolbar',
-          e = 'sideCatalog',
-          f = 'sideCatalog-catalog',
-          g = 'sideCatalogBtn',
-          h = 'sideToolbar-up',
-          i = '<div id="sideToolbar"style="display:none;">\<div class="sideCatalogBg"id="sideCatalog">\<div id="sideCatalog-sidebar">\<div class="sideCatalog-sidebar-top"></div>\<div class="sideCatalog-sidebar-bottom"></div>\</div>\<div id="sideCatalog-catalog">\<ul class="nav"style="width:225px;zoom:1">\</ul>\</div>\</div>\<a href="javascript:void(0);"id="sideCatalogBtn"class="sideCatalogBtnDisable"></a>\</div>',
-          j = '',
-          k = 200,
-          l = 0,
-          m = 0,
-          n = 0,
-          //限制存在个数，如数量过多，则只显示h2，不显示h3
-          //o, p = 13,
-          o, p = 100,
-          q = true,
-          r = true,
-          s = b;
-        if(s.length === 0) {
-          return
-        };
-        b.append(i);
-        //指定获取目录的范围-------------这一点非常重要，因为每个人指定的范围都不一样，所以这是要修改的地方
-        //o = s.find(':header');
-        o = $('#cnblogs_post_body').find(':header')
-        if(o.length > p) {
-          r = false;
-          var t = s.find('h2');
-          var u = s.find('h3');
-          if(t.length + u.length > p) {
-            q = false
-          }
-        };
-        o.each(function(t) {
-          var u = $(this),
-            v = u[0];
-
-          var title = u.text();
-          var text = u.text();
-
-          u.attr('id', 'autoid-' + l + '-' + m + '-' + n)
-          //if (!u.attr('id')) {
-          //    u.attr('id', 'autoid-' + l + '-' + m + '-' + n)
-          //};
-          if(v.localName === 'h2') {
-            l++;
-            m = 0;
-            if(text.length > 14) text = text.substr(0, 20) + "...";
-            j += '<li><span>' + l + '&nbsp&nbsp</span><a href="#' + u.attr('id') + '" title="' + title + '">' + text + '</a><span class="sideCatalog-dot"></span></li>';
-          } else if(v.localName === 'h3') {
-            m++;
-            n = 0;
-            if(q) {
-              if(text.length > 12) text = text.substr(0, 16) + "...";
-              j += '<li class="h2Offset"><span>' + l + '.' + m + '&nbsp&nbsp</span><a href="#' + u.attr('id') + '" title="' + title + '">' + text + '</a></li>';
-            }
-          } else if(v.localName === 'h4') {
-            n++;
-            if(r) {
-              j += '<li class="h3Offset"><span>' + l + '.' + m + '.' + n + '&nbsp&nbsp</span><a href="#' + u.attr('id') + '" title="' + title + '">' + u.text() + '</a></li>';
-            }
-          }
-        });
-        $('#' + f + '>ul').html(j);
-        b.data('spy', 'scroll');
-        b.data('target', '.sideCatalogBg');
-        $('body').scrollspy({
-          target: '.sideCatalogBg'
-        });
-        $sideCatelog = $('#' + e);
-        $('#' + g).on('click', function() {
-          if($(this).hasClass('sideCatalogBtnDisable')) {
-            $sideCatelog.css('visibility', 'hidden')
-          } else {
-            $sideCatelog.css('visibility', 'visible')
-          };
-          $(this).toggleClass('sideCatalogBtnDisable')
-        });
-        $('#' + h).on('click', function() {
-          $("html,body").animate({
-            scrollTop: 0
-          }, 500)
-        });
-        $sideToolbar = $('#' + d);
-
-        //通过判断评论框是否存在显示索引目录
-        var commentDiv = $("#blog-comments-placeholder");
-
-        a.on('scroll', function() {
-          //评论框存在才调用方法
-          if(commentDiv.length > 0) {
-            var t = a.scrollTop();
-            if(t > k) {
-              $sideToolbar.css('display', 'block');
-              $('#gotop').show()
-            } else {
-              $sideToolbar.css('display', 'none')
-              $('#gotop').hide()
-            }
-          }
-        })
-      });
-      //以上是锚点JS
-      //以下是返回顶部JS
-      $(function() {
-        $('body').append('<div id="gotop" onclick="goTop();"></div>');
-      });
-
-      function goTop(u, t, r) {
-        var scrollActivate = !0;
-        if(scrollActivate) {
-          u = u || 0.1;
-          t = t || 16;
-          var s = 0,
-            q = 0,
-            o = 0,
-            p = 0,
-            n = 0,
-            j = 0;
-          document.documentElement && (s = document.documentElement.scrollLeft || 0, q = document.documentElement.scrollTop || 0);
-          document.body && (o = document.body.scrollLeft || 0, p = document.body.scrollTop || 0);
-          n = window.scrollX || 0;
-          j = window.scrollY || 0;
-          s = Math.max(s, Math.max(o, n));
-          q = Math.max(q, Math.max(p, j));
-          p = 1 + u;
-          window.scrollTo(Math.floor(s / p), Math.floor(q / p));
-          0 < s || 0 < q ? window.setTimeout('goTop(' + u + ', ' + t + ')', t) : 'undefined' != typeof r && r()
-        } else {
-          scrollActivate = !0
-        }
-      }
-      //以上是返回顶部JS
-    </script>
-
-
-
-~~~
-
 
 
 链表 
 
-# 一、单向链表
+# 单向链表
 
 ## 1.核心Api
 
@@ -484,7 +334,7 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
 
 
 
-# 二、双向链表
+# 双向链表
 
 含有一个头节点和尾节点的链表
 
@@ -905,7 +755,7 @@ public static void main(String[] args) {
 
 
 
-# 三、单向循环链表
+# 单向循环链表
 
 最后一个节点指向第一个节点
 
@@ -923,7 +773,7 @@ public static void main(String[] args) {
 
 
 
-# 四、双向循环链表
+# 双向循环链表
 
 ## add
 
@@ -934,3 +784,96 @@ public static void main(String[] args) {
 ## remove
 
 ![image-20201006190743462](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20201006190743.png)
+
+
+
+
+
+
+
+
+
+## 约瑟夫问题
+
+
+
+### 在双向循环链表中添加属性和方法
+
+
+
+```java
+/**
+ * 针对约瑟夫问题
+ * 当前的节点
+ */
+private Node<T> current;
+
+/**
+ * 针对约瑟夫问题
+ * 重置current节点，指向first
+ */
+public void resetCurrent() {
+    current = first;
+}
+
+/**
+ * 针对约瑟夫问题
+ * 当前下
+ *
+ * @return {@link T}
+ */
+public T currentNext() {
+    if (current == null) return null;
+
+    current = current.next;
+    return current.o;
+}
+
+/**
+ * 针对约瑟夫问题
+ * 删除当前
+ */
+public T removeCurrent() {
+    Node<T> next = current.next;
+    T o = remove(current.o);
+    if (size == 0) {
+        current = null;
+    } else {
+        current = next;
+    }
+    return o;
+}
+```
+
+
+
+### 实现
+
+```java
+public static void main(String[] args) {
+    LinkedRingList<Integer> list = new LinkedRingList<>();
+
+    for (int i = 1; i <= 8; i++) {
+        list.add(i);
+    }
+    System.out.println("添加完成：" + list);
+
+    int count = 3;
+
+    josephQuestion(list, count);
+}
+
+private static void josephQuestion(LinkedRingList<Integer> list, int count) {
+    // 1.使curr 指向 first
+    list.resetCurrent();
+    // 2.小孩出圈
+    while (list.size > 0) {
+        // 3.数几次出一个
+        for (int i = 1; i < count; i++) {
+            // 4.出
+            list.currentNext();
+        }
+        System.out.println(list.removeCurrent());
+    }
+}
+```
