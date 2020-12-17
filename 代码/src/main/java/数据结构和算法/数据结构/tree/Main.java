@@ -15,13 +15,14 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         BinarySearchTree<Integer> bTree = new BinarySearchTree<>();
-        int[] ints = {7, 8, 4, 5, 1, 9, 11};
+        int[] ints = {7, 8, 4, 5, 2, 3, 1, 9, 11, 10, 12};
         for (int i : ints) {
             bTree.add(i);
         }
         BinaryTrees.println(bTree);
-        Node<Integer> node = bTree.getNodeForElement(12);
-        System.out.println(bTree.predecessor(node));
+        bTree.remove(11);
+        System.out.println("============");
+        BinaryTrees.println(bTree);
     }
 
     private static void test1() {

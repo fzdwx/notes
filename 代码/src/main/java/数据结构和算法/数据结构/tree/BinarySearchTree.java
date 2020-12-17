@@ -197,10 +197,56 @@ public class BinarySearchTree<T> implements BinaryTreeInfo {
 
     }
 
+    /**
+     * 删除
+     *
+     * @param element 元素
+     */
     public void remove(T element) {
         // 1.删除叶子节点(n0)  - 直接删除
         // 2.删除n1  - 用子节点代替原节点的位置 node.left/right.parent = node.parent
         // 3.删除n2  先用前驱或后继节点覆盖原节点，然后删除对应的前驱或后继
+        remove(getNodeUseIteration(element));
+    }
+
+    /**
+     * 删除
+     *
+     * @param node 节点
+     */
+    private void remove(Node<T> node) {
+        if (node == null) {
+            return;
+        }
+
+        if (node.hasTwoChildren()) {        // n2
+            Node<T> s = predecessor(node);   // 要删除节点的后继节点
+            node.element = s.element;     // 删除当前节点(覆盖当前节点所保存的值)
+            node = s;
+        }
+
+        //n1、n0
+        Node<T> removeNext = node.left != null ? node.left : node.right;   // 判断要删除的节点是否有子节点
+        if (removeNext != null) {                                         // n1
+            removeNext.parent = node.parent;                             // removeNext -> node.parent
+            if (node.parent == null) {                                  // 根节点
+                root = removeNext;
+            } else if (node == node.parent.left) {                    // node.parent.left/right -> removeNext
+                node.parent.left = removeNext;
+            } else {
+                node.parent.right = removeNext;
+            }
+        } else if (node.parent == null) {  // n0且没有父节点 ->root
+            root = null;
+        } else {     // n0  直接删除
+            if (node.parent.left == node) {
+                node.parent.left = null;
+            } else if (node.parent.right == node){
+                node.parent.right = null;
+            }
+        }
+
+        size--;
     }
 
     public void contains(T element) {
@@ -235,7 +281,7 @@ public class BinarySearchTree<T> implements BinaryTreeInfo {
             if (leaf && !poll.isLeaf()) {  // 如果没有叶子节点
                 return false;
             }
-            if (poll.hasChildren()) { //如果当前节点有子节点
+            if (poll.hasTwoChildren()) { //如果当前节点有子节点
                 queue.offer(poll.left);
                 queue.offer(poll.right);
             } else if (poll.left == null && poll.right != null) {  // 如果没有左子节点但是有右子节点->不是
@@ -305,8 +351,8 @@ public class BinarySearchTree<T> implements BinaryTreeInfo {
                 return temp;   // 返回节点
             }
             if (d > 0) {
-                temp =temp.right;
-            }else {
+                temp = temp.right;
+            } else {
                 temp = temp.left;
             }
         }

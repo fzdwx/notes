@@ -29,7 +29,7 @@ public class Node<T> {
                 '}';
     }
 
-    public boolean hasChildren() {
+    public boolean hasTwoChildren() {
         return right != null && left != null;
     }
 
