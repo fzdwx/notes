@@ -5,14 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/AVLTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/SDAdapterTF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/SDCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/SDCardImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/TFCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/TFCardImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/SDAdapterTF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/SDCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/SDCardImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/TFCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/TFCardImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinarySearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +81,7 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/代理模式/Jdk动态代理" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.1507799" />
@@ -82,7 +91,11 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="设计模式.结构型模式.适配器模式.类适配器" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\notes\代码\src\main\java\设计模式\结构型模式\适配器模式\对象适配器" />
       <recent name="D:\github\notes\代码\src\main\java\设计模式\结构型模式\代理模式\Jdk动态代理" />
       <recent name="D:\Java\project\myproject\work\src\main\java\数据结构和算法\数据结构\tree" />
       <recent name="D:\Java\project\myproject\work\src\main\resources" />
@@ -105,11 +118,11 @@
       <recent name="FizzOrBuzz" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="设计模式.结构型模式.适配器模式.对象适配器" />
       <recent name="设计模式.结构型模式.代理模式.cglib动态代理" />
       <recent name="设计模式.创建者模式.原型模式.深克隆" />
       <recent name="设计模式.创建者模式.工厂模式.抽象工厂" />
       <recent name="设计模式.创建者模式.工厂模式.工厂方法模式" />
-      <recent name="设计模式.创建者模式.工厂模式.简单工厂模式" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -137,20 +150,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (4)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.代理模式.静态代理.Main" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="设计模式.结构型模式.代理模式.静态代理.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="应用程序.Main">
     <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.代理模式.Jdk动态代理.Main" />
       <module name="work" />
@@ -190,12 +190,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.创建者模式.建造者模式.builder.Main" />
+    <configuration name="Main (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.适配器模式.类适配器.Main" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="设计模式.创建者模式.建造者模式.builder.*" />
+          <option name="PATTERN" value="设计模式.结构型模式.适配器模式.类适配器.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.适配器模式.对象适配器.Main" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="设计模式.结构型模式.适配器模式.对象适配器.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -229,17 +242,17 @@
     </configuration>
     <list>
       <item itemvalue="应用程序.Main (2)" />
-      <item itemvalue="应用程序.Main" />
-      <item itemvalue="应用程序.Main (1)" />
       <item itemvalue="应用程序.Main (3)" />
       <item itemvalue="应用程序.Main (4)" />
+      <item itemvalue="应用程序.Main (5)" />
+      <item itemvalue="应用程序.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main" />
+        <item itemvalue="应用程序.Main (5)" />
         <item itemvalue="应用程序.Main (4)" />
         <item itemvalue="应用程序.Main (3)" />
-        <item itemvalue="应用程序.Main (2)" />
-        <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.Main (2)" />
       </list>
     </recent_temporary>
@@ -324,7 +337,7 @@
       <workItem from="1608104953985" duration="2687000" />
       <workItem from="1608171973090" duration="6149000" />
       <workItem from="1608256733727" duration="8752000" />
-      <workItem from="1608267465896" duration="1216000" />
+      <workItem from="1608267465896" duration="5729000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -382,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608200177301</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="添加AVL数-平衡二叉树">
+      <created>1608272328153</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1608272328153</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +429,8 @@
     <MESSAGE value="静态代理" />
     <MESSAGE value="jdk动态代理" />
     <MESSAGE value="cglib动态代理" />
-    <option name="LAST_COMMIT_MESSAGE" value="cglib动态代理" />
+    <MESSAGE value="添加AVL数-平衡二叉树" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加AVL数-平衡二叉树" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
