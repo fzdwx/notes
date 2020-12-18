@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/代理模式/cglib动态代理/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/代理模式/cglib动态代理/ProxyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/代理模式/cglib动态代理/TrainStation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/AVLTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work.iml" beforeDir="false" afterPath="$PROJECT_DIR$/work.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,20 +137,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (3)">
-    <configuration name="计算二叉树的高度" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.刷题.树.二叉树.计算二叉树的高度" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.刷题.树.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="应用程序.Main (4)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.代理模式.静态代理.Main" />
       <module name="work" />
@@ -181,6 +170,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="设计模式.结构型模式.代理模式.cglib动态代理.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.tree.Main" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.数据结构.tree.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -227,18 +229,18 @@
     </configuration>
     <list>
       <item itemvalue="应用程序.Main (2)" />
-      <item itemvalue="应用程序.计算二叉树的高度" />
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.Main (1)" />
       <item itemvalue="应用程序.Main (3)" />
+      <item itemvalue="应用程序.Main (4)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main (4)" />
         <item itemvalue="应用程序.Main (3)" />
         <item itemvalue="应用程序.Main (2)" />
         <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.Main (2)" />
-        <item itemvalue="应用程序.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -248,7 +250,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4a9550ed-74e3-411f-9a39-f3f2f002ca4b" name="默认的" comment="" />
+      <changelist id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="" />
       <created>1600346746098</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -321,6 +323,8 @@
       <workItem from="1608099325439" duration="663000" />
       <workItem from="1608104953985" duration="2687000" />
       <workItem from="1608171973090" duration="6149000" />
+      <workItem from="1608256733727" duration="8752000" />
+      <workItem from="1608267465896" duration="1216000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -371,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608199074580</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="cglib动态代理">
+      <created>1608200177301</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1608200177301</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +408,8 @@
     <MESSAGE value="添加笔记" />
     <MESSAGE value="静态代理" />
     <MESSAGE value="jdk动态代理" />
-    <option name="LAST_COMMIT_MESSAGE" value="jdk动态代理" />
+    <MESSAGE value="cglib动态代理" />
+    <option name="LAST_COMMIT_MESSAGE" value="cglib动态代理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

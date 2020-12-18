@@ -13,7 +13,7 @@ import java.util.Queue;
  * @contactMe 980650920@qq.com
  * @description
  */
-abstract class BinaryTree<T> implements BinaryTreeInfo {
+public abstract class BinaryTree<T> implements BinaryTreeInfo {
 
     protected int size;
     protected Node<T> root;
@@ -379,25 +379,7 @@ abstract class BinaryTree<T> implements BinaryTreeInfo {
         return h;
     }
 
-    @Override
-    public Object root() {
-        return root;
-    }
 
-    @Override
-    public Object left(Object node) {
-        return ((Node<T>) node).left;
-    }
-
-    @Override
-    public Object right(Object node) {
-        return ((Node<T>) node).right;
-    }
-
-    @Override
-    public Object string(Object node) {
-        return ((Node<T>) node).element;
-    }
 
     /**
      * 元素not null检查
@@ -422,15 +404,20 @@ abstract class BinaryTree<T> implements BinaryTreeInfo {
             this.parent = parent;
         }
 
-        public Node() {
-
-        }
 
         @Override
         public String toString() {
             return "Node{" +
                     "element=" + element +
                     '}';
+        }
+
+        public boolean isLeftChild() {
+            return parent != null && this == parent.left;
+        }
+
+        public boolean isRightChild() {
+            return parent != null && this == parent.right;
         }
 
         public boolean hasTwoChildren() {
@@ -440,6 +427,7 @@ abstract class BinaryTree<T> implements BinaryTreeInfo {
         public boolean isLeaf() {
             return right == null && left == null;
         }
+
     }
 
 
@@ -456,6 +444,5 @@ abstract class BinaryTree<T> implements BinaryTreeInfo {
 
         public boolean continueTo = false;
     }
-
 
 }

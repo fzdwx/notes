@@ -2,6 +2,7 @@ package 数据结构和算法.数据结构.tree;
 
 
 import 数据结构和算法.数据结构.tree.printer.BinaryTrees;
+import 数据结构和算法.数据结构.tree.二叉树.AVLTree;
 import 数据结构和算法.数据结构.tree.二叉树.BinarySearchTree;
 
 import java.util.Random;
@@ -16,14 +17,15 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         BinarySearchTree<Integer> bTree = new BinarySearchTree<>();
+        BinarySearchTree<Integer> avlTree = new AVLTree<>();
         int[] ints = {7, 8, 4, 5, 2, 3, 1, 9, 11, 10, 12};
         for (int i : ints) {
             bTree.add(i);
+            avlTree.add(i);
         }
         BinaryTrees.println(bTree);
-        bTree.remove(11);
-        System.out.println("============");
-        BinaryTrees.println(bTree);
+        System.out.println("-----------------------------------");
+        BinaryTrees.println(avlTree);
     }
 
     private static void test1() {

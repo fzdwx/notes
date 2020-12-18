@@ -31,7 +31,7 @@ public class BinarySearchTree<T> extends BinaryTree<T>  {
         Node<T> temp = this.root;                      // 遍历的元素
         Node<T> parent = this.root;                   // 插入元素的父节点
         int compare = 0;                             // 记录插入位置
-        Node<T> curr = new Node<>(element, parent); // 需要插入的元素
+        Node<T> curr = createNode(element, parent); // 需要插入的元素
 
         // 2.找到父节点，以及插入位置
         // 2.a.判断根节点是否为空
@@ -45,7 +45,7 @@ public class BinarySearchTree<T> extends BinaryTree<T>  {
                 } else if (compare < 0) {
                     temp = temp.left;
                 } else {
-                    temp.element = element;
+                    temp.element = element;     // 相等覆盖
                     return;
                 }
             }
@@ -62,11 +62,50 @@ public class BinarySearchTree<T> extends BinaryTree<T>  {
         }
         size++;
 
+        addAfter(curr);         // 添加后的操作
+    }
+
+    /**
+     * 添加后
+     * 留给子类去实现，调整树->平衡二叉树
+     * @param node 添加的节点
+     */
+    protected void addAfter(Node<T> node) { }
+
+    /**
+     * 创建节点的类型
+     *
+     * @param element 元素
+     * @param parent  父
+     * @return {@link Node<T>}
+     */
+    protected Node<T> createNode(T element, Node<T> parent) {
+        return new Node<>(element,parent);
     }
 
     @Override
     public Node<T> getNodeForElement(T element) {
         return getNodeUseIteration(element);
+    }
+
+    @Override
+    public Object root() {
+        return this.root;
+    }
+
+    @Override
+    public Object left(Object node) {
+        return ((Node<T>) node).left;
+    }
+
+    @Override
+    public Object right(Object node) {
+        return ((Node<T>) node).right;
+    }
+
+    @Override
+    public Object string(Object node) {
+        return ((Node<T>) node).element;
     }
 
     /**
