@@ -62,40 +62,7 @@ public abstract class BinaryTree<T> implements BinaryTreeInfo {
      *
      * @param node 节点
      */
-    public void remove(Node<T> node) {
-        if (node == null) {
-            return;
-        }
-
-        if (node.hasTwoChildren()) {        // n2
-            Node<T> s = predecessor(node);   // 要删除节点的后继节点
-            node.element = s.element;     // 删除当前节点(覆盖当前节点所保存的值)
-            node = s;
-        }
-
-        //n1、n0
-        Node<T> removeNext = node.left != null ? node.left : node.right;   // 判断要删除的节点是否有子节点
-        if (removeNext != null) {                                         // n1
-            removeNext.parent = node.parent;                             // removeNext -> node.parent
-            if (node.parent == null) {                                  // 根节点
-                root = removeNext;
-            } else if (node == node.parent.left) {                    // node.parent.left/right -> removeNext
-                node.parent.left = removeNext;
-            } else {
-                node.parent.right = removeNext;
-            }
-        } else if (node.parent == null) {  // n0且没有父节点 ->root
-            root = null;
-        } else {     // n0  直接删除
-            if (node.parent.left == node) {
-                node.parent.left = null;
-            } else if (node.parent.right == node) {
-                node.parent.right = null;
-            }
-        }
-
-        size--;
-    }
+    public abstract void remove(Node<T> node);
 
     /**
      * 高度

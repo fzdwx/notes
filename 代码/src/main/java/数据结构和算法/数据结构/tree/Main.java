@@ -16,15 +16,16 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        BinarySearchTree<Integer> bTree = new BinarySearchTree<>();
         BinarySearchTree<Integer> avlTree = new AVLTree<>();
         int[] ints = {7, 8, 4, 5, 2, 3, 1, 9, 11, 10, 12};
         for (int i : ints) {
-            bTree.add(i);
             avlTree.add(i);
         }
-        BinaryTrees.println(bTree);
-        System.out.println("-----------------------------------");
+        BinaryTrees.println(avlTree);
+        System.out.println("============remove================");
+        avlTree.remove(9);
+        BinaryTrees.println(avlTree);
+        avlTree.remove(8);
         BinaryTrees.println(avlTree);
     }
 

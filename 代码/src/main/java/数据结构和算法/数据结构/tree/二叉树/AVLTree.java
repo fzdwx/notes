@@ -17,6 +17,20 @@ public class AVLTree<T> extends BinarySearchTree<T> {
     }
 
     @Override
+    protected void removeAfter(Node<T> node) {
+        // 1.找到最近的失衡节点
+        while ((node = node.parent) != null) {
+            if (isBalance((node))) {        // 判断当前节点是否是平衡的
+                // 更新高度
+                updateHeight(node);
+            } else {
+                // 恢复平衡
+                toRestoreBalance(node);
+            }
+        }
+    }
+
+    @Override
     protected void addAfter(Node<T> node) {
         // 1.找到最近的失衡节点
         while ((node = node.parent) != null) {

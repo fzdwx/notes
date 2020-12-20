@@ -8,7 +8,7 @@ import java.util.Comparator;
  * @contactMe 980650920@qq.com
  * @description 二叉搜索树
  */
-public class BinarySearchTree<T> extends BinaryTree<T>  {
+public class BinarySearchTree<T> extends BinaryTree<T> {
 
     private int size;
     public Node<T> root;
@@ -66,11 +66,65 @@ public class BinarySearchTree<T> extends BinaryTree<T>  {
     }
 
     /**
+     * 删除
+     *
+     * @param node 节点
+     */
+    @Override
+    public void remove(Node<T> node) {
+        if (node == null) {
+            return;
+        }
+
+        if (node.hasTwoChildren()) {        // n2
+            Node<T> s = predecessor(node);   // 要删除节点的后继节点
+            node.element = s.element;     // 删除当前节点(覆盖当前节点所保存的值)
+            node = s;
+        }
+
+        //n1、n0
+        Node<T> removeNext = node.left != null ? node.left : node.right;   // 判断要删除的节点是否有子节点
+        if (removeNext != null) {                                         // n1
+            removeNext.parent = node.parent;                             // removeNext -> node.parent
+            if (node.parent == null) {                                  // 根节点
+                root = removeNext;
+            } else if (node == node.parent.left) {                    // node.parent.left/right -> removeNext
+                node.parent.left = removeNext;
+            } else {
+                node.parent.right = removeNext;
+            }
+        } else if (node.parent == null) {  // n0且没有父节点 ->root
+            root = null;
+        } else {     // n0  直接删除
+            if (node.parent.left == node) {
+                node.parent.left = null;
+            } else if (node.parent.right == node) {
+                node.parent.right = null;
+            }
+        }
+
+        // 恢复平衡
+        removeAfter(node);
+
+        size--;
+    }
+
+    /**
      * 添加后
      * 留给子类去实现，调整树->平衡二叉树
+     *
      * @param node 添加的节点
      */
-    protected void addAfter(Node<T> node) { }
+    protected void addAfter(Node<T> node) {
+    }
+
+    /**
+     * 删除后
+     *
+     * @param node 节点
+     */
+    protected void removeAfter(Node<T> node) {
+    }
 
     /**
      * 创建节点的类型
@@ -80,7 +134,7 @@ public class BinarySearchTree<T> extends BinaryTree<T>  {
      * @return {@link Node<T>}
      */
     protected Node<T> createNode(T element, Node<T> parent) {
-        return new Node<>(element,parent);
+        return new Node<>(element, parent);
     }
 
     @Override

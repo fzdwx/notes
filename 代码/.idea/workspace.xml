@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/AVLTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -215,6 +219,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="应用程序.Main (2)" />
       <item itemvalue="应用程序.Main (3)" />
@@ -314,6 +329,7 @@
       <workItem from="1608256733727" duration="8752000" />
       <workItem from="1608267465896" duration="5729000" />
       <workItem from="1608342987502" duration="3161000" />
+      <workItem from="1608430127544" duration="1904000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -378,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608272328153</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="统一的旋转">
+      <created>1608430322965</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1608430322965</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,7 +429,8 @@
     <MESSAGE value="jdk动态代理" />
     <MESSAGE value="cglib动态代理" />
     <MESSAGE value="添加AVL数-平衡二叉树" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加AVL数-平衡二叉树" />
+    <MESSAGE value="统一的旋转" />
+    <option name="LAST_COMMIT_MESSAGE" value="统一的旋转" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
