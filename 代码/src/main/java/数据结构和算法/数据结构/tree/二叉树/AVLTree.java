@@ -42,19 +42,65 @@ public class AVLTree<T> extends BinarySearchTree<T> {
 
         if (parent.isLeftChild()) {        // l
             if (node.isLeftChild()) {     // ll  - 右旋转
-                rightRotation(grand);
+//                rightRotation(grand);
+                rotation(grand, node.left, node, node.right, parent, parent.right, grand, grand.right);
             } else {                    // lr  左旋转 -> 右旋转
-                leftRotation(parent);
-                rightRotation(grand);
+//                leftRotation(parent);
+//                rightRotation(grand);
+                rotation(grand, parent.left, parent, node.left, node, node.right, grand, grand.parent);
             }
         } else {                         // l
             if (node.isRightChild()) {  // rr 左旋转
-                leftRotation(grand);
+//                leftRotation(grand);
+                rotation(grand, grand.left, grand, parent.left, parent, node.left, node, node.right);
             } else {                   // rl 右旋转 -> 左旋转
-                rightRotation(parent);
-                leftRotation(grand);
+//                rightRotation(parent);
+//                leftRotation(grand);
+                rotation(grand, grand.left, grand, node.left, node, node.right, parent, parent.right);
             }
         }
+    }
+
+    /**
+     * 统一的旋转
+     *
+     * @param grand 大
+     * @param d     d
+     * @param a     a
+     * @param b     b
+     * @param c     c
+     * @param e     e
+     * @param f     f
+     * @param g     g
+     */
+    private void rotation(Node<T> grand,
+                          Node<T> a, Node<T> b, Node<T> c,
+                          Node<T> d,
+                          Node<T> e, Node<T> f, Node<T> g) {
+        d.parent = grand.parent;
+        if (grand.isRightChild()) {
+            grand.parent.right = d;
+        } else if (grand.isLeftChild()) {
+            grand.parent.left = d;
+        } else {
+            root = d;
+        }
+
+        doIt(a, b, c);
+        doIt(e, f, g);
+        doIt(b, d, f);
+    }
+
+    private void doIt(Node<T> a, Node<T> b, Node<T> c) {
+        b.left = a;
+        b.right = c;
+        if (a != null) {
+            a.parent = b;
+        }
+        if (c != null) {
+            c.parent = b;
+        }
+        updateHeight(b);
     }
 
     /**
@@ -199,8 +245,4 @@ public class AVLTree<T> extends BinarySearchTree<T> {
         }
     }
 
-    @Override
-    public Object string(Object node) {
-        return ((AVLNode<T>) node).element + "_h:" + (((AVLNode<T>) node).height);
-    }
 }

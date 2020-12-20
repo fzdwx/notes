@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/Computer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/SDAdapterTF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/SDCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/SDCardImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/TFCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/TFCardImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/Computer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/SDAdapterTF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/SDCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/SDCardImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/TFCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/类适配器/TFCardImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/AVLTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +136,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main">
+  <component name="RunManager" selected="应用程序.Main (4)">
     <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.代理模式.Jdk动态代理.Main" />
       <module name="work" />
@@ -229,17 +215,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="应用程序.Main (2)" />
       <item itemvalue="应用程序.Main (3)" />
@@ -249,9 +224,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main (4)" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.Main (5)" />
-        <item itemvalue="应用程序.Main (4)" />
         <item itemvalue="应用程序.Main (3)" />
         <item itemvalue="应用程序.Main (2)" />
       </list>
@@ -338,6 +313,7 @@
       <workItem from="1608171973090" duration="6149000" />
       <workItem from="1608256733727" duration="8752000" />
       <workItem from="1608267465896" duration="5729000" />
+      <workItem from="1608342987502" duration="3161000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
