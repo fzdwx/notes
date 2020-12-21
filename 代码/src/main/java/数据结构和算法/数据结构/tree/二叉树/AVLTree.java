@@ -8,12 +8,13 @@ import java.util.Comparator;
  * @contactMe 980650920@qq.com
  * @description
  */
-public class AVLTree<T> extends BinarySearchTree<T> {
+public class AVLTree<T> extends BinaryBalanceSearchTree<T> {
     public AVLTree(Comparator<T> comparator) {
         super(comparator);
     }
 
     public AVLTree() {
+        this(null);
     }
 
     @Override
@@ -56,128 +57,53 @@ public class AVLTree<T> extends BinarySearchTree<T> {
 
         if (parent.isLeftChild()) {        // l
             if (node.isLeftChild()) {     // ll  - 右旋转
-//                rightRotation(grand);
+                rightRotation(grand);
+            } else {                    // lr  左旋转 -> 右旋转
+                leftRotation(parent);
+                rightRotation(grand);
+            }
+        } else {                         // l
+            if (node.isRightChild()) {  // rr 左旋转
+                leftRotation(grand);
+            } else {                   // rl 右旋转 -> 左旋转
+                rightRotation(parent);
+                leftRotation(grand);
+            }
+        }
+    }
+
+    private void toRestoreBalanceUseGeneral(Node<T> grand) {
+        Node<T> parent = ((AVLNode<T>) grand).tallerChild();
+        Node<T> node = ((AVLNode<T>) parent).tallerChild();
+
+        if (parent.isLeftChild()) {        // l
+            if (node.isLeftChild()) {     // ll  - 右旋转
                 rotation(grand, node.left, node, node.right, parent, parent.right, grand, grand.right);
             } else {                    // lr  左旋转 -> 右旋转
-//                leftRotation(parent);
-//                rightRotation(grand);
                 rotation(grand, parent.left, parent, node.left, node, node.right, grand, grand.parent);
             }
         } else {                         // l
             if (node.isRightChild()) {  // rr 左旋转
-//                leftRotation(grand);
                 rotation(grand, grand.left, grand, parent.left, parent, node.left, node, node.right);
             } else {                   // rl 右旋转 -> 左旋转
-//                rightRotation(parent);
-//                leftRotation(grand);
                 rotation(grand, grand.left, grand, node.left, node, node.right, parent, parent.right);
             }
         }
     }
 
-    /**
-     * 统一的旋转
-     *
-     * @param grand 大
-     * @param d     d
-     * @param a     a
-     * @param b     b
-     * @param c     c
-     * @param e     e
-     * @param f     f
-     * @param g     g
-     */
-    private void rotation(Node<T> grand,
-                          Node<T> a, Node<T> b, Node<T> c,
-                          Node<T> d,
-                          Node<T> e, Node<T> f, Node<T> g) {
-        d.parent = grand.parent;
-        if (grand.isRightChild()) {
-            grand.parent.right = d;
-        } else if (grand.isLeftChild()) {
-            grand.parent.left = d;
-        } else {
-            root = d;
-        }
-
-        doIt(a, b, c);
-        doIt(e, f, g);
-        doIt(b, d, f);
-    }
-
-    private void doIt(Node<T> a, Node<T> b, Node<T> c) {
-        b.left = a;
-        b.right = c;
-        if (a != null) {
-            a.parent = b;
-        }
-        if (c != null) {
-            c.parent = b;
-        }
-        updateHeight(b);
-    }
-
-    /**
-     * 右旋转
-     *
-     * @param grand 节点
-     */
-    private void rightRotation(Node<T> grand) {
-        Node<T> parent = grand.left;
-        Node<T> root = grand.parent;
-        Node<T> t2 = parent.right;
-
-        grand.left = parent.right;
-        parent.right = grand;
-        // 更新父节点
-        afterRo(grand, parent, root, t2);
-    }
-
-    /**
-     * 左旋转
-     *
-     * @param grand 节点
-     */
-    private void leftRotation(Node<T> grand) {
-        Node<T> parent = grand.right;
-        Node<T> root = grand.parent;
-        Node<T> t1 = parent.left;
-
-        // 交换位置 连线
-        grand.right = parent.left;
-        parent.left = grand;
-
-        afterRo(grand, parent, root, t1);
-    }
-
-    /**
-     * 旋转之后调整父节点的位置
-     *
-     * @param grand  大
-     * @param parent 父
-     * @param root   根
-     * @param child  parent的子节点
-     */
-    private void afterRo(Node<T> grand, Node<T> parent, Node<T> root, Node<T> child) {
-        // 更新root节点的子节点
-        if (grand.isLeftChild()) {
-            root.left = parent;
-        } else if (grand.isRightChild()) {
-            root.right = parent;
-        } else {   // root
-            this.root = parent;
-        }
-
-        // 更新父节点
-        parent.parent = root;
-        if (child != null) {
-            child.parent = grand;
-        }
-        grand.parent = parent;
-
+    @Override
+    protected void afterRo(Node<T> grand, Node<T> parent, Node<T> root, Node<T> child) {
+        super.afterRo(grand, parent, root, child);
         // 更新高度
         updateHeight(grand);
         updateHeight(parent);
+    }
+
+    @Override
+    protected void doIt(Node<T> a, Node<T> b, Node<T> c) {
+        super.doIt(a, b, c);
+        // 更新高度
+        updateHeight(b);
     }
 
     /**
@@ -210,7 +136,7 @@ public class AVLTree<T> extends BinarySearchTree<T> {
      * @author pdd20
      * @date 2020/12/18
      */
-    private static class AVLNode<T> extends Node<T> {
+    public static class AVLNode<T> extends Node<T> {
         int height = 1; // 当前节点的高度
 
         public AVLNode(T element, Node<T> parent) {
@@ -244,7 +170,7 @@ public class AVLTree<T> extends BinarySearchTree<T> {
         /**
          * 更新当前节点的高度
          */
-        private void updateHeight() {
+        public void updateHeight() {
             int leftH = left == null ? 0 : ((AVLNode<T>) left).height;
             int rightH = right == null ? 0 : ((AVLNode<T>) right).height;
             height = Math.max(leftH, rightH) + 1;

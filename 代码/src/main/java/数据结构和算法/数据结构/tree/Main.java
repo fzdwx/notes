@@ -3,7 +3,9 @@ package 数据结构和算法.数据结构.tree;
 
 import 数据结构和算法.数据结构.tree.printer.BinaryTrees;
 import 数据结构和算法.数据结构.tree.二叉树.AVLTree;
+import 数据结构和算法.数据结构.tree.二叉树.BinaryBalanceSearchTree;
 import 数据结构和算法.数据结构.tree.二叉树.BinarySearchTree;
+import 数据结构和算法.数据结构.tree.二叉树.RBTree;
 
 import java.util.Random;
 
@@ -16,17 +18,19 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        BinarySearchTree<Integer> avlTree = new AVLTree<>();
+        BinaryBalanceSearchTree<Integer> avlTree = new AVLTree<>();
+        RBTree<Integer> rbTree = new RBTree<>();
+        show(avlTree);
+        System.out.println("*****************");
+        show(rbTree);
+    }
+
+    private static void show(BinaryBalanceSearchTree<Integer> bbst) {
         int[] ints = {7, 8, 4, 5, 2, 3, 1, 9, 11, 10, 12};
         for (int i : ints) {
-            avlTree.add(i);
+            bbst.add(i);
         }
-        BinaryTrees.println(avlTree);
-        System.out.println("============remove================");
-        avlTree.remove(9);
-        BinaryTrees.println(avlTree);
-        avlTree.remove(8);
-        BinaryTrees.println(avlTree);
+        BinaryTrees.println(bbst);
     }
 
     private static void test1() {

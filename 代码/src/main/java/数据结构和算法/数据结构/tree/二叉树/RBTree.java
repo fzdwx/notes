@@ -8,7 +8,7 @@ import java.util.Comparator;
  * @contactMe 980650920@qq.com
  * @description 红黑树
  */
-public class RBTree<T> extends BinarySearchTree<T> {
+public class RBTree<T> extends BinaryBalanceSearchTree<T> {
     public static final boolean RED = false;
     public static final boolean BLACK = true;
 
@@ -20,6 +20,17 @@ public class RBTree<T> extends BinarySearchTree<T> {
         this(null);
     }
 
+
+    @Override
+    protected Node<T> createNode(T element, Node<T> parent) {
+        return new RBNode<>(element, parent);
+    }
+
+    @Override
+    public Object string(Object node) {
+        return node;
+    }
+
     /**
      * 添加后恢复成红黑树
      *
@@ -27,7 +38,52 @@ public class RBTree<T> extends BinarySearchTree<T> {
      */
     @Override
     protected void addAfter(Node<T> node) {
-        super.addAfter(node);
+        Node<T> parent = node.parent;
+        Node<T> grand = node.grand();
+        Node<T> uncle = node.uncle();
+
+        // 1.添加的是根节点
+        if (parent == null) {
+            toBlack(node);
+            return;
+        }
+
+        // 2.如果父节点是黑色，直接返回
+        if (isBlack(parent)) { return; }
+
+        // 3.判断uncle是不是red
+        if (isRed(uncle)) {   // 红色，上溢
+            // 3.1、parent和uncle染成黑色
+            toBlack(parent);
+            toBlack(uncle);
+            // 3.2、grand向上合并(当做是新添加的节点)
+            addAfter(toRed(grand));
+        } else {         // 不是红色
+            // 旋转
+            if (parent.isLeftChild()) {
+                if (node.isLeftChild()) {  // LL
+                    toBlack(parent);
+                    toRed(grand);
+                    rightRotation(grand);
+                }else {  // LR
+                    toBlack(node);
+                    toRed(grand);
+                    leftRotation(parent);
+                    rightRotation(grand);
+                }
+            }else {
+                if (node.isRightChild()) {  //RR
+                    toBlack(parent);
+                    toRed(grand);
+                    leftRotation(grand);
+                }else { // RL
+                    toBlack(node);
+                    rightRotation(parent);
+                    toRed(grand);
+                    leftRotation(grand);
+                }
+            }
+        }
     }
 
     /**
@@ -93,6 +149,15 @@ public class RBTree<T> extends BinarySearchTree<T> {
 
         public RBNode(T element, Node<T> parent) {
             super(element, parent);
+        }
+
+        @Override
+        public String toString() {
+          String s= "";
+            if (color == RED) {
+                s =  "R_";
+            }
+            return s+element.toString();
         }
     }
 }

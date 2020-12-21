@@ -405,11 +405,17 @@ public abstract class BinaryTree<T> implements BinaryTreeInfo {
         }
 
         public Node<T> uncle() {
+            if (parent == null) {
+                return null;
+            }
             return parent.sibling();
         }
 
         public Node<T> grand() {
-            return parent.parent;
+            if (parent == null) {
+                return null;
+            }
+            return parent.parent==null?null:parent.parent;
         }
     }
 
