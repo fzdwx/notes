@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/装饰者模式/Bacon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/装饰者模式/Egg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/装饰者模式/FastFood.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/装饰者模式/FriedNoodles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/装饰者模式/FriedRice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/装饰者模式/Garnish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/装饰者模式/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/RBTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,6 +317,8 @@
       <workItem from="1608342987502" duration="3161000" />
       <workItem from="1608430127544" duration="3757000" />
       <workItem from="1608442470258" duration="2955000" />
+      <workItem from="1608514498050" duration="1308000" />
+      <workItem from="1608518376882" duration="1155000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -401,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608432348830</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="装饰者模式">
+      <created>1608514707604</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1608514707604</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +434,8 @@
     <MESSAGE value="添加AVL数-平衡二叉树" />
     <MESSAGE value="统一的旋转" />
     <MESSAGE value="删除导致的失衡" />
-    <option name="LAST_COMMIT_MESSAGE" value="删除导致的失衡" />
+    <MESSAGE value="装饰者模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="装饰者模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

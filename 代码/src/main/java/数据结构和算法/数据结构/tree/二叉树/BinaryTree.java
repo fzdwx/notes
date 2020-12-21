@@ -347,7 +347,6 @@ public abstract class BinaryTree<T> implements BinaryTreeInfo {
     }
 
 
-
     /**
      * 元素not null检查
      *
@@ -395,6 +394,19 @@ public abstract class BinaryTree<T> implements BinaryTreeInfo {
             return right == null && left == null;
         }
 
+        public Node<T> sibling() {
+            if (isLeftChild()) {
+                return parent.right;
+            }
+            if (isRightChild()) {
+                return parent.left;
+            }
+            return null;
+        }
+
+        public Node<T> uncle() {
+            return parent.sibling();
+        }
     }
 
 
