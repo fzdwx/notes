@@ -8,7 +8,7 @@ import java.util.Comparator;
  * @contactMe 980650920@qq.com
  * @description 平衡二叉搜索树
  */
-public class BinaryBalanceSearchTree<T> extends  BinarySearchTree<T> {
+public abstract class BinaryBalanceSearchTree<T> extends  BinarySearchTree<T> {
     public BinaryBalanceSearchTree(Comparator<T> comparator) {
         super(comparator);
     }

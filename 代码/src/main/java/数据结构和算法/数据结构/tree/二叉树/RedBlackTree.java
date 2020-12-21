@@ -8,15 +8,15 @@ import java.util.Comparator;
  * @contactMe 980650920@qq.com
  * @description 红黑树
  */
-public class RBTree<T> extends BinaryBalanceSearchTree<T> {
+public class RedBlackTree<T> extends BinaryBalanceSearchTree<T> {
     public static final boolean RED = false;
     public static final boolean BLACK = true;
 
-    public RBTree(Comparator<T> comparator) {
+    public RedBlackTree(Comparator<T> comparator) {
         super(comparator);
     }
 
-    public RBTree() {
+    public RedBlackTree() {
         this(null);
     }
 
@@ -42,7 +42,7 @@ public class RBTree<T> extends BinaryBalanceSearchTree<T> {
         Node<T> grand = node.grand();
         Node<T> uncle = node.uncle();
 
-        // 1.添加的是根节点
+        // 1.添加的是根节点 或 上溢到达了根节点
         if (parent == null) {
             toBlack(node);
             return;

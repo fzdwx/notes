@@ -2,10 +2,9 @@ package 数据结构和算法.数据结构.tree;
 
 
 import 数据结构和算法.数据结构.tree.printer.BinaryTrees;
-import 数据结构和算法.数据结构.tree.二叉树.AVLTree;
-import 数据结构和算法.数据结构.tree.二叉树.BinaryBalanceSearchTree;
 import 数据结构和算法.数据结构.tree.二叉树.BinarySearchTree;
-import 数据结构和算法.数据结构.tree.二叉树.RBTree;
+import 数据结构和算法.数据结构.tree.二叉树.BinaryTree;
+import 数据结构和算法.数据结构.tree.二叉树.RedBlackTree;
 
 import java.util.Random;
 
@@ -18,16 +17,17 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        BinaryBalanceSearchTree<Integer> avlTree = new AVLTree<>();
-        RBTree<Integer> rbTree = new RBTree<>();
-        show(avlTree);
-        System.out.println("*****************");
-        show(rbTree);
+        RedBlackTree<Integer> redBlackTree = new RedBlackTree<>();
+        BinaryTree<Integer> tree = new BinarySearchTree<>();
+        show(redBlackTree);
+        System.out.println("==========二叉搜索树==========");
+        show(tree);
     }
 
-    private static void show(BinaryBalanceSearchTree<Integer> bbst) {
-        int[] ints = {7, 8, 4, 5, 2, 3, 1, 9, 11, 10, 12};
+    private static void show(BinaryTree<Integer> bbst) {
+        int[] ints = {6,2,4,7,9,3,4,1,10,5,12,17,22};
         for (int i : ints) {
+//            System.out.println("****************{ "+i+" }***************");
             bbst.add(i);
         }
         BinaryTrees.println(bbst);
