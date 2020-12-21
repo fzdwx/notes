@@ -87,9 +87,9 @@ public class RBTree<T> extends BinarySearchTree<T> {
      */
     private static class RBNode<T> extends Node<T> {
         /**
-         * 当前节点的颜色 red or black
+         * 当前节点的颜色(默认为红色) red or black
          */
-        boolean color;
+        boolean color = RED;
 
         public RBNode(T element, Node<T> parent) {
             super(element, parent);
