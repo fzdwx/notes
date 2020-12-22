@@ -1,6 +1,7 @@
 package 设计模式.结构型模式.装饰者模式;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author like
@@ -8,6 +9,7 @@ import lombok.Data;
  * @contactMe 980650920@qq.com
  * @description 抽象装饰
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public abstract class Garnish extends  FastFood {
 

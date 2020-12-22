@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/外观模式/AirCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/外观模式/Light.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/外观模式/SmartAppFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/外观模式/TV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryBalanceSearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryBalanceSearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinarySearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/RedBlackTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/RedBlackTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/装饰者模式/Garnish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/装饰者模式/Garnish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work.iml" beforeDir="false" afterPath="$PROJECT_DIR$/work.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +31,9 @@
       <list>
         <option value="JUnit3 Test Class" />
         <option value="TestNG Test Class" />
-        <option value="JUnit5 Test Class" />
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -65,7 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -105,6 +108,7 @@
       <recent name="数据结构和算法.数据结构" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="数据结构和算法.数据结构.tree.二叉树" />
       <recent name="数据结构和算法.数据结构.list.linked" />
       <recent name="数据结构和算法.数据结构.List" />
       <recent name="修炼.数据结构和算法.数据结构.List" />
@@ -143,13 +147,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (4)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.装饰者模式.Main" />
+  <component name="RunManager" selected="应用程序.Main (3)">
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.桥接模式.Main" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="设计模式.结构型模式.装饰者模式.*" />
+          <option name="PATTERN" value="设计模式.结构型模式.桥接模式.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,12 +161,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.桥接模式.Main" />
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.外观模式.Main" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="设计模式.结构型模式.桥接模式.*" />
+          <option name="PATTERN" value="设计模式.结构型模式.外观模式.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -216,31 +220,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.Main (1)" />
       <item itemvalue="应用程序.Main (2)" />
       <item itemvalue="应用程序.Main (4)" />
       <item itemvalue="应用程序.Main (5)" />
       <item itemvalue="应用程序.Main" />
+      <item itemvalue="应用程序.Main (3)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main (3)" />
         <item itemvalue="应用程序.Main (4)" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.Main (5)" />
         <item itemvalue="应用程序.Main (2)" />
-        <item itemvalue="应用程序.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -336,7 +342,8 @@
       <workItem from="1608607256345" duration="287000" />
       <workItem from="1608607971083" duration="455000" />
       <workItem from="1608608464199" duration="738000" />
-      <workItem from="1608610180703" duration="4882000" />
+      <workItem from="1608610180703" duration="7252000" />
+      <workItem from="1608624103637" duration="1100000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -457,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608602494110</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="红黑树删除+调试">
+      <created>1608615842287</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608615842287</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +506,8 @@
     <MESSAGE value="红黑树完成，抽取二叉平衡搜索树类" />
     <MESSAGE value="红黑树调试" />
     <MESSAGE value="桥接模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="桥接模式" />
+    <MESSAGE value="红黑树删除+调试" />
+    <option name="LAST_COMMIT_MESSAGE" value="红黑树删除+调试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
