@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/桥接模式/AviFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/桥接模式/Linux.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/桥接模式/Mac.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/桥接模式/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/桥接模式/OperatingSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/桥接模式/RmvbFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/桥接模式/VideoFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/桥接模式/Windows.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryBalanceSearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/BinaryBalanceSearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/RBTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/二叉树/RedBlackTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +86,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="设计模式.结构型模式.桥接模式" />
       <recent name="设计模式.结构型模式.适配器模式.类适配器" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -138,7 +145,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (4)">
+  <component name="RunManager" selected="应用程序.Main (2)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.装饰者模式.Main" />
       <module name="work" />
@@ -152,12 +159,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.代理模式.cglib动态代理.Main" />
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.桥接模式.Main" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="设计模式.结构型模式.代理模式.cglib动态代理.*" />
+          <option name="PATTERN" value="设计模式.结构型模式.桥接模式.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -217,33 +224,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="应用程序.Main (3)" />
       <item itemvalue="应用程序.Main (4)" />
       <item itemvalue="应用程序.Main (5)" />
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.Main (1)" />
+      <item itemvalue="应用程序.Main (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main (2)" />
         <item itemvalue="应用程序.Main (4)" />
         <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.Main (5)" />
-        <item itemvalue="应用程序.Main (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -332,7 +326,7 @@
       <workItem from="1608430127544" duration="3757000" />
       <workItem from="1608442470258" duration="2955000" />
       <workItem from="1608514498050" duration="1308000" />
-      <workItem from="1608518376882" duration="9928000" />
+      <workItem from="1608518376882" duration="11749000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -439,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608525983164</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="红黑树调试">
+      <created>1608534347177</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1608534347177</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +473,8 @@
     <MESSAGE value="装饰者模式" />
     <MESSAGE value="定义红黑树的辅助方法" />
     <MESSAGE value="红黑树完成，抽取二叉平衡搜索树类" />
-    <option name="LAST_COMMIT_MESSAGE" value="红黑树完成，抽取二叉平衡搜索树类" />
+    <MESSAGE value="红黑树调试" />
+    <option name="LAST_COMMIT_MESSAGE" value="红黑树调试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
