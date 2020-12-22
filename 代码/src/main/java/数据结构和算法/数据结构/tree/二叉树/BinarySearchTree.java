@@ -10,8 +10,6 @@ import java.util.Comparator;
  */
 public class BinarySearchTree<T> extends BinaryTree<T> {
 
-    private int size;
-    public Node<T> root;
     private Comparator<T> comparator;
 
 

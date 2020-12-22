@@ -255,7 +255,7 @@ public abstract class BinaryTree<T> implements BinaryTreeInfo {
      * @param root    根
      * @param visitor 游客
      */
-    protected void preorderTraversal(Node<T> root, Visitor<T> visitor) {
+    private void preorderTraversal(Node<T> root, Visitor<T> visitor) {
         if (root == null || visitor.continueTo) {
             return;
         }
@@ -274,7 +274,7 @@ public abstract class BinaryTree<T> implements BinaryTreeInfo {
      * @param root    根
      * @param visitor 游客
      */
-    protected void inorderTraversal(Node<T> root, Visitor<T> visitor) {
+    private void inorderTraversal(Node<T> root, Visitor<T> visitor) {
         if (root == null || visitor.continueTo) {
             return;
         }
@@ -292,7 +292,7 @@ public abstract class BinaryTree<T> implements BinaryTreeInfo {
      * @param root    根
      * @param visitor 游客
      */
-    protected void postorderTraversal(Node<T> root, Visitor<T> visitor) {
+    private void postorderTraversal(Node<T> root, Visitor<T> visitor) {
         if (root == null || visitor.continueTo) {
             return;
         }
@@ -364,7 +364,6 @@ public abstract class BinaryTree<T> implements BinaryTreeInfo {
         Node<T> right;     // 当前节点的右子节点
         Node<T> parent;   // 当前节点的父节点
 
-
         public Node(T element, Node<T> parent) {
             this.element = element;
             this.parent = parent;
@@ -378,6 +377,9 @@ public abstract class BinaryTree<T> implements BinaryTreeInfo {
                     '}';
         }
 
+        public  T element() {
+            return element;
+        }
         public boolean isLeftChild() {
             return parent != null && this == parent.left;
         }
@@ -415,7 +417,7 @@ public abstract class BinaryTree<T> implements BinaryTreeInfo {
             if (parent == null) {
                 return null;
             }
-            return parent.parent==null?null:parent.parent;
+            return parent.parent == null ? null : parent.parent;
         }
     }
 

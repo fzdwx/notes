@@ -65,18 +65,18 @@ public class RedBlackTree<T> extends BinaryBalanceSearchTree<T> {
                     toBlack(parent);
                     toRed(grand);
                     rightRotation(grand);
-                }else {  // LR
+                } else {  // LR
                     toBlack(node);
                     toRed(grand);
                     leftRotation(parent);
                     rightRotation(grand);
                 }
-            }else {
+            } else {
                 if (node.isRightChild()) {  //RR
                     toBlack(parent);
                     toRed(grand);
                     leftRotation(grand);
-                }else { // RL
+                } else { // RL
                     toBlack(node);
                     rightRotation(parent);
                     toRed(grand);
@@ -93,7 +93,79 @@ public class RedBlackTree<T> extends BinaryBalanceSearchTree<T> {
      */
     @Override
     protected void removeAfter(Node<T> node) {
-        super.removeAfter(node);
+        Node<T> son = node.left != null ? node.left : node.right;
+        Node<T> parent = node.parent;
+
+
+        // 1.要删除的是RED->直接删除
+        if (isRed(node)) { return; }
+
+        // 2. 要删除的是n1,子节点是BLACK(n2这种情况不存在)
+        if (isRed(son)) {
+            toBlack(son); // 将子节点染黑
+            return;
+        }
+
+        // 3.删除是n0,BLACK节点(红黑树默认补null为BLACK)
+        if (parent == null) {return;}   // root是null->直接返回
+        boolean isLeft = parent.left == null || node.isLeftChild();
+        Node<T> sib = isLeft ? parent.right : parent.left;
+
+        if (isLeft) {   // L
+            if (isRed(sib)) {  // 把红色兄弟换成黑色兄弟
+                toBlack(sib);
+                toRed(parent);
+                leftRotation(parent);
+                // 更换兄弟
+                sib = parent.right;
+            }
+            // 兄弟节点是黑色
+            if (isBlack(sib.right) && isBlack(sib.left)) {
+                // 兄弟都是黑色子节点
+                boolean color = isBlack(parent);
+                toRed(sib);
+                toBlack(parent);
+                if (color) { // 如果父亲本来就是黑色，就会产生下溢
+                    removeAfter(parent);
+                }
+            } else {// 兄弟至少有一个RED子节点
+                if (isBlack(sib.right)) { // 左边是黑色 兄弟进行旋转
+                    rightRotation(sib);
+                    sib = parent.right;
+                }
+                color(sib, colorOf(parent));
+                toBlack(sib.right);
+                toBlack(parent);
+                leftRotation(parent);
+            }
+        } else {  // R
+            if (isRed(sib)) {  // 把红色兄弟换成黑色兄弟
+                toBlack(sib);
+                toRed(parent);
+                rightRotation(parent);
+                // 更换兄弟
+                sib = parent.left;
+            }
+            // 兄弟节点是黑色
+            if (isBlack(sib.left) && isBlack(sib.right)) {
+                // 兄弟都是黑色子节点
+                boolean color = isBlack(parent);
+                toRed(sib);
+                toBlack(parent);
+                if (color) { // 如果父亲本来就是黑色，就会产生下溢
+                    removeAfter(parent);
+                }
+            } else {// 兄弟至少有一个RED子节点
+                if (isBlack(sib.left)) { // 左边是黑色 兄弟进行旋转
+                    leftRotation(sib);
+                    sib = parent.left;
+                }
+                color(sib, colorOf(parent));
+                toBlack(sib.left);
+                toBlack(parent);
+                rightRotation(parent);
+            }
+        }
     }
 
     /**
@@ -153,11 +225,11 @@ public class RedBlackTree<T> extends BinaryBalanceSearchTree<T> {
 
         @Override
         public String toString() {
-          String s= "";
+            String s = "";
             if (color == RED) {
-                s =  "R_";
+                s = "R_";
             }
-            return s+element.toString();
+            return s + element.toString();
         }
     }
 }

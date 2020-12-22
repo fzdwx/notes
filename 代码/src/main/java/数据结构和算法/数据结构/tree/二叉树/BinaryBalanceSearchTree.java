@@ -8,7 +8,7 @@ import java.util.Comparator;
  * @contactMe 980650920@qq.com
  * @description 平衡二叉搜索树
  */
-public abstract class BinaryBalanceSearchTree<T> extends  BinarySearchTree<T> {
+public abstract class BinaryBalanceSearchTree<T> extends BinarySearchTree<T> {
     public BinaryBalanceSearchTree(Comparator<T> comparator) {
         super(comparator);
     }
@@ -30,9 +30,9 @@ public abstract class BinaryBalanceSearchTree<T> extends  BinarySearchTree<T> {
      * @param g     g
      */
     protected void rotation(Node<T> grand,
-                          Node<T> a, Node<T> b, Node<T> c,
-                          Node<T> d,
-                          Node<T> e, Node<T> f, Node<T> g) {
+                            Node<T> a, Node<T> b, Node<T> c,
+                            Node<T> d,
+                            Node<T> e, Node<T> f, Node<T> g) {
         d.parent = grand.parent;
         if (grand.isRightChild()) {
             grand.parent.right = d;

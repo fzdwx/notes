@@ -6,6 +6,8 @@ import 数据结构和算法.数据结构.tree.二叉树.BinarySearchTree;
 import 数据结构和算法.数据结构.tree.二叉树.BinaryTree;
 import 数据结构和算法.数据结构.tree.二叉树.RedBlackTree;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -18,19 +20,28 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         RedBlackTree<Integer> redBlackTree = new RedBlackTree<>();
-        BinaryTree<Integer> tree = new BinarySearchTree<>();
-        show(redBlackTree);
-        System.out.println("==========二叉搜索树==========");
-        show(tree);
+        loadData(redBlackTree);
+        redBlackTree.remove(17);
+        redBlackTree.remove(10);
+        redBlackTree.remove(7);
+        redBlackTree.remove(6);
+        BinaryTrees.println(redBlackTree);
+        List<Integer>  list = new ArrayList<>();
+        redBlackTree.inorderTraversal(new BinaryTree.Visitor<Integer>() {
+            @Override
+            public boolean visit(BinaryTree.Node<Integer> node) {
+                list.add(node.element());
+                return false;
+            }
+        });
+        System.out.println("list = " + list);
     }
 
-    private static void show(BinaryTree<Integer> bbst) {
-        int[] ints = {6,2,4,7,9,3,4,1,10,5,12,17,22};
+    private static void loadData(BinaryTree<Integer> bbst) {
+        int[] ints = {6, 2, 4, 7, 9, 3, 4, 1, 10, 5, 12, 17, 22};
         for (int i : ints) {
-//            System.out.println("****************{ "+i+" }***************");
             bbst.add(i);
         }
-        BinaryTrees.println(bbst);
     }
 
     private static void test1() {
