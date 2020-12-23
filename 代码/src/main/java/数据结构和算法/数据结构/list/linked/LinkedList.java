@@ -69,7 +69,7 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
             temp = temp.next;
         }
 
-        return index;
+        return temp ==null ?-1:index;
     }
 
     /**

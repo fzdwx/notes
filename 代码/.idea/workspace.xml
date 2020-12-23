@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/外观模式/AirCondition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/外观模式/Light.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/外观模式/SmartAppFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/外观模式/TV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/ListSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/Set.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/TreeSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/file/FileInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/file/Files.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/tree/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/装饰者模式/Garnish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/装饰者模式/Garnish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work.iml" beforeDir="false" afterPath="$PROJECT_DIR$/work.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/树/二叉树.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/list/linked/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/list/linked/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,7 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/适配器模式/对象适配器" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/file" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.1507799" />
@@ -87,15 +85,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="数据结构和算法.数据结构.set" />
       <recent name="设计模式.结构型模式.桥接模式" />
       <recent name="设计模式.结构型模式.适配器模式.类适配器" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\set\file" />
+      <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\set" />
       <recent name="D:\github\notes\代码\src\main\java\设计模式\结构型模式\适配器模式\对象适配器" />
       <recent name="D:\github\notes\代码\src\main\java\设计模式\结构型模式\代理模式\Jdk动态代理" />
       <recent name="D:\Java\project\myproject\work\src\main\java\数据结构和算法\数据结构\tree" />
-      <recent name="D:\Java\project\myproject\work\src\main\resources" />
-      <recent name="D:\Java\project\myproject\work\src\main\java\设计模式\创建者模式\工厂模式\实际使用" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -125,7 +124,9 @@
   <component name="RunAnythingCache">
     <myKeys>
       <visibility group="Gradle tasks" flag="true" />
+      <visibility group="Grunt" flag="true" />
       <visibility group="Grunt tasks" flag="true" />
+      <visibility group="Gulp" flag="true" />
       <visibility group="Gulp tasks" flag="true" />
       <visibility group="Maven goals" flag="true" />
       <visibility group="Node.js" flag="true" />
@@ -133,6 +134,8 @@
       <visibility group="Run configurations" flag="true" />
       <visibility group="npm" flag="true" />
       <visibility group="yarn" flag="true" />
+      <visibility group="最近的项目" flag="true" />
+      <visibility group="运行配置" flag="true" />
     </myKeys>
   </component>
   <component name="RunDashboard">
@@ -147,13 +150,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (3)">
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.桥接模式.Main" />
+  <component name="RunManager" selected="应用程序.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.set.Main" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="设计模式.结构型模式.桥接模式.*" />
+          <option name="PATTERN" value="数据结构和算法.数据结构.set.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -220,33 +223,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.Main (2)" />
       <item itemvalue="应用程序.Main (4)" />
       <item itemvalue="应用程序.Main (5)" />
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.Main (3)" />
+      <item itemvalue="应用程序.Main (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.Main (3)" />
         <item itemvalue="应用程序.Main (4)" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.Main (5)" />
-        <item itemvalue="应用程序.Main (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -343,7 +344,8 @@
       <workItem from="1608607971083" duration="455000" />
       <workItem from="1608608464199" duration="738000" />
       <workItem from="1608610180703" duration="7252000" />
-      <workItem from="1608624103637" duration="1100000" />
+      <workItem from="1608624103637" duration="2297000" />
+      <workItem from="1608689421003" duration="5378000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -471,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608615842287</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="外观模式">
+      <created>1608631049225</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1608631049225</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +516,8 @@
     <MESSAGE value="红黑树调试" />
     <MESSAGE value="桥接模式" />
     <MESSAGE value="红黑树删除+调试" />
-    <option name="LAST_COMMIT_MESSAGE" value="红黑树删除+调试" />
+    <MESSAGE value="外观模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="外观模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
