@@ -26,6 +26,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: cn.hutool:hutool-all:5.3.8" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib:3.2.5" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm:6.0_ALPHA" level="project" />
     <orderEntry type="library" name="Maven: org.apache.ant:ant:1.9.6" level="project" />

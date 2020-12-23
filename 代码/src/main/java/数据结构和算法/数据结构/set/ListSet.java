@@ -34,10 +34,10 @@ public class ListSet<T> implements Set<T> {
     @Override
     public void add(T element) {
         int index = list.indexOf(element);
-        if (index != -1 && list.get(index) != null) {
-            list.set(index, element);
-        } else {
+        if (index ==-1 ) {
             list.add(element);
+        } else {
+            list.set(index, element);
         }
     }
 
@@ -45,7 +45,7 @@ public class ListSet<T> implements Set<T> {
     public void remove(T element) {
         int index = list.indexOf(element);
         if (index != -1) {
-            list.add(element);
+            list.remove(element);
         }
     }
 

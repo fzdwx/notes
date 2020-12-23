@@ -3,8 +3,6 @@ package 数据结构和算法.数据结构.list.linked;
 import 数据结构和算法.数据结构.list.AbstractList;
 import 数据结构和算法.数据结构.list.List;
 
-import java.util.Objects;
-
 
 /**
  * @author likeLove
@@ -23,37 +21,25 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
      */
     private Node<T> last;
 
-    public static void main(String[] args) {
-        int j = 100000;
-        LinkedList<Integer> list = new LinkedList<>();
-        java.util.LinkedList<Integer> sysList = new java.util.LinkedList<>();
-        long listStart = System.currentTimeMillis();
-        for (int i = 1; i <= j; i++) {
-            list.add(i);
-            if (i > 100) {
-                list.add(i - 10, i);
-            }
-        }
-        long listEnd = System.currentTimeMillis();
-        System.out.println(listEnd - listStart);
-        long sysStart = System.currentTimeMillis();
-        for (int i = 1; i <= j; i++) {
-            sysList.add(i);
-            if (i > 100) {
-                sysList.add(i - 10, i);
-            }
-        }
-        long sysEnd = System.currentTimeMillis();
-        System.out.println(sysEnd - sysStart);
 
-        System.out.println(Objects.equals(list.toString(), sysList.toString()));
-    }
-
-    /**
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        Node<T> temp = this.first;
+        for (int i = 0; i < size; i++) {
+            sb.append(temp.o);
+            if (i < size - 1) {
+                sb.append(",").append(" ");
+            }
+            temp = temp.next;
+        }
+        sb.append("]");
+        return String.valueOf(sb);
+    }    /**
      * 查找元素在数组中的位置
      *
      * @param o 需要查找的元素
-     *
      * @return 元素在数组中的索引
      */
     @Override
@@ -62,17 +48,53 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
         int index = 0;
 
         while (temp != null) {
-            if (temp.o == o) {
+            if (temp.o.equals(o)) {
                 break;
             }
             index++;
             temp = temp.next;
         }
 
-        return temp ==null ?-1:index;
+        return temp == null ? -1 : index;
     }
 
     /**
+     * 双向链表的节点类
+     *
+     * @param <T> the type parameter
+     */
+    public static class Node<T> {
+        /**
+         * 元素
+         */
+        T o;
+        /**
+         * 前驱
+         */
+        Node<T> prev;
+        /**
+         * 后继
+         */
+        Node<T> next;
+
+        /**
+         * 初始化 new Node.
+         *
+         * @param o    当前节点存放的元素
+         * @param prev 当前节点的前驱
+         * @param next 当前节点的后继
+         */
+        public Node(T o, Node<T> prev, Node<T> next) {
+            this.o = o;
+            this.prev = prev;
+            this.next = next;
+        }
+
+        @Override
+        public String toString() {
+            return o.toString();
+        }
+    }    /**
      * 添加元素到数组
      *
      * @param o 需要添加的元素
@@ -142,7 +164,6 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
      * prev next
      *
      * @param index 指定位置
-     *
      * @return 被移除的元素
      */
     @Override
@@ -179,7 +200,6 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
      * 移除指定元素
      *
      * @param o o
-     *
      * @return 被移除的元素
      */
     @Override
@@ -191,7 +211,6 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
      * 根据索引返回元素(从0开始）
      *
      * @param index 元素的索引
-     *
      * @return 元素
      */
     @Override
@@ -205,7 +224,6 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
      *
      * @param index 索引
      * @param o     新元素
-     *
      * @return 旧元素
      */
     @Override
@@ -236,27 +254,12 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
         System.gc();
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        Node<T> temp = this.first;
-        for (int i = 0; i < size; i++) {
-            sb.append(temp.o);
-            if (i < size - 1) {
-                sb.append(",").append(" ");
-            }
-            temp = temp.next;
-        }
-        sb.append("]");
-        return String.valueOf(sb);
-    }
+
 
     /**
      * 根据索引返回node节点
      *
      * @param index 索引
-     *
      * @return 根据节点返回的节点
      */
     private Node<T> getNodeOfIndex(int index) {
@@ -282,41 +285,5 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
         return temp;
     }
 
-    /**
-     * 双向链表的节点类
-     *
-     * @param <T> the type parameter
-     */
-    public static class Node<T> {
-        /**
-         * 元素
-         */
-        T o;
-        /**
-         * 前驱
-         */
-        Node<T> prev;
-        /**
-         * 后继
-         */
-        Node<T> next;
 
-        /**
-         * 初始化 new Node.
-         *
-         * @param o    当前节点存放的元素
-         * @param prev 当前节点的前驱
-         * @param next 当前节点的后继
-         */
-        public Node(T o, Node<T> prev, Node<T> next) {
-            this.o = o;
-            this.prev = prev;
-            this.next = next;
-        }
-
-        @Override
-        public String toString() {
-            return o.toString();
-        }
-    }
 }
