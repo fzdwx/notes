@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/ListSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/Set.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/TreeSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/file/FileInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/set/file/Files.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/map/Map.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/map/TreeMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/list/linked/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/list/linked/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/LinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +73,12 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="数据结构和算法.数据结构.map" />
       <recent name="数据结构和算法.数据结构.set" />
       <recent name="设计模式.结构型模式.桥接模式" />
       <recent name="设计模式.结构型模式.适配器模式.类适配器" />
@@ -223,31 +217,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="应用程序.Main (3)" />
       <item itemvalue="应用程序.Main (4)" />
       <item itemvalue="应用程序.Main (5)" />
       <item itemvalue="应用程序.Main" />
-      <item itemvalue="应用程序.Main (3)" />
       <item itemvalue="应用程序.Main (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.Main (1)" />
-        <item itemvalue="应用程序.Main (3)" />
-        <item itemvalue="应用程序.Main (4)" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.Main (5)" />
+        <item itemvalue="应用程序.Main (4)" />
+        <item itemvalue="应用程序.Main (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -345,7 +328,7 @@
       <workItem from="1608608464199" duration="738000" />
       <workItem from="1608610180703" duration="7252000" />
       <workItem from="1608624103637" duration="2297000" />
-      <workItem from="1608689421003" duration="5378000" />
+      <workItem from="1608689421003" duration="11612000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -480,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608631049225</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="set的实现">
+      <created>1608696547685</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1608696547685</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +507,8 @@
     <MESSAGE value="桥接模式" />
     <MESSAGE value="红黑树删除+调试" />
     <MESSAGE value="外观模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="外观模式" />
+    <MESSAGE value="set的实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="set的实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
