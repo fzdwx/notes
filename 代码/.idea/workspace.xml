@@ -479,7 +479,7 @@
       <workItem from="1608624103637" duration="2297000" />
       <workItem from="1608689421003" duration="21502000" />
       <workItem from="1608773494822" duration="4191000" />
-      <workItem from="1608780922181" duration="6366000" />
+      <workItem from="1608780922181" duration="6671000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -642,7 +642,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608720574979</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="添加功能完成">
+      <created>1608788559003</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1608788559003</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +691,8 @@
     <MESSAGE value="map的实现" />
     <MESSAGE value="map的调试" />
     <MESSAGE value="组合模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="组合模式" />
+    <MESSAGE value="添加功能完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加功能完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
