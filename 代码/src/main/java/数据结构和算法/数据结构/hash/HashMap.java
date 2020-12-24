@@ -1,27 +1,31 @@
-package 数据结构和算法.数据结构.map;
+package 数据结构和算法.数据结构.hash;
 
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.Queue;
+import 数据结构和算法.数据结构.map.Map;
+
+import java.util.Objects;
 
 /**
  * @author like
- * @date 2020-12-23 12:18
+ * @date 2020-12-24 12:02
  * @contactMe 980650920@qq.com
- * @description 红黑树实现的Map
+ * @description 哈希Map
  */
-public class TreeMap<K, V> implements Map<K, V> {
-    public static final boolean RED = false;
-    public static final boolean BLACK = true;
+public class HashMap<K, V> implements Map<K, V> {
+    private static final boolean RED = false;
+    private static final boolean BLACK = true;
+    private static final int DEFAULT_CAPACITY = 16; // 最好是2^n次方 16 = 1<<4
     private int size;
-    private Node<K, V> root;
-    private Comparator<K> comparator;
+    private Node<K, V>[] table;
 
-    public TreeMap() {
+    public HashMap() {
+        this(DEFAULT_CAPACITY);
     }
 
-    public TreeMap(Comparator<K> comparator) {
-        this.comparator = comparator;
+    public HashMap(int capacity) {
+        if (capacity < DEFAULT_CAPACITY) {
+            capacity = DEFAULT_CAPACITY;
+        }
+        table = new Node[capacity];
     }
 
     @Override
@@ -36,28 +40,26 @@ public class TreeMap<K, V> implements Map<K, V> {
 
     @Override
     public void clear() {
-        root = null;
+        if (size == 0) { return; }
+        for (Node<K, V> node : table) {
+            node = null;
+        }
         size = 0;
     }
 
     @Override
     public V put(K key, V value) {
-        if (key == null) {
-            throw new RuntimeException("key 不能为空");
-        }
-
-        // 1.初始化条件
-        Node<K, V> temp = this.root;                      // 遍历的元素
-        Node<K, V> parent = this.root;                   // 插入元素的父节点
-        int compare = 0;                             // 记录插入位置
-        Node<K, V> curr = createNode(key, value, parent); // 需要插入的元素
-
-        // 2.找到父节点，以及插入位置
-        // 2.a.判断根节点是否为空
-        if (temp != null) {
-            // 2.b.存在根节点，查找当前节点的父节点  parent.left/right = curr
-            while (temp != null) {
-                compare = compare(key, temp.key);
+        int index = index(key);
+        // 1.取出index位置的红黑树节点
+        Node<K, V> root = table[index];
+        if (root != null) {  // hash冲突
+            // 1.初始化条件
+            Node<K, V> temp = root;                               // 遍历的元素
+            Node<K, V> parent = root;                            // 插入元素的父节点
+            int compare = 0;                                    // 记录插入位置
+            Node<K, V> curr = createNode(key, value, parent);  // 需要插入的元素
+            do {
+                compare = compare(key, temp.key, curr.hash, temp.hash);
                 parent = temp;
                 if (compare > 0) {
                     temp = temp.right;
@@ -69,27 +71,27 @@ public class TreeMap<K, V> implements Map<K, V> {
                     temp.value = value;
                     return tempValue;
                 }
+            } while (temp != null);
+
+            // 3.添加节点
+            curr.parent = parent;
+            if (compare > 0) {
+                parent.right = curr;
+            } else {
+                parent.left = curr;
             }
-        } else {
-            root = curr;
-        }
+            size++;
 
-        // 3.添加节点
-        curr.parent = parent;
-        if (compare > 0) {
-            parent.right = curr;
-        } else if (compare < 0) {
-            parent.left = curr;
+            afterPut(curr);         // 添加后的操作
+
+            return null;
         }
+        // 表示这个节点沒有元素
+        root = new Node<>(key, value, null);
+        table[index] = root;
         size++;
-
-        afterPut(curr);         // 添加后的操作
-
+        afterPut(root);
         return null;
-    }
-
-    public V remove(K key) {
-        return get(key);
     }
 
     @Override
@@ -98,7 +100,6 @@ public class TreeMap<K, V> implements Map<K, V> {
         return node == null ? null : node.value;
     }
 
-
     @Override
     public boolean containsKey(K key) {
         return node(key) != null;
@@ -106,54 +107,69 @@ public class TreeMap<K, V> implements Map<K, V> {
 
     @Override
     public boolean containsValue(V value) {
-        if (root == null) {
-            return false;
-        }
-        Queue<Node<K, V>> queue = new LinkedList<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            Node<K, V> poll = queue.poll();
-            if (poll.value.equals(value)) {
-                return true;
-            }
-            if (poll.left != null) {
-                queue.offer(poll.left);
-            }
-            if (poll.right != null) {
-                queue.offer(poll.right);
-            }
 
-        }
         return false;
     }
 
     @Override
     public void traversal(Visitor<K, V> visitor) {
-        if (visitor == null) {
-            return;
-        }
-        traversal(root, visitor);
+
     }
 
     private Node<K, V> node(K key) {
-        if (key == null || root == null) { return null; }
-        Node<K, V> temp = this.root;
-        while (temp != null) {
-            Integer d = compare(key, temp.key);
-            if (d == 0) { return temp; } // 返回节点
-            if (d > 0) { temp = temp.right; } else { temp = temp.left; }
+        Node<K, V> root = table[index(key)];
+        int h1 = key == null ? 0 : key.hashCode();
+        while (root != null) {
+            int compare = compare(key, root.key, h1, root.hash);
+            if (compare == 0) {
+                return root;
+            }
+            if (compare > 0) {
+                root = root.right;
+            } else {
+                root = root.left;
+            }
         }
         return null;
     }
 
-    private Integer compare(K key, K compare) {
-        if (comparator == null) {
-            return ((Comparable<K>) key).compareTo(compare);
+    /**
+     * 根据Key生成索引
+     */
+    private int index(K key) {
+        if (key == null) { return 0; }
+        int hash = key.hashCode();
+        return index(hash);
+    }
+
+    private Integer compare(K k1, K k2, int h1, int h2) {
+        int res = h1 - h2;
+        if (res != 0) {
+            return res;
         }
-        return comparator.compare(key, compare);
+        if (Objects.equals(k1, k2)) {
+            return 0;
+        }
+        if (k1 != null && k2 != null) {
+            String n1 = k1.getClass().getName();
+            String n2 = k2.getClass().getName();
+            res = n1.compareTo(n2);
+            if (res != 0) { return res;}
+            // 同一种类型
+            if (k1 instanceof Comparable) {
+                return ((Comparable) k1).compareTo(k2);
+            }
+        }
+        // 同一种类型不具备可比较性
+        return System.identityHashCode(k1) - System.identityHashCode(k2);
+    }
+
+    private int index(int hash) {
+        return hash ^ (hash >>> 16) & (table.length - 1);
     }
 
     private static class Node<K, V> {
+        int hash;
         K key;
         V value;
         Node<K, V> left;       // 当前节点的左子节点
@@ -168,6 +184,7 @@ public class TreeMap<K, V> implements Map<K, V> {
             this.key = key;
             this.value = value;
             this.parent = parent;
+            this.hash = key == null ? 0 : key.hashCode();
         }
 
         public boolean hasTwoChildren() {
@@ -261,6 +278,7 @@ public class TreeMap<K, V> implements Map<K, V> {
     }
 
     /**
+     * 在罗
      * 旋转之后调整父节点的位置
      *
      * @param grand  大
@@ -275,7 +293,7 @@ public class TreeMap<K, V> implements Map<K, V> {
         } else if (grand.isRightChild()) {
             root.right = parent;
         } else {   // root
-            this.root = parent;
+            table[index(grand.hash)] = parent;
         }
 
         // 更新父节点
@@ -306,7 +324,7 @@ public class TreeMap<K, V> implements Map<K, V> {
      * @return boolean
      */
     private boolean colorOf(Node<K, V> node) {
-        return node == null ? BLACK : ((Node<K, V>) node).color;
+        return node == null ? BLACK : node.color;
     }
 
     private Node<K, V> createNode(K key, V value, Node<K, V> parent) {
@@ -334,7 +352,6 @@ public class TreeMap<K, V> implements Map<K, V> {
         // 交换位置 连线
         grand.right = parent.left;
         parent.left = grand;
-
         afterRo(grand, parent, root, t1);
     }
 
@@ -376,15 +393,14 @@ public class TreeMap<K, V> implements Map<K, V> {
         if (removeNext != null) {                                         // n1
             removeNext.parent = node.parent;                             // removeNext -> node.parent
             if (node.parent == null) {                                  // 根节点
-                root = removeNext;
+                table[index(node.hash)] = removeNext;
             } else if (node == node.parent.left) {                    // node.parent.left/right -> removeNext
                 node.parent.left = removeNext;
-
             } else {
                 node.parent.right = removeNext;
             }
         } else if (node.parent == null) {  // n0且没有父节点 ->root
-            root = null;
+            table[index(node.hash)] = null;
         } else {     // n0  直接删除
             if (node.parent.left == node) {
                 node.parent.left = null;
@@ -482,6 +498,7 @@ public class TreeMap<K, V> implements Map<K, V> {
      * @param grand 节点
      */
     private void rightRotation(Node<K, V> grand) {
+        int hash;
         Node<K, V> parent = grand.left;
         Node<K, V> root = grand.parent;
         Node<K, V> t2 = parent.right;
@@ -500,15 +517,4 @@ public class TreeMap<K, V> implements Map<K, V> {
         return color(node, RED);
     }
 
-    private void traversal(Node<K, V> node, Visitor<K, V> visitor) {
-        if (node == null) {
-            return;
-        }
-        traversal(root.left, visitor);
-        boolean visit = visitor.visit(node.key, node.value);
-        if (visit) {
-            return;
-        }
-        traversal(root.right, visitor);
-    }
 }
