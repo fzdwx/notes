@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/模板方法模式/AbstractClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/模板方法模式/BaoCai.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/模板方法模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,11 +82,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="设计模式.行为模式.模板方法模式" />
       <recent name="设计模式.结构型模式.享元模式" />
       <recent name="数据结构和算法.数据结构.map" />
       <recent name="数据结构和算法.数据结构.set" />
       <recent name="设计模式.结构型模式.桥接模式" />
-      <recent name="设计模式.结构型模式.适配器模式.类适配器" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\hash\model" />
@@ -145,7 +149,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (1)">
+  <component name="RunManager" selected="应用程序.Main (2)">
     <configuration name="HashMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.hash.HashMap" />
       <module name="work" />
@@ -172,12 +176,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.享元模式.Main" />
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.行为模式.模板方法模式.Main" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="设计模式.结构型模式.享元模式.*" />
+          <option name="PATTERN" value="设计模式.行为模式.模板方法模式.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -185,12 +189,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.适配器模式.类适配器.Main" />
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.享元模式.Main" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="设计模式.结构型模式.适配器模式.类适配器.*" />
+          <option name="PATTERN" value="设计模式.结构型模式.享元模式.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -224,33 +228,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="应用程序.Main (5)" />
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.Main (3)" />
       <item itemvalue="应用程序.HashMap" />
       <item itemvalue="应用程序.Main (1)" />
+      <item itemvalue="应用程序.Main (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main (2)" />
         <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.HashMap" />
         <item itemvalue="应用程序.Main (3)" />
         <item itemvalue="应用程序.Main" />
-        <item itemvalue="应用程序.Main (5)" />
       </list>
     </recent_temporary>
   </component>
@@ -353,7 +344,7 @@
       <workItem from="1608780922181" duration="6732000" />
       <workItem from="1608791809253" duration="358000" />
       <workItem from="1608795461184" duration="2154000" />
-      <workItem from="1608859494027" duration="21895000" />
+      <workItem from="1608859494027" duration="25907000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -593,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608881944466</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="更新笔记">
+      <created>1608882211647</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1608882211647</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,7 +611,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="jdk动态代理" />
     <MESSAGE value="cglib动态代理" />
     <MESSAGE value="添加AVL数-平衡二叉树" />
     <MESSAGE value="统一的旋转" />
@@ -638,7 +635,8 @@
     <MESSAGE value="测试HashMap以及修复map里面的put()扫描递归的时候一直用的是当前红黑树的root节点，而不是node节点" />
     <MESSAGE value="修复当sib为null时的情况" />
     <MESSAGE value="重构hash获取方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构hash获取方法" />
+    <MESSAGE value="更新笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新笔记" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
