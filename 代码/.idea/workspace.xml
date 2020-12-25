@@ -5,18 +5,130 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/享元模式/AbstractBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/享元模式/BoxFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/享元模式/Ibox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/享元模式/Lbox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/享元模式/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/结构型模式/享元模式/Obox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/LevelOrderPrinter$LevelInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/LevelOrderPrinter$LevelInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/LevelOrderPrinter$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/LevelOrderPrinter$Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/LevelOrderPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/LevelOrderPrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/BlockingQueueDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/BlockingQueueDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/CallAbleDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/CallAbleDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/CasDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/CasDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/CollectionNoSafeDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/CollectionNoSafeDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/CountDownLatchDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/CountDownLatchDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/Country.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/Country.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/CyclicBarrierDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/CyclicBarrierDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/DeadlockDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/DeadlockDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/HashMapDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/HashMapDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyDeadData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyDeadData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyThread1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyThread1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyThread2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/MyThread2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/ProduceAndConsumerWithBlockQueueDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/ProduceAndConsumerWithBlockQueueDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/ReadWriterLockDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/ReadWriterLockDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/SemaphoreDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/SemaphoreDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/ShareData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/ShareData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/Singleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/Singleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/SpinLockDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/SpinLockDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/SyncAndLockDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/SyncAndLockDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/ThreadLocalDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/ThreadLocalDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/ThreadPollDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/ThreadPollDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/VolatileDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java并发编程_JavaUtilConcurrent/VolatileDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/GCRootDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/GCRootDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/HelloGc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/HelloGc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/OOMErrorDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/OOMErrorDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/ReferenceDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/ReferenceDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/loader/ClassLoaderDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/loader/ClassLoaderDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/loader/ParentDelegationDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/loader/ParentDelegationDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/EscapeAnalysisDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/EscapeAnalysisDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/HeapDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/HeapDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/JVMStackDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/JVMStackDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/LocalVariablesDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/LocalVariablesDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/MethodAreaDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/MethodAreaDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/OOMDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Java虚拟机_JavaVirtualMachine/runttimedata/OOMDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/栈/_20有效的括号.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/栈/_20有效的括号.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/树/TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/树/TreeNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/树/二叉树/_226反转二叉树.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/树/二叉树/_226反转二叉树.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/树/二叉树/计算二叉树的高度.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/树/二叉树/计算二叉树的高度.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/链表/ListNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/链表/ListNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/链表/_141环形链表.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/链表/_141环形链表.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/链表/_206反转链表.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/链表/_206反转链表.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/链表/_237删除链表中的节点.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/链表/_237删除链表中的节点.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/队列/MyQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/队列/MyQueue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/队列/_用栈实现队列.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/刷题/队列/_用栈实现队列.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/AbstractList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/AbstractList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/List.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/List.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/array/ArrayList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/array/ArrayList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/LinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/LinkedList$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/Ring/LinkedRingList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/Ring/LinkedRingList$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/Ring/LinkedRingList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/Ring/LinkedRingList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/Ring/SinglyRingLinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/Ring/SinglyRingLinkedList$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/Ring/SinglyRingLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/Ring/SinglyRingLinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/SinglyLinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/SinglyLinkedList$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/SinglyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/list/linked/SinglyLinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/queue/CircleDeque.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/queue/CircleDeque.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/queue/CircleQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/queue/CircleQueue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/queue/Deque.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/queue/Deque.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/queue/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/queue/Queue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/stack/Stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/stack/Stack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/BinaryTreeInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/BinaryTreeInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/BinaryTrees$PrintStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/BinaryTrees$PrintStyle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/BinaryTrees.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/BinaryTrees.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/InorderPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/InorderPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/Printer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/Printer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/Strings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/数据结构和算法/数据结构/tree/printer/Strings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/懒汉式/双重检查/Singleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/懒汉式/双重检查/Singleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/懒汉式/线程不安全/Singleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/懒汉式/线程不安全/Singleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/懒汉式/静态内部类/Singleton$SingletonCreate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/懒汉式/静态内部类/Singleton$SingletonCreate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/懒汉式/静态内部类/Singleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/懒汉式/静态内部类/Singleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/枚举/Singleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/枚举/Singleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/饿汉式/静态代码块/Singleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/饿汉式/静态代码块/Singleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/饿汉式/静态成员变量/Singleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/单例模式/饿汉式/静态成员变量/Singleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/原型模式/浅克隆/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/原型模式/浅克隆/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/原型模式/浅克隆/People.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/原型模式/浅克隆/People.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/原型模式/深克隆/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/原型模式/深克隆/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/原型模式/深克隆/People.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/原型模式/深克隆/People.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/原型模式/深克隆/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/原型模式/深克隆/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/before/Coffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/before/Coffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/before/CoffeeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/before/CoffeeStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/before/LatteCoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/before/LatteCoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/before/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/before/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/before/USACoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/before/USACoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/实际使用/Coffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/实际使用/Coffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/实际使用/CoffeeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/实际使用/CoffeeStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/实际使用/LatteCoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/实际使用/LatteCoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/实际使用/SimpleCoffeeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/实际使用/SimpleCoffeeFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/实际使用/USACoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/实际使用/USACoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/Coffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/Coffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/CoffeeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/CoffeeFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/CoffeeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/CoffeeStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/LatteCoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/LatteCoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/LatteCoffeeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/LatteCoffeeFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/USACoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/USACoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/USACoffeeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/工厂方法模式/USACoffeeFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/Coffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/Coffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/Dessert.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/Dessert.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/FoodFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/FoodFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/LatteCoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/LatteCoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/LatteFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/LatteFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/MatchaMousse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/MatchaMousse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/Tiramisu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/Tiramisu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/USACoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/USACoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/USAFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/抽象工厂/USAFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/简单工厂模式/Coffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/简单工厂模式/Coffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/简单工厂模式/CoffeeStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/简单工厂模式/CoffeeStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/简单工厂模式/LatteCoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/简单工厂模式/LatteCoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/简单工厂模式/SimpleCoffeeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/简单工厂模式/SimpleCoffeeFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/简单工厂模式/USACoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/工厂模式/简单工厂模式/USACoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/Bike.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/Bike.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/Director.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/Director.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/MobileBikeBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/MobileBikeBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/builder/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/builder/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/builder/Person$PersonBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/builder/Person$PersonBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/builder/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/设计模式/创建者模式/建造者模式/builder/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/数据结构和算法/数据结构/array/ArrayListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/数据结构和算法/数据结构/array/ArrayListTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/数据结构和算法/数据结构/list/linked/SinglyLinkedListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/数据结构和算法/数据结构/list/linked/SinglyLinkedListTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,7 +468,7 @@
       <workItem from="1608773494822" duration="4191000" />
       <workItem from="1608780922181" duration="6732000" />
       <workItem from="1608791809253" duration="358000" />
-      <workItem from="1608795461184" duration="1790000" />
+      <workItem from="1608795461184" duration="2154000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -533,7 +645,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608788613813</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="享元模式">
+      <created>1608797297234</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1608797297234</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +695,8 @@
     <MESSAGE value="map的调试" />
     <MESSAGE value="组合模式" />
     <MESSAGE value="添加功能完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加功能完成" />
+    <MESSAGE value="享元模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="享元模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
