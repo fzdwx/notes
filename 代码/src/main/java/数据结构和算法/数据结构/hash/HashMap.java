@@ -2,7 +2,9 @@ package 数据结构和算法.数据结构.hash;
 
 import 数据结构和算法.数据结构.map.Map;
 
+import java.util.LinkedList;
 import java.util.Objects;
+import java.util.Queue;
 
 /**
  * @author like
@@ -101,19 +103,65 @@ public class HashMap<K, V> implements Map<K, V> {
     }
 
     @Override
+    public V remove(K key) {
+        return remove(node(key));
+    }
+
+
+    @Override
     public boolean containsKey(K key) {
         return node(key) != null;
     }
 
     @Override
     public boolean containsValue(V value) {
-
+        if (size == 0) {
+            return false;
+        }
+        Queue<Node<K, V>> queue = new LinkedList<>();
+        for (Node<K, V> node : table) {
+            if (node == null) {
+                continue;
+            }
+            queue.offer(node);
+            while (!queue.isEmpty()) {
+                Node<K, V> poll = queue.poll();
+                if (Objects.equals(value, node.value)) {
+                    return true;
+                }
+                if (poll.left != null) {
+                    queue.offer(poll.left);
+                }
+                if (poll.right != null) {
+                    queue.offer(poll.right);
+                }
+            }
+        }
         return false;
     }
 
     @Override
     public void traversal(Visitor<K, V> visitor) {
-
+        if (size == 0) {
+            return;
+        }
+        Queue<Node<K, V>> queue = new LinkedList<>();
+        for (Node<K, V> node : table) {
+            if (node == null) {
+                continue;
+            }
+            queue.offer(node);
+            while (!queue.isEmpty()) {
+                Node<K, V> poll = queue.poll();
+                visitor.visit(poll.key,poll.value);
+                if (poll.left != null) {
+                    queue.offer(poll.left);
+                }
+                if (poll.right != null) {
+                    queue.offer(poll.right);
+                }
+            }
+        }
     }
 
     private Node<K, V> node(K key) {
