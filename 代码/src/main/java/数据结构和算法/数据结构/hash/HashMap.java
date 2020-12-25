@@ -93,6 +93,7 @@ public class HashMap<K, V> implements Map<K, V> {
             int h1 = curr.hash;
             K k1 = key;
             Node<K, V> res = null;
+            boolean isSearch = false; // 是否搜索过
             do {
                 parent = temp;
                 K k2 = temp.key;
@@ -109,8 +110,11 @@ public class HashMap<K, V> implements Map<K, V> {
                     // 2.具备可比较性
                 } else if (k1 != null && k2 != null
                         && k1.getClass() == k2.getClass()
-                        && k2 instanceof Comparable) {
-                    compare = ((Comparable) k1).compareTo(k2);
+                        && k2 instanceof Comparable
+                        && (compare = ((Comparable) k1).compareTo(k2)) != 0) {
+
+                } else if (isSearch) {   // 已经扫描过了
+                    compare = System.identityHashCode(k1) - System.identityHashCode(k2);
                 } else { // 3.扫描
                     if (root.left != null && (res = node(root.left, k1)) != null) {
                         root = res;
@@ -119,6 +123,7 @@ public class HashMap<K, V> implements Map<K, V> {
                         root = res;
                         compare = 0;
                     } else {
+                        isSearch = true;
                         compare = System.identityHashCode(k1) - System.identityHashCode(k2);
                     }
                 }
@@ -220,6 +225,71 @@ public class HashMap<K, V> implements Map<K, V> {
                     queue.offer(poll.right);
                 }
             }
+        }
+    }
+
+    private static class Node<K, V> {
+        /**
+         * 当前节点的颜色(默认为红色) red or black
+         */
+        boolean color = RED;
+        private int hash;
+        private K key;
+        private V value;
+        private Node<K, V> left;       // 当前节点的左子节点
+        private Node<K, V> right;     // 当前节点的右子节点
+        private Node<K, V> parent;   // 当前节点的父节点
+
+        public Node(K key, V value, Node<K, V> parent) {
+            this.key = key;
+            this.value = value;
+            this.parent = parent;
+            this.hash = key == null ? 0 : key.hashCode();
+        }
+
+        @Override
+        public String toString() {
+            return "k_" + key + ",v_" + value;
+        }
+
+        public boolean hasTwoChildren() {
+            return right != null && left != null;
+        }
+
+        public boolean isLeaf() {
+            return right == null && left == null;
+        }
+
+        public Node<K, V> uncle() {
+            if (parent == null) {
+                return null;
+            }
+            return parent.sibling();
+        }
+
+        public Node<K, V> sibling() {
+            if (isLeftChild()) {
+                return parent.right;
+            }
+            if (isRightChild()) {
+                return parent.left;
+            }
+            return null;
+        }
+
+        public boolean isLeftChild() {
+            return parent != null && this == parent.left;
+        }
+
+        public boolean isRightChild() {
+            return parent != null && this == parent.right;
+        }
+
+        public Node<K, V> grand() {
+            if (parent == null) {
+                return null;
+            }
+            return parent.parent == null ? null : parent.parent;
         }
     }
 
@@ -472,6 +542,7 @@ public class HashMap<K, V> implements Map<K, V> {
     private Node<K, V> node(Node<K, V> root, K k1) {
         int h1 = k1 == null ? 0 : k1.hashCode();
         Node<K, V> res = null;
+        int cmp = 0;
         while (root != null) {
             K k2 = root.key;
             int h2 = root.hash;
@@ -485,23 +556,20 @@ public class HashMap<K, V> implements Map<K, V> {
                 // 2、具备可比较性
             } else if (k1 != null && k2 != null
                     && k1.getClass() == k2.getClass()
-                    && k2 instanceof Comparable) {
-                int cmp = ((Comparable) k1).compareTo(k2);
-                if (cmp > 0) {
-                    root = root.right;
-                } else if (cmp < 0) {
-                    root = root.left;
-                } else {
-                    return root;
-                }
+                    && k2 instanceof Comparable
+                    && (cmp = ((Comparable) k1).compareTo(k2)) != 0) {
+                root = cmp > 0 ? root.right : root.left;
                 // 3、哈希相等，不具备可比较性
             } else if (root.right != null && (res = node(root.right, k1)) != null) {
                 return res;
-            } else if (root.left != null && (res = node(root.left, k1)) != null) {
-                return res;
             } else {
-                return null;
+                root = root.left;
             }
+            //            } else if (root.left != null && (res = node(root.left, k1)) != null) {
+            //                return res;
+            //            } else {
+            //                return null;
+            //            }
         }
         return null;
     }
@@ -590,71 +658,5 @@ public class HashMap<K, V> implements Map<K, V> {
 
     private Node<K, V> toRed(Node<K, V> node) {
         return color(node, RED);
-    }
-
-
-    private static class Node<K, V> {
-        /**
-         * 当前节点的颜色(默认为红色) red or black
-         */
-        boolean color = RED;
-        private int hash;
-        private K key;
-        private V value;
-        private Node<K, V> left;       // 当前节点的左子节点
-        private Node<K, V> right;     // 当前节点的右子节点
-        private Node<K, V> parent;   // 当前节点的父节点
-
-        public Node(K key, V value, Node<K, V> parent) {
-            this.key = key;
-            this.value = value;
-            this.parent = parent;
-            this.hash = key == null ? 0 : key.hashCode();
-        }
-
-        @Override
-        public String toString() {
-            return "k_" + key + ",v_" + value;
-        }
-
-        public boolean hasTwoChildren() {
-            return right != null && left != null;
-        }
-
-        public boolean isLeaf() {
-            return right == null && left == null;
-        }
-
-        public Node<K, V> uncle() {
-            if (parent == null) {
-                return null;
-            }
-            return parent.sibling();
-        }
-
-        public Node<K, V> sibling() {
-            if (isLeftChild()) {
-                return parent.right;
-            }
-            if (isRightChild()) {
-                return parent.left;
-            }
-            return null;
-        }
-
-        public boolean isLeftChild() {
-            return parent != null && this == parent.left;
-        }
-
-        public boolean isRightChild() {
-            return parent != null && this == parent.right;
-        }
-
-        public Node<K, V> grand() {
-            if (parent == null) {
-                return null;
-            }
-            return parent.parent == null ? null : parent.parent;
-        }
     }
 }
