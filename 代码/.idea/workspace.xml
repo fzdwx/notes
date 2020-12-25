@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/Asserts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/HashMap_v0.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/Key.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/SubKey1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/SubKey2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/Times.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +76,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -362,7 +356,7 @@
       <workItem from="1608780922181" duration="6732000" />
       <workItem from="1608791809253" duration="358000" />
       <workItem from="1608795461184" duration="2154000" />
-      <workItem from="1608859494027" duration="16626000" />
+      <workItem from="1608859494027" duration="20063000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -581,7 +575,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608869749444</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="测试HashMap以及修复map里面的put()扫描递归的时候一直用的是当前红黑树的root节点，而不是node节点">
+      <created>1608877082258</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1608877082258</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +602,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="二叉树继承数重构" />
     <MESSAGE value="添加笔记" />
     <MESSAGE value="静态代理" />
     <MESSAGE value="jdk动态代理" />
@@ -626,7 +626,8 @@
     <MESSAGE value="hashMap接口完成" />
     <MESSAGE value="put()和node()重构" />
     <MESSAGE value="put()和node()优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="put()和node()优化" />
+    <MESSAGE value="测试HashMap以及修复map里面的put()扫描递归的时候一直用的是当前红黑树的root节点，而不是node节点" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试HashMap以及修复map里面的put()扫描递归的时候一直用的是当前红黑树的root节点，而不是node节点" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -650,6 +651,11 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.NullPointerException" memberName="cause" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/数据结构和算法/刷题/队列/_用栈实现队列.java" line="19">
         <watch expression="q" language="JAVA" />
