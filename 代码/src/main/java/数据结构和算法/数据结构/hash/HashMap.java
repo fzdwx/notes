@@ -32,34 +32,6 @@ public class HashMap<K, V> implements Map<K, V> {
         table = new Node[capacity];
     }
 
-    public void print() {
-        if (size == 0) {return;}
-        for (Node<K, V> node : table) {
-            BinaryTrees.println(new BinaryTreeInfo() {
-                @Override
-                public Object root() {
-                    return node;
-                }
-
-                @Override
-                public Object left(Object node) {
-                    return ((Node<K, V>) node).left;
-                }
-
-                @Override
-                public Object right(Object node) {
-                    return ((Node<K, V>) node).right;
-                }
-
-                @Override
-                public Object string(Object node) {
-                    return ((Node<K, V>) node);
-                }
-            });
-        }
-
-    }
-
     @Override
     public int size() {
         return size;
@@ -224,7 +196,35 @@ public class HashMap<K, V> implements Map<K, V> {
         }
     }
 
-    public static class Node<K, V> {
+    public void print() {
+        if (size == 0) {return;}
+        for (Node<K, V> node : table) {
+            BinaryTrees.println(new BinaryTreeInfo() {
+                @Override
+                public Object root() {
+                    return node;
+                }
+
+                @Override
+                public Object left(Object node) {
+                    return ((Node<K, V>) node).left;
+                }
+
+                @Override
+                public Object right(Object node) {
+                    return ((Node<K, V>) node).right;
+                }
+
+                @Override
+                public Object string(Object node) {
+                    return ((Node<K, V>) node);
+                }
+            });
+        }
+
+    }
+
+    private static class Node<K, V> {
         /**
          * 当前节点的颜色(默认为红色) red or black
          */

@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -355,7 +353,7 @@
       <workItem from="1608780922181" duration="6732000" />
       <workItem from="1608791809253" duration="358000" />
       <workItem from="1608795461184" duration="2154000" />
-      <workItem from="1608859494027" duration="21551000" />
+      <workItem from="1608859494027" duration="21895000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -588,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608880306311</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="重构hash获取方法">
+      <created>1608881944466</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1608881944466</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +613,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="静态代理" />
     <MESSAGE value="jdk动态代理" />
     <MESSAGE value="cglib动态代理" />
     <MESSAGE value="添加AVL数-平衡二叉树" />
@@ -633,7 +637,8 @@
     <MESSAGE value="put()和node()优化" />
     <MESSAGE value="测试HashMap以及修复map里面的put()扫描递归的时候一直用的是当前红黑树的root节点，而不是node节点" />
     <MESSAGE value="修复当sib为null时的情况" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复当sib为null时的情况" />
+    <MESSAGE value="重构hash获取方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构hash获取方法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

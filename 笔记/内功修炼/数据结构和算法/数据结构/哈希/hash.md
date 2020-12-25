@@ -97,17 +97,23 @@ private Node<K, V> node(Node<K, V> root, K k1) {
 根据key计算出对应的索引
 
 ```java
-/**
- * 根据Key生成索引
- */
-private int index(K key) {
-    if (key == null) { return 0; }
+private int hash(K key) {
+    if (key == null) {
+        return 0;
+    }
     int hash = key.hashCode();
-    return index(hash);
+    return hash ^ (hash >>> 16);
 }
 
-private int index(int hash) {
-    return hash ^ (hash >>> 16) & (table.length - 1);
+/**
+     * 根据key生成对应的索引（在桶数组中的位置）
+     */
+private int index(K key) {
+    return hash(key) & (table.length - 1);
+}
+
+private int index(Node<K, V> node) {
+    return node.hash & (table.length - 1);
 }
 ```
 
@@ -219,79 +225,80 @@ public class HashMap<K, V> implements Map<K, V> {
 ## put()
 
 ```java
-public V put(K key, V value) {
-    int index = index(key);
+@Override
+public V put(K k1, V value) {
+    int index = index(k1);
     // 1.取出index位置的红黑树节点
     Node<K, V> root = table[index];
-    if (root != null) {  // hash冲突
-        // 1.初始化条件
-        Node<K, V> temp = root;                               // 遍历的元素
-        Node<K, V> parent = root;                            // 插入元素的父节点
-        int compare = 0;                                    // 记录插入位置
-        Node<K, V> curr = createNode(key, value, parent);  // 需要插入的元素
-        int h1 = curr.hash;
-        K k1 = key;
-        Node<K, V> res = null;
-        do {
-            parent = temp;
-            K k2 = temp.key;
-            int h2 = temp.hash;
-            // 1.比较哈希
-            if (h1 > h2) {
-                root = root.right;
-                compare = 1;
-            } else if (h1 < h2) {
-                root = root.left;
-                compare = -1;
-            } else if (Objects.equals(k1, k2)) {
-                compare = 0;
-                // 2.具备可比较性
-            } else if (k1 != null && k2 != null
-                    && k1.getClass() == k2.getClass()
-                    && k2 instanceof Comparable) {
-                compare = ((Comparable) k1).compareTo(k2);
-            } else { // 3.扫描
-                if (root.left != null && (res = node(root.left, k1)) != null) {
-                    root = res;
-                    compare = 0;
-                } else if (root.right != null && (res = node(root.right, k1)) != null) {
-                    root = res;
-                    compare = 0;
-                } else {
-                    compare = System.identityHashCode(k1) - System.identityHashCode(k2);
-                }
-            }
-            // 4.处理compare
-            if (compare > 0) {
-                temp = temp.right;
-            } else if (compare < 0) {
-                temp = temp.left;
-            } else {
-                V tempValue = temp.value;
-                temp.key = key;         // 相等覆盖
-                temp.value = value;
-                return tempValue;
-            }
-        } while (temp != null);
-
-        // 3.添加节点
-        curr.parent = parent;
-        if (compare > 0) {
-            parent.right = curr;
-        } else {
-            parent.left = curr;
-        }
+    if (root == null) {  // hash冲突
+        // 表示这个索引是第一次添加元素
+        root = new Node<>(k1, value, null);
+        table[index] = root;
         size++;
-
-        afterPut(curr);         // 添加后的操作
-
+        afterPut(root);
         return null;
     }
-     // 表示这个索引是第一次添加元素
-    root = new Node<>(key, value, null);
-    table[index] = root;
+    // 1.初始化条件
+    Node<K, V> parent = root;                            // 插入元素的父节点
+    Node<K, V> node = root;                               // 遍历的元素
+    int compare = 0;                                    // 记录插入位置
+    int h1 = hash(k1);
+    Node<K, V> res = null;
+    boolean isSearch = false; // 是否搜索过
+    do {
+        parent = node;
+        K k2 = node.key;
+        int h2 = node.hash;
+        // 1.比较哈希
+        if (h1 > h2) {
+            compare = 1;
+        } else if (h1 < h2) {
+            compare = -1;
+        } else if (Objects.equals(k1, k2)) {
+            compare = 0;
+            // 2.具备可比较性
+        } else if (k1 != null && k2 != null
+                   && k1.getClass() == k2.getClass()
+                   && k1 instanceof Comparable
+                   && (compare = ((Comparable) k1).compareTo(k2)) != 0) {
+
+        } else if (isSearch) {   // 已经扫描过了
+            compare = System.identityHashCode(k1) - System.identityHashCode(k2);
+        } else { // 3.扫描
+            if (node.left != null && (res = node(node.left, k1)) != null
+                || root.right != null && (res = node(node.right, k1)) != null) {
+                node = res;
+                compare = 0;
+            } else {
+                isSearch = true;
+                compare = System.identityHashCode(k1) - System.identityHashCode(k2);
+            }
+        }
+        // 4.处理compare
+        if (compare > 0) {
+            node = node.right;
+        } else if (compare < 0) {
+            node = node.left;
+        } else {
+            V tempValue = node.value;
+            node.key = k1;         // 相等覆盖
+            node.value = value;
+            return tempValue;
+        }
+    } while (node != null);
+
+    // 3.添加节点
+    Node<K, V> curr = createNode(k1, value, parent);  // 需要插入的元素
+    curr.parent = parent;
+    if (compare > 0) {
+        parent.right = curr;
+    } else {
+        parent.left = curr;
+    }
     size++;
-    afterPut(root);
+
+    afterPut(curr);         // 添加后的操作
+
     return null;
 }
 ```
@@ -304,43 +311,54 @@ public V put(K key, V value) {
 
 ```java
 private V remove(Node<K, V> node) {
-    if (node == null) {
-        return null;
-    }
-    V removeValue = node.value;
+    if (node == null) return null;
 
-    if (node.hasTwoChildren()) {        // n2
-        Node<K, V> s = predecessor(node);   // 要删除节点的后继节点
-        node.key = s.key;     // 删除当前节点(覆盖当前节点所保存的值)
-        node.value = s.value;     // 删除当前节点(覆盖当前节点所保存的值)
+    size--;
+
+    V oldValue = node.value;
+
+    if (node.hasTwoChildren()) { // 度为2的节点
+        // 找到后继节点
+        Node<K, V> s = successor(node);
+        // 用后继节点的值覆盖度为2的节点的值
+        node.key = s.key;
+        node.value = s.value;
+        node.hash = s.hash;
+        // 删除后继节点
         node = s;
     }
 
-    //n1、n0
-    Node<K, V> removeNext = node.left != null ? node.left : node.right;   // 判断要删除的节点是否有子节点
-    if (removeNext != null) {                                         // n1
-        removeNext.parent = node.parent;                             // removeNext -> node.parent
-        if (node.parent == null) {                                  // 根节点
-            table[index(node.hash)] = removeNext;
-        } else if (node == node.parent.left) {                    // node.parent.left/right -> removeNext
-            node.parent.left = removeNext;
-        } else {
-            node.parent.right = removeNext;
+    // 删除node节点（node的度必然是1或者0）
+    Node<K, V> replacement = node.left != null ? node.left : node.right;
+    int index = index(node);
+
+    if (replacement != null) { // node是度为1的节点
+        // 更改parent
+        replacement.parent = node.parent;
+        // 更改parent的left、right的指向
+        if (node.parent == null) { // node是度为1的节点并且是根节点
+            table[index] = replacement;
+        } else if (node == node.parent.left) {
+            node.parent.left = replacement;
+        } else { // node == node.parent.right
+            node.parent.right = replacement;
         }
-    } else if (node.parent == null) {  // n0且没有父节点 ->root
-        table[index(node.hash)] = null;
-    } else {     // n0  直接删除
-        if (node.parent.left == node) {
+
+        // 删除节点之后的处理
+        afterRemove(replacement);
+    } else if (node.parent == null) { // node是叶子节点并且是根节点
+        table[index] = null;
+    } else { // node是叶子节点，但不是根节点
+        if (node == node.parent.left) {
             node.parent.left = null;
-        } else if (node.parent.right == node) {
+        } else { // node == node.parent.right
             node.parent.right = null;
         }
+
+        // 删除节点之后的处理
+        afterRemove(node);
     }
 
-    // 恢复平衡
-    afterRemove(node);
-
-    size--;
-    return removeValue;
+    return oldValue;
 }
 ```
