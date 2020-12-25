@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/Times.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" afterDir="false" />
@@ -356,7 +355,7 @@
       <workItem from="1608780922181" duration="6732000" />
       <workItem from="1608791809253" duration="358000" />
       <workItem from="1608795461184" duration="2154000" />
-      <workItem from="1608859494027" duration="20063000" />
+      <workItem from="1608859494027" duration="21551000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -582,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608877082258</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="修复当sib为null时的情况">
+      <created>1608880306311</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1608880306311</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +608,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="添加笔记" />
     <MESSAGE value="静态代理" />
     <MESSAGE value="jdk动态代理" />
     <MESSAGE value="cglib动态代理" />
@@ -627,7 +632,8 @@
     <MESSAGE value="put()和node()重构" />
     <MESSAGE value="put()和node()优化" />
     <MESSAGE value="测试HashMap以及修复map里面的put()扫描递归的时候一直用的是当前红黑树的root节点，而不是node节点" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试HashMap以及修复map里面的put()扫描递归的时候一直用的是当前红黑树的root节点，而不是node节点" />
+    <MESSAGE value="修复当sib为null时的情况" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复当sib为null时的情况" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

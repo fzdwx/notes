@@ -23,7 +23,7 @@ public class Main {
 
 
     static void test1() {
-        String filepath = "D:\\Java\\project\\myproject\\blog\\java\\main\\java\\com\\lk\\blog";
+        String filepath = "D:\\Java\\project\\src\\java.base\\jdk";
         FileInfo fileInfo = Files.read(filepath, null);
         String[] words = fileInfo.words();
 

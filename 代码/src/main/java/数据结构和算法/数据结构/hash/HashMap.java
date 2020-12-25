@@ -96,7 +96,7 @@ public class HashMap<K, V> implements Map<K, V> {
         Node<K, V> parent = root;                            // 插入元素的父节点
         Node<K, V> node = root;                               // 遍历的元素
         int compare = 0;                                    // 记录插入位置
-        int h1 = k1 == null ? 0 : k1.hashCode();
+        int h1 = hash(k1);
         Node<K, V> res = null;
         boolean isSearch = false; // 是否搜索过
         do {
@@ -105,10 +105,8 @@ public class HashMap<K, V> implements Map<K, V> {
             int h2 = node.hash;
             // 1.比较哈希
             if (h1 > h2) {
-                //                    root = root.right;
                 compare = 1;
             } else if (h1 < h2) {
-                //                    root = root.left;
                 compare = -1;
             } else if (Objects.equals(k1, k2)) {
                 compare = 0;
@@ -242,7 +240,8 @@ public class HashMap<K, V> implements Map<K, V> {
             this.key = key;
             this.value = value;
             this.parent = parent;
-            this.hash = key == null ? 0 : key.hashCode();
+            int hash = key == null ? 0 : key.hashCode();
+            this.hash = hash ^ (hash >>> 16);
         }
 
         @Override
@@ -423,6 +422,26 @@ public class HashMap<K, V> implements Map<K, V> {
         }
     }
 
+    private void afterRotate(Node<K, V> grand, Node<K, V> parent, Node<K, V> child) {
+        // 让parent称为子树的根节点
+        parent.parent = grand.parent;
+        if (grand.isLeftChild()) {
+            grand.parent.left = parent;
+        } else if (grand.isRightChild()) {
+            grand.parent.right = parent;
+        } else { // grand是root节点
+            table[index(grand)] = parent;
+        }
+
+        // 更新child的parent
+        if (child != null) {
+            child.parent = grand;
+        }
+
+        // 更新grand的parent
+        grand.parent = parent;
+    }
+
     /**
      * 给节点染色
      *
@@ -450,15 +469,23 @@ public class HashMap<K, V> implements Map<K, V> {
         return new Node<>(key, value, parent);
     }
 
-    /**
-     * 根据key生成对应的索引（在桶数组中的位置）
-     */
-    private int index(K key) {
+    private int hash(K key) {
         if (key == null) {
             return 0;
         }
         int hash = key.hashCode();
-        return (hash ^ (hash >>> 16)) & (table.length - 1);
+        return hash ^ (hash >>> 16);
+    }
+
+    /**
+     * 根据key生成对应的索引（在桶数组中的位置）
+     */
+    private int index(K key) {
+        return hash(key) & (table.length - 1);
+    }
+
+    private int index(Node<K, V> node) {
+        return node.hash & (table.length - 1);
     }
 
     private boolean isBlack(Node<K, V> node) {
@@ -482,7 +509,7 @@ public class HashMap<K, V> implements Map<K, V> {
      * @return {@link Node<K, V>}
      */
     private Node<K, V> node(Node<K, V> root, K k1) {
-        int h1 = k1 == null ? 0 : k1.hashCode();
+        int h1 = hash(k1);
         Node<K, V> res = null;
         int cmp = 0;
         while (root != null) {
@@ -536,51 +563,6 @@ public class HashMap<K, V> implements Map<K, V> {
         return p.parent;
     }
 
-    //    private V remove(Node<K, V> node) {
-    //        if (node == null) {
-    //            return null;
-    //        }
-    //        V removeValue = node.value;
-    //
-    //        if (node.hasTwoChildren()) {        // n2
-    //            Node<K, V> s = successor(node);   // 要删除节点的后继节点
-    //            node.key = s.key;     // 删除当前节点(覆盖当前节点所保存的值)
-    //            node.value = s.value;     // 删除当前节点(覆盖当前节点所保存的值)
-    //            node.hash = s.hash;
-    //            node = s;
-    //        }
-    //
-    //        //n1、n0
-    //        Node<K, V> removeNext = node.left != null ? node.left : node.right;   // 判断要删除的节点是否有子节点
-    //        int index = index(node);
-    //
-    //        if (removeNext != null) {                                         // n1
-    //            // 更改parent
-    //            removeNext.parent = node.parent;                             // removeNext -> node.parent
-    //            // 更改parent的left、right的指向
-    //            if (node.parent == null) {                                  // 根节点
-    //                table[index] = removeNext;
-    //            } else if (node == node.parent.left) {                    // node.parent.left/right -> removeNext
-    //                node.parent.left = removeNext;
-    //            } else {
-    //                node.parent.right = removeNext;
-    //            }
-    //            // 删除节点之后的处理
-    //            afterRemove(removeNext);
-    //        } else if (node.parent == null) {  // n0且没有父节点 ->root
-    //            table[index] = null;
-    //        } else {     // n0  直接删除
-    //            if (node.parent.left == node) {
-    //                node.parent.left = null;
-    //            } else if (node.parent.right == node) {
-    //                node.parent.right = null;
-    //            }
-    //            // 删除节点之后的处理
-    //            afterRemove(node);
-    //        }
-    //        size--;
-    //        return removeValue;
-    //    }
     private V remove(Node<K, V> node) {
         if (node == null) return null;
 
@@ -631,38 +613,6 @@ public class HashMap<K, V> implements Map<K, V> {
         }
 
         return oldValue;
-    }
-
-    private void rightRotation(Node<K, V> grand) {
-        Node<K, V> parent = grand.left;
-        Node<K, V> child = parent.right;
-        grand.left = child;
-        parent.right = grand;
-        afterRotate(grand, parent, child);
-    }
-
-    private void afterRotate(Node<K, V> grand, Node<K, V> parent, Node<K, V> child) {
-        // 让parent称为子树的根节点
-        parent.parent = grand.parent;
-        if (grand.isLeftChild()) {
-            grand.parent.left = parent;
-        } else if (grand.isRightChild()) {
-            grand.parent.right = parent;
-        } else { // grand是root节点
-            table[index(grand)] = parent;
-        }
-
-        // 更新child的parent
-        if (child != null) {
-            child.parent = grand;
-        }
-
-        // 更新grand的parent
-        grand.parent = parent;
-    }
-
-    private int index(Node<K, V> node) {
-        return (node.hash ^ (node.hash >>> 16)) & (table.length - 1);
     }
 
     private void rotateLeft(Node<K, V> grand) {
