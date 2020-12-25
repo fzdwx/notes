@@ -5,6 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/Asserts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/HashMap_v0.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/Key.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/SubKey1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model/SubKey2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" afterDir="false" />
     </list>
@@ -48,7 +56,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
-    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -69,7 +76,7 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/model" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.1507799" />
@@ -87,11 +94,11 @@
       <recent name="设计模式.结构型模式.适配器模式.类适配器" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\hash\model" />
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\hash" />
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\set\file" />
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\set" />
       <recent name="D:\github\notes\代码\src\main\java\设计模式\结构型模式\适配器模式\对象适配器" />
-      <recent name="D:\github\notes\代码\src\main\java\设计模式\结构型模式\代理模式\Jdk动态代理" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -147,9 +154,22 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.HashMap">
+  <component name="RunManager" selected="应用程序.Main (1)">
     <configuration name="HashMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.hash.HashMap" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.数据结构.hash.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.hash.Main" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
@@ -170,13 +190,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.tree.Main" />
-      <module name="work" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -234,19 +247,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.Main (4)" />
       <item itemvalue="应用程序.Main (5)" />
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.Main (3)" />
       <item itemvalue="应用程序.HashMap" />
+      <item itemvalue="应用程序.Main (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.HashMap" />
         <item itemvalue="应用程序.Main (3)" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.Main (5)" />
-        <item itemvalue="应用程序.Main (4)" />
       </list>
     </recent_temporary>
   </component>
@@ -349,7 +362,7 @@
       <workItem from="1608780922181" duration="6732000" />
       <workItem from="1608791809253" duration="358000" />
       <workItem from="1608795461184" duration="2154000" />
-      <workItem from="1608859494027" duration="9740000" />
+      <workItem from="1608859494027" duration="16626000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -561,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608867803241</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="put()和node()优化">
+      <created>1608869749444</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1608869749444</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +601,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="接口完善" />
     <MESSAGE value="二叉树继承数重构" />
     <MESSAGE value="添加笔记" />
     <MESSAGE value="静态代理" />
@@ -606,7 +625,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="hashMap接口完成" />
     <MESSAGE value="put()和node()重构" />
-    <option name="LAST_COMMIT_MESSAGE" value="put()和node()重构" />
+    <MESSAGE value="put()和node()优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="put()和node()优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

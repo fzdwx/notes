@@ -17,7 +17,7 @@ import java.util.Queue;
 public class HashMap<K, V> implements Map<K, V> {
     private static final boolean RED = false;
     private static final boolean BLACK = true;
-    private static final int DEFAULT_CAPACITY = 16; // 最好是2^n次方 16 = 1<<4
+    private static final int DEFAULT_CAPACITY = 1 << 4; // 最好是2^n次方 16 = 1<<4
     private int size;
     private Node<K, V>[] table;
 
@@ -80,91 +80,89 @@ public class HashMap<K, V> implements Map<K, V> {
     }
 
     @Override
-    public V put(K key, V value) {
-        int index = index(key);
+    public V put(K k1, V value) {
+        int index = index(k1);
         // 1.取出index位置的红黑树节点
         Node<K, V> root = table[index];
-        if (root != null) {  // hash冲突
-            // 1.初始化条件
-            Node<K, V> temp = root;                               // 遍历的元素
-            Node<K, V> parent = root;                            // 插入元素的父节点
-            int compare = 0;                                    // 记录插入位置
-            Node<K, V> curr = createNode(key, value, parent);  // 需要插入的元素
-            int h1 = curr.hash;
-            K k1 = key;
-            Node<K, V> res = null;
-            boolean isSearch = false; // 是否搜索过
-            do {
-                parent = temp;
-                K k2 = temp.key;
-                int h2 = temp.hash;
-                // 1.比较哈希
-                if (h1 > h2) {
-                    root = root.right;
-                    compare = 1;
-                } else if (h1 < h2) {
-                    root = root.left;
-                    compare = -1;
-                } else if (Objects.equals(k1, k2)) {
-                    compare = 0;
-                    // 2.具备可比较性
-                } else if (k1 != null && k2 != null
-                        && k1.getClass() == k2.getClass()
-                        && k2 instanceof Comparable
-                        && (compare = ((Comparable) k1).compareTo(k2)) != 0) {
-
-                } else if (isSearch) {   // 已经扫描过了
-                    compare = System.identityHashCode(k1) - System.identityHashCode(k2);
-                } else { // 3.扫描
-                    if (root.left != null && (res = node(root.left, k1)) != null) {
-                        root = res;
-                        compare = 0;
-                    } else if (root.right != null && (res = node(root.right, k1)) != null) {
-                        root = res;
-                        compare = 0;
-                    } else {
-                        isSearch = true;
-                        compare = System.identityHashCode(k1) - System.identityHashCode(k2);
-                    }
-                }
-                // 4.处理compare
-                if (compare > 0) {
-                    temp = temp.right;
-                } else if (compare < 0) {
-                    temp = temp.left;
-                } else {
-                    V tempValue = temp.value;
-                    temp.key = key;         // 相等覆盖
-                    temp.value = value;
-                    return tempValue;
-                }
-            } while (temp != null);
-
-            // 3.添加节点
-            curr.parent = parent;
-            if (compare > 0) {
-                parent.right = curr;
-            } else {
-                parent.left = curr;
-            }
+        if (root == null) {  // hash冲突
+            // 表示这个索引是第一次添加元素
+            root = new Node<>(k1, value, null);
+            table[index] = root;
             size++;
-
-            afterPut(curr);         // 添加后的操作
-
+            afterPut(root);
             return null;
         }
-        // 表示这个索引是第一次添加元素
-        root = new Node<>(key, value, null);
-        table[index] = root;
+        // 1.初始化条件
+        Node<K, V> parent = root;                            // 插入元素的父节点
+        Node<K, V> node = root;                               // 遍历的元素
+        int compare = 0;                                    // 记录插入位置
+        int h1 = k1 == null ? 0 : k1.hashCode();
+        Node<K, V> res = null;
+        boolean isSearch = false; // 是否搜索过
+        do {
+            parent = node;
+            K k2 = node.key;
+            int h2 = node.hash;
+            // 1.比较哈希
+            if (h1 > h2) {
+                //                    root = root.right;
+                compare = 1;
+            } else if (h1 < h2) {
+                //                    root = root.left;
+                compare = -1;
+            } else if (Objects.equals(k1, k2)) {
+                compare = 0;
+                // 2.具备可比较性
+            } else if (k1 != null && k2 != null
+                    && k1.getClass() == k2.getClass()
+                    && k1 instanceof Comparable
+                    && (compare = ((Comparable) k1).compareTo(k2)) != 0) {
+
+            } else if (isSearch) {   // 已经扫描过了
+                compare = System.identityHashCode(k1) - System.identityHashCode(k2);
+            } else { // 3.扫描
+                if (node.left != null && (res = node(node.left, k1)) != null
+                        || root.right != null && (res = node(node.right, k1)) != null) {
+                    node = res;
+                    compare = 0;
+                } else {
+                    isSearch = true;
+                    compare = System.identityHashCode(k1) - System.identityHashCode(k2);
+                }
+            }
+            // 4.处理compare
+            if (compare > 0) {
+                node = node.right;
+            } else if (compare < 0) {
+                node = node.left;
+            } else {
+                V tempValue = node.value;
+                node.key = k1;         // 相等覆盖
+                node.value = value;
+                return tempValue;
+            }
+        } while (node != null);
+
+        // 3.添加节点
+        Node<K, V> curr = createNode(k1, value, parent);  // 需要插入的元素
+        curr.parent = parent;
+        if (compare > 0) {
+            parent.right = curr;
+        } else {
+            parent.left = curr;
+        }
         size++;
-        afterPut(root);
+
+        afterPut(curr);         // 添加后的操作
+
         return null;
     }
+
 
     @Override
     public V get(K key) {
         Node<K, V> node = node(key);
-        return node == null ? null : node.value;
+        return node != null ? node.value : null;
     }
 
     @Override
@@ -206,7 +204,7 @@ public class HashMap<K, V> implements Map<K, V> {
 
     @Override
     public void traversal(Visitor<K, V> visitor) {
-        if (size == 0) {
+        if (size == 0 || visitor == null) {
             return;
         }
         Queue<Node<K, V>> queue = new LinkedList<>();
@@ -434,7 +432,7 @@ public class HashMap<K, V> implements Map<K, V> {
         } else if (grand.isRightChild()) {
             root.right = parent;
         } else {   // root
-            table[index(grand.hash)] = parent;
+            table[index(grand)] = parent;
         }
 
         // 更新父节点
@@ -491,18 +489,17 @@ public class HashMap<K, V> implements Map<K, V> {
     }
 
     /**
-     * 根据Key生成索引
+     * 根据key生成对应的索引（在桶数组中的位置）
      */
     private int index(K key) {
-        if (key == null) { return 0; }
+        if (key == null) return 0;
         int hash = key.hashCode();
-        return index(hash);
+        return (hash ^ (hash >>> 16)) & (table.length - 1);
     }
 
-    private int index(int hash) {
-        return hash ^ (hash >>> 16) & (table.length - 1);
+    private int index(Node<K, V> node) {
+        return (node.hash ^ (node.hash >>> 16)) & (table.length - 1);
     }
-
     private boolean isBlack(Node<K, V> node) {
         return colorOf(node) == BLACK;
     }
@@ -601,9 +598,10 @@ public class HashMap<K, V> implements Map<K, V> {
         V removeValue = node.value;
 
         if (node.hasTwoChildren()) {        // n2
-            Node<K, V> s = predecessor(node);   // 要删除节点的后继节点
+            Node<K, V> s = successor(node);   // 要删除节点的后继节点
             node.key = s.key;     // 删除当前节点(覆盖当前节点所保存的值)
             node.value = s.value;     // 删除当前节点(覆盖当前节点所保存的值)
+            node.hash = s.hash;
             node = s;
         }
 
@@ -612,14 +610,14 @@ public class HashMap<K, V> implements Map<K, V> {
         if (removeNext != null) {                                         // n1
             removeNext.parent = node.parent;                             // removeNext -> node.parent
             if (node.parent == null) {                                  // 根节点
-                table[index(node.hash)] = removeNext;
+                table[index(node.key)] = removeNext;
             } else if (node == node.parent.left) {                    // node.parent.left/right -> removeNext
                 node.parent.left = removeNext;
             } else {
                 node.parent.right = removeNext;
             }
         } else if (node.parent == null) {  // n0且没有父节点 ->root
-            table[index(node.hash)] = null;
+            table[index(node.key)] = null;
         } else {     // n0  直接删除
             if (node.parent.left == node) {
                 node.parent.left = null;
@@ -650,6 +648,26 @@ public class HashMap<K, V> implements Map<K, V> {
         parent.right = grand;
         // 更新父节点
         afterRo(grand, parent, root, t2);
+    }
+
+    private Node<K, V> successor(Node<K, V> node) {
+        if (node == null) {
+            return null;
+        }
+        Node<K, V> p = node.right;
+        // 后继节点在右子树中,right.left.left.left  ...
+        if (p != null) {
+            while (p.left != null) {
+                p = p.left;
+            }
+            return p;
+        }
+        p = node;
+        // 后继节点在父节点的右父节点
+        while (p.parent != null && p == p.parent.right) { // 父节点==null，当前节点是父节点的左节点
+            p = p.parent;
+        }
+        return p.parent;
     }
 
     private Node<K, V> toBlack(Node<K, V> node) {
