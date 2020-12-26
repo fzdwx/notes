@@ -1,6 +1,7 @@
-package 数据结构和算法.数据结构.hash;
+package 数据结构和算法.数据结构.hash.model;
 
-import 数据结构和算法.数据结构.hash.model.*;
+import 数据结构和算法.数据结构.hash.HashMap;
+import 数据结构和算法.数据结构.hash.LinkedHashMap;
 import 数据结构和算法.数据结构.map.Map;
 import 数据结构和算法.数据结构.set.file.FileInfo;
 import 数据结构和算法.数据结构.set.file.Files;
