@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/LinkedHashMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work.iml" beforeDir="false" afterPath="$PROJECT_DIR$/work.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/哈希/hash.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/哈希/hash.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/01-分布式基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/01-分布式基础.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,16 +77,16 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.postfix.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="数据结构和算法.数据结构.hash" />
       <recent name="设计模式.行为模式.模板方法模式" />
       <recent name="设计模式.结构型模式.享元模式" />
       <recent name="数据结构和算法.数据结构.map" />
       <recent name="数据结构和算法.数据结构.set" />
-      <recent name="设计模式.结构型模式.桥接模式" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\hash\model" />
@@ -361,7 +359,7 @@
       <workItem from="1608795461184" duration="2154000" />
       <workItem from="1608859494027" duration="25907000" />
       <workItem from="1608888810977" duration="1335000" />
-      <workItem from="1608950695672" duration="7350000" />
+      <workItem from="1608950695672" duration="12191000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -615,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608888890692</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="hashMap扩容完成+测试">
+      <created>1608958955832</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1608958955832</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +640,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="添加AVL数-平衡二叉树" />
     <MESSAGE value="统一的旋转" />
     <MESSAGE value="删除导致的失衡" />
     <MESSAGE value="装饰者模式" />
@@ -660,7 +664,8 @@
     <MESSAGE value="重构hash获取方法" />
     <MESSAGE value="更新笔记" />
     <MESSAGE value="行为模式-》模板方法模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="行为模式-》模板方法模式" />
+    <MESSAGE value="hashMap扩容完成+测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="hashMap扩容完成+测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

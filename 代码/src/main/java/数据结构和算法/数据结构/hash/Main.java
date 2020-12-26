@@ -1,6 +1,7 @@
 package 数据结构和算法.数据结构.hash;
 
 import 数据结构和算法.数据结构.hash.model.*;
+import 数据结构和算法.数据结构.map.Map;
 import 数据结构和算法.数据结构.set.file.FileInfo;
 import 数据结构和算法.数据结构.set.file.Files;
 
@@ -15,7 +16,20 @@ import 数据结构和算法.数据结构.set.file.Files;
 public class Main {
     public static void main(String[] args) {
         // java.util.HashMap
-        test1();
+//        test1();
+        LinkedHashMap<Object, Object> map = new LinkedHashMap<>();
+        map.put(1,1);
+        map.put(3,3);
+        map.put(2,2);
+        map.traversal(new Map.Visitor<Object, Object>() {
+            @Override
+            public boolean visit(Object key, Object value) {
+                System.out.println(key+":"+value);
+                return false;
+            }
+        });
+        System.out.println("===============");
+        map.print();
     }
 
 
