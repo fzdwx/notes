@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/模板方法模式/AbstractClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/模板方法模式/BaoCai.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/模板方法模式/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/设计模式概述.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/HashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/hash/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work.iml" beforeDir="false" afterPath="$PROJECT_DIR$/work.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/哈希/hash.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/数据结构/哈希/hash.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/01-分布式基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/01-分布式基础.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +151,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (2)">
+  <component name="RunManager" selected="应用程序.Main (1)">
     <configuration name="HashMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.hash.HashMap" />
       <module name="work" />
@@ -228,6 +230,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.Main (3)" />
@@ -237,8 +252,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.Main (2)" />
         <item itemvalue="应用程序.Main (1)" />
+        <item itemvalue="应用程序.Main (2)" />
         <item itemvalue="应用程序.HashMap" />
         <item itemvalue="应用程序.Main (3)" />
         <item itemvalue="应用程序.Main" />
@@ -345,6 +360,8 @@
       <workItem from="1608791809253" duration="358000" />
       <workItem from="1608795461184" duration="2154000" />
       <workItem from="1608859494027" duration="25907000" />
+      <workItem from="1608888810977" duration="1335000" />
+      <workItem from="1608950695672" duration="7350000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -591,7 +608,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608882211647</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="行为模式-》模板方法模式">
+      <created>1608888890692</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1608888890692</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +635,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="cglib动态代理" />
     <MESSAGE value="添加AVL数-平衡二叉树" />
     <MESSAGE value="统一的旋转" />
     <MESSAGE value="删除导致的失衡" />
@@ -636,7 +659,8 @@
     <MESSAGE value="修复当sib为null时的情况" />
     <MESSAGE value="重构hash获取方法" />
     <MESSAGE value="更新笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新笔记" />
+    <MESSAGE value="行为模式-》模板方法模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="行为模式-》模板方法模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -657,6 +681,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="8" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="9" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,9 +1,10 @@
 package 数据结构和算法.数据结构.hash;
 
 import 数据结构和算法.数据结构.hash.model.*;
-import 数据结构和算法.数据结构.map.Map;
 import 数据结构和算法.数据结构.set.file.FileInfo;
 import 数据结构和算法.数据结构.set.file.Files;
+
+
 
 /**
  * @author like
@@ -13,12 +14,8 @@ import 数据结构和算法.数据结构.set.file.Files;
  */
 public class Main {
     public static void main(String[] args) {
-        // HashMap
+        // java.util.HashMap
         test1();
-        test2(new HashMap<>());
-        test3(new HashMap<>());
-        test4(new HashMap<>());
-        test5(new HashMap<>());
     }
 
 
@@ -34,7 +31,31 @@ public class Main {
         test1Map(new HashMap<>(), words);
     }
 
-    static void test2(HashMap<Object, Integer> map) {
+    static void test1Map(HashMap<String, Integer> map, String[] words) {
+        Times.test(map.getClass().getName(), new Times.Task() {
+            @Override
+            public void execute() {
+                for (String word : words) {
+                    Integer count = map.get(word);
+                    count = count == null ? 0 : count;
+                    map.put(word, count + 1);
+                }
+                System.out.println("map.size = " + map.size());
+
+                int count = 0;
+                for (String word : words) {
+                    Integer i = map.get(word);
+                    count += i == null ? 0 : i;
+                    map.remove(word);
+                }
+                Asserts.test(count == words.length);
+                Asserts.test(map.size() == 0);
+            }
+        });
+        System.out.println(map.size());
+    }
+
+    static void test2(java.util.HashMap<Object, Integer> map) {
         for (int i = 1; i <= 20; i++) {
             map.put(new Key(i), i);
         }
@@ -49,7 +70,7 @@ public class Main {
         Asserts.test(map.get(new Key(8)) == 8);
     }
 
-    static void test3(HashMap<Object, Integer> map) {
+    static void test3(java.util.HashMap<Object, Integer> map) {
         map.put(null, 1); // 1
         map.put(new Object(), 2); // 2
         map.put("jack", 3); // 3
@@ -71,7 +92,7 @@ public class Main {
 
     }
 
-    static void test4(HashMap<Object, Integer> map) {
+    static void test4(java.util.HashMap<Object, Integer> map) {
         map.put("jack", 1);
         map.put("rose", 2);
         map.put("jim", 3);
@@ -99,7 +120,7 @@ public class Main {
         Asserts.test(map.get(new Key(8)) == 8);
     }
 
-    static void test5(HashMap<Object, Integer> map) {
+    static void test5(java.util.HashMap<Object, Integer> map) {
         for (int i = 1; i <= 20; i++) {
             map.put(new SubKey1(i), i);
         }
@@ -107,29 +128,5 @@ public class Main {
         Asserts.test(map.get(new SubKey1(1)) == 5);
         Asserts.test(map.get(new SubKey2(1)) == 5);
         Asserts.test(map.size() == 20);
-    }
-
-    static void test1Map(Map<String, Integer> map, String[] words) {
-        Times.test(map.getClass().getName(), new Times.Task() {
-            @Override
-            public void execute() {
-                for (String word : words) {
-                    Integer count = map.get(word);
-                    count = count == null ? 0 : count;
-                    map.put(word, count + 1);
-                }
-                System.out.println("map.size = " + map.size());
-
-                int count = 0;
-                for (String word : words) {
-                    Integer i = map.get(word);
-                    count += i == null ? 0 : i;
-                    map.remove(word);
-                }
-                Asserts.test(count == words.length);
-                Asserts.test(map.size() == 0);
-            }
-        });
-        System.out.println(map.size());
     }
 }

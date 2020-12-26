@@ -1,4 +1,4 @@
-# 哈希表
+# 哈希表简介
 
 Hash Table(哈希表)
 
@@ -29,7 +29,7 @@ Hash Table(哈希表)
 
 
 
-# 实现hash表
+# 实现hashMap
 
 
 
@@ -360,5 +360,125 @@ private V remove(Node<K, V> node) {
     }
 
     return oldValue;
+}
+```
+
+
+
+
+
+# 扩容
+
+通过扩容因子 
+
+## 装填因子
+
+也叫负载因子：节点总数量 / 哈希表数组长度 
+
+```java
+public static final float DEFAULT_LOAD_FACTOR = 0.75f;  // 默认装填因子   size / table.length
+```
+
+
+
+
+
+## 实现
+
+```java
+/**
+ * 扩容
+ */
+private void resize() {
+    // 1.判断装填因子 -> 装填因子小于 < 0.75
+    if (((float) (size / table.length)) <= DEFAULT_LOAD_FACTOR) {return;}
+
+    // 2.进行扩容 -> 2倍
+    Node<K, V>[] oldTable = table;
+    table = new Node[oldTable.length << 1];
+
+    Queue<Node<K, V>> queue = new LinkedList<>();  // 遍历每个节点
+    for (Node<K, V> kvNode : oldTable) {
+        if (kvNode != null) {
+            queue.offer(kvNode);
+            while (!queue.isEmpty()) {
+                Node<K, V> node = queue.poll();
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+
+                // 挪动代码得放到最后面
+                move(node);
+            }
+        }
+    }
+}
+```
+
+```java
+/**
+ * 扩容的时候移动节点
+ *
+ * @param newNode 节点
+ */
+private void move(Node<K, V> newNode) {
+    // 重置
+    newNode.parent = null;
+    newNode.left = null;
+    newNode.right = null;
+    newNode.color = RED;
+
+    int index = index(newNode);
+    // 取出index位置的红黑树根节点
+    Node<K, V> root = table[index];
+    if (root == null) {
+        root = newNode;
+        table[index] = root;
+        afterPut(root);
+        return;
+    }
+
+    // 添加新的节点到红黑树上面
+    Node<K, V> parent;
+    Node<K, V> node = root;
+    int cmp;
+    K k1 = newNode.key;
+    int h1 = newNode.hash;
+    do {
+        parent = node;
+        K k2 = node.key;
+        int h2 = node.hash;
+        if (h1 > h2) {
+            cmp = 1;
+        } else if (h1 < h2) {
+            cmp = -1;
+        } else if (k2 != null
+                   && k1 instanceof Comparable
+                   && k1.getClass() == k2.getClass()
+                   && (cmp = ((Comparable) k1).compareTo(k2)) != 0) {
+        } else {
+            cmp = System.identityHashCode(k1) - System.identityHashCode(k2);
+        }
+
+        if (cmp > 0) {
+            node = node.right;
+        } else if (cmp < 0) {
+            node = node.left;
+        }
+    } while (node != null);
+
+    // 看看插入到父节点的哪个位置
+    newNode.parent = parent;
+    if (cmp > 0) {
+        parent.right = newNode;
+    } else {
+        parent.left = newNode;
+    }
+
+    // 新添加节点之后的处理
+    afterPut(newNode);
 }
 ```
