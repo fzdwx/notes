@@ -1,6 +1,7 @@
 package 数据结构和算法.数据结构.tree.二叉树;
 
 import java.util.Comparator;
+import java.util.Stack;
 
 /**
  * @author like
@@ -19,6 +20,93 @@ public class BinarySearchTree<T> extends BinaryTree<T> {
 
     public BinarySearchTree() {
         this(null);
+    }
+
+    public void pre(Visitor<T> visitor) {
+        if (root == null) return;
+        Node<T> node = this.root;
+        Stack<Node<T>> stack = new Stack<>();
+        while (true) {
+            if (node != null) {
+                if (visitor.visit(node)) return;
+                if (node.right != null) stack.push(node.right);
+                node = node.left;
+            } else if (stack.isEmpty()) return;
+            else node = stack.pop();
+        }
+    }
+
+    public void in(Visitor<T> visitor) {
+        if (root == null) return;
+        Node<T> node = this.root;
+        Stack<Node<T>> stack = new Stack<>();
+        while (true) {
+            if (node != null) {
+                stack.push(node);
+                node = node.left;
+            } else if (stack.isEmpty()) return;
+            else {
+                node = stack.pop();
+                if (visitor.visit(node)) return;
+                node = node.right;
+            }
+
+        }
+    }
+
+    public void post(Visitor<T> visitor) {
+        if (root == null) return;
+        Node<T> node = root;
+        Node<T> pop = null;
+        Stack<Node<T>> stack = new Stack<>();
+        stack.push(node);
+        while (!stack.isEmpty()) {
+            Node<T> peek = stack.peek();
+            if (peek.isLeaf() || (pop != null && pop.parent == peek)) {
+                pop = stack.pop();
+                if (visitor.visit(pop)) return;
+            } else {
+                if (peek.right != null) {
+                    stack.push(peek.right);
+                }
+                if (peek.left != null) {
+                    stack.push(peek.left);
+                }
+            }
+        }
+    }
+
+    /**
+     * 添加后
+     * 留给子类去实现，调整树->平衡二叉树
+     *
+     * @param node 添加的节点
+     */
+    protected void addAfter(Node<T> node) {
+    }
+
+    /**
+     * 删除后
+     *
+     * @param node 节点
+     */
+    protected void removeAfter(Node<T> node) {
+    }
+
+    /**
+     * 创建节点的类型
+     *
+     * @param element 元素
+     * @param parent  父
+     * @return {@link Node<T>}
+     */
+    protected Node<T> createNode(T element, Node<T> parent) {
+        return new Node<>(element, parent);
+    }
+
+    @Override
+    public Node<T> getNodeForElement(T element) {
+        return getNodeUseIteration(element);
     }
 
     @Override
@@ -107,39 +195,6 @@ public class BinarySearchTree<T> extends BinaryTree<T> {
         size--;
     }
 
-    /**
-     * 添加后
-     * 留给子类去实现，调整树->平衡二叉树
-     *
-     * @param node 添加的节点
-     */
-    protected void addAfter(Node<T> node) {
-    }
-
-    /**
-     * 删除后
-     *
-     * @param node 节点
-     */
-    protected void removeAfter(Node<T> node) {
-    }
-
-    /**
-     * 创建节点的类型
-     *
-     * @param element 元素
-     * @param parent  父
-     * @return {@link Node<T>}
-     */
-    protected Node<T> createNode(T element, Node<T> parent) {
-        return new Node<>(element, parent);
-    }
-
-    @Override
-    public Node<T> getNodeForElement(T element) {
-        return getNodeUseIteration(element);
-    }
-
     @Override
     public Object root() {
         return this.root;
@@ -158,6 +213,23 @@ public class BinarySearchTree<T> extends BinaryTree<T> {
     @Override
     public Object string(Object node) {
         return ((Node<T>) node).element;
+    }
+
+    /**
+     * 比较
+     *
+     * @param element 需要添加的元素
+     * @param compare 比较的对象
+     * @return {@link Integer}
+     * 返回0 表示相等         覆盖
+     * 大于0 表示element大    右边
+     * 小于0 表示compare大    左边
+     */
+    private Integer compare(T element, T compare) {
+        if (comparator == null) {
+            return ((Comparable<T>) element).compareTo(compare);
+        }
+        return comparator.compare(element, compare);
     }
 
     /**
@@ -184,22 +256,5 @@ public class BinarySearchTree<T> extends BinaryTree<T> {
             }
         }
         return null;
-    }
-
-    /**
-     * 比较
-     *
-     * @param element 需要添加的元素
-     * @param compare 比较的对象
-     * @return {@link Integer}
-     * 返回0 表示相等         覆盖
-     * 大于0 表示element大    右边
-     * 小于0 表示compare大    左边
-     */
-    private Integer compare(T element, T compare) {
-        if (comparator == null) {
-            return ((Comparable<T>) element).compareTo(compare);
-        }
-        return comparator.compare(element, compare);
     }
 }
