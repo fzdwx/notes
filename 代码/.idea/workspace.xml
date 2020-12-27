@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/策略模式/SaleMan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/策略模式/Strategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/策略模式/StrategyA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/策略模式/StrategyB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/heap/AbstractHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/heap/BinaryHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/heap/Heap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/heap/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/03-分布式高级.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,16 +81,16 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.postfix.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="数据结构和算法.数据结构.hash.heap" />
       <recent name="设计模式.行为模式.策略模式" />
       <recent name="数据结构和算法.数据结构.hash" />
       <recent name="设计模式.行为模式.模板方法模式" />
       <recent name="设计模式.结构型模式.享元模式" />
-      <recent name="数据结构和算法.数据结构.map" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\hash\model" />
@@ -151,6 +154,19 @@
     </option>
   </component>
   <component name="RunManager" selected="应用程序.Main (1)">
+    <configuration name="BinaryHeap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.heap.BinaryHeap" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.数据结构.heap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HashMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.hash.HashMap" />
       <module name="work" />
@@ -191,11 +207,11 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.适配器模式.对象适配器.Main" />
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.heap.Main" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="设计模式.结构型模式.适配器模式.对象适配器.*" />
+          <option name="PATTERN" value="数据结构和算法.数据结构.heap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -229,33 +245,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.Main (3)" />
       <item itemvalue="应用程序.HashMap" />
-      <item itemvalue="应用程序.Main (1)" />
       <item itemvalue="应用程序.Main (2)" />
+      <item itemvalue="应用程序.Main (1)" />
+      <item itemvalue="应用程序.BinaryHeap" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.Main (1)" />
+        <item itemvalue="应用程序.BinaryHeap" />
         <item itemvalue="应用程序.Main (2)" />
         <item itemvalue="应用程序.HashMap" />
         <item itemvalue="应用程序.Main (3)" />
-        <item itemvalue="应用程序.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -360,7 +374,8 @@
       <workItem from="1608795461184" duration="2154000" />
       <workItem from="1608859494027" duration="25907000" />
       <workItem from="1608888810977" duration="1335000" />
-      <workItem from="1608950695672" duration="16043000" />
+      <workItem from="1608950695672" duration="16775000" />
+      <workItem from="1609029837988" duration="9653000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -635,7 +650,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608964290562</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="策略模式">
+      <created>1608972464123</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1608972464123</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -655,7 +677,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="装饰者模式" />
     <MESSAGE value="定义红黑树的辅助方法" />
     <MESSAGE value="红黑树完成，抽取二叉平衡搜索树类" />
     <MESSAGE value="红黑树调试" />
@@ -680,7 +701,8 @@
     <MESSAGE value="hashMap扩容完成+测试" />
     <MESSAGE value="LinkedHashMap -&gt;按照添加顺序遍历" />
     <MESSAGE value="实现对应的set" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现对应的set" />
+    <MESSAGE value="策略模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="策略模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
