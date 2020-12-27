@@ -8,9 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/trie/Trie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/heap/BinaryHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/heap/BinaryHeap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/heap/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/数据结构/heap/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +149,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main">
+  <component name="RunManager" selected="应用程序.Trie">
     <configuration name="BinaryHeap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.heap.BinaryHeap" />
       <module name="work" />
@@ -183,19 +182,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="设计模式.行为模式.模板方法模式.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.结构型模式.享元模式.Main" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="设计模式.结构型模式.享元模式.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -242,33 +228,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration name="Trie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.trie.Trie" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.数据结构.trie.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
-      <item itemvalue="应用程序.Main (3)" />
       <item itemvalue="应用程序.HashMap" />
       <item itemvalue="应用程序.Main (2)" />
       <item itemvalue="应用程序.BinaryHeap" />
+      <item itemvalue="应用程序.Trie" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Trie" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.BinaryHeap" />
         <item itemvalue="应用程序.Main (2)" />
         <item itemvalue="应用程序.HashMap" />
-        <item itemvalue="应用程序.Main (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -375,7 +372,8 @@
       <workItem from="1608888810977" duration="1335000" />
       <workItem from="1608950695672" duration="16775000" />
       <workItem from="1609029837988" duration="13084000" />
-      <workItem from="1609049041251" duration="2147000" />
+      <workItem from="1609049041251" duration="3668000" />
+      <workItem from="1609059009720" duration="5321000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -664,7 +662,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609042597788</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="二叉堆 top n 问题">
+      <created>1609051276209</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1609051276209</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +689,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="红黑树完成，抽取二叉平衡搜索树类" />
     <MESSAGE value="红黑树调试" />
     <MESSAGE value="桥接模式" />
     <MESSAGE value="红黑树删除+调试" />
@@ -709,7 +713,8 @@
     <MESSAGE value="实现对应的set" />
     <MESSAGE value="策略模式" />
     <MESSAGE value="堆接口完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="堆接口完成" />
+    <MESSAGE value="二叉堆 top n 问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="二叉堆 top n 问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
