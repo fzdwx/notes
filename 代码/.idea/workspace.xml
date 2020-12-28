@@ -8,11 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/code/GeneralManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/code/GroupLeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/code/Handler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/code/LeaveRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/code/Manger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/BubbleSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/Sort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/排序.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/排序.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,11 +88,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="设计模式.行为模式.责任链模式" />
       <recent name="设计模式.行为模式.命令模式" />
       <recent name="数据结构和算法.数据结构.hash.heap" />
       <recent name="设计模式.行为模式.策略模式" />
       <recent name="数据结构和算法.数据结构.hash" />
-      <recent name="设计模式.行为模式.模板方法模式" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\算法\排序" />
@@ -152,26 +155,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main">
+  <component name="RunManager" selected="应用程序.Main (2)">
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.sort.BubbleSort" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="数据结构和算法.算法.排序.sort.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Chef" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.行为模式.命令模式.Chef" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="设计模式.行为模式.命令模式.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -198,6 +188,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="数据结构和算法.算法.排序.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.行为模式.责任链模式.Main" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="设计模式.行为模式.责任链模式.code.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -244,20 +247,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="应用程序.Chef" />
       <item itemvalue="应用程序.Main (1)" />
       <item itemvalue="应用程序.BubbleSort" />
       <item itemvalue="应用程序.SelectionSort" />
       <item itemvalue="应用程序.Main" />
+      <item itemvalue="应用程序.Main (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main (2)" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.BubbleSort" />
         <item itemvalue="应用程序.SelectionSort" />
         <item itemvalue="应用程序.Main (1)" />
-        <item itemvalue="应用程序.Chef" />
       </list>
     </recent_temporary>
   </component>
@@ -369,6 +383,7 @@
       <workItem from="1609114963658" duration="469000" />
       <workItem from="1609115465143" duration="4675000" />
       <workItem from="1609120907201" duration="10725000" />
+      <workItem from="1609136708727" duration="4083000" />
     </task>
     <task id="LOCAL-00003" summary="接口完善">
       <created>1608192298591</created>
