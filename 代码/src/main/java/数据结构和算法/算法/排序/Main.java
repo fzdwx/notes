@@ -5,7 +5,6 @@ import 数据结构和算法.算法.排序.sort.HeapSort;
 import 数据结构和算法.算法.排序.sort.SelectionSort;
 import 数据结构和算法.算法.排序.sort.Sort;
 import 数据结构和算法.算法.排序.tools.Asserts;
-import 数据结构和算法.算法.排序.tools.Times;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -18,14 +17,32 @@ import java.util.Random;
  */
 public class Main {
     public static final Integer ARRAY_SIZE = 10000;
+    public static Integer[] ascSort;
 
     public static void main(String[] args) {
         Integer[] array = loadData();
-        Integer[] sort = copy(array);Arrays.sort(sort);
+        ascSort = copy(array);
+        Arrays.sort(ascSort);
 
-        equals(sort, sort(SelectionSort.class.getName(), new SelectionSort<>(), copy(array)));
-        equals(sort, sort(HeapSort.class.getName(), new HeapSort<>(), copy(array)));
-        equals(sort, sort(BubbleSort.class.getName(), new BubbleSort<>(), copy(array)));
+        sort(array,
+                new BubbleSort<>(),
+                new SelectionSort<>(),
+                new HeapSort<>());
+    }
+
+    @SafeVarargs
+    public static void sort(Integer[] array, Sort<Integer>... sorts) {
+        for (Sort<Integer> sort : sorts) {
+            equals(ascSort, sort.sort(copy(array)));
+        }
+        Arrays.sort(sorts);
+        for (Sort<Integer> sort : sorts) {
+            System.out.println(sort);
+        }
+    }
+
+    private static void equals(Integer[] array, Integer[] sort) {
+        Asserts.test(Arrays.equals(array, sort));
     }
 
     private static Integer[] loadData() {
@@ -36,17 +53,8 @@ public class Main {
         return array;
     }
 
-    public static Integer[] copy(Integer[] array) {
+    private static Integer[] copy(Integer[] array) {
         return Arrays.copyOf(array, array.length);
-    }
-
-    public static Integer[] sort(String title, Sort<Integer> sort, Integer[] array) {
-        Times<Integer[]> t = new Times<Integer[]>();
-        return t.test(title, () -> sort.sort(array));
-    }
-
-    public static void equals(Integer[] array, Integer[] sort) {
-        Asserts.test(Arrays.equals(array, sort));
     }
 
 }

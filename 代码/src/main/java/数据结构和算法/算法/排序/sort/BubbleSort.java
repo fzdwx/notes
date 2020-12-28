@@ -11,13 +11,11 @@ public class BubbleSort<E> extends Sort<E> {
     @Override
     protected E[] sort() {
         m();
-        //        m1();
-        //        m2();
         return array;
     }
 
     private void m() {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             for (int j = i; j < array.length; j++) {
                 if (cmp(i, j) > 0) {
                     swap(i, j);
@@ -27,9 +25,9 @@ public class BubbleSort<E> extends Sort<E> {
     }
 
     private void m1() {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             boolean sorted = true;
-            for (int j = i; j < array.length - 1; j++) {
+            for (int j = i; j < array.length; j++) {
                 if (cmp(i, j) > 0) {
                     swap(i, j);
                     sorted = false;
@@ -40,15 +38,16 @@ public class BubbleSort<E> extends Sort<E> {
     }
 
     private void m2() {
-        for (int end = array.length - 1; end > 0; end--) {
-            int index = 1;
-            for (int begin = 1; begin <= end; begin++) {
-                if (cmp(begin, begin - 1) > 0) {
-                    swap(begin, begin - 1);
-                    index = begin;
+        int len = array.length - 1;
+        int index = 0;
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                if (cmp(j, j + 1) > 0) {
+                    swap(j, j + 1);
+                    index = j;
                 }
             }
-            end = index;
+            len = index;
         }
     }
 
