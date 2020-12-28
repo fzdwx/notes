@@ -1,5 +1,6 @@
 package 数据结构和算法.算法.排序;
 
+import 数据结构和算法.算法.排序.tools.Asserts;
 import 数据结构和算法.算法.排序.tools.Times;
 
 import java.util.Arrays;
@@ -17,50 +18,44 @@ public class BubbleSort {
 
     static {
         array = new Integer[ARRAY_SIZE];
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < ARRAY_SIZE; i++) {
             array[i] = new Random().nextInt(ARRAY_SIZE);
         }
     }
 
     public static void main(String[] args) {
         Integer[] a = Arrays.copyOf(array, array.length);
-        Integer[] a1 = Arrays.copyOf(array, array.length);
-        Integer[] a2 = Arrays.copyOf(array, array.length);
-        Times.test("m", () -> {
+        Arrays.sort(array);
+        Times.test("m-初始", () -> {
             m(a);
         });
-        Times.test("m1-初始", () -> {
-            m1(a1);
-        });
-        Times.test("m2-优化1-增加判断当前数组是否是有序的", () -> {
-            m2(a2);
-        });
+        Asserts.test(Arrays.equals(a, array));
     }
 
     private static void m(Integer[] array) {
-        for (int end = array.length - 1; end > 0; end--) {
-            int index =1;
-            for (int begin = 1; begin <= end; begin++) {
-                if (array[begin] > array[begin - 1]) {
-                    int temp = array[begin];
-                    array[begin] = array[begin-1];
-                    array[begin-1] = temp;
-                    index =begin;
-                }
-            }
-            end = index;
-        }
-    }
-
-    private static void m1(Integer[] array) {
         for (int i = 0; i < array.length; i++) {
-            for (int j = i; j < array.length - 1; j++) {
+            for (int j = i; j < array.length; j++) {
                 if (array[i] > array[j]) {
                     int temp = array[i];
                     array[i] = array[j];
                     array[j] = temp;
                 }
             }
+        }
+    }
+
+    private static void m1(Integer[] array) {
+        for (int end = array.length - 1; end > 0; end--) {
+            int index = 1;
+            for (int begin = 1; begin <= end; begin++) {
+                if (array[begin] > array[begin - 1]) {
+                    int temp = array[begin];
+                    array[begin] = array[begin - 1];
+                    array[begin - 1] = temp;
+                    index = begin;
+                }
+            }
+            end = index;
         }
     }
 
