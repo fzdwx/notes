@@ -1,5 +1,10 @@
 package 数据结构和算法.算法.排序;
 
+import 数据结构和算法.算法.排序.tools.Times;
+
+import java.util.Arrays;
+import java.util.Random;
+
 /**
  * @author like
  * @date 2020-12-28 8:40
@@ -7,15 +12,28 @@ package 数据结构和算法.算法.排序;
  * @description 冒泡排序
  */
 public class BubbleSort {
-    static int[] array = new int[]{
-            3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48
-    };
+    public static final Integer ARRAY_SIZE = 10000;
+    static Integer[] array;
 
-    public static void main(String[] args) {
-        m2();
+    static {
+        array = new Integer[ARRAY_SIZE];
+        for (int i = 0; i < 10000; i++) {
+            array[i] = new Random().nextInt(ARRAY_SIZE);
+        }
     }
 
-    private static void m2() {
+    public static void main(String[] args) {
+        Integer[] a1 = Arrays.copyOf(array, array.length);
+        Integer[] a2 = Arrays.copyOf(array, array.length);
+        Times.test("m1", () -> {
+            m1(a1);
+        });
+        Times.test("m2", () -> {
+            m2(a2);
+        });
+    }
+
+    private static void m1(Integer[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = i; j < array.length - 1; j++) {
                 if (array[i] > array[j]) {
@@ -23,14 +41,11 @@ public class BubbleSort {
                     array[i] = array[j];
                     array[j] = temp;
                 }
-
             }
         }
-
     }
 
-    private static void m1() {
-        int counter = 0;
+    private static void m2(Integer[] array) {
         boolean flag;
         do {
             flag = false;
@@ -41,9 +56,8 @@ public class BubbleSort {
                     array[i - 1] = temp;
                     flag = true;
                 }
-                counter++;
+
             }
         } while (flag);
-        System.out.println(counter);
     }
 }
