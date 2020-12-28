@@ -23,14 +23,33 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
+        Integer[] a = Arrays.copyOf(array, array.length);
         Integer[] a1 = Arrays.copyOf(array, array.length);
         Integer[] a2 = Arrays.copyOf(array, array.length);
-        Times.test("m1", () -> {
+        Times.test("m", () -> {
+            m(a);
+        });
+        Times.test("m1-初始", () -> {
             m1(a1);
         });
-        Times.test("m2", () -> {
+        Times.test("m2-优化1-增加判断当前数组是否是有序的", () -> {
             m2(a2);
         });
+    }
+
+    private static void m(Integer[] array) {
+        for (int end = array.length - 1; end > 0; end--) {
+            int index =1;
+            for (int begin = 1; begin <= end; begin++) {
+                if (array[begin] > array[begin - 1]) {
+                    int temp = array[begin];
+                    array[begin] = array[begin-1];
+                    array[begin-1] = temp;
+                    index =begin;
+                }
+            }
+            end = index;
+        }
     }
 
     private static void m1(Integer[] array) {
@@ -46,6 +65,26 @@ public class BubbleSort {
     }
 
     private static void m2(Integer[] array) {
+        for (int i = 0; i < array.length; i++) {
+            boolean sorted = true;
+            for (int j = i; j < array.length - 1; j++) {
+                if (array[i] > array[j]) {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                    sorted = false;
+                }
+            }
+            if (sorted) break;
+        }
+    }
+
+    /**
+     * 学习网站上面的解法
+     *
+     * @param array 数组
+     */
+    private static void s(Integer[] array) {
         boolean flag;
         do {
             flag = false;

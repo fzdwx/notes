@@ -8,10 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/tools/Asserts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/tools/Times.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/BubbleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/排序.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/排序.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,13 +243,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -378,7 +379,8 @@
       <workItem from="1609049041251" duration="3668000" />
       <workItem from="1609059009720" duration="13211000" />
       <workItem from="1609114963658" duration="469000" />
-      <workItem from="1609115465143" duration="3400000" />
+      <workItem from="1609115465143" duration="4675000" />
+      <workItem from="1609120907201" duration="954000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -709,7 +711,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609118841479</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="冒泡排序优化测试方案">
+      <created>1609119787731</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1609119787731</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -729,7 +738,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="set的实现" />
     <MESSAGE value="map的实现" />
     <MESSAGE value="map的调试" />
     <MESSAGE value="组合模式" />
@@ -754,7 +762,8 @@
     <MESSAGE value="添加二叉树变量的迭代版本" />
     <MESSAGE value="命令模式完成" />
     <MESSAGE value="冒泡排序完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="冒泡排序完成" />
+    <MESSAGE value="冒泡排序优化测试方案" />
+    <option name="LAST_COMMIT_MESSAGE" value="冒泡排序优化测试方案" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
