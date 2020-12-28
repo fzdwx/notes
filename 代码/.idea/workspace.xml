@@ -8,14 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/命令模式/Chef.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/命令模式/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/命令模式/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/命令模式/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/命令模式/OrderCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/命令模式/Waiter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/BubbleSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +77,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -155,13 +149,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (1)">
-    <configuration name="BinaryHeap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.数据结构.heap.BinaryHeap" />
+  <component name="RunManager" selected="应用程序.BubbleSort">
+    <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.BubbleSort" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="数据结构和算法.数据结构.heap.*" />
+          <option name="PATTERN" value="数据结构和算法.算法.排序.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -260,18 +254,18 @@
     </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
-      <item itemvalue="应用程序.BinaryHeap" />
       <item itemvalue="应用程序.Trie" />
       <item itemvalue="应用程序.Chef" />
       <item itemvalue="应用程序.Main (1)" />
+      <item itemvalue="应用程序.BubbleSort" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.BubbleSort" />
         <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.Chef" />
         <item itemvalue="应用程序.Trie" />
         <item itemvalue="应用程序.Main" />
-        <item itemvalue="应用程序.BinaryHeap" />
       </list>
     </recent_temporary>
   </component>
@@ -379,7 +373,9 @@
       <workItem from="1608950695672" duration="16775000" />
       <workItem from="1609029837988" duration="13084000" />
       <workItem from="1609049041251" duration="3668000" />
-      <workItem from="1609059009720" duration="12886000" />
+      <workItem from="1609059009720" duration="13211000" />
+      <workItem from="1609114963658" duration="469000" />
+      <workItem from="1609115465143" duration="2464000" />
     </task>
     <task id="LOCAL-00001" summary="添加迭代法">
       <created>1608182111845</created>
@@ -696,7 +692,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609070297686</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="命令模式完成">
+      <created>1609073062476</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1609073062476</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -716,7 +719,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="红黑树删除+调试" />
     <MESSAGE value="外观模式" />
     <MESSAGE value="set的实现" />
     <MESSAGE value="map的实现" />
@@ -741,7 +743,8 @@
     <MESSAGE value="二叉堆 top n 问题" />
     <MESSAGE value="添加字典树" />
     <MESSAGE value="添加二叉树变量的迭代版本" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加二叉树变量的迭代版本" />
+    <MESSAGE value="命令模式完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="命令模式完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
