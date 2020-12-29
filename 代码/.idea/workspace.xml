@@ -8,12 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/code/GeneralManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/code/GroupLeader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/code/Handler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/code/LeaveRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/责任链模式/code/Manger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/状态模式/after/CloseState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/状态模式/after/Context.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/状态模式/after/LifeState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/状态模式/after/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/状态模式/after/OpeningState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/状态模式/after/RunningState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/状态模式/after/StoppingState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/状态模式/before/ILift.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/状态模式/before/Lift.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/状态模式/before/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/数据结构和算法/算法/排序/sort/BubbleSortTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" afterDir="false" />
     </list>
@@ -83,16 +88,16 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="设计模式.行为模式.状态模式.after" />
+      <recent name="设计模式.行为模式.状态模式.before" />
       <recent name="设计模式.行为模式.责任链模式" />
       <recent name="设计模式.行为模式.命令模式" />
       <recent name="数据结构和算法.数据结构.hash.heap" />
-      <recent name="设计模式.行为模式.策略模式" />
-      <recent name="数据结构和算法.数据结构.hash" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\算法\排序" />
@@ -112,11 +117,11 @@
       <recent name="数据结构和算法.数据结构" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="数据结构和算法.算法.排序.sort" />
       <recent name="数据结构和算法.数据结构.tree.二叉树" />
       <recent name="数据结构和算法.数据结构.list.linked" />
       <recent name="数据结构和算法.数据结构.List" />
       <recent name="修炼.数据结构和算法.数据结构.List" />
-      <recent name="FizzOrBuzz" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="设计模式.结构型模式.装饰者模式" />
@@ -155,7 +160,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (2)">
+  <component name="RunManager" selected="应用程序.Main (1)">
     <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.sort.BubbleSort" />
       <module name="work" />
@@ -169,12 +174,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.行为模式.命令模式.Main" />
+    <configuration name="BubbleSortTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.sort.BubbleSortTest" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="设计模式.行为模式.命令模式.*" />
+          <option name="PATTERN" value="数据结构和算法.算法.排序.sort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.行为模式.状态模式.after.Main" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="设计模式.行为模式.状态模式.after.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="设计模式.行为模式.状态模式.before.Main" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="设计模式.行为模式.状态模式.before.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -234,19 +265,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SelectionSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.sort.SelectionSort" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.排序.sort.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -259,19 +277,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.Main (1)" />
       <item itemvalue="应用程序.BubbleSort" />
-      <item itemvalue="应用程序.SelectionSort" />
       <item itemvalue="应用程序.Main" />
+      <item itemvalue="应用程序.BubbleSortTest" />
       <item itemvalue="应用程序.Main (2)" />
+      <item itemvalue="应用程序.Main (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.Main (2)" />
+        <item itemvalue="应用程序.BubbleSortTest" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.BubbleSort" />
-        <item itemvalue="应用程序.SelectionSort" />
-        <item itemvalue="应用程序.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -384,13 +402,10 @@
       <workItem from="1609115465143" duration="4675000" />
       <workItem from="1609120907201" duration="10725000" />
       <workItem from="1609136708727" duration="4083000" />
-    </task>
-    <task id="LOCAL-00003" summary="接口完善">
-      <created>1608192298591</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1608192298591</updated>
+      <workItem from="1609162777101" duration="2638000" />
+      <workItem from="1609210657901" duration="1020000" />
+      <workItem from="1609234190845" duration="110000" />
+      <workItem from="1609234396751" duration="2722000" />
     </task>
     <task id="LOCAL-00004" summary="二叉树继承数重构">
       <created>1608193914082</created>
@@ -728,7 +743,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609127698395</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="行为模式完成">
+      <created>1609162805669</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1609162805670</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -748,7 +770,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="添加功能完成" />
     <MESSAGE value="享元模式" />
     <MESSAGE value="update" />
     <MESSAGE value="hashMap接口完成" />
@@ -773,7 +794,8 @@
     <MESSAGE value="冒泡排序优化方案完成" />
     <MESSAGE value="选择排序完成" />
     <MESSAGE value="抽取公共类以及测试代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="抽取公共类以及测试代码" />
+    <MESSAGE value="行为模式完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="行为模式完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
