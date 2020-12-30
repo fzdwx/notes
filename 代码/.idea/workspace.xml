@@ -8,12 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/BinarySearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/InsertSort2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/InsertionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/排序.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/排序.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,17 +254,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.BubbleSortTest" />
@@ -400,14 +384,7 @@
       <workItem from="1609210657901" duration="1020000" />
       <workItem from="1609234190845" duration="110000" />
       <workItem from="1609234396751" duration="2801000" />
-      <workItem from="1609286135396" duration="10016000" />
-    </task>
-    <task id="LOCAL-00010" summary="统一的旋转">
-      <created>1608430322965</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1608430322965</updated>
+      <workItem from="1609286135396" duration="10386000" />
     </task>
     <task id="LOCAL-00011" summary="删除导致的失衡">
       <created>1608432348830</created>
@@ -745,7 +722,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609291424262</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="【20201230】】插入排序，使用二分查找优化">
+      <created>1609297130350</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1609297130350</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -765,7 +749,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="修复当sib为null时的情况" />
     <MESSAGE value="重构hash获取方法" />
     <MESSAGE value="更新笔记" />
     <MESSAGE value="行为模式-》模板方法模式" />
@@ -790,7 +773,8 @@
     <MESSAGE value="【2020/12/30 8:24】】增加稳定性-student" />
     <MESSAGE value="【20201230】】增加插入排序" />
     <MESSAGE value="【20201230】】插入排序小优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="【20201230】】插入排序小优化" />
+    <MESSAGE value="【20201230】】插入排序，使用二分查找优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="【20201230】】插入排序，使用二分查找优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
