@@ -1,9 +1,6 @@
 package 数据结构和算法.算法.排序;
 
-import 数据结构和算法.算法.排序.sort.BubbleSort;
-import 数据结构和算法.算法.排序.sort.HeapSort;
-import 数据结构和算法.算法.排序.sort.SelectionSort;
-import 数据结构和算法.算法.排序.sort.Sort;
+import 数据结构和算法.算法.排序.sort.*;
 import 数据结构和算法.算法.排序.tools.Asserts;
 
 import java.util.Arrays;
@@ -27,7 +24,8 @@ public class Main {
         sort(array,
                 new BubbleSort<>(),
                 new SelectionSort<>(),
-                new HeapSort<>());
+                new HeapSort<>(),
+                new InsertionSort<>());
     }
 
     @SafeVarargs
