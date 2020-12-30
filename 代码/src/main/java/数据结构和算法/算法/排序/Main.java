@@ -25,6 +25,7 @@ public class Main {
                 new BubbleSort<>(),
                 new SelectionSort<>(),
                 new HeapSort<>(),
+                new InsertSort2<>(),
                 new InsertionSort<>());
     }
 
@@ -43,16 +44,16 @@ public class Main {
         Asserts.test(Arrays.equals(array, sort));
     }
 
+    private static Integer[] copy(Integer[] array) {
+        return Arrays.copyOf(array, array.length);
+    }
+
     private static Integer[] loadData() {
         Integer[] array = new Integer[ARRAY_SIZE];
         for (int i = 0; i < ARRAY_SIZE; i++) {
             array[i] = new Random().nextInt(ARRAY_SIZE);
         }
         return array;
-    }
-
-    private static Integer[] copy(Integer[] array) {
-        return Arrays.copyOf(array, array.length);
     }
 
 }
