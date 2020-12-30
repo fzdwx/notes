@@ -6,7 +6,7 @@ package 数据结构和算法.算法.排序.sort;
  * @contactMe 980650920@qq.com
  * @description 堆排序
  */
-public class HeapSort<E> extends Sort<E> {
+public class HeapSort<E extends Comparable<E>> extends Sort<E> {
 
     private int heapSize;
 

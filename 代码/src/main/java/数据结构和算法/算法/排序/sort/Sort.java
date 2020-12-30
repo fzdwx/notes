@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
  * @contactMe 980650920@qq.com
  * @description
  */
-public abstract class Sort<E> implements Comparable<Sort> {
+public abstract class Sort<E extends Comparable<E>> implements Comparable<Sort<E>> {
     private final DecimalFormat fmt = new DecimalFormat("#.00");
     protected E[] array;
     private int cmpCount = 0;
@@ -16,7 +16,7 @@ public abstract class Sort<E> implements Comparable<Sort> {
     private long time;
 
     @Override
-    public int compareTo(Sort o) {
+    public int compareTo(Sort<E> o) {
         int i = Math.toIntExact(time - o.time);
         return i == 0 ? cmpCount - o.cmpCount : i;
     }
@@ -38,7 +38,7 @@ public abstract class Sort<E> implements Comparable<Sort> {
 
     protected int cmp(E e1, E e2) {
         cmpCount++;
-        return ((Comparable) e1).compareTo(e2);
+        return e1.compareTo(e2);
     }
 
     protected void swap(int i1, int i2) {
