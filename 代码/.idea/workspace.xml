@@ -8,13 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/观察者模式/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/观察者模式/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/观察者模式/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/观察者模式/SubscriptionSubject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/观察者模式/WeiXinUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/MergeSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/排序.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/排序.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/04-分布式高级2.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/04-分布式高级2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +54,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
-    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -88,8 +85,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="设计模式.行为模式.观察者模式" />
       <recent name="数据结构和算法.算法.排序.sort" />
+      <recent name="设计模式.行为模式.观察者模式" />
       <recent name="数据结构和算法.算法.排序.tools" />
       <recent name="设计模式.行为模式.状态模式.after" />
       <recent name="设计模式.行为模式.状态模式.before" />
@@ -155,7 +152,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (3)">
+  <component name="RunManager" selected="应用程序.Main">
     <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.sort.BinarySearch" />
       <module name="work" />
@@ -260,15 +257,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -282,8 +277,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.Main (3)" />
         <item itemvalue="应用程序.Main" />
+        <item itemvalue="应用程序.Main (3)" />
         <item itemvalue="应用程序.BinarySearch" />
         <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.Main (2)" />
@@ -404,14 +399,8 @@
       <workItem from="1609234190845" duration="110000" />
       <workItem from="1609234396751" duration="2801000" />
       <workItem from="1609286135396" duration="10386000" />
-      <workItem from="1609299851406" duration="2613000" />
-    </task>
-    <task id="LOCAL-00012" summary="装饰者模式">
-      <created>1608514707604</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1608514707604</updated>
+      <workItem from="1609299851406" duration="3256000" />
+      <workItem from="1609375731297" duration="5796000" />
     </task>
     <task id="LOCAL-00013" summary="定义红黑树的辅助方法">
       <created>1608519845721</created>
@@ -749,7 +738,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609299941785</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="观察者模式实现">
+      <created>1609304809589</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1609304809589</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -769,7 +765,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="更新笔记" />
     <MESSAGE value="行为模式-》模板方法模式" />
     <MESSAGE value="hashMap扩容完成+测试" />
     <MESSAGE value="LinkedHashMap -&gt;按照添加顺序遍历" />
@@ -794,7 +789,8 @@
     <MESSAGE value="【20201230】】插入排序小优化" />
     <MESSAGE value="【20201230】】插入排序，使用二分查找优化" />
     <MESSAGE value="插入排序完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="插入排序完成" />
+    <MESSAGE value="观察者模式实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="观察者模式实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

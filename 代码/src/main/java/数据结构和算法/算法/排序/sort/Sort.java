@@ -13,8 +13,8 @@ import java.text.DecimalFormat;
 public abstract class Sort<E extends Comparable<E>> implements Comparable<Sort<E>> {
     private final DecimalFormat fmt = new DecimalFormat("#.00");
     protected E[] array;
-    private int cmpCount = 0;
-    private int swapCount = 0;
+    protected int cmpCount = 0;
+    protected int swapCount = 0;
     private long time;
 
     @Override

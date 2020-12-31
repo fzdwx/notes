@@ -25,8 +25,8 @@ public class Main {
                 new BubbleSort<>(),
                 new SelectionSort<>(),
                 new HeapSort<>(),
-                new InsertSort2<>(),
-                new InsertionSort<>());
+                new InsertionSort<>(),
+                new MergeSort<>());
     }
 
     @SafeVarargs
