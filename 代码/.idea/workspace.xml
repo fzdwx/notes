@@ -76,7 +76,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -253,19 +253,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.Main (1)" />
@@ -400,13 +387,7 @@
       <workItem from="1609299851406" duration="3256000" />
       <workItem from="1609375731297" duration="6539000" />
       <workItem from="1609388822562" duration="2646000" />
-    </task>
-    <task id="LOCAL-00015" summary="红黑树完成，抽取二叉平衡搜索树类">
-      <created>1608525983164</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1608525983164</updated>
+      <workItem from="1609461898500" duration="40000" />
     </task>
     <task id="LOCAL-00016" summary="红黑树调试">
       <created>1608534347177</created>
@@ -744,7 +725,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609393312670</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="更新笔记">
+      <created>1609461916394</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1609461916394</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -764,7 +752,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="LinkedHashMap -&gt;按照添加顺序遍历" />
     <MESSAGE value="实现对应的set" />
     <MESSAGE value="策略模式" />
     <MESSAGE value="堆接口完成" />
@@ -789,7 +776,8 @@
     <MESSAGE value="观察者模式实现" />
     <MESSAGE value="归并排序" />
     <MESSAGE value="中介者模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="中介者模式" />
+    <MESSAGE value="更新笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新笔记" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
