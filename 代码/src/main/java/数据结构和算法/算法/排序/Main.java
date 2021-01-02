@@ -13,7 +13,7 @@ import java.util.Random;
  * @description
  */
 public class Main {
-    public static final Integer ARRAY_SIZE = 500000;
+    public static final Integer ARRAY_SIZE =10000;
     public static Integer[] ascSort;
 
     public static void main(String[] args) {

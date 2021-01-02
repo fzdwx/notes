@@ -14,28 +14,28 @@ public class ShellSort<E extends Comparable<E>> extends Sort<E> {
 
     @Override
     protected E[] sort() {
-                List<Integer> stepSequence = getSedgewickStepSequence(); //{8,4,2,1}
-                for (Integer step : stepSequence) {
-                    sort(step);
-                }
-//        shellsortIS((Integer[]) array, array.length);
+        List<Integer> stepSequence = getSedgewickStepSequence(); //{8,4,2,1}
+        for (Integer step : stepSequence) {
+            sort(step);
+        }
+        //        shellsortIS((Integer[]) array, array.length);
         return array;
     }
 
     int shellsortIS(Integer[] p, int n) {
-        int op=0;
-        int h,i,j,t,temp;
-        for(t=1;t*t<=n/4;t+=t);
-        for(h=n/4;t>0;t/=2,h=t*t-(3*t)/2+1){
+        int op = 0;
+        int h, i, j, t, temp;
+        for (t = 1; t * t <= n / 4; t += t) ;
+        for (h = n / 4; t > 0; t /= 2, h = t * t - (3 * t) / 2 + 1) {
             /*h=1,8,23,77,281,1073,4193,16577,
              *65921,262913,1050113...4^i+3*2^(i-1）+1*/
-            for(i=h;i<n;i++){
-                temp=p[i];
-                for(j=i-h;j>=0&&p[j]>temp;j-=h){
-                    p[j+h]=p[j];
+            for (i = h; i < n; i++) {
+                temp = p[i];
+                for (j = i - h; j >= 0 && p[j] > temp; j -= h) {
+                    p[j + h] = p[j];
                     op++;
                 }
-                p[j+h]=temp;
+                p[j + h] = temp;
                 op++;
             }
         }
