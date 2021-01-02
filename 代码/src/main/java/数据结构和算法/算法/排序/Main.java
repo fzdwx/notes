@@ -13,7 +13,7 @@ import java.util.Random;
  * @description
  */
 public class Main {
-    public static final Integer ARRAY_SIZE = 20000;
+    public static final Integer ARRAY_SIZE = 500000;
     public static Integer[] ascSort;
 
     public static void main(String[] args) {
@@ -25,9 +25,10 @@ public class Main {
 //                new BubbleSort<>(),
 //                new SelectionSort<>(),
                 new HeapSort<>(),
-                new InsertionSort<>(),
-                new MergeSort<>()
-                , new QuickSort<>()
+//                new InsertionSort<>(),
+                new MergeSort<>(),
+                new QuickSort<>(),
+                new ShellSort<>()
         );
     }
 

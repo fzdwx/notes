@@ -10,28 +10,40 @@ class BubbleSortTest {
     };
 
     public static void main(String[] args) {
-        // 插入排序,用二分法找出要插入的位置
-        for (int begin = 1; begin < array.length; begin++) {
-            // 要插入的元素
-            Integer insert = array[begin];
-            // 二分法查找
-            int l = 0;
-            int r = begin;
-            while (l < r) {
-                int mid = (l + r) >> 1;
-                if (array[mid] > array[begin]) {
-                    r = mid;
+        sort(0, array.length);
+        System.out.println(Arrays.toString(array));
+    }
+
+    private static void sort(int begin, int end) {
+        if (end - begin < 2) return;
+        int mid = getPivotIdx(begin, end);
+
+        sort(begin, mid);
+        sort(mid + 1, end);
+    }
+
+    private static int getPivotIdx(int begin, int end) {
+        Integer pivot = array[begin];
+        end--;
+        while (begin < end) {
+            while (begin < end) {
+                if (pivot < array[end]) {  // 大于轴点放后面->不动
+                    end--;
                 } else {
-                    l = mid + 1;
+                    array[begin++] = array[end];
+                    break;
                 }
             }
-            // 复制数组
-            // [l,begin)
-            for (int i = begin; i > l; i--) {
-                array[i] = array[i - 1];
+            while (begin < end) {
+                if (pivot > array[begin]) {  // 小于放前面->不动
+                    begin++;
+                } else {
+                    array[end--] = array[begin];
+                    break;
+                }
             }
-            array[l] = insert;
         }
-        System.out.println(Arrays.toString(array));
+        array[begin] = pivot;
+        return begin;
     }
 }

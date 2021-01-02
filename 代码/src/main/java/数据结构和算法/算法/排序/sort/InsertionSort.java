@@ -25,9 +25,6 @@ public class InsertionSort<E extends Comparable<E>> extends Sort<E> {
             }
             // 2.将[l,begin) 右移一位
             if (begin - l >= 0) System.arraycopy(array, l, array, l + 1, begin - l);
-//            for (int i = begin; i >l ; i--) {
-//                array[i] = array[i-1];
-//            }
             // 3.插入
             array[l] = insertVal;
         }
