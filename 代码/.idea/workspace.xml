@@ -7,11 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新设计模式笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/nocmp/CountingSort.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="计算排序">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/Sort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/nocmp/CountingSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/sort/nocmp/CountingSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/排序.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/排序.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -411,14 +409,7 @@
       <workItem from="1609504173888" duration="69000" />
       <workItem from="1609548890698" duration="6410000" />
       <workItem from="1609562085219" duration="4713000" />
-      <workItem from="1609637166893" duration="5019000" />
-    </task>
-    <task id="LOCAL-00024" summary="添加功能完成">
-      <created>1608788559003</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1608788559003</updated>
+      <workItem from="1609637166893" duration="7108000" />
     </task>
     <task id="LOCAL-00025" summary="添加功能完成">
       <created>1608788613813</created>
@@ -756,7 +747,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609640990473</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="计算排序">
+      <created>1609642400455</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1609642400455</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -788,7 +786,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="冒泡排序完成" />
     <MESSAGE value="冒泡排序优化测试方案" />
     <MESSAGE value="冒泡排序优化方案完成" />
     <MESSAGE value="选择排序完成" />
@@ -813,7 +810,8 @@
     <MESSAGE value="更新结构" />
     <MESSAGE value="更新订单提交笔记" />
     <MESSAGE value="更新设计模式笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新设计模式笔记" />
+    <MESSAGE value="计算排序" />
+    <option name="LAST_COMMIT_MESSAGE" value="计算排序" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -822,6 +820,11 @@
           <url>jar://$PROJECT_DIR$/../../jdk-8/src.zip!/java/util/HashMap.java</url>
           <line>156</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/Main.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.2.8.RELEASE/spring-beans-5.2.8.RELEASE-sources.jar!/org/springframework/beans/factory/support/AbstractBeanFactory.java</url>
