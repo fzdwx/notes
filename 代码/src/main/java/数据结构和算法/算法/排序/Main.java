@@ -1,10 +1,10 @@
 package 数据结构和算法.算法.排序;
 
-import 数据结构和算法.算法.排序.sort.*;
+import 数据结构和算法.算法.排序.sort.Sort;
 import 数据结构和算法.算法.排序.sort.cmp.HeapSort;
 import 数据结构和算法.算法.排序.sort.cmp.MergeSort;
 import 数据结构和算法.算法.排序.sort.cmp.QuickSort;
-import 数据结构和算法.算法.排序.sort.cmp.ShellSort;
+import 数据结构和算法.算法.排序.sort.nocmp.CountingSort;
 import 数据结构和算法.算法.排序.tools.Asserts;
 
 import java.util.Arrays;
@@ -17,7 +17,7 @@ import java.util.Random;
  * @description
  */
 public class Main {
-    public static final Integer ARRAY_SIZE =10000;
+    public static final Integer ARRAY_SIZE =500000;
     public static Integer[] ascSort;
 
     public static void main(String[] args) {
@@ -32,7 +32,8 @@ public class Main {
 //                new InsertionSort<>(),
                 new MergeSort<>(),
                 new QuickSort<>(),
-                new ShellSort<>()
+//                new ShellSort<>(),
+                new CountingSort()
         );
     }
 
