@@ -13,45 +13,25 @@ class BubbleSortTest {
     };
 
     public static void main(String[] args) {
-        sort(0, array.length);
+        for (Integer step : stepArray) {
+            shell(step);
+        }
         System.out.println(Arrays.toString(array));
     }
 
-    private static void sort(int begin, int end) {
-        if (end - begin < 2) return;
-        int mid = getPivot(begin, end);
-        sort(begin, mid);
-        sort(mid + 1, end);
-    }
-
-    private static int getPivot(int begin, int end) {
-        Integer pivot = array[begin];
-
-        end--;
-        while (end > begin) {
-
-            while (end > begin) {
-                if (array[end] > pivot) {
-                    end--;
-                } else {
-                    array[begin++] = array[end];
-                    break;
-                }
-            }
-
-            while (end > begin) {
-                if (array[begin] < pivot) {
-                    begin++;
-                } else {
-                    array[end--] = array[begin];
-                    break;
+    private static void shell(Integer step) {
+        for (int col = 0; col < step; col++) {
+            for (int i = col + step; i < array.length; i += step) {
+                int cur = i;
+                while (cur > col && array[cur] < array[cur - step]) {
+                    int temp = array[cur];
+                    array[cur] = array[cur - step];
+                    array[cur - step] = temp;
+                    cur -= step;
                 }
             }
         }
-
-
-        array[begin] = pivot;
-        return begin;
     }
+
 
 }
