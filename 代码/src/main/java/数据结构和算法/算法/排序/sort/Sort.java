@@ -1,5 +1,8 @@
 package 数据结构和算法.算法.排序.sort;
 
+import 数据结构和算法.算法.排序.sort.cmp.SelectionSort;
+import 数据结构和算法.算法.排序.tools.Student;
+
 import java.text.DecimalFormat;
 
 /**
@@ -65,16 +68,16 @@ public abstract class Sort<E extends Comparable<E>> implements Comparable<Sort<E
 //        if (this instanceof CountingSort) return true;
 //        if (this instanceof ShellSort) return false;
         if (this instanceof SelectionSort) return false;
-//        Student[] students = new Student[20];
-//        for (int i = 0; i < students.length; i++) {
-//            students[i] = new Student(i * 10, 10);
-//        }
-//        this.sort((E[]) students);
-//        for (int i = 1; i < students.length; i++) {
-//            int score = students[i].score;
-//            int prevScore = students[i - 1].score;
-//            if (score != prevScore + 10) return false;
-//        }
+        Student[] students = new Student[20];
+        for (int i = 0; i < students.length; i++) {
+            students[i] = new Student(i * 10, 10);
+        }
+        this.sort((E[]) students);
+        for (int i = 1; i < students.length; i++) {
+            int score = students[i].score;
+            int prevScore = students[i - 1].score;
+            if (score != prevScore + 10) return false;
+        }
         return true;
     }
 

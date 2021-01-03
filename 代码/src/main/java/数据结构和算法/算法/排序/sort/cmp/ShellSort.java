@@ -1,4 +1,6 @@
-package 数据结构和算法.算法.排序.sort;
+package 数据结构和算法.算法.排序.sort.cmp;
+
+import 数据结构和算法.算法.排序.sort.Sort;
 
 import java.util.ArrayList;
 import java.util.List;

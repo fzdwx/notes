@@ -1,6 +1,10 @@
 package 数据结构和算法.算法.排序;
 
 import 数据结构和算法.算法.排序.sort.*;
+import 数据结构和算法.算法.排序.sort.cmp.HeapSort;
+import 数据结构和算法.算法.排序.sort.cmp.MergeSort;
+import 数据结构和算法.算法.排序.sort.cmp.QuickSort;
+import 数据结构和算法.算法.排序.sort.cmp.ShellSort;
 import 数据结构和算法.算法.排序.tools.Asserts;
 
 import java.util.Arrays;

@@ -6,7 +6,10 @@ class BubbleSortTest {
 
     static Integer[] leftArray;
     static Integer[] array = {
-            4, 2, 1, 5, 3, 7, 6, 8, 9
+            4, 2, 1, 5, 3, 7, 6, 8
+    };
+    static Integer[] stepArray = {
+            4, 2, 1
     };
 
     public static void main(String[] args) {
@@ -16,26 +19,28 @@ class BubbleSortTest {
 
     private static void sort(int begin, int end) {
         if (end - begin < 2) return;
-        int mid = getPivotIdx(begin, end);
-
+        int mid = getPivot(begin, end);
         sort(begin, mid);
         sort(mid + 1, end);
     }
 
-    private static int getPivotIdx(int begin, int end) {
+    private static int getPivot(int begin, int end) {
         Integer pivot = array[begin];
+
         end--;
-        while (begin < end) {
-            while (begin < end) {
-                if (pivot < array[end]) {  // 大于轴点放后面->不动
+        while (end > begin) {
+
+            while (end > begin) {
+                if (array[end] > pivot) {
                     end--;
                 } else {
                     array[begin++] = array[end];
                     break;
                 }
             }
-            while (begin < end) {
-                if (pivot > array[begin]) {  // 小于放前面->不动
+
+            while (end > begin) {
+                if (array[begin] < pivot) {
                     begin++;
                 } else {
                     array[end--] = array[begin];
@@ -43,7 +48,10 @@ class BubbleSortTest {
                 }
             }
         }
+
+
         array[begin] = pivot;
         return begin;
     }
+
 }
