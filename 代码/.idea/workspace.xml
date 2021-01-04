@@ -8,13 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="基数排序-未完成">
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/备忘录模式/white/GameRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/备忘录模式/white/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/备忘录模式/white/RoleStateCaretaker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/设计模式/行为模式/备忘录模式/white/RoleStateMemento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/数据结构和算法/算法/排序/sort/BubbleSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/数据结构和算法/算法/排序/sort/BubbleSortTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/设计模式/行为模式.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/04-分布式高级2.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/04-分布式高级2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +78,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -157,7 +153,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (1)">
+  <component name="RunManager" selected="应用程序.BubbleSortTest">
     <configuration name="BubbleSortTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.sort.BubbleSortTest" />
       <module name="work" />
@@ -262,15 +258,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -284,8 +278,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.BubbleSortTest" />
+        <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.ShellSort" />
         <item itemvalue="应用程序.Main (4)" />
@@ -416,14 +410,9 @@
       <workItem from="1609548890698" duration="6410000" />
       <workItem from="1609562085219" duration="4713000" />
       <workItem from="1609637166893" duration="9843000" />
-      <workItem from="1609656432726" duration="3321000" />
-    </task>
-    <task id="LOCAL-00028" summary="hashMap接口完成">
-      <created>1608861596653</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1608861596653</updated>
+      <workItem from="1609656432726" duration="4395000" />
+      <workItem from="1609722717519" duration="190000" />
+      <workItem from="1609722939331" duration="2625000" />
     </task>
     <task id="LOCAL-00029" summary="put()和node()重构">
       <created>1608867781755</created>
@@ -761,7 +750,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609656464016</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="备忘录模式">
+      <created>1609660548137</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1609660548137</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -793,7 +789,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="抽取公共类以及测试代码" />
     <MESSAGE value="行为模式完成" />
     <MESSAGE value="状态模式完成" />
     <MESSAGE value="增加强制实现Comparable接口" />
@@ -818,7 +813,8 @@
     <MESSAGE value="计算排序优化" />
     <MESSAGE value="基数排序-未完成" />
     <MESSAGE value="补全排序" />
-    <option name="LAST_COMMIT_MESSAGE" value="补全排序" />
+    <MESSAGE value="备忘录模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="备忘录模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

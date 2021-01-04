@@ -22,16 +22,12 @@ class BubbleSortTest {
     private static void shell(Integer step) {
         for (int col = 0; col < step; col++) {
             for (int i = col + step; i < array.length; i += step) {
-                int cur = i;
-                while (cur > col && array[cur] < array[cur - step]) {
-                    int temp = array[cur];
-                    array[cur] = array[cur - step];
-                    array[cur - step] = temp;
-                    cur -= step;
+                if (array[i] < array[i - step]) {
+                    int temp = array[i];
+                    array[i] = array[i - step];
+                    array[i - step] = temp;
                 }
             }
         }
     }
-
-
 }
