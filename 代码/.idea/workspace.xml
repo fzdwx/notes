@@ -8,9 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="基数排序-未完成">
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/并查集/QuickFind.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/并查集/QuickUnion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/并查集/UnionFind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/数据结构和算法/算法/排序/sort/BubbleSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/数据结构和算法/算法/排序/sort/BubbleSortTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/04-分布式高级2.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/04-分布式高级2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,16 +80,16 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="数据结构和算法.算法.并查集" />
       <recent name="设计模式.行为模式.备忘录模式.white" />
       <recent name="数据结构和算法.算法.排序.sort.nocmp" />
       <recent name="数据结构和算法.算法.排序.sort" />
       <recent name="设计模式.行为模式.迭代器模式" />
-      <recent name="设计模式.行为模式.中介者模式" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\算法\排序" />
@@ -153,7 +155,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.BubbleSortTest">
+  <component name="RunManager" selected="应用程序.QuickFind">
     <configuration name="BubbleSortTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.sort.BubbleSortTest" />
       <module name="work" />
@@ -173,19 +175,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="设计模式.行为模式.备忘录模式.white.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.行为模式.中介者模式.Main" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="设计模式.行为模式.中介者模式.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -245,6 +234,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="QuickFind" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.并查集.QuickFind" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.算法.并查集.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ShellSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.sort.ShellSort" />
       <module name="work" />
@@ -270,19 +272,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.Main (4)" />
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.BubbleSortTest" />
       <item itemvalue="应用程序.ShellSort" />
       <item itemvalue="应用程序.Main (1)" />
+      <item itemvalue="应用程序.QuickFind" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.QuickFind" />
         <item itemvalue="应用程序.BubbleSortTest" />
         <item itemvalue="应用程序.Main (1)" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.ShellSort" />
-        <item itemvalue="应用程序.Main (4)" />
       </list>
     </recent_temporary>
   </component>
@@ -412,14 +414,7 @@
       <workItem from="1609637166893" duration="9843000" />
       <workItem from="1609656432726" duration="4395000" />
       <workItem from="1609722717519" duration="190000" />
-      <workItem from="1609722939331" duration="2625000" />
-    </task>
-    <task id="LOCAL-00029" summary="put()和node()重构">
-      <created>1608867781755</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1608867781755</updated>
+      <workItem from="1609722939331" duration="6178000" />
     </task>
     <task id="LOCAL-00030" summary="put()和node()重构">
       <created>1608867803241</created>
@@ -757,7 +752,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609660548137</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="笔记更新">
+      <created>1609726594320</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1609726594321</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -789,7 +791,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="行为模式完成" />
     <MESSAGE value="状态模式完成" />
     <MESSAGE value="增加强制实现Comparable接口" />
     <MESSAGE value="【2020/12/30 8:24】】增加稳定性" />
@@ -814,7 +815,8 @@
     <MESSAGE value="基数排序-未完成" />
     <MESSAGE value="补全排序" />
     <MESSAGE value="备忘录模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="备忘录模式" />
+    <MESSAGE value="笔记更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="笔记更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
