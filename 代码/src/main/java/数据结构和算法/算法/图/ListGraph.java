@@ -4,6 +4,7 @@ import 数据结构和算法.数据结构.hash.HashMap;
 import 数据结构和算法.数据结构.map.Map;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.Set;
 
@@ -78,12 +79,39 @@ public class ListGraph<V, E> implements Graph<V, E> {
 
     @Override
     public void removeVertex(V v) {
+        Vertex<V, E> vertex = vertices.remove(v);
+        if (vertex == null) return;  // 不存在
+        for (Iterator<Edge<V, E>> iterator = vertex.fromEdges.iterator(); iterator.hasNext();) {
+            Edge<V, E> edge = iterator.next();
+            edge.to.toEdges.remove(edge);
+            // 将当前遍历到的元素edge从集合vertex.outEdges中删掉
+            iterator.remove();
+            edges.remove(edge);
+        }
+
+        for (Iterator<Edge<V, E>> iterator = vertex.toEdges.iterator(); iterator.hasNext();) {
+            Edge<V, E> edge = iterator.next();
+            edge.from.fromEdges.remove(edge);
+            // 将当前遍历到的元素edge从集合vertex.inEdges中删掉
+            iterator.remove();
+            edges.remove(edge);
+        }
 
     }
 
     @Override
     public void removeEdge(V from, V to) {
-
+        // 1.确定这两个定点存在
+        Vertex<V, E> fV = vertices.get(from);
+        Vertex<V, E> tV = vertices.get(to);
+        if (fV == null) return;
+        if (tV == null) return;
+        // 2.如果这2个顶点有边连接就删除
+        Edge<V, E> e = new Edge<>(fV, tV, null);
+        if (fV.fromEdges.remove(e)) {
+            tV.toEdges.remove(e);
+            edges.remove(e);
+        }
     }
 
     /**

@@ -17,5 +17,8 @@ public class Main {
         g.addEdge("v0", "v4", 6);
 
         g.print();
+        System.out.println("*******************");
+        g.removeVertex("v0");
+        g.print();
     }
 }
