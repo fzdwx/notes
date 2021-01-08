@@ -26,4 +26,5 @@ public interface Graph<V, E> {
     void removeEdge(V from, V to);
 
     List<ListGraph.Vertex<V, E>> bfs(V root);
+    List<ListGraph.Vertex<V, E>> dfs(V root);
 }

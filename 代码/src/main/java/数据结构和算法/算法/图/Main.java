@@ -16,6 +16,8 @@ public class Main {
         g.addEdge("v3", "v4", 1);
         g.addEdge("v0", "v4", 6);
         System.out.println(g.bfs("v1"));
+        System.out.println("====");
+        g.dfs("v1");
 
     }
 }

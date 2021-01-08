@@ -114,8 +114,8 @@ public class ListGraph<V, E> implements Graph<V, E> {
     @Override
     public List<Vertex<V, E>> bfs(V root) {
         List<Vertex<V, E>> data = new ArrayList<>();
-
         Set<Vertex<V, E>> visit = new HashSet<>();
+
         Vertex<V, E> v = vertices.get(root);
         if (v == null) return data;
         Queue<Vertex<V, E>> queue = new LinkedList<>();
@@ -123,7 +123,7 @@ public class ListGraph<V, E> implements Graph<V, E> {
         visit.add(v); // 把起始节点加入队列
         while (!queue.isEmpty()) {
             Vertex<V, E> poll = queue.poll();
-            data.add(poll);
+            data.add(poll);     // 深度遍历出来的节点
             for (Edge<V, E> fE : poll.fromEdges) {
                 if (visit.contains(fE.to)) continue; // 判断是否遍历过
                 queue.offer(fE.to); // 入队以当前顶点为起点的边的终点
@@ -132,6 +132,26 @@ public class ListGraph<V, E> implements Graph<V, E> {
         }
         return data;
     }
+
+    @Override
+    public List<Vertex<V, E>> dfs(V root) {
+        List<Vertex<V, E>> data = new ArrayList<>();
+        Set<Vertex<V, E>> visit = new HashSet<>();
+
+        Vertex<V, E> begin = vertices.get(root);
+        if (begin == null) return data;
+        dfs(begin,visit,data);
+        return data;
+    }
+
+    private void dfs(Vertex<V, E> begin, Set<Vertex<V, E>> visit, List<Vertex<V, E>> data) {
+        data.add(begin);
+        for (Edge<V, E> edge : begin.fromEdges) {
+            if (visit.contains(edge.to))continue;
+            dfs(edge.to,visit,data);
+        }
+    }
+
 
     /**
      * 顶点

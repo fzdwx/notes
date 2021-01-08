@@ -12,6 +12,8 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/ListGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/数据结构和算法/算法/排序/sort/BubbleSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/数据结构和算法/算法/排序/sort/BubbleSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/图.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/图.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,6 +261,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.BubbleSortTest" />
@@ -407,13 +420,7 @@
       <workItem from="1609745420592" duration="1929000" />
       <workItem from="1609810527697" duration="10304000" />
       <workItem from="1609892442337" duration="5762000" />
-    </task>
-    <task id="LOCAL-00038" summary="LinkedHashMap -&gt;按照添加顺序遍历">
-      <created>1608963976081</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1608963976081</updated>
+      <workItem from="1610068010519" duration="5910000" />
     </task>
     <task id="LOCAL-00039" summary="实现对应的set">
       <created>1608964290562</created>
@@ -751,7 +758,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609894942342</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="图的深度优先遍历">
+      <created>1610068102797</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1610068102797</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -783,7 +797,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="【20201230】】插入排序小优化" />
     <MESSAGE value="【20201230】】插入排序，使用二分查找优化" />
     <MESSAGE value="插入排序完成" />
     <MESSAGE value="观察者模式实现" />
@@ -808,7 +821,8 @@
     <MESSAGE value="图的基本完成" />
     <MESSAGE value="带权值的有向图完成" />
     <MESSAGE value="更新笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新笔记" />
+    <MESSAGE value="图的深度优先遍历" />
+    <option name="LAST_COMMIT_MESSAGE" value="图的深度优先遍历" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

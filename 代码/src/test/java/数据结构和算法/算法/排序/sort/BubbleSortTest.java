@@ -14,7 +14,7 @@ class BubbleSortTest {
 
     public static void main(String[] args) {
         for (Integer step : stepArray) {
-            shell(step);
+            sort(step);
         }
         System.out.println(Arrays.toString(array));
     }
@@ -23,15 +23,27 @@ class BubbleSortTest {
         for (int col = 0; col < step; col++) {
             for (int i = col + step; i < array.length; i += step) {
                 int cur = i;
-                while (cur > col && array[i] < array[i - step]) {
-                    int temp = array[i];
-                    array[i] = array[i -step];
-                    array[i - step] = temp;
+                while (cur > col && array[cur] > array[cur - step]) {
+                    Integer temp = array[cur];
+                    array[cur] = array[cur - step];
+                    array[cur - step] = temp;
+                    cur -= temp;
+                }
+            }
+        }
+    }
+    private static void sort(Integer step) {
+        for (int col = 0; col < step; col++) { // 具体元素的索引：col  + row * step
+            for (int i = col + step; i < array.length; i += step) {
+                int cur = i;
+                while (cur > col &&  array[cur] < array[cur - step]) {
+                    Integer temp = array[cur];
+                    array[cur] = array[cur - step];
+                    array[cur - step] = temp;
                     cur -= step;
                 }
             }
         }
     }
-
 
 }
