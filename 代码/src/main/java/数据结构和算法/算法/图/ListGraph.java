@@ -3,10 +3,7 @@ package 数据结构和算法.算法.图;
 import 数据结构和算法.数据结构.hash.HashMap;
 import 数据结构和算法.数据结构.map.Map;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author like
@@ -81,7 +78,7 @@ public class ListGraph<V, E> implements Graph<V, E> {
     public void removeVertex(V v) {
         Vertex<V, E> vertex = vertices.remove(v);
         if (vertex == null) return;  // 不存在
-        for (Iterator<Edge<V, E>> iterator = vertex.fromEdges.iterator(); iterator.hasNext();) {
+        for (Iterator<Edge<V, E>> iterator = vertex.fromEdges.iterator(); iterator.hasNext(); ) {
             Edge<V, E> edge = iterator.next();
             edge.to.toEdges.remove(edge);
             // 将当前遍历到的元素edge从集合vertex.outEdges中删掉
@@ -89,7 +86,7 @@ public class ListGraph<V, E> implements Graph<V, E> {
             edges.remove(edge);
         }
 
-        for (Iterator<Edge<V, E>> iterator = vertex.toEdges.iterator(); iterator.hasNext();) {
+        for (Iterator<Edge<V, E>> iterator = vertex.toEdges.iterator(); iterator.hasNext(); ) {
             Edge<V, E> edge = iterator.next();
             edge.from.fromEdges.remove(edge);
             // 将当前遍历到的元素edge从集合vertex.inEdges中删掉
@@ -112,6 +109,28 @@ public class ListGraph<V, E> implements Graph<V, E> {
             tV.toEdges.remove(e);
             edges.remove(e);
         }
+    }
+
+    @Override
+    public List<Vertex<V, E>> bfs(V root) {
+        List<Vertex<V, E>> data = new ArrayList<>();
+
+        Set<Vertex<V, E>> visit = new HashSet<>();
+        Vertex<V, E> v = vertices.get(root);
+        if (v == null) return data;
+        Queue<Vertex<V, E>> queue = new LinkedList<>();
+        queue.offer(v);
+        visit.add(v); // 把起始节点加入队列
+        while (!queue.isEmpty()) {
+            Vertex<V, E> poll = queue.poll();
+            data.add(poll);
+            for (Edge<V, E> fE : poll.fromEdges) {
+                if (visit.contains(fE.to)) continue; // 判断是否遍历过
+                queue.offer(fE.to); // 入队以当前顶点为起点的边的终点
+                visit.add(fE.to);  // 标记遍历过了
+            }
+        }
+        return data;
     }
 
     /**
