@@ -1,7 +1,5 @@
 package 数据结构和算法.算法.图;
 
-import java.util.List;
-
 /**
  * @author like
  * @date 2021-01-05 11:01
@@ -25,6 +23,14 @@ public interface Graph<V, E> {
 
     void removeEdge(V from, V to);
 
-    List<ListGraph.Vertex<V, E>> bfs(V root);
-    List<ListGraph.Vertex<V, E>> dfs(V root);
+    void bfs(V root, VertexVisitor<V> visitor);
+
+    void dfs(V root, VertexVisitor<V> visitor);
+
+    void dfs2(V root, VertexVisitor<V> visitor);
+
+    interface VertexVisitor<V> {
+        boolean visit(V v);
+    }
+
 }

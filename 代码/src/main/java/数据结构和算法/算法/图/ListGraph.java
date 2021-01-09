@@ -112,44 +112,65 @@ public class ListGraph<V, E> implements Graph<V, E> {
     }
 
     @Override
-    public List<Vertex<V, E>> bfs(V root) {
-        List<Vertex<V, E>> data = new ArrayList<>();
+    public void bfs(V root, VertexVisitor<V> visitor) {
         Set<Vertex<V, E>> visit = new HashSet<>();
 
         Vertex<V, E> v = vertices.get(root);
-        if (v == null) return data;
+        if (v == null) return;
         Queue<Vertex<V, E>> queue = new LinkedList<>();
         queue.offer(v);
         visit.add(v); // 把起始节点加入队列
         while (!queue.isEmpty()) {
             Vertex<V, E> poll = queue.poll();
-            data.add(poll);     // 深度遍历出来的节点
+            if (visitor.visit(poll.value)) return;  // 訪問
             for (Edge<V, E> fE : poll.fromEdges) {
                 if (visit.contains(fE.to)) continue; // 判断是否遍历过
                 queue.offer(fE.to); // 入队以当前顶点为起点的边的终点
                 visit.add(fE.to);  // 标记遍历过了
             }
         }
-        return data;
     }
 
     @Override
-    public List<Vertex<V, E>> dfs(V root) {
-        List<Vertex<V, E>> data = new ArrayList<>();
+    public void dfs(V root, VertexVisitor<V> visitor) {
+        Vertex<V, E> begin = vertices.get(root);
+        if (begin == null) return;
+
         Set<Vertex<V, E>> visit = new HashSet<>();
 
-        Vertex<V, E> begin = vertices.get(root);
-        if (begin == null) return data;
-        dfs(begin,visit,data);
-        return data;
+        dfs(begin, visit, visitor);
     }
 
-    private void dfs(Vertex<V, E> begin, Set<Vertex<V, E>> visit, List<Vertex<V, E>> data) {
-        data.add(begin);
+    @Override
+    public void dfs2(V root, VertexVisitor<V> visitor) {
+        Vertex<V, E> begin = vertices.get(root);
+        if (begin == null) return;
+
+        Set<Vertex<V, E>> visit = new HashSet<>();
+        Stack<Vertex<V, E>> stack = new Stack<>();
+
+        stack.push(begin);
+        if (visitor.visit(begin.value)) return;  // 訪問
+        visit.add(begin); // 標記已經訪問過了
+        while (!stack.isEmpty()) {
+            Vertex<V, E> v = stack.pop();
+            for (Edge<V, E> edge : v.fromEdges) {
+                if (visit.contains(edge.to)) continue;
+                stack.push(edge.from);
+                stack.push(edge.to);
+
+                visit.add(edge.to);
+                if (visitor.visit(edge.to.value)) return; // 訪問
+            }
+        }
+    }
+
+    private void dfs(Vertex<V, E> begin, Set<Vertex<V, E>> visit, VertexVisitor<V> visitor) {
+        if (visitor.visit(begin.value)) return;  // 訪問
         visit.add(begin);
         for (Edge<V, E> edge : begin.fromEdges) {
-            if (visit.contains(edge.to))continue;
-            dfs(edge.to,visit,data);
+            if (visit.contains(edge.to)) continue;
+            dfs(edge.to, visit, visitor);
         }
     }
 

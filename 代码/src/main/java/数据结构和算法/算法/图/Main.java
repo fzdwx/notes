@@ -15,9 +15,19 @@ public class Main {
         g.addEdge("v2", "v3", 5);
         g.addEdge("v3", "v4", 1);
         g.addEdge("v0", "v4", 6);
-        System.out.println(g.bfs("v1"));
-        System.out.println("====");
-        System.out.println(g.dfs("v1"));
-
+        g.bfs("v1", s -> {
+            System.out.print(s);
+            return false;
+        });
+        System.out.println();
+        g.dfs("v1", s -> {
+            System.out.print(s);
+            return false;
+        });
+        System.out.println();
+        g.dfs2("v1", s -> {
+            System.out.print(s);
+            return false;
+        });
     }
 }
