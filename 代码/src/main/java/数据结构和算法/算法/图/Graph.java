@@ -1,5 +1,7 @@
 package 数据结构和算法.算法.图;
 
+import java.util.List;
+
 /**
  * @author like
  * @date 2021-01-05 11:01
@@ -29,6 +31,10 @@ public interface Graph<V, E> {
 
     void dfs2(V root, VertexVisitor<V> visitor);
 
+    /**
+     * 拓扑排序,必须是有向无环图
+     */
+    List<V> topologicalSort();
     interface VertexVisitor<V> {
         boolean visit(V v);
     }

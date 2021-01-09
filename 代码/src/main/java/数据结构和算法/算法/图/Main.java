@@ -8,26 +8,22 @@ package 数据结构和算法.算法.图;
  */
 public class Main {
     public static void main(String[] args) {
-        Graph<String, Integer> g = new ListGraph<>();
-        g.addEdge("v1", "v0", 9);
-        g.addEdge("v1", "v2", 3);
-        g.addEdge("v2", "v0", 2);
-        g.addEdge("v2", "v3", 5);
-        g.addEdge("v3", "v4", 1);
-        g.addEdge("v0", "v4", 6);
-        g.bfs("v1", s -> {
-            System.out.print(s);
-            return false;
-        });
-        System.out.println();
-        g.dfs("v1", s -> {
-            System.out.print(s);
-            return false;
-        });
-        System.out.println();
-        g.dfs2("v1", s -> {
-            System.out.print(s);
-            return false;
-        });
+        Graph<Object, Double> g = directedGraph(Data.TOPO);
+        System.out.println(g.topologicalSort());
+    }
+
+    private static Graph<Object, Double> directedGraph(Object[][] data) {
+        Graph<Object, Double> graph = new ListGraph<>();
+        for (Object[] edge : data) {
+            if (edge.length == 1) {
+                graph.addVertex(edge[0]);
+            } else if (edge.length == 2) {
+                graph.addEdge(edge[0], edge[1]);
+            } else if (edge.length == 3) {
+                double weight = Double.parseDouble(edge[2].toString());
+                graph.addEdge(edge[0], edge[1], weight);
+            }
+        }
+        return graph;
     }
 }

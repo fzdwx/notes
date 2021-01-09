@@ -1,7 +1,5 @@
 package 数据结构和算法.算法.图;
 
-import 数据结构和算法.数据结构.hash.HashMap;
-import 数据结构和算法.数据结构.map.Map;
 
 import java.util.*;
 
@@ -14,17 +12,17 @@ import java.util.*;
 public class ListGraph<V, E> implements Graph<V, E> {
     private Map<V, Vertex<V, E>> vertices = new HashMap<>();
     private Set<Edge<V, E>> edges = new HashSet<>();
+    private Map<Vertex<V, E>, Integer> ins = new HashMap<>();
 
     @Override
     public void print() {
-        vertices.traversal((key, value) -> {
+        vertices.forEach((key, value) -> {
             System.out.println(key);
             System.out.println("==={out}===");
             System.out.println(value.fromEdges);
             System.out.println("==={in}===");
             System.out.println(value.toEdges);
             System.out.println("=================");
-            return false;
         });
         edges.forEach(System.out::println);
     }
@@ -163,6 +161,36 @@ public class ListGraph<V, E> implements Graph<V, E> {
                 if (visitor.visit(edge.to.value)) return; // 訪問
             }
         }
+    }
+
+    @Override
+    public List<V> topologicalSort() {
+        List<V> list = new ArrayList<>();
+        Queue<Vertex<V, E>> queue = new LinkedList<>();
+
+        // 1.将所有度为0的入队
+        vertices.forEach((v, vertex) -> {
+            int size = vertex.toEdges.size();
+            if (size == 0) {
+                queue.offer(vertex);
+            } else {
+                ins.put(vertex, size); // 記錄度
+            }
+        });
+
+        while (!queue.isEmpty()) {
+            Vertex<V, E> poll = queue.poll();
+            list.add(poll.value);  // 访问
+            for (Edge<V, E> edge : poll.fromEdges) {
+                int in = ins.get(edge.to) - 1;
+                if (in == 0) {
+                    queue.offer(edge.to);
+                } else {
+                    ins.put(edge.to, in);
+                }
+            }
+        }
+        return list;
     }
 
     private void dfs(Vertex<V, E> begin, Set<Vertex<V, E>> visit, VertexVisitor<V> visitor) {
