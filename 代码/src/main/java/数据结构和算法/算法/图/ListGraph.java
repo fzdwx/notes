@@ -146,6 +146,7 @@ public class ListGraph<V, E> implements Graph<V, E> {
 
     private void dfs(Vertex<V, E> begin, Set<Vertex<V, E>> visit, List<Vertex<V, E>> data) {
         data.add(begin);
+        visit.add(begin);
         for (Edge<V, E> edge : begin.fromEdges) {
             if (visit.contains(edge.to))continue;
             dfs(edge.to,visit,data);
