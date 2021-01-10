@@ -13,6 +13,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
     private Map<V, Vertex<V, E>> vertices = new HashMap<>();
     private Set<Edge<V, E>> edges = new HashSet<>();
     private Map<Vertex<V, E>, Integer> ins = new HashMap<>();
+    private Comparator<Edge<V, E>> comparator = (e1, e2) -> weightManager.compare(e1.weight, e2.weight);
 
     public ListGraph(WeightManager<E> weightManager) {
         super(weightManager);
@@ -172,7 +173,8 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     @Override
     public Set<EdgeInfo<V, E>> mst() {
-        return prim();
+        //        return prim();
+        return kruskal();
     }
 
     @Override
@@ -215,6 +217,30 @@ public class ListGraph<V, E> extends Graph<V, E> {
     }
 
     /**
+     * 最小生成树算法
+     */
+    private Set<EdgeInfo<V, E>> kruskal() {
+        Iterator<Vertex<V, E>> iterator = vertices.values().iterator();
+        if (!iterator.hasNext()) return null;
+
+        Vertex<V, E> vertex = iterator.next();
+        Set<EdgeInfo<V, E>> edgeInfos = new HashSet<>();   // 最小生成树的边
+        PriorityQueue<Edge<V, E>> queue = new PriorityQueue<>(comparator);  // 建堆
+        // UnionFind<Vertex<V,E> uf = new UnionFind<>();
+        //        vertices.forEach((v,vx)->{
+        //uf.makeSet(vx)
+        //        });
+        queue.addAll(vertex.fromEdges);
+        while (!queue.isEmpty()) {
+            Edge<V, E> e = queue.remove();
+//            if (uf.isSame(e.from,e.to)) continue;  // 如果加入e，是否构成环
+            edgeInfos.add(e.toEdgeInfo());
+            //uf.union(edge.from,edge.to);
+        }
+        return edgeInfos;
+    }
+
+    /**
      * 最小生成树算法-prim
      */
     private Set<EdgeInfo<V, E>> prim() {
@@ -225,8 +251,8 @@ public class ListGraph<V, E> extends Graph<V, E> {
         Set<Vertex<V, E>> verticesAdd = new HashSet<>(); // 标记已经添加过了
         Vertex<V, E> vertex = iterator.next();
 
-//        PriorityQueue<Edge<V, E>> queue = new PriorityQueue<>(vertex.fromEdges);  // 建堆
-        PriorityQueue<Edge<V, E>> queue = new PriorityQueue<>((e1, e2) -> weightManager.compare(e1.weight, e2.weight));  // 建堆
+        //        PriorityQueue<Edge<V, E>> queue = new PriorityQueue<>(vertex.fromEdges);  // 建堆
+        PriorityQueue<Edge<V, E>> queue = new PriorityQueue<>(comparator);  // 建堆
         queue.addAll(vertex.fromEdges);
         int edgeCount = vertices.size() - 1; // 最小生成树的边的数量
         while (!queue.isEmpty() && edgeInfos.size() < edgeCount) {
