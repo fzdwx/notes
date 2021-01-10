@@ -1,4 +1,4 @@
-package 数据结构和算法.算法.图;
+package 数据结构和算法.算法.图.graph;
 
 
 import java.util.*;
@@ -9,10 +9,17 @@ import java.util.*;
  * @contactMe 980650920@qq.com
  * @description
  */
-public class ListGraph<V, E> implements Graph<V, E> {
+public class ListGraph<V, E> extends Graph<V, E> {
     private Map<V, Vertex<V, E>> vertices = new HashMap<>();
     private Set<Edge<V, E>> edges = new HashSet<>();
     private Map<Vertex<V, E>, Integer> ins = new HashMap<>();
+
+    public ListGraph(WeightManager<E> weightManager) {
+        super(weightManager);
+    }
+
+    public ListGraph() {
+    }
 
     @Override
     public void print() {
@@ -164,6 +171,11 @@ public class ListGraph<V, E> implements Graph<V, E> {
     }
 
     @Override
+    public Set<EdgeInfo<V, E>> mst() {
+        return prim();
+    }
+
+    @Override
     public List<V> topologicalSort() {
         List<V> list = new ArrayList<>();
         Queue<Vertex<V, E>> queue = new LinkedList<>();
@@ -202,6 +214,31 @@ public class ListGraph<V, E> implements Graph<V, E> {
         }
     }
 
+    /**
+     * 最小生成树算法-prim
+     */
+    private Set<EdgeInfo<V, E>> prim() {
+        Iterator<Vertex<V, E>> iterator = vertices.values().iterator();
+
+        if (!iterator.hasNext()) return null;
+        Set<EdgeInfo<V, E>> edgeInfos = new HashSet<>();   // 最小生成树的边
+        Set<Vertex<V, E>> verticesAdd = new HashSet<>(); // 标记已经添加过了
+        Vertex<V, E> vertex = iterator.next();
+
+//        PriorityQueue<Edge<V, E>> queue = new PriorityQueue<>(vertex.fromEdges);  // 建堆
+        PriorityQueue<Edge<V, E>> queue = new PriorityQueue<>((e1, e2) -> weightManager.compare(e1.weight, e2.weight));  // 建堆
+        queue.addAll(vertex.fromEdges);
+        int edgeCount = vertices.size() - 1; // 最小生成树的边的数量
+        while (!queue.isEmpty() && edgeInfos.size() < edgeCount) {
+            Edge<V, E> e = queue.remove();
+            if (verticesAdd.contains(e.to)) continue;
+
+            edgeInfos.add(e.toEdgeInfo());  // 最小生成树的边
+            verticesAdd.add(e.to);  // 标记已经添加过了
+            queue.addAll(e.to.fromEdges);  // 继续遍历
+        }
+        return edgeInfos;
+    }
 
     /**
      * 顶点
@@ -257,7 +294,6 @@ public class ListGraph<V, E> implements Graph<V, E> {
             return from.hashCode() * 31 + to.hashCode();
         }
 
-
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
@@ -272,7 +308,12 @@ public class ListGraph<V, E> implements Graph<V, E> {
                     "from=" + from +
                     ", to=" + to +
                     ", weight=" + weight +
-                    '}';
+                    "}";
+        }
+
+        public Graph.EdgeInfo<V, E> toEdgeInfo() {
+            Edge<V, E> edge = this;
+            return new EdgeInfo<V, E>(edge.from.value, edge.to.value, edge.weight);
         }
     }
 }
