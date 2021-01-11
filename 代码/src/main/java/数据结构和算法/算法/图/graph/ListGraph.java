@@ -1,6 +1,8 @@
 package 数据结构和算法.算法.图.graph;
 
 
+import 数据结构和算法.算法.图.UnionFind;
+
 import java.util.*;
 
 /**
@@ -172,6 +174,38 @@ public class ListGraph<V, E> extends Graph<V, E> {
     }
 
     @Override
+    public Map<V, E> shortestPath(V start) {
+        Vertex<V, E> vertex = vertices.get(start);
+        if (vertex == null) return null;
+        Map<Vertex<V, E>, E> paths = new HashMap<>();
+        Map<V, E> selectedPaths = new HashMap<>();
+        // 初始化
+        for (Edge<V, E> edge : vertex.fromEdges) {
+            paths.put(edge.to, edge.weight);
+        }
+        while (!paths.isEmpty()) {
+            // 1.获取权重最小的点
+            Map.Entry<Vertex<V, E>, E> min = getShortestPath(paths);
+            selectedPaths.put(min.getKey().value, min.getValue());
+            paths.remove(min.getKey());
+            // 2.进行松弛操作->更新兩個頂點之間的最短路徑
+            for (Edge<V, E> edge : min.getKey().fromEdges) {
+                // 如果已经包含了就跳过
+                if (selectedPaths.containsKey(edge.to.value)) continue;
+                // a.新的可选的最短路径：vertex到edge.from的最短路径+edge.weight
+                E nw = weightManager.add(min.getValue(), edge.weight);
+                // b.以前的最短路径
+                E ow = paths.get(edge.to);
+                // c.覆盖
+                if (ow == null || weightManager.compare(nw, ow) < 0) {
+                    paths.put(edge.to, nw);
+                }
+            }
+        }
+        return selectedPaths;
+    }
+
+    @Override
     public Set<EdgeInfo<V, E>> mst() {
         //        return prim();
         return kruskal();
@@ -217,6 +251,21 @@ public class ListGraph<V, E> extends Graph<V, E> {
     }
 
     /**
+     * 得到最短路径，最小权重
+     */
+    private Map.Entry<Vertex<V,E>, E> getShortestPath(Map<Vertex<V, E>, E> paths) {
+        Iterator<Map.Entry<Vertex<V, E>, E>> it = paths.entrySet().iterator();
+        Map.Entry<Vertex<V, E>, E> min = it.next();
+        while (it.hasNext()) {
+            Map.Entry<Vertex<V, E>, E> next = it.next();
+            if (weightManager.compare(next.getValue(), min.getValue()) < 0) {
+                min = next;
+            }
+        }
+        return min;
+    }
+
+    /**
      * 最小生成树算法
      */
     private Set<EdgeInfo<V, E>> kruskal() {
@@ -226,16 +275,16 @@ public class ListGraph<V, E> extends Graph<V, E> {
         Vertex<V, E> vertex = iterator.next();
         Set<EdgeInfo<V, E>> edgeInfos = new HashSet<>();   // 最小生成树的边
         PriorityQueue<Edge<V, E>> queue = new PriorityQueue<>(comparator);  // 建堆
-        // UnionFind<Vertex<V,E> uf = new UnionFind<>();
-        //        vertices.forEach((v,vx)->{
-        //uf.makeSet(vx)
-        //        });
+        UnionFind<Vertex<V, E>> uf = new UnionFind<>();
+        vertices.forEach((v, vx) -> {
+            uf.makeSet(vx);
+        });
         queue.addAll(vertex.fromEdges);
         while (!queue.isEmpty()) {
             Edge<V, E> e = queue.remove();
-//            if (uf.isSame(e.from,e.to)) continue;  // 如果加入e，是否构成环
+            if (uf.isSame(e.from, e.to)) continue;  // 如果加入e，是否构成环
             edgeInfos.add(e.toEdgeInfo());
-            //uf.union(edge.from,edge.to);
+            uf.union(e.from, e.to);
         }
         return edgeInfos;
     }
@@ -304,10 +353,10 @@ public class ListGraph<V, E> extends Graph<V, E> {
      */
     public static class Edge<V, E> {
         /** 当前边的起点 **/
-        Vertex<V, E> from;
+        public Vertex<V, E> from;
         /** 当前边的终点 **/
-        Vertex<V, E> to;
-        E weight;
+        public Vertex<V, E> to;
+        public E weight;
 
         public Edge(Vertex<V, E> from, Vertex<V, E> to, E weight) {
             this.from = from;

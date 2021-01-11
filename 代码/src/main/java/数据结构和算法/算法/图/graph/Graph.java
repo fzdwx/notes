@@ -1,6 +1,7 @@
 package 数据结构和算法.算法.图.graph;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -41,6 +42,10 @@ public abstract class Graph<V, E> {
 
     public abstract void dfs2(V root, VertexVisitor<V> visitor);
 
+    /**
+     * 最短路径，求权值
+     */
+    public abstract Map<V,E> shortestPath(V start);
     /**
      * 最小生成树
      */
