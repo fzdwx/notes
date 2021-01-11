@@ -155,7 +155,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main (3)">
+  <component name="RunManager" selected="应用程序.Main">
     <configuration name="BubbleSortTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.sort.BubbleSortTest" />
       <module name="work" />
@@ -260,6 +260,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.BubbleSortTest" />
@@ -270,11 +281,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.Main (3)" />
         <item itemvalue="应用程序.BubbleSortTest" />
         <item itemvalue="应用程序.Main (2)" />
         <item itemvalue="应用程序.QuickFind" />
-        <item itemvalue="应用程序.Main (1)" />
       </list>
     </recent_temporary>
   </component>

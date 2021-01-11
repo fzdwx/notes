@@ -22,8 +22,8 @@ public class Main {
     };
 
     public static void main(String[] args) {
-        Graph<Object, Double> g = undirectedGraph(Data.MST_01);
-        System.out.println(g.mst());
+        Graph<Object, Double> g = directedGraph(Data.SP);
+        System.out.println(g.shortestPath("A"));
     }
 
     private static Graph<Object, Double> directedGraph(Object[][] data) {

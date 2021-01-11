@@ -202,6 +202,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
                 }
             }
         }
+        selectedPaths.remove(vertex);
         return selectedPaths;
     }
 
