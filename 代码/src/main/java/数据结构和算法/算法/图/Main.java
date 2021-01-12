@@ -3,6 +3,8 @@ package 数据结构和算法.算法.图;
 import 数据结构和算法.算法.图.graph.Graph;
 import 数据结构和算法.算法.图.graph.ListGraph;
 
+import java.util.Map;
+
 /**
  * @author like
  * @date 2021-01-05 11:22
@@ -24,6 +26,11 @@ public class Main {
     public static void main(String[] args) {
         Graph<Object, Double> g = directedGraph(Data.SP);
         System.out.println(g.shortestPath("A"));
+        System.out.println("==================");
+        Map<Object, Graph.PathInfo<Object, Double>> a = g.shortestPathLine("A");
+        a.forEach((v,path)->{
+            System.out.println(v+":"+path);
+        });
     }
 
     private static Graph<Object, Double> directedGraph(Object[][] data) {

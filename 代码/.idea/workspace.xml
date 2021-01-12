@@ -8,8 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/UnionFind.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/ListGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/图.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/图.md" afterDir="false" />
@@ -432,21 +432,11 @@
       <workItem from="1610335213551" duration="1094000" />
       <workItem from="1610347255457" duration="2139000" />
       <workItem from="1610354811716" duration="1236000" />
-      <workItem from="1610356967195" duration="294000" />
-    </task>
-    <task id="LOCAL-00047" summary="冒泡排序完成">
-      <created>1609118841479</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1609118841479</updated>
-    </task>
-    <task id="LOCAL-00048" summary="冒泡排序优化测试方案">
-      <created>1609119787731</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1609119787731</updated>
+      <workItem from="1610356967195" duration="640000" />
+      <workItem from="1610357659583" duration="8000" />
+      <workItem from="1610429002527" duration="1662000" />
+      <workItem from="1610432680690" duration="1566000" />
+      <workItem from="1610434953264" duration="1200000" />
     </task>
     <task id="LOCAL-00049" summary="冒泡排序优化方案完成">
       <created>1609121891555</created>
@@ -777,7 +767,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610261871008</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="最短路径算法-dijkstra">
+      <created>1610357316429</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1610357316429</updated>
+    </task>
+    <task id="LOCAL-00097" summary="最短路径算法-dijkstra（优化是无向图的时候包含顶点）">
+      <created>1610357574529</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1610357574529</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -809,8 +813,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="希尔排序" />
-    <MESSAGE value="update" />
     <MESSAGE value="更新结构" />
     <MESSAGE value="更新订单提交笔记" />
     <MESSAGE value="更新设计模式笔记" />
@@ -834,7 +836,9 @@
     <MESSAGE value="spring ioc 的xml实现" />
     <MESSAGE value="最小生成树算法prim" />
     <MESSAGE value="最小生成树kruskal算法" />
-    <option name="LAST_COMMIT_MESSAGE" value="最小生成树kruskal算法" />
+    <MESSAGE value="最短路径算法-dijkstra" />
+    <MESSAGE value="最短路径算法-dijkstra（优化是无向图的时候包含顶点）" />
+    <option name="LAST_COMMIT_MESSAGE" value="最短路径算法-dijkstra（优化是无向图的时候包含顶点）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

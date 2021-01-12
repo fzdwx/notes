@@ -207,6 +207,47 @@ public class ListGraph<V, E> extends Graph<V, E> {
     }
 
     @Override
+    public Map<V, PathInfo<V, E>> shortestPathLine(V start) {
+        Vertex<V, E> vertex = vertices.get(start);
+        if (vertex == null) return null;
+        Map<Vertex<V, E>, PathInfo<V, E>> paths = new HashMap<>();
+        Map<V, PathInfo<V, E>> selectedPaths = new HashMap<>();
+        // 1.初始化
+        for (Edge<V, E> edge : vertex.fromEdges) {
+            PathInfo<V, E> pif = new PathInfo<>();
+            pif.setWeight(edge.weight);
+            pif.addEdgeInfo(edge.toEdgeInfo());
+
+            paths.put(edge.to, pif);
+        }
+        while (!paths.isEmpty()) {
+            // 1.获取权重最小的点
+            Map.Entry<Vertex<V, E>, PathInfo<V, E>> min = getShortestPathLine(paths);
+            selectedPaths.put(min.getKey().value, min.getValue());
+            paths.remove(min.getKey());
+            // 2.进行松弛操作->更新兩個頂點之間的最短路徑
+            for (Edge<V, E> edge : min.getKey().fromEdges) {
+                // 如果已经包含了就跳过
+                if (selectedPaths.containsKey(edge.to.value)) continue;
+                // a.新的可选的最短路径：vertex到edge.from的最短路径+edge.weight
+                E nw = weightManager.add(min.getValue().getWeight(), edge.weight);
+                // b.覆盖
+                PathInfo<V, E> op = paths.get(edge.to);
+                if (op != null && weightManager.compare(nw, op.getWeight()) > 0) {} else if (op == null || weightManager.compare(nw, op.getWeight()) < 0) {
+                    op = new PathInfo<>();
+                    paths.put(edge.to, op);
+                }
+                op.setWeight(nw);
+                op.getEdgeInfos().clear();
+                op.getEdgeInfos().addAll(min.getValue().getEdgeInfos());
+                op.addEdgeInfo(edge.toEdgeInfo());
+            }
+        }
+        selectedPaths.remove(vertex);
+        return selectedPaths;
+    }
+
+    @Override
     public Set<EdgeInfo<V, E>> mst() {
         //        return prim();
         return kruskal();
@@ -254,12 +295,24 @@ public class ListGraph<V, E> extends Graph<V, E> {
     /**
      * 得到最短路径，最小权重
      */
-    private Map.Entry<Vertex<V,E>, E> getShortestPath(Map<Vertex<V, E>, E> paths) {
+    private Map.Entry<Vertex<V, E>, E> getShortestPath(Map<Vertex<V, E>, E> paths) {
         Iterator<Map.Entry<Vertex<V, E>, E>> it = paths.entrySet().iterator();
         Map.Entry<Vertex<V, E>, E> min = it.next();
         while (it.hasNext()) {
             Map.Entry<Vertex<V, E>, E> next = it.next();
             if (weightManager.compare(next.getValue(), min.getValue()) < 0) {
+                min = next;
+            }
+        }
+        return min;
+    }
+
+    private Map.Entry<Vertex<V, E>, PathInfo<V, E>> getShortestPathLine(Map<Vertex<V, E>, PathInfo<V, E>> paths) {
+        Iterator<Map.Entry<Vertex<V, E>, PathInfo<V, E>>> it = paths.entrySet().iterator();
+        Map.Entry<Vertex<V, E>, PathInfo<V, E>> min = it.next();
+        while (it.hasNext()) {
+            Map.Entry<Vertex<V, E>, PathInfo<V, E>> next = it.next();
+            if (weightManager.compare(next.getValue().getWeight(), min.getValue().getWeight()) < 0) {
                 min = next;
             }
         }

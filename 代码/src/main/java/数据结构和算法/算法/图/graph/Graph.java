@@ -1,5 +1,6 @@
 package 数据结构和算法.算法.图.graph;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -45,7 +46,15 @@ public abstract class Graph<V, E> {
     /**
      * 最短路径，求权值
      */
-    public abstract Map<V,E> shortestPath(V start);
+    public abstract Map<V, E> shortestPath(V start);
+
+    /**
+     * 最短路径线
+     *
+     * @return
+     */
+    public abstract Map<V, PathInfo<V, E>> shortestPathLine(V start);
+
     /**
      * 最小生成树
      */
@@ -64,6 +73,36 @@ public abstract class Graph<V, E> {
         int compare(E w1, E w2);
 
         E add(E w1, E w2);
+    }
+
+
+    public static class PathInfo<V, E> {
+        private E weight;
+        private List<EdgeInfo<V, E>> edgeInfos = new LinkedList<>();
+
+        public E getWeight() {
+            return weight;
+        }
+
+        public List<EdgeInfo<V, E>> getEdgeInfos() {
+            return edgeInfos;
+        }
+
+        public void setWeight(E weight) {
+            this.weight = weight;
+        }
+
+        public boolean addEdgeInfo(EdgeInfo<V, E> edgeInfo) {
+            return edgeInfos.add(edgeInfo);
+        }
+
+        @Override
+        public String toString() {
+            return "PathInfo{" +
+                    "weight=" + weight +
+                    ", edgeInfos=" + edgeInfos +
+                    '}';
+        }
     }
 
     public static class EdgeInfo<V, E> {
