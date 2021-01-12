@@ -73,23 +73,32 @@ public abstract class Graph<V, E> {
         int compare(E w1, E w2);
 
         E add(E w1, E w2);
+
+        E zero();
     }
 
 
     public static class PathInfo<V, E> {
-        private E weight;
+       public    E weight;
         private List<EdgeInfo<V, E>> edgeInfos = new LinkedList<>();
+
+        public PathInfo() {
+        }
+
+        public PathInfo(E zero) {
+            this.weight = zero;
+        }
 
         public E getWeight() {
             return weight;
         }
 
-        public List<EdgeInfo<V, E>> getEdgeInfos() {
-            return edgeInfos;
-        }
-
         public void setWeight(E weight) {
             this.weight = weight;
+        }
+
+        public List<EdgeInfo<V, E>> getEdgeInfos() {
+            return edgeInfos;
         }
 
         public boolean addEdgeInfo(EdgeInfo<V, E> edgeInfo) {

@@ -208,43 +208,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     @Override
     public Map<V, PathInfo<V, E>> shortestPathLine(V start) {
-        Vertex<V, E> vertex = vertices.get(start);
-        if (vertex == null) return null;
-        Map<Vertex<V, E>, PathInfo<V, E>> paths = new HashMap<>();
-        Map<V, PathInfo<V, E>> selectedPaths = new HashMap<>();
-        // 1.初始化
-        for (Edge<V, E> edge : vertex.fromEdges) {
-            PathInfo<V, E> pif = new PathInfo<>();
-            pif.setWeight(edge.weight);
-            pif.addEdgeInfo(edge.toEdgeInfo());
-
-            paths.put(edge.to, pif);
-        }
-        while (!paths.isEmpty()) {
-            // 1.获取权重最小的点
-            Map.Entry<Vertex<V, E>, PathInfo<V, E>> min = getShortestPathLine(paths);
-            selectedPaths.put(min.getKey().value, min.getValue());
-            paths.remove(min.getKey());
-            // 2.进行松弛操作->更新兩個頂點之間的最短路徑
-            for (Edge<V, E> edge : min.getKey().fromEdges) {
-                // 如果已经包含了就跳过
-                if (selectedPaths.containsKey(edge.to.value)) continue;
-                // a.新的可选的最短路径：vertex到edge.from的最短路径+edge.weight
-                E nw = weightManager.add(min.getValue().getWeight(), edge.weight);
-                // b.覆盖
-                PathInfo<V, E> op = paths.get(edge.to);
-                if (op != null && weightManager.compare(nw, op.getWeight()) > 0) {} else if (op == null || weightManager.compare(nw, op.getWeight()) < 0) {
-                    op = new PathInfo<>();
-                    paths.put(edge.to, op);
-                }
-                op.setWeight(nw);
-                op.getEdgeInfos().clear();
-                op.getEdgeInfos().addAll(min.getValue().getEdgeInfos());
-                op.addEdgeInfo(edge.toEdgeInfo());
-            }
-        }
-        selectedPaths.remove(vertex);
-        return selectedPaths;
+        return dijkstra(start);
     }
 
     @Override
@@ -283,6 +247,23 @@ public class ListGraph<V, E> extends Graph<V, E> {
         return list;
     }
 
+    private Map<V, PathInfo<V, E>> bellmanFort(V start) {
+        Vertex<V, E> vertex = vertices.get(start);
+        if (vertex == null) return null;
+        Map<V, PathInfo<V, E>> selectedPaths = new HashMap<>();
+        selectedPaths.put(start, new PathInfo<>(weightManager.zero()));
+        int count = vertices.size() - 1;
+        for (int i = 0; i < count; i++) {
+            for (Edge<V, E> edge : edges) {
+                PathInfo<V, E> from = selectedPaths.get(edge.from.value);
+                if (from == null) continue;
+                relax(edge, from, selectedPaths);
+            }
+        }
+        selectedPaths.remove(start);
+        return selectedPaths;
+    }
+
     private void dfs(Vertex<V, E> begin, Set<Vertex<V, E>> visit, VertexVisitor<V> visitor) {
         if (visitor.visit(begin.value)) return;  // 訪問
         visit.add(begin);
@@ -290,6 +271,36 @@ public class ListGraph<V, E> extends Graph<V, E> {
             if (visit.contains(edge.to)) continue;
             dfs(edge.to, visit, visitor);
         }
+    }
+
+    private Map<V, PathInfo<V, E>> dijkstra(V start) {
+        Vertex<V, E> vertex = vertices.get(start);
+        if (vertex == null) return null;
+        Map<Vertex<V, E>, PathInfo<V, E>> paths = new HashMap<>();
+        Map<V, PathInfo<V, E>> selectedPaths = new HashMap<>();
+        // 1.初始化
+        for (Edge<V, E> edge : vertex.fromEdges) {
+            PathInfo<V, E> pif = new PathInfo<>();
+            pif.setWeight(edge.weight);
+            pif.addEdgeInfo(edge.toEdgeInfo());
+
+            paths.put(edge.to, pif);
+        }
+        while (!paths.isEmpty()) {
+            // 1.获取权重最小的点
+            Map.Entry<Vertex<V, E>, PathInfo<V, E>> min = getShortestPathLine(paths);
+            selectedPaths.put(min.getKey().value, min.getValue());
+            paths.remove(min.getKey());
+            // 2.进行松弛操作->更新兩個頂點之間的最短路徑
+            for (Edge<V, E> edge : min.getKey().fromEdges) {
+                // 如果已经包含了就跳过
+                if (selectedPaths.containsKey(edge.to.value)) continue;
+                // a.新的可选的最短路径：vertex到edge.from的最短路径+edge.weight
+                relax(paths, min, edge);
+            }
+        }
+        selectedPaths.remove(vertex);
+        return selectedPaths;
     }
 
     /**
@@ -367,6 +378,39 @@ public class ListGraph<V, E> extends Graph<V, E> {
             queue.addAll(e.to.fromEdges);  // 继续遍历
         }
         return edgeInfos;
+    }
+
+    private void relax(Edge<V, E> edge, PathInfo<V, E> fromPath, Map<V, PathInfo<V, E>> paths) {
+        // 新的可选择的最短路径：beginVertex到edge.from的最短路径 + edge.weight
+        E newWeight = weightManager.add(fromPath.getWeight(), edge.weight);
+        // 以前的最短路径：beginVertex到edge.to的最短路径
+        PathInfo<V, E> oldPath = paths.get(edge.to.value);
+        if (oldPath != null && weightManager.compare(newWeight, oldPath.getWeight()) >= 0) return;
+
+        if (oldPath == null) {
+            oldPath = new PathInfo<>();
+            paths.put(edge.to.value, oldPath);
+        } else {
+            oldPath.getEdgeInfos().clear();
+        }
+
+        oldPath.weight = newWeight;
+        oldPath.getEdgeInfos().addAll(fromPath.getEdgeInfos());
+        oldPath.getEdgeInfos().add(edge.toEdgeInfo());
+    }
+
+    private void relax(Map<Vertex<V, E>, PathInfo<V, E>> paths, Map.Entry<Vertex<V, E>, PathInfo<V, E>> min, Edge<V, E> edge) {
+        E nw = weightManager.add(min.getValue().getWeight(), edge.weight);
+        // b.覆盖
+        PathInfo<V, E> op = paths.get(edge.to);
+        if (op != null && weightManager.compare(nw, op.getWeight()) > 0) {} else if (op == null || weightManager.compare(nw, op.getWeight()) < 0) {
+            op = new PathInfo<>();
+            paths.put(edge.to, op);
+        }
+        op.setWeight(nw);
+        op.getEdgeInfos().clear();
+        op.getEdgeInfos().addAll(min.getValue().getEdgeInfos());
+        op.addEdgeInfo(edge.toEdgeInfo());
     }
 
     /**
