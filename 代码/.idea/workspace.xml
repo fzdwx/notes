@@ -10,7 +10,9 @@
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/ListGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/图.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/图.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,6 +260,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.BubbleSortTest" />
@@ -426,13 +439,8 @@
       <workItem from="1610434953264" duration="2098000" />
       <workItem from="1610440484748" duration="618000" />
       <workItem from="1610442704798" duration="2047000" />
-    </task>
-    <task id="LOCAL-00051" summary="抽取公共类以及测试代码">
-      <created>1609127698395</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1609127698395</updated>
+      <workItem from="1610506447469" duration="2047000" />
+      <workItem from="1610528656042" duration="980000" />
     </task>
     <task id="LOCAL-00052" summary="行为模式完成">
       <created>1609162805669</created>
@@ -770,7 +778,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610444575369</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="测试bellmanFord算法">
+      <created>1610506702177</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1610506702178</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -802,7 +817,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="更新设计模式笔记" />
     <MESSAGE value="计算排序" />
     <MESSAGE value="计算排序优化" />
     <MESSAGE value="补全排序" />
@@ -827,7 +841,8 @@
     <MESSAGE value="最短路径算法-dijkstra（优化是无向图的时候包含顶点）" />
     <MESSAGE value="dijkstra算法計算路徑完成" />
     <MESSAGE value="最短路径算法-bellmanFort" />
-    <option name="LAST_COMMIT_MESSAGE" value="最短路径算法-bellmanFort" />
+    <MESSAGE value="测试bellmanFord算法" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试bellmanFord算法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

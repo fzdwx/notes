@@ -30,11 +30,12 @@ public class Main {
 
     public static void main(String[] args) {
         Graph<Object, Double> g = directedGraph(Data.SP);
-        System.out.println(g.shortestPath("A"));
-        System.out.println("==================");
-        Map<Object, Graph.PathInfo<Object, Double>> a = g.shortestPathLine("A");
-        a.forEach((v,path)->{
-            System.out.println(v+":"+path);
+        Map<Object, Map<Object, Graph.PathInfo<Object, Double>>> sp = g.shortestPathLine();
+        sp.forEach((from, paths) -> {
+            System.out.println("-------" + from + "-------");
+            paths.forEach((to, path) -> {
+                System.out.println(to + ":" + path);
+            });
         });
     }
 

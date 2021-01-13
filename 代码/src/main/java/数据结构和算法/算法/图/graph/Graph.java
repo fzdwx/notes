@@ -56,6 +56,11 @@ public abstract class Graph<V, E> {
     public abstract Map<V, PathInfo<V, E>> shortestPathLine(V start);
 
     /**
+     * 多源最短路径线floyd
+     */
+    public abstract Map<V,Map<V, PathInfo<V, E>>> shortestPathLine();
+
+    /**
      * 最小生成树
      */
     public abstract Set<EdgeInfo<V, E>> mst();

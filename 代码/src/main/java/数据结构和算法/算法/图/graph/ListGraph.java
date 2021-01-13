@@ -208,8 +208,51 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     @Override
     public Map<V, PathInfo<V, E>> shortestPathLine(V start) {
-//        return dijkstra(start);
+        //        return dijkstra(start);
         return bellmanFort(start);
+    }
+
+    @Override
+    public Map<V, Map<V, PathInfo<V, E>>> shortestPathLine() {
+        Map<V, Map<V, PathInfo<V, E>>> paths = new HashMap<>();
+        // 1.初始化
+        for (Edge<V, E> edge : edges) {
+            Map<V, PathInfo<V, E>> map = paths.computeIfAbsent(edge.from.value, k -> new HashMap<>());
+            PathInfo<V, E> value = new PathInfo<>(edge.weight);
+            value.addEdgeInfo(edge.toEdgeInfo());
+            map.put(edge.to.value, value);
+        }
+        vertices.forEach((v2, veVertex2) -> {
+            vertices.forEach((v1, veVertex1) -> {
+                vertices.forEach((v3, veVertex3) -> {
+                    // v1-v2
+                    Map<V, PathInfo<V, E>> getV1 = paths.get(v1);
+                    if (getV1 == null) {
+                        return;
+                    }
+                    PathInfo<V, E> p1To2 = getV1.get(v2);
+                    if (p1To2 == null) return;
+                    // v2-v3
+                    Map<V, PathInfo<V, E>> getV2 = paths.get(v2);
+                    if (getV2 == null) return;
+                    PathInfo<V, E> p2To3 = getV2.get(v3);
+                    if (p2To3 == null) return;
+                    // v1-v3
+                    PathInfo<V, E> p1To3 = paths.get(v1).get(v3);
+                    E nw = weightManager.add(p1To2.weight, p2To3.weight);
+                    if (p1To3 != null && weightManager.compare(nw, p1To3.weight) >= 0) return;
+                    if (p1To3 == null) {
+                        p1To3 = new PathInfo<>();
+                        paths.get(v1).put(v3, p1To3);
+                    } else
+                        p1To3.getEdgeInfos().clear();
+                    p1To3.weight = nw;
+                    p1To3.getEdgeInfos().addAll(p1To2.getEdgeInfos());
+                    p1To3.getEdgeInfos().addAll(p2To3.getEdgeInfos());
+                });
+            });
+        });
+        return paths;
     }
 
     @Override
