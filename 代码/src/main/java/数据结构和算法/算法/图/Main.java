@@ -21,6 +21,11 @@ public class Main {
             return w1 + w2;
         }
 
+        @Override
+        public Double zero() {
+            return 0.0;
+        }
+
     };
 
     public static void main(String[] args) {

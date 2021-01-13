@@ -208,7 +208,8 @@ public class ListGraph<V, E> extends Graph<V, E> {
 
     @Override
     public Map<V, PathInfo<V, E>> shortestPathLine(V start) {
-        return dijkstra(start);
+//        return dijkstra(start);
+        return bellmanFort(start);
     }
 
     @Override
