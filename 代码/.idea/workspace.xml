@@ -8,11 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/递归/Fib.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/递归.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图/graph/ListGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/图.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/图.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +28,8 @@
         <option value="TestNG Test Class" />
         <option value="JUnit4 Test Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -155,7 +154,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Main">
+  <component name="RunManager" selected="应用程序.Fib">
     <configuration name="BubbleSortTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.sort.BubbleSortTest" />
       <module name="work" />
@@ -169,12 +168,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="设计模式.行为模式.备忘录模式.white.Main" />
+    <configuration name="Fib" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.递归.Fib" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="设计模式.行为模式.备忘录模式.white.*" />
+          <option name="PATTERN" value="数据结构和算法.算法.递归.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -247,19 +246,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickFind" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.并查集.QuickFind" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.并查集.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -274,18 +260,17 @@
     <list>
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.BubbleSortTest" />
-      <item itemvalue="应用程序.Main (1)" />
-      <item itemvalue="应用程序.QuickFind" />
       <item itemvalue="应用程序.Main (2)" />
       <item itemvalue="应用程序.Main (3)" />
+      <item itemvalue="应用程序.Fib" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Fib" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.Main (3)" />
         <item itemvalue="应用程序.BubbleSortTest" />
         <item itemvalue="应用程序.Main (2)" />
-        <item itemvalue="应用程序.QuickFind" />
       </list>
     </recent_temporary>
   </component>
@@ -440,14 +425,9 @@
       <workItem from="1610440484748" duration="618000" />
       <workItem from="1610442704798" duration="2047000" />
       <workItem from="1610506447469" duration="2047000" />
-      <workItem from="1610528656042" duration="980000" />
-    </task>
-    <task id="LOCAL-00052" summary="行为模式完成">
-      <created>1609162805669</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1609162805670</updated>
+      <workItem from="1610528656042" duration="1461000" />
+      <workItem from="1610534623449" duration="1186000" />
+      <workItem from="1610584877324" duration="3123000" />
     </task>
     <task id="LOCAL-00053" summary="状态模式完成">
       <created>1609237214455</created>
@@ -785,7 +765,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610506702178</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="弗洛伊德算法完成">
+      <created>1610529678403</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1610529678404</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -817,7 +804,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="计算排序" />
     <MESSAGE value="计算排序优化" />
     <MESSAGE value="补全排序" />
     <MESSAGE value="备忘录模式" />
@@ -842,7 +828,8 @@
     <MESSAGE value="dijkstra算法計算路徑完成" />
     <MESSAGE value="最短路径算法-bellmanFort" />
     <MESSAGE value="测试bellmanFord算法" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试bellmanFord算法" />
+    <MESSAGE value="弗洛伊德算法完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="弗洛伊德算法完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -212,6 +212,11 @@ public class ListGraph<V, E> extends Graph<V, E> {
         return bellmanFort(start);
     }
 
+    /**
+     * 最短路径线 floyd
+     *
+     * @return {@link Map<V, Map<V, PathInfo<V, E>>>}
+     */
     @Override
     public Map<V, Map<V, PathInfo<V, E>>> shortestPathLine() {
         Map<V, Map<V, PathInfo<V, E>>> paths = new HashMap<>();
@@ -255,6 +260,11 @@ public class ListGraph<V, E> extends Graph<V, E> {
         return paths;
     }
 
+    /**
+     * 最小生成樹
+     *
+     * @return {@link Set<EdgeInfo<V, E>>}
+     */
     @Override
     public Set<EdgeInfo<V, E>> mst() {
         //        return prim();
