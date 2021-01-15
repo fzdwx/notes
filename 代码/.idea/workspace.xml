@@ -8,8 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/递归/ClimbStairs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/递归/Hanoi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/递归/TailCall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -245,6 +244,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.BubbleSortTest" />
@@ -420,13 +430,7 @@
       <workItem from="1610616995545" duration="494000" />
       <workItem from="1610629160548" duration="576000" />
       <workItem from="1610672381437" duration="631000" />
-    </task>
-    <task id="LOCAL-00054" summary="增加强制实现Comparable接口">
-      <created>1609287399350</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1609287399351</updated>
+      <workItem from="1610673047813" duration="904000" />
     </task>
     <task id="LOCAL-00055" summary="【2020/12/30 8:24】】增加稳定性">
       <created>1609287874983</created>
@@ -764,7 +768,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610589331434</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="哈诺塔">
+      <created>1610673147242</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1610673147243</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -796,7 +807,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="补全排序" />
     <MESSAGE value="备忘录模式" />
     <MESSAGE value="笔记更新" />
     <MESSAGE value="并查集的2种实现" />
@@ -821,7 +831,8 @@
     <MESSAGE value="测试bellmanFord算法" />
     <MESSAGE value="弗洛伊德算法完成" />
     <MESSAGE value="斐波拉契数列的几种写法" />
-    <option name="LAST_COMMIT_MESSAGE" value="斐波拉契数列的几种写法" />
+    <MESSAGE value="哈诺塔" />
+    <option name="LAST_COMMIT_MESSAGE" value="哈诺塔" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
