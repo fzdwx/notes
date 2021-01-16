@@ -8,8 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/回溯/eightQueen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/贪心/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/贪心/CoinChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/贪心/Pirate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/递归.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/递归.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/04-分布式高级2.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/尚硅谷商城项目/04-分布式高级2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,13 +156,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.eightQueen">
-    <configuration name="Fib" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.递归.Fib" />
+  <component name="RunManager" selected="应用程序.test">
+    <configuration name="CoinChange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.贪心.CoinChange" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.递归.*" />
+          <option name="PATTERN" value="数据结构和算法.算法.贪心.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -172,32 +176,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="数据结构和算法.算法.递归.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.图.Main" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.图.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.图.Main" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.图.graph.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -231,6 +209,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Pirate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.贪心.Pirate" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.算法.贪心.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="eightQueen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.回溯.eightQueen" />
       <module name="work" />
@@ -244,20 +235,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.贪心.test" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.算法.贪心.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
-      <item itemvalue="应用程序.Main (3)" />
-      <item itemvalue="应用程序.Fib" />
       <item itemvalue="应用程序.Hanoi" />
       <item itemvalue="应用程序.eightQueen" />
+      <item itemvalue="应用程序.Pirate" />
+      <item itemvalue="应用程序.CoinChange" />
+      <item itemvalue="应用程序.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.test" />
+        <item itemvalue="应用程序.CoinChange" />
+        <item itemvalue="应用程序.Pirate" />
         <item itemvalue="应用程序.eightQueen" />
         <item itemvalue="应用程序.Hanoi" />
-        <item itemvalue="应用程序.Fib" />
-        <item itemvalue="应用程序.Main" />
-        <item itemvalue="应用程序.Main (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -424,13 +442,7 @@
       <workItem from="1610685742578" duration="2323000" />
       <workItem from="1610692397077" duration="2200000" />
       <workItem from="1610695453764" duration="781000" />
-    </task>
-    <task id="LOCAL-00056" summary="【2020/12/30 8:24】】增加稳定性-student">
-      <created>1609289258927</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1609289258927</updated>
+      <workItem from="1610764803902" duration="4396000" />
     </task>
     <task id="LOCAL-00057" summary="【20201230】】增加插入排序">
       <created>1609290020385</created>
@@ -768,7 +780,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610674213505</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="八皇后问题">
+      <created>1610764856784</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1610764856785</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -800,7 +819,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="笔记更新" />
     <MESSAGE value="并查集的2种实现" />
     <MESSAGE value="基于rank+路径压缩" />
     <MESSAGE value="路径分裂优化" />
@@ -825,7 +843,8 @@
     <MESSAGE value="斐波拉契数列的几种写法" />
     <MESSAGE value="哈诺塔" />
     <MESSAGE value="尾遞歸優化" />
-    <option name="LAST_COMMIT_MESSAGE" value="尾遞歸優化" />
+    <MESSAGE value="八皇后问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="八皇后问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
