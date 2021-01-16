@@ -8,7 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/递归/TailCall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/回溯/eightQueen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,20 +152,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Hanoi">
-    <configuration name="BubbleSortTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.排序.sort.BubbleSortTest" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.排序.sort.nocmp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="应用程序.eightQueen">
     <configuration name="Fib" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.递归.Fib" />
       <module name="work" />
@@ -244,31 +231,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="eightQueen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.回溯.eightQueen" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.算法.回溯.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
-      <item itemvalue="应用程序.BubbleSortTest" />
       <item itemvalue="应用程序.Main (3)" />
       <item itemvalue="应用程序.Fib" />
       <item itemvalue="应用程序.Hanoi" />
+      <item itemvalue="应用程序.eightQueen" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.eightQueen" />
         <item itemvalue="应用程序.Hanoi" />
         <item itemvalue="应用程序.Fib" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序.Main (3)" />
-        <item itemvalue="应用程序.BubbleSortTest" />
       </list>
     </recent_temporary>
   </component>
@@ -430,14 +419,11 @@
       <workItem from="1610616995545" duration="494000" />
       <workItem from="1610629160548" duration="576000" />
       <workItem from="1610672381437" duration="631000" />
-      <workItem from="1610673047813" duration="904000" />
-    </task>
-    <task id="LOCAL-00055" summary="【2020/12/30 8:24】】增加稳定性">
-      <created>1609287874983</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1609287874983</updated>
+      <workItem from="1610673047813" duration="2553000" />
+      <workItem from="1610680923208" duration="1968000" />
+      <workItem from="1610685742578" duration="2323000" />
+      <workItem from="1610692397077" duration="2200000" />
+      <workItem from="1610695453764" duration="781000" />
     </task>
     <task id="LOCAL-00056" summary="【2020/12/30 8:24】】增加稳定性-student">
       <created>1609289258927</created>
@@ -775,7 +761,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610673147243</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="尾遞歸優化">
+      <created>1610674213505</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1610674213505</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -807,7 +800,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="备忘录模式" />
     <MESSAGE value="笔记更新" />
     <MESSAGE value="并查集的2种实现" />
     <MESSAGE value="基于rank+路径压缩" />
@@ -832,7 +824,8 @@
     <MESSAGE value="弗洛伊德算法完成" />
     <MESSAGE value="斐波拉契数列的几种写法" />
     <MESSAGE value="哈诺塔" />
-    <option name="LAST_COMMIT_MESSAGE" value="哈诺塔" />
+    <MESSAGE value="尾遞歸優化" />
+    <option name="LAST_COMMIT_MESSAGE" value="尾遞歸優化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
