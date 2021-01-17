@@ -8,10 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/动态规划/CoinChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/动态规划/CoinChange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/递归.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/递归.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,6 +218,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="应用程序.CoinChange" />
       <item itemvalue="应用程序.test" />
@@ -230,8 +241,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.CoinChange (1)" />
-        <item itemvalue="应用程序.最大子序列和" />
         <item itemvalue="应用程序.BubbleSortTest" />
+        <item itemvalue="应用程序.最大子序列和" />
         <item itemvalue="应用程序.test" />
         <item itemvalue="应用程序.CoinChange" />
       </list>
@@ -405,14 +416,7 @@
       <workItem from="1610786721184" duration="1704000" />
       <workItem from="1610852146159" duration="1923000" />
       <workItem from="1610861472242" duration="1027000" />
-      <workItem from="1610866173370" duration="317000" />
-    </task>
-    <task id="LOCAL-00060" summary="插入排序完成">
-      <created>1609299941784</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1609299941785</updated>
+      <workItem from="1610866173370" duration="3207000" />
     </task>
     <task id="LOCAL-00061" summary="观察者模式实现">
       <created>1609304809589</created>
@@ -750,7 +754,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610861569530</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="动态规划，硬币兑换，记忆化搜索">
+      <created>1610866773900</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1610866773900</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -782,7 +793,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="解释器模式" />
     <MESSAGE value="图的基本完成" />
     <MESSAGE value="带权值的有向图完成" />
     <MESSAGE value="更新笔记" />
@@ -807,7 +817,8 @@
     <MESSAGE value="贪心" />
     <MESSAGE value="分治算法求最大連續子序列和" />
     <MESSAGE value="使用动态规划（暴力递归）解决钱币兑换问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用动态规划（暴力递归）解决钱币兑换问题" />
+    <MESSAGE value="动态规划，硬币兑换，记忆化搜索" />
+    <option name="LAST_COMMIT_MESSAGE" value="动态规划，硬币兑换，记忆化搜索" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

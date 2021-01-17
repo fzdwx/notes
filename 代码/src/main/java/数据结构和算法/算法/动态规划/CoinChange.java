@@ -1,7 +1,5 @@
 package 数据结构和算法.算法.动态规划;
 
-import java.util.Arrays;
-
 /**
  * @author like
  * @date 2021-01-17 11:37
@@ -11,8 +9,23 @@ import java.util.Arrays;
 public class CoinChange {
 
     public static void main(String[] args) {
-        System.out.println(coins(42));
-        System.out.println(coins2(42));
+        System.out.println(coins3(41, new int[]{1, 5, 20, 25}));
+    }
+
+    public static int coins3(int money, int[] faces) {
+        if (money < 1) {
+            return 0;
+        }
+        int[] dp = new int[money + 1];
+        for (int i = 1; i <= money; i++) {
+            int min = Integer.MAX_VALUE;
+            for (int face : faces) {
+                if (i < face) continue;
+                min = Math.min(dp[i - face], min);
+            }
+            dp[i] = min + 1;
+        }
+        return dp[money];
     }
 
     /**
@@ -42,15 +55,14 @@ public class CoinChange {
         if (money < 1) return -1;
 
         int[] dp = new int[money + 1];
-        int[] faces = {1,5,20,25};
+        int[] faces = {1, 5, 20, 25};
         for (int face : faces) {
-            if (money <face) {
+            if (money < face) {
                 break;
             }
             dp[face] = 1;
         }
         int i = coins2(money, dp);
-        System.out.println(Arrays.toString(dp));
         return i;
     }
 
