@@ -13,37 +13,41 @@ class BubbleSortTest {
     };
 
     public static void main(String[] args) {
-        for (Integer step : stepArray) {
-            sort(step);
-        }
+        sort(0, array.length);
         System.out.println(Arrays.toString(array));
     }
 
-    private static void shell(Integer step) {
-        for (int col = 0; col < step; col++) {
-            for (int i = col + step; i < array.length; i += step) {
-                int cur = i;
-                while (cur > col && array[cur] > array[cur - step]) {
-                    Integer temp = array[cur];
-                    array[cur] = array[cur - step];
-                    array[cur - step] = temp;
-                    cur -= temp;
-                }
-            }
-        }
+    private static void sort(int begin, int end) {
+        if (end - begin < 2) return;
+        int mid = getPivod(begin,end);
+        sort(begin, mid);
+        sort(mid+1, end);
     }
-    private static void sort(Integer step) {
-        for (int col = 0; col < step; col++) { // 具体元素的索引：col  + row * step
-            for (int i = col + step; i < array.length; i += step) {
-                int cur = i;
-                while (cur > col &&  array[cur] < array[cur - step]) {
-                    Integer temp = array[cur];
-                    array[cur] = array[cur - step];
-                    array[cur - step] = temp;
-                    cur -= step;
+
+    private static int getPivod(int begin, int end) {
+        Integer axisPoint = array[begin];
+        end--;
+        while (begin < end) {
+            while (begin < end) {
+                if (array[end] > axisPoint) {
+                    end--;
+                } else {
+                    array[begin++] = array[end];
+                    break;
+                }
+            }
+            while (begin < end) {
+                if (array[begin] < axisPoint) {
+                    begin++;
+                } else {
+                    array[end--] = array[begin];
+                    break;
                 }
             }
         }
+
+        array[begin] = axisPoint;
+        return begin;
     }
 
 }
