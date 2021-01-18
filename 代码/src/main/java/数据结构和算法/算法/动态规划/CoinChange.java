@@ -21,9 +21,15 @@ public class CoinChange {
             int min = Integer.MAX_VALUE;
             for (int face : faces) {
                 if (i < face) continue;
+                int v = dp[i - face];
+                if (v >= min || v < 0) continue;
                 min = Math.min(dp[i - face], min);
             }
-            dp[i] = min + 1;
+            if (min == Integer.MAX_VALUE) {
+                dp[i] = -1;
+            } else {
+                dp[i] = min + 1;
+            }
         }
         return dp[money];
     }

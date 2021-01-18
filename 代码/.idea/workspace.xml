@@ -218,19 +218,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="应用程序.CoinChange" />
       <item itemvalue="应用程序.test" />
@@ -416,14 +403,8 @@
       <workItem from="1610786721184" duration="1704000" />
       <workItem from="1610852146159" duration="1923000" />
       <workItem from="1610861472242" duration="1027000" />
-      <workItem from="1610866173370" duration="3207000" />
-    </task>
-    <task id="LOCAL-00061" summary="观察者模式实现">
-      <created>1609304809589</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1609304809589</updated>
+      <workItem from="1610866173370" duration="3371000" />
+      <workItem from="1610940325165" duration="1820000" />
     </task>
     <task id="LOCAL-00062" summary="归并排序">
       <created>1609383093259</created>
@@ -761,7 +742,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610866773900</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="动态规划，硬币兑换-递推">
+      <created>1610869539645</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1610869539645</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -793,7 +781,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="图的基本完成" />
     <MESSAGE value="带权值的有向图完成" />
     <MESSAGE value="更新笔记" />
     <MESSAGE value="图的深度优先遍历" />
@@ -818,7 +805,8 @@
     <MESSAGE value="分治算法求最大連續子序列和" />
     <MESSAGE value="使用动态规划（暴力递归）解决钱币兑换问题" />
     <MESSAGE value="动态规划，硬币兑换，记忆化搜索" />
-    <option name="LAST_COMMIT_MESSAGE" value="动态规划，硬币兑换，记忆化搜索" />
+    <MESSAGE value="动态规划，硬币兑换-递推" />
+    <option name="LAST_COMMIT_MESSAGE" value="动态规划，硬币兑换-递推" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
