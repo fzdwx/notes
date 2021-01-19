@@ -19,17 +19,18 @@ class BubbleSortTest {
 
     private static void sort(int begin, int end) {
         if (end - begin < 2) return;
-        int mid = getPivod(begin,end);
+        int mid = getPrivot(begin, end);
         sort(begin, mid);
-        sort(mid+1, end);
+        sort(mid + 1, end);
     }
 
-    private static int getPivod(int begin, int end) {
-        Integer axisPoint = array[begin];
+    private static int getPrivot(int begin, int end) {
+        int e = array[begin];
+
         end--;
         while (begin < end) {
             while (begin < end) {
-                if (array[end] > axisPoint) {
+                if (array[end] > e) {
                     end--;
                 } else {
                     array[begin++] = array[end];
@@ -37,17 +38,14 @@ class BubbleSortTest {
                 }
             }
             while (begin < end) {
-                if (array[begin] < axisPoint) {
+                if (array[begin] < e) {
                     begin++;
                 } else {
                     array[end--] = array[begin];
-                    break;
                 }
             }
         }
-
-        array[begin] = axisPoint;
+        array[begin] = e;
         return begin;
     }
-
 }

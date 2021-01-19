@@ -8,8 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/动态规划/最长上升子序列.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/动态规划/最长公共子序列.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/数据结构和算法/算法/排序/sort/BubbleSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/数据结构和算法/算法/排序/sort/BubbleSortTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/递归.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/算法/递归.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,13 +154,26 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.最大子序列和">
+  <component name="RunManager" selected="应用程序.最长公共子序列">
     <configuration name="最大子序列和" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.贪心.分治.最大子序列和" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="数据结构和算法.算法.贪心.分治.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="最长公共子序列" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.最长公共子序列" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.算法.动态规划.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -219,15 +233,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -236,11 +248,13 @@
       <item itemvalue="应用程序.最大子序列和" />
       <item itemvalue="应用程序.BubbleSortTest" />
       <item itemvalue="应用程序.CoinChange (1)" />
+      <item itemvalue="应用程序.最长公共子序列" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.CoinChange (1)" />
+        <item itemvalue="应用程序.最长公共子序列" />
         <item itemvalue="应用程序.BubbleSortTest" />
+        <item itemvalue="应用程序.CoinChange (1)" />
         <item itemvalue="应用程序.最大子序列和" />
       </list>
     </recent_temporary>
@@ -417,13 +431,8 @@
       <workItem from="1610940325165" duration="1820000" />
       <workItem from="1610947098902" duration="798000" />
       <workItem from="1610954055206" duration="2103000" />
-    </task>
-    <task id="LOCAL-00064" summary="更新笔记">
-      <created>1609461916394</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1609461916394</updated>
+      <workItem from="1611032773677" duration="1874000" />
+      <workItem from="1611053329238" duration="1557000" />
     </task>
     <task id="LOCAL-00065" summary="更新笔记">
       <created>1609461949216</created>
@@ -761,7 +770,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610955189148</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="最长上升子序列-动态规划实现">
+      <created>1611032860090</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1611032860090</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -793,7 +809,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="图的深度优先遍历" />
     <MESSAGE value="深度优先递归实现" />
     <MESSAGE value="深度优先搜索的非遞歸實現" />
     <MESSAGE value="拓扑排序实现" />
@@ -818,7 +833,8 @@
     <MESSAGE value="动态规划，硬币兑换-递推" />
     <MESSAGE value="优化硬币兑换" />
     <MESSAGE value="最大连续子序列和的动态规划写法" />
-    <option name="LAST_COMMIT_MESSAGE" value="最大连续子序列和的动态规划写法" />
+    <MESSAGE value="最长上升子序列-动态规划实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="最长上升子序列-动态规划实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
