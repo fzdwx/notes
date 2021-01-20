@@ -9,11 +9,6 @@ package 数据结构和算法.算法.动态规划;
 public class 最长公共子序列 {
 
     public static void main(String[] args) {
-        System.out.println(lcs1(new int[]{
-                1, 3, 5, 9, 10
-        }, new int[]{
-                1, 4, 9, 10
-        }));
         System.out.println(lcs(new int[]{
                 1, 3, 5, 9, 10
         }, new int[]{
@@ -21,10 +16,30 @@ public class 最长公共子序列 {
         }));
     }
 
+    /** 优化 */
+    public static int lcs(int[] arr1, int[] arr2) {
+        if (arr1 == null || arr1.length == 0) return 0;
+        if (arr2 == null || arr2.length == 0) { return 0;}
+        int[] dp = new int[arr1.length + 1];
+        for (int i = 1; i <= arr1.length; i++) {
+            int curr = 0;
+            for (int j = 1; j <= arr2.length; j++) {
+                int leftTop = curr;
+                curr = dp[j];
+                if (arr1[i - 1] == arr2[j - 1]) {
+                    dp[j] = leftTop + 1;
+                } else {
+                    dp[j] = Math.max(dp[j], dp[j - 1]);
+                }
+            }
+        }
+        return dp[arr2.length];
+    }
+
     /**
      * 动态规划实现
      */
-    public static int lcs(int[] arr1, int[] arr2) {
+    public static int lcs2(int[] arr1, int[] arr2) {
         if (arr1 == null || arr1.length == 0) return 0;
         if (arr2 == null || arr2.length == 0) { return 0;}
         int[][] dp = new int[arr1.length + 1][arr2.length + 1];
