@@ -8,8 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/跳表/SkipList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/布隆过滤器/BloomFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/布隆过滤器/BloomFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -266,17 +266,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -475,14 +464,8 @@
       <workItem from="1611191211388" duration="841000" />
       <workItem from="1611211425178" duration="2655000" />
       <workItem from="1611218879613" duration="473000" />
-      <workItem from="1611281897125" duration="2026000" />
-    </task>
-    <task id="LOCAL-00069" summary="update">
-      <created>1609562131290</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1609562131290</updated>
+      <workItem from="1611281897125" duration="3520000" />
+      <workItem from="1611289664569" duration="1636000" />
     </task>
     <task id="LOCAL-00070" summary="更新结构">
       <created>1609640926678</created>
@@ -820,7 +803,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611218908927</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="完成布隆过滤器">
+      <created>1611285169225</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1611285169226</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -852,7 +842,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="spring ioc 的xml实现" />
     <MESSAGE value="最小生成树算法prim" />
     <MESSAGE value="最小生成树kruskal算法" />
     <MESSAGE value="最短路径算法-dijkstra" />
@@ -877,7 +866,8 @@
     <MESSAGE value="优化成一维数组" />
     <MESSAGE value="更新" />
     <MESSAGE value="布隆过滤器初步" />
-    <option name="LAST_COMMIT_MESSAGE" value="布隆过滤器初步" />
+    <MESSAGE value="完成布隆过滤器" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成布隆过滤器" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
