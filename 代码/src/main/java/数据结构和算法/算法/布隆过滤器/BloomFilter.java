@@ -1,5 +1,7 @@
 package 数据结构和算法.算法.布隆过滤器;
 
+import 数据结构和算法.算法.排序.tools.Asserts;
+
 /**
  * @author like
  * @date 2021-01-21 14:44
@@ -7,6 +9,7 @@ package 数据结构和算法.算法.布隆过滤器;
  * @description
  */
 public class BloomFilter<T> {
+
     /** 二进制向量长度 **/
     private int bitSize;
     /** 二进制向量 **/
@@ -31,12 +34,16 @@ public class BloomFilter<T> {
         hashSize = (int) (bitSize / ln2 / n);
         // 3.bits
         bits = new long[bitSize + Long.SIZE - 1 / Long.SIZE];
-        System.out.println("bitSize = " + bitSize);
-        System.out.println("hashSize = " + hashSize);
     }
 
     public static void main(String[] args) {
-        new BloomFilter<Integer>(1_000_000, 0.01);
+        BloomFilter<Integer> bf = new BloomFilter<>(1_000_000, 0.01);
+        for (int i = 0; i < 50; i++) {
+            bf.put(i);
+        }
+        for (int i = 0; i < 50; i++) {
+            Asserts.test(bf.contains(i));
+        }
     }
 
     public void put(T value) {
@@ -50,7 +57,7 @@ public class BloomFilter<T> {
             // 1.生成一个二进制索引
             int index = combineHash % bitSize;
             // 2.设置为1
-            setBit(index);
+            set(index);
         }
     }
 
@@ -64,17 +71,22 @@ public class BloomFilter<T> {
             }
             // 1.生成一个二进制索引
             int index = combineHash % bitSize;
-            // 2.查询index是否为0
-            return get(index) == 0;
+            // 2.查询index是否为1
+            if (!get(index)) return false;
         }
         return true;
     }
 
-    private int get(int index) {
-        return 0;
+    /**
+     * 查看index処的元素是否存在
+     */
+    private boolean get(int index) {
+        long value = bits[index / Long.SIZE];
+        return (value & (1L << (index % Long.SIZE))) != 0;
     }
 
-    private void setBit(int index) {
-
+    private void set(int index) {
+        long value = bits[index / Long.SIZE];
+        bits[index/Long.SIZE] = value | (1L << (index % Long.SIZE));
     }
 }
