@@ -8,9 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/刷题/字符串/_151翻转字符串里的单词.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/刷题/字符串/_3无重复字符的最长子串.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/刷题/面试题/_47礼物的最大价值.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/刷题/1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/刷题/1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -488,14 +488,8 @@
       <workItem from="1611470834806" duration="1659000" />
       <workItem from="1611476821093" duration="1619000" />
       <workItem from="1611627246084" duration="4333000" />
-      <workItem from="1611635460033" duration="1722000" />
-    </task>
-    <task id="LOCAL-00073" summary="计算排序">
-      <created>1609642400455</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1609642400455</updated>
+      <workItem from="1611635460033" duration="3039000" />
+      <workItem from="1611642471670" duration="603000" />
     </task>
     <task id="LOCAL-00074" summary="计算排序优化">
       <created>1609646120800</created>
@@ -833,7 +827,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611478534955</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="update">
+      <created>1611637341428</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1611637341428</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -865,7 +866,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="最短路径算法-dijkstra（优化是无向图的时候包含顶点）" />
     <MESSAGE value="dijkstra算法計算路徑完成" />
     <MESSAGE value="最短路径算法-bellmanFort" />
     <MESSAGE value="测试bellmanFord算法" />
@@ -890,7 +890,8 @@
     <MESSAGE value="跳表初步" />
     <MESSAGE value="跳表完成" />
     <MESSAGE value="字符串的暴力和KMP算法" />
-    <option name="LAST_COMMIT_MESSAGE" value="字符串的暴力和KMP算法" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
