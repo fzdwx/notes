@@ -8,9 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/刷题/动态规划/_121买卖股票的最佳时机.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/刷题/1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/刷题/1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/数据结构和算法/刷题/动态规划/_121买卖股票的最佳时机.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/刷题/动态规划/_121买卖股票的最佳时机.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +153,19 @@
     </option>
   </component>
   <component name="RunManager" selected="应用程序._121买卖股票的最佳时机">
+    <configuration name="最长公共子串" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.最长公共子串" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.算法.动态规划.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BloomFilter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.布隆过滤器.BloomFilter" />
       <module name="work" />
@@ -182,19 +194,6 @@
     </configuration>
     <configuration name="CoinChange (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.CoinChange" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.动态规划.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="最长公共子串" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.最长公共子串" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
@@ -284,18 +283,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="应用程序.最长公共子串" />
       <item itemvalue="应用程序.BubbleSortTest" />
       <item itemvalue="应用程序.CoinChange (1)" />
       <item itemvalue="应用程序.BloomFilter" />
@@ -501,14 +490,7 @@
       <workItem from="1611627246084" duration="4333000" />
       <workItem from="1611635460033" duration="3039000" />
       <workItem from="1611642471670" duration="863000" />
-      <workItem from="1611722335701" duration="2837000" />
-    </task>
-    <task id="LOCAL-00075" summary="基数排序-未完成">
-      <created>1609649485502</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1609649485502</updated>
+      <workItem from="1611722335701" duration="4157000" />
     </task>
     <task id="LOCAL-00076" summary="补全排序">
       <created>1609656464016</created>
@@ -846,7 +828,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611643231376</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="update">
+      <created>1611726056901</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1611726056902</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
