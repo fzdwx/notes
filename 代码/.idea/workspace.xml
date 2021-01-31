@@ -8,9 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/数据结构和算法/刷题/动态规划/_72编辑距离.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netty学习/bio实例/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/刷题/1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/数据结构和算法/刷题/1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -280,6 +279,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -494,13 +504,8 @@
       <workItem from="1611722335701" duration="4157000" />
       <workItem from="1611729116521" duration="1694000" />
       <workItem from="1611800158269" duration="460000" />
-    </task>
-    <task id="LOCAL-00077" summary="备忘录模式">
-      <created>1609660548137</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1609660548137</updated>
+      <workItem from="1612054528135" duration="1267000" />
+      <workItem from="1612059826905" duration="616000" />
     </task>
     <task id="LOCAL-00078" summary="笔记更新">
       <created>1609726594320</created>
@@ -838,7 +843,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611729255592</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="update-烂尾">
+      <created>1612054613879</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1612054613879</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -870,7 +882,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="dijkstra算法計算路徑完成" />
     <MESSAGE value="最短路径算法-bellmanFort" />
     <MESSAGE value="测试bellmanFord算法" />
     <MESSAGE value="弗洛伊德算法完成" />
@@ -895,7 +906,8 @@
     <MESSAGE value="跳表完成" />
     <MESSAGE value="字符串的暴力和KMP算法" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update-烂尾" />
+    <option name="LAST_COMMIT_MESSAGE" value="update-烂尾" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

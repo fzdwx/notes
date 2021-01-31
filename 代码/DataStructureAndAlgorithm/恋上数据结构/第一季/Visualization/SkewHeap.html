@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+    <title>
+        Skew Heap Visualization
+    </title>
+    <meta charset="UTF-8">
+
+    <!-- css sheet for how the page is laid out -->
+
+    <link href="visualizationPageStyle.css" rel="stylesheet">
+
+
+    <!-- jqueury stuff.  Only used for the animation speed slider. -->
+    <link href="ThirdParty/jquery-ui-1.8.11.custom.css" rel="stylesheet">
+
+    <script src="ThirdParty/jquery-1.5.2.min.js"></script>
+    <script src="ThirdParty/jquery-ui-1.8.11.custom.min.js"></script>
+
+    <!-- Javascript for the actual visualization code -->
+    <script src="AnimationLibrary/CustomEvents.js" type="text/javascript"></script>
+    <script src="AnimationLibrary/UndoFunctions.js" type="text/javascript"></script>
+    <script src="AnimationLibrary/AnimatedObject.js" type="text/javascript"></script>
+    <script src="AnimationLibrary/AnimatedLabel.js" type="text/javascript"></script>
+    <script src="AnimationLibrary/AnimatedCircle.js" type="text/javascript"></script>
+    <script src="AnimationLibrary/AnimatedRectangle.js" type="text/javascript"></script>
+    <script src="AnimationLibrary/AnimatedLinkedList.js" type="text/javascript"></script>
+    <script src="AnimationLibrary/HighlightCircle.js" type="text/javascript"></script>
+    <script src="AnimationLibrary/Line.js" type="text/javascript"></script>
+    <script src="AnimationLibrary/ObjectManager.js" type="text/javascript"></script>
+    <script src="AnimationLibrary/AnimationMain.js" type="text/javascript"></script>
+    <script src="AlgorithmLibrary/Algorithm.js" type="text/javascript"></script>
+    <script src="AlgorithmLibrary/SkewHeap.js" type="text/javascript"></script>
+
+
+</head>
+
+<body class="VisualizationMainPage" onload="init();">
+
+<div id="container">
+
+    <div id="header">
+        <h1>Skew Heap</h1>
+    </div>
+
+    <div
+    = id = "mainContent">
+
+    <div id="algoControlSection">
+        <!-- Table for buttons to control specific animation (insert/find/etc) -->
+        <!-- (filled in by javascript code specific to the animtion) -->
+        <table id="AlgorithmSpecificControls"></table>
+    </div>
+
+    <!-- Drawing canvas where all animation is done.  Note:  can be resized in code -->
+
+    <canvas height="500" id="canvas" width="1000"></canvas>
+
+    <div id="generalAnimationControlSection">
+        <!-- Table for buttons to control general animation (play/pause/undo/etc) ->
+        <!-- (filled in by javascript code, specifically AnimationMain.js)  -->
+
+        <table id="GeneralAnimationControls"></table>
+    </div>
+
+</div> <!-- mainContent -->
+
+<div id="footer">
+    <p><a href="Algorithms.html">首页</a></p>
+</div>
+
+</div><!-- container -->
+</body>
+</html>
