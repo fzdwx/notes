@@ -1,10 +1,10 @@
 package com.mj.sort.cmp;
 
+import com.mj.sort.Sort;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import com.mj.sort.Sort;
 
 @SuppressWarnings("unused")
 public class ShellSort<T extends Comparable<T>> extends Sort<T> {

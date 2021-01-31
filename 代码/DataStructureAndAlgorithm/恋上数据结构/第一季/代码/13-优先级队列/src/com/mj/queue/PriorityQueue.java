@@ -1,8 +1,8 @@
 package com.mj.queue;
 
-import java.util.Comparator;
-
 import com.mj.heap.BinaryHeap;
+
+import java.util.Comparator;
 
 public class PriorityQueue<E> {
     private BinaryHeap<E> heap;

@@ -1,7 +1,5 @@
 package com.mj.file;
 
-import java.io.*;
-
 public class Files {
 
     /**

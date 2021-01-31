@@ -3,7 +3,6 @@ package com.mj.graph;
 import com.mj.MinHeap;
 import com.mj.UnionFind;
 
-import java.util.*;
 import java.util.Map.Entry;
 
 @SuppressWarnings("unchecked")

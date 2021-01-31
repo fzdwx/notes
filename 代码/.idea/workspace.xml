@@ -8,8 +8,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty学习/bio实例/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/bio/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/06-二叉搜索树/src/com/mj/printer/LevelOrderPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/06-二叉搜索树/src/com/mj/printer/LevelOrderPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/06-二叉搜索树2/src/com/mj/printer/LevelOrderPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/06-二叉搜索树2/src/com/mj/printer/LevelOrderPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/07-AVL树/src/com/mj/printer/LevelOrderPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/07-AVL树/src/com/mj/printer/LevelOrderPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/08-红黑树/src/com/mj/printer/LevelOrderPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/08-红黑树/src/com/mj/printer/LevelOrderPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/09-集合/src/com/mj/file/Files.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/09-集合/src/com/mj/file/Files.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/09-集合/src/com/mj/set/TreeSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/09-集合/src/com/mj/set/TreeSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/10-映射/src/com/mj/file/Files.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/10-映射/src/com/mj/file/Files.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/11-哈希表/src/com/mj/file/Files.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/11-哈希表/src/com/mj/file/Files.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/11-哈希表/src/com/mj/printer/LevelOrderPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/11-哈希表/src/com/mj/printer/LevelOrderPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/12-堆/src/com/mj/printer/LevelOrderPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/12-堆/src/com/mj/printer/LevelOrderPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/13-优先级队列/src/com/mj/queue/PriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/13-优先级队列/src/com/mj/queue/PriorityQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/15-二叉树的非递归遍历/src/com/mj/printer/LevelOrderPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第一季/代码/15-二叉树的非递归遍历/src/com/mj/printer/LevelOrderPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第二季/1.课件/课堂代码/01-排序/src/com/mj/sort/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第二季/1.课件/课堂代码/01-排序/src/com/mj/sort/Sort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第二季/1.课件/课堂代码/01-排序/src/com/mj/sort/cmp/ShellSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第二季/1.课件/课堂代码/01-排序/src/com/mj/sort/cmp/ShellSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第二季/1.课件/课堂代码/03-图/src/com/mj/graph/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/恋上数据结构/第二季/1.课件/课堂代码/03-图/src/com/mj/graph/ListGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +80,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -71,13 +91,13 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/数据结构和算法/算法/图" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DataStructureAndAlgorithm/src" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -89,17 +109,20 @@
       <recent name="设计模式.自定义SpringIoc.com.like.framework.beans.factory.support.xml" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\notes\代码\DataStructureAndAlgorithm\src" />
+      <recent name="D:\github\notes\代码\DataStructureAndAlgorithm" />
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\算法\图" />
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\算法\排序" />
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\trie" />
-      <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\hash\model" />
-      <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\数据结构\hash" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\github\notes\代码\DataStructureAndAlgorithm\src" />
+      <recent name="D:\github\notes\代码\juc\src" />
+      <recent name="D:\github\notes\代码\juc" />
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\算法\排序\sort\cmp" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -152,9 +175,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序._121买卖股票的最佳时机">
-    <configuration name="最长公共子串" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.最长公共子串" />
+  <component name="RunManager" selected="应用程序.Main">
+    <configuration name="最长公共子序列" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.最长公共子序列" />
       <module name="work" />
       <extension name="coverage">
         <pattern>
@@ -192,25 +215,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoinChange (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.CoinChange" />
-      <module name="work" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.bio.Main" />
+      <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.动态规划.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="最长公共子序列" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.最长公共子序列" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.动态规划.*" />
+          <option name="PATTERN" value="com.like.bio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -283,32 +293,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.最长公共子串" />
+      <item itemvalue="应用程序.最长公共子序列" />
       <item itemvalue="应用程序.BubbleSortTest" />
-      <item itemvalue="应用程序.CoinChange (1)" />
       <item itemvalue="应用程序.BloomFilter" />
       <item itemvalue="应用程序._151翻转字符串里的单词" />
       <item itemvalue="应用程序._121买卖股票的最佳时机" />
+      <item itemvalue="应用程序.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序._121买卖股票的最佳时机" />
         <item itemvalue="应用程序._151翻转字符串里的单词" />
         <item itemvalue="应用程序.BloomFilter" />
         <item itemvalue="应用程序.BubbleSortTest" />
-        <item itemvalue="应用程序.CoinChange (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -505,14 +517,8 @@
       <workItem from="1611729116521" duration="1694000" />
       <workItem from="1611800158269" duration="460000" />
       <workItem from="1612054528135" duration="1267000" />
-      <workItem from="1612059826905" duration="616000" />
-    </task>
-    <task id="LOCAL-00078" summary="笔记更新">
-      <created>1609726594320</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1609726594321</updated>
+      <workItem from="1612059826905" duration="4337000" />
+      <workItem from="1612067293979" duration="690000" />
     </task>
     <task id="LOCAL-00079" summary="并查集的2种实现">
       <created>1609731563282</created>
@@ -850,7 +856,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612054613879</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="目錄重構">
+      <created>1612062420169</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1612062420169</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -882,7 +895,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="最短路径算法-bellmanFort" />
     <MESSAGE value="测试bellmanFord算法" />
     <MESSAGE value="弗洛伊德算法完成" />
     <MESSAGE value="斐波拉契数列的几种写法" />
@@ -907,7 +919,8 @@
     <MESSAGE value="字符串的暴力和KMP算法" />
     <MESSAGE value="update" />
     <MESSAGE value="update-烂尾" />
-    <option name="LAST_COMMIT_MESSAGE" value="update-烂尾" />
+    <MESSAGE value="目錄重構" />
+    <option name="LAST_COMMIT_MESSAGE" value="目錄重構" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -940,16 +953,6 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="java.lang.NullPointerException" memberName="cause" />
-      </pinned-members>
-    </pin-to-top-manager>
-    <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/数据结构和算法/刷题/队列/_用栈实现队列.java" line="19">
-        <watch expression="q" language="JAVA" />
-      </inline-watch>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

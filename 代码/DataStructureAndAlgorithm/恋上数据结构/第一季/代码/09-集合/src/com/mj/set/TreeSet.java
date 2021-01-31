@@ -1,9 +1,9 @@
 package com.mj.set;
 
-import java.util.Comparator;
-
 import com.mj.tree.BinaryTree;
 import com.mj.tree.RBTree;
+
+import java.util.Comparator;
 
 public class TreeSet<E> implements Set<E> {
     private RBTree<E> tree;

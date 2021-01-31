@@ -1,10 +1,10 @@
 package com.mj.sort;
 
-import java.text.DecimalFormat;
-
 import com.mj.Student;
 import com.mj.sort.cmp.SelectionSort;
 import com.mj.sort.cmp.ShellSort;
+
+import java.text.DecimalFormat;
 
 @SuppressWarnings("unchecked")
 public abstract class Sort<T extends Comparable<T>> implements Comparable<Sort<T>> {

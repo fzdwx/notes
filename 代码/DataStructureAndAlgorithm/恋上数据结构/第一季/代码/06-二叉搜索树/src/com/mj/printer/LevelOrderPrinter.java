@@ -1,7 +1,5 @@
 package com.mj.printer;
 
-import java.util.*;
-
 /**
  * ┌───381────┐
  * │          │
