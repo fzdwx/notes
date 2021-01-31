@@ -1,4 +1,4 @@
-package com.like.nio;
+package com.like.nio.demo;
 
 import java.nio.IntBuffer;
 import java.util.Random;

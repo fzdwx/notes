@@ -8,9 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/NIOFileChannelD1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/NIOFileChannelD2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/BasicBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/BasicBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/BasicBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/BasicBuffer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,39 +158,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.BasicBuffer">
-    <configuration name="最长公共子序列" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.最长公共子序列" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.动态规划.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="应用程序.NIOFileChannelD2">
     <configuration name="BasicBuffer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.nio.BasicBuffer" />
+      <option name="MAIN_CLASS_NAME" value="com.like.nio.demo.BasicBuffer" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BloomFilter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.布隆过滤器.BloomFilter" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.布隆过滤器.*" />
+          <option name="PATTERN" value="com.like.nio.demo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -203,6 +178,32 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.like.bio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NIOFileChannelD1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.nio.demo.NIOFileChannelD1" />
+      <module name="nettyStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.like.nio.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NIOFileChannelD2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.nio.demo.NIOFileChannelD2" />
+      <module name="nettyStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.like.nio.demo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -249,19 +250,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="_151翻转字符串里的单词" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.刷题.字符串._151翻转字符串里的单词" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.刷题.字符串.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -274,20 +262,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.最长公共子序列" />
-      <item itemvalue="应用程序.BloomFilter" />
-      <item itemvalue="应用程序._151翻转字符串里的单词" />
       <item itemvalue="应用程序._121买卖股票的最佳时机" />
       <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.BasicBuffer" />
+      <item itemvalue="应用程序.NIOFileChannelD1" />
+      <item itemvalue="应用程序.NIOFileChannelD2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.NIOFileChannelD2" />
+        <item itemvalue="应用程序.NIOFileChannelD1" />
         <item itemvalue="应用程序.BasicBuffer" />
         <item itemvalue="应用程序.Main" />
         <item itemvalue="应用程序._121买卖股票的最佳时机" />
-        <item itemvalue="应用程序._151翻转字符串里的单词" />
-        <item itemvalue="应用程序.BloomFilter" />
       </list>
     </recent_temporary>
   </component>
@@ -486,14 +473,7 @@
       <workItem from="1612054528135" duration="1267000" />
       <workItem from="1612059826905" duration="4337000" />
       <workItem from="1612067293979" duration="2748000" />
-      <workItem from="1612074472040" duration="1103000" />
-    </task>
-    <task id="LOCAL-00082" summary="解释器模式">
-      <created>1609747310248</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1609747310249</updated>
+      <workItem from="1612074472040" duration="2810000" />
     </task>
     <task id="LOCAL-00083" summary="图的基本完成">
       <created>1609820097878</created>
@@ -831,7 +811,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612074523243</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="对buffer的初步使用">
+      <created>1612076945060</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1612076945060</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
