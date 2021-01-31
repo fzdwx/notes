@@ -8,8 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/BasicBuffer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/BasicBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/BasicBuffer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -262,6 +262,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="应用程序.最长公共子序列" />
       <item itemvalue="应用程序.BloomFilter" />
@@ -475,13 +486,7 @@
       <workItem from="1612054528135" duration="1267000" />
       <workItem from="1612059826905" duration="4337000" />
       <workItem from="1612067293979" duration="2748000" />
-    </task>
-    <task id="LOCAL-00081" summary="路径分裂优化">
-      <created>1609735690634</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1609735690634</updated>
+      <workItem from="1612074472040" duration="1103000" />
     </task>
     <task id="LOCAL-00082" summary="解释器模式">
       <created>1609747310248</created>
@@ -819,7 +824,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612068109885</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="对buffer的初步使用">
+      <created>1612074523242</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1612074523243</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -851,7 +863,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="弗洛伊德算法完成" />
     <MESSAGE value="斐波拉契数列的几种写法" />
     <MESSAGE value="哈诺塔" />
     <MESSAGE value="尾遞歸優化" />
@@ -876,7 +887,8 @@
     <MESSAGE value="目錄重構" />
     <MESSAGE value="update" />
     <MESSAGE value="bio测试实例" />
-    <option name="LAST_COMMIT_MESSAGE" value="bio测试实例" />
+    <MESSAGE value="对buffer的初步使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="对buffer的初步使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
