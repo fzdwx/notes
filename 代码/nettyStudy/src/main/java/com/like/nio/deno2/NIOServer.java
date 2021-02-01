@@ -55,11 +55,11 @@ public class NIOServer {
                     if (key.isReadable()) {  // b. op.read
                         // 7.通过key获取到channel和我们放入的buffer
                         SocketChannel client = (SocketChannel) key.channel();
-                        // 8.读取数据
                         ByteBuffer buffer = ByteBuffer.allocate(1024);
                         client.read(buffer);
+                        // 8.读取数据
+                        client.read(buffer);
                         System.out.println("from client:" + new String(buffer.array()));
-
                         buffer.clear();
                     }
 

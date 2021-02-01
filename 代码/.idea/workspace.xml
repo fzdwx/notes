@@ -8,10 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/deno2/NIOClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/deno2/NIOServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/deno2/NIOServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/deno2/NIOServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -452,14 +450,7 @@
       <workItem from="1612082366196" duration="2476000" />
       <workItem from="1612152735955" duration="4511000" />
       <workItem from="1612160643942" duration="857000" />
-      <workItem from="1612167184673" duration="2247000" />
-    </task>
-    <task id="LOCAL-00088" summary="图的深度优先遍历">
-      <created>1610075699573</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1610075699573</updated>
+      <workItem from="1612167184673" duration="2572000" />
     </task>
     <task id="LOCAL-00089" summary="深度优先递归实现">
       <created>1610159849815</created>
@@ -797,7 +788,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612153582209</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="update">
+      <created>1612169493184</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1612169493185</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
