@@ -80,8 +80,8 @@ public class GroupChatClient {
                             System.out.println(new String(buffer.array()));
                         }
                     }
+                    iKeys.remove();  // 防止重复操作
                 }
-                iKeys.remove();  // 防止重复操作
             }
 
         } catch (IOException e) {

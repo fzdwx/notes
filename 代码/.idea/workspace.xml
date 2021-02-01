@@ -448,7 +448,7 @@
       <workItem from="1612160643942" duration="857000" />
       <workItem from="1612167184673" duration="4745000" />
       <workItem from="1612176825438" duration="2014000" />
-      <workItem from="1612182659011" duration="4909000" />
+      <workItem from="1612182659011" duration="5214000" />
     </task>
     <task id="LOCAL-00090" summary="深度优先搜索的非遞歸實現">
       <created>1610161849365</created>
@@ -825,7 +825,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="八皇后问题" />
     <MESSAGE value="贪心" />
     <MESSAGE value="分治算法求最大連續子序列和" />
     <MESSAGE value="使用动态规划（暴力递归）解决钱币兑换问题" />
@@ -850,7 +849,8 @@
     <MESSAGE value="fileChannel复制文件demo" />
     <MESSAGE value="多个buffer的使用" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="聊天室" />
+    <option name="LAST_COMMIT_MESSAGE" value="聊天室" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
