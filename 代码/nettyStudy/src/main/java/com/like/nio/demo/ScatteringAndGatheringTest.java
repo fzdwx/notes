@@ -54,7 +54,7 @@ public class ScatteringAndGatheringTest {
 
                 Arrays.asList(buffers).forEach(Buffer::clear);  // clear
 
-                System.out.println("read:" + read + "-" + "write:" + write + "-" + "messageLength:" + messageLength);
+                System.out.println("read:" + read + "  " + "write:" + write + "  " + "messageLength:" + messageLength);
             }
 
         } catch (Exception e) {

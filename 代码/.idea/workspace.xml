@@ -7,10 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/ScatteringAndGatheringTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,6 +154,19 @@
     </option>
   </component>
   <component name="RunManager" selected="应用程序.ScatteringAndGatheringTest">
+    <configuration name="最长上升子序列" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.最长上升子序列" />
+      <module name="work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="数据结构和算法.算法.动态规划.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicBuffer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.like.nio.demo.BasicBuffer" />
       <module name="nettyStudy" />
@@ -222,33 +232,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="最长上升子序列" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.最长上升子序列" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.动态规划.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="应用程序.最长上升子序列" />
       <item itemvalue="应用程序.BasicBuffer" />
       <item itemvalue="应用程序.NIOFileChannelD1" />
       <item itemvalue="应用程序.NIOFileChannelD2" />
@@ -461,14 +457,7 @@
       <workItem from="1612059826905" duration="4337000" />
       <workItem from="1612067293979" duration="2748000" />
       <workItem from="1612074472040" duration="3828000" />
-      <workItem from="1612082366196" duration="2365000" />
-    </task>
-    <task id="LOCAL-00085" summary="基数排序-未完成">
-      <created>1609894879584</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1609894879585</updated>
+      <workItem from="1612082366196" duration="2476000" />
     </task>
     <task id="LOCAL-00086" summary="更新笔记">
       <created>1609894942342</created>
@@ -806,7 +795,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612079021687</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="多个buffer的使用">
+      <created>1612086109573</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1612086109573</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -838,7 +834,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="尾遞歸優化" />
     <MESSAGE value="八皇后问题" />
     <MESSAGE value="贪心" />
     <MESSAGE value="分治算法求最大連續子序列和" />
@@ -863,7 +858,8 @@
     <MESSAGE value="对buffer的初步使用" />
     <MESSAGE value="fileChannel读写小案例" />
     <MESSAGE value="fileChannel复制文件demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="fileChannel复制文件demo" />
+    <MESSAGE value="多个buffer的使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="多个buffer的使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
