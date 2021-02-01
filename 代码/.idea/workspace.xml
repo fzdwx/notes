@@ -8,8 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/groupChat/GroupChatClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/groupChat/GroupChatServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/deno2/NIOServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/deno2/NIOServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,13 +159,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.NIOClient">
-    <configuration name="NIOClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.nio.deno2.NIOClient" />
+  <component name="RunManager" selected="应用程序.GroupChatClient">
+    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.nio.groupChat.ClientMain" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.deno2.*" />
+          <option name="PATTERN" value="com.like.nio.groupChat.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -171,12 +173,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NIOFileChannelD2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.nio.demo.NIOFileChannelD2" />
+    <configuration name="GroupChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.nio.groupChat.GroupChatClient" />
+      <module name="nettyStudy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.nio.groupChat.GroupChatServer" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.deno2.*" />
+          <option name="PATTERN" value="com.like.nio.groupChat.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -184,12 +193,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NIOFileChannelD3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.nio.demo.NIOFileChannelD3" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.nio.groupChat.Main" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.deno2.*" />
+          <option name="PATTERN" value="com.like.nio.groupChat.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -197,25 +206,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NIOServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.nio.deno2.NIOServer" />
+    <configuration name="ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.nio.groupChat.ServerMain" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.deno2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ScatteringAndGatheringTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.nio.demo.ScatteringAndGatheringTest" />
-      <module name="nettyStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.like.nio.deno2.*" />
+          <option name="PATTERN" value="com.like.nio.groupChat.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -235,19 +231,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.NIOFileChannelD2" />
-      <item itemvalue="应用程序.NIOFileChannelD3" />
-      <item itemvalue="应用程序.ScatteringAndGatheringTest" />
-      <item itemvalue="应用程序.NIOClient" />
-      <item itemvalue="应用程序.NIOServer" />
+      <item itemvalue="应用程序.Main" />
+      <item itemvalue="应用程序.ClientMain" />
+      <item itemvalue="应用程序.ServerMain" />
+      <item itemvalue="应用程序.GroupChatServer" />
+      <item itemvalue="应用程序.GroupChatClient" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.NIOClient" />
-        <item itemvalue="应用程序.NIOServer" />
-        <item itemvalue="应用程序.ScatteringAndGatheringTest" />
-        <item itemvalue="应用程序.NIOFileChannelD3" />
-        <item itemvalue="应用程序.NIOFileChannelD2" />
+        <item itemvalue="应用程序.GroupChatClient" />
+        <item itemvalue="应用程序.GroupChatServer" />
+        <item itemvalue="应用程序.Main" />
+        <item itemvalue="应用程序.ClientMain" />
+        <item itemvalue="应用程序.ServerMain" />
       </list>
     </recent_temporary>
   </component>
@@ -450,14 +446,9 @@
       <workItem from="1612082366196" duration="2476000" />
       <workItem from="1612152735955" duration="4511000" />
       <workItem from="1612160643942" duration="857000" />
-      <workItem from="1612167184673" duration="2572000" />
-    </task>
-    <task id="LOCAL-00089" summary="深度优先递归实现">
-      <created>1610159849815</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1610159849816</updated>
+      <workItem from="1612167184673" duration="4745000" />
+      <workItem from="1612176825438" duration="2014000" />
+      <workItem from="1612182659011" duration="4909000" />
     </task>
     <task id="LOCAL-00090" summary="深度优先搜索的非遞歸實現">
       <created>1610161849365</created>
@@ -795,7 +786,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612169493185</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="update">
+      <created>1612169811364</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1612169811364</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
