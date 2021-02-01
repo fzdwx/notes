@@ -8,8 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/deno2/NIOClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/deno2/NIOServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/ScatteringAndGatheringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/ScatteringAndGatheringTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,44 +153,19 @@
         <option value="CucumberJavaRunConfigurationType" />
         <option value="JUnit" />
         <option value="JarApplication" />
+        <option value="SwaggerCodegen" />
         <option value="TestNG" />
         <option value="XSLT" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.ScatteringAndGatheringTest">
-    <configuration name="最长上升子序列" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="数据结构和算法.算法.动态规划.最长上升子序列" />
-      <module name="work" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="数据结构和算法.算法.动态规划.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BasicBuffer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.nio.demo.BasicBuffer" />
+  <component name="RunManager" selected="应用程序.NIOClient">
+    <configuration name="NIOClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.nio.deno2.NIOClient" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NIOFileChannelD1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.nio.demo.NIOFileChannelD1" />
-      <module name="nettyStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.like.nio.demo.*" />
+          <option name="PATTERN" value="com.like.nio.deno2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -201,7 +178,7 @@
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.demo.*" />
+          <option name="PATTERN" value="com.like.nio.deno2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -214,7 +191,20 @@
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.demo.*" />
+          <option name="PATTERN" value="com.like.nio.deno2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NIOServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.nio.deno2.NIOServer" />
+      <module name="nettyStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.like.nio.deno2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -227,7 +217,7 @@
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.demo.*" />
+          <option name="PATTERN" value="com.like.nio.deno2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -247,20 +237,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.最长上升子序列" />
-      <item itemvalue="应用程序.BasicBuffer" />
-      <item itemvalue="应用程序.NIOFileChannelD1" />
       <item itemvalue="应用程序.NIOFileChannelD2" />
       <item itemvalue="应用程序.NIOFileChannelD3" />
       <item itemvalue="应用程序.ScatteringAndGatheringTest" />
+      <item itemvalue="应用程序.NIOClient" />
+      <item itemvalue="应用程序.NIOServer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.NIOClient" />
+        <item itemvalue="应用程序.NIOServer" />
         <item itemvalue="应用程序.ScatteringAndGatheringTest" />
         <item itemvalue="应用程序.NIOFileChannelD3" />
         <item itemvalue="应用程序.NIOFileChannelD2" />
-        <item itemvalue="应用程序.NIOFileChannelD1" />
-        <item itemvalue="应用程序.BasicBuffer" />
       </list>
     </recent_temporary>
   </component>
@@ -461,14 +450,9 @@
       <workItem from="1612067293979" duration="2748000" />
       <workItem from="1612074472040" duration="3828000" />
       <workItem from="1612082366196" duration="2476000" />
-      <workItem from="1612152735955" duration="620000" />
-    </task>
-    <task id="LOCAL-00087" summary="图的深度优先遍历">
-      <created>1610068102797</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1610068102797</updated>
+      <workItem from="1612152735955" duration="4511000" />
+      <workItem from="1612160643942" duration="857000" />
+      <workItem from="1612167184673" duration="2247000" />
     </task>
     <task id="LOCAL-00088" summary="图的深度优先遍历">
       <created>1610075699573</created>
@@ -806,7 +790,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612153035950</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="update">
+      <created>1612153582209</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1612153582209</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
