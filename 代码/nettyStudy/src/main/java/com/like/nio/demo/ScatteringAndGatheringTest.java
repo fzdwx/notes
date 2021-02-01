@@ -39,6 +39,9 @@ public class ScatteringAndGatheringTest {
                 while (read < messageLength) {
                     long l = client.read(buffers);
                     read += l;
+                    if (l!=-1) {
+                        break;
+                    }
                 }
                 Arrays.asList(buffers).forEach(b->{
                     System.out.println("position:"+ b.position()+"--"+"limit"+b.limit());
@@ -50,6 +53,9 @@ public class ScatteringAndGatheringTest {
                 while (write < messageLength) {
                     long l = client.write(buffers);
                     write += l;
+                    if (l!=-1) {
+                        break;
+                    }
                 }
 
                 Arrays.asList(buffers).forEach(Buffer::clear);  // clear

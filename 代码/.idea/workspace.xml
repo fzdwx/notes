@@ -7,7 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/ScatteringAndGatheringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/ScatteringAndGatheringTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -458,13 +461,7 @@
       <workItem from="1612067293979" duration="2748000" />
       <workItem from="1612074472040" duration="3828000" />
       <workItem from="1612082366196" duration="2476000" />
-    </task>
-    <task id="LOCAL-00086" summary="更新笔记">
-      <created>1609894942342</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1609894942342</updated>
+      <workItem from="1612152735955" duration="620000" />
     </task>
     <task id="LOCAL-00087" summary="图的深度优先遍历">
       <created>1610068102797</created>
@@ -802,7 +799,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612086109573</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="update">
+      <created>1612153035949</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1612153035950</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -853,13 +857,13 @@
     <MESSAGE value="字符串的暴力和KMP算法" />
     <MESSAGE value="update-烂尾" />
     <MESSAGE value="目錄重構" />
-    <MESSAGE value="update" />
     <MESSAGE value="bio测试实例" />
     <MESSAGE value="对buffer的初步使用" />
     <MESSAGE value="fileChannel读写小案例" />
     <MESSAGE value="fileChannel复制文件demo" />
     <MESSAGE value="多个buffer的使用" />
-    <option name="LAST_COMMIT_MESSAGE" value="多个buffer的使用" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
