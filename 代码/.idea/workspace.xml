@@ -8,10 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/zeroCopy/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/zeroCopy/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../笔记/netty学习/2.Netty.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +61,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -159,13 +167,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.GroupChatClient">
-    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.nio.groupChat.ClientMain" />
+  <component name="RunManager" selected="应用程序.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.simple.Client" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.groupChat.*" />
+          <option name="PATTERN" value="com.like.netty.simple.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -206,12 +214,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.nio.groupChat.ServerMain" />
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.simple.Server" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.groupChat.*" />
+          <option name="PATTERN" value="com.like.netty.simple.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -219,33 +227,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="应用程序.Main" />
-      <item itemvalue="应用程序.ClientMain" />
-      <item itemvalue="应用程序.ServerMain" />
       <item itemvalue="应用程序.GroupChatServer" />
       <item itemvalue="应用程序.GroupChatClient" />
+      <item itemvalue="应用程序.Server" />
+      <item itemvalue="应用程序.Client" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Client" />
+        <item itemvalue="应用程序.Server" />
         <item itemvalue="应用程序.GroupChatClient" />
         <item itemvalue="应用程序.GroupChatServer" />
         <item itemvalue="应用程序.Main" />
-        <item itemvalue="应用程序.ClientMain" />
-        <item itemvalue="应用程序.ServerMain" />
       </list>
     </recent_temporary>
   </component>
@@ -452,13 +458,10 @@
       <workItem from="1612176825438" duration="2014000" />
       <workItem from="1612182659011" duration="5338000" />
       <workItem from="1612228298245" duration="1731000" />
-    </task>
-    <task id="LOCAL-00092" summary="测试">
-      <created>1610190951801</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1610190951801</updated>
+      <workItem from="1612234325991" duration="2224000" />
+      <workItem from="1612240751075" duration="607000" />
+      <workItem from="1612249438009" duration="3166000" />
+      <workItem from="1612254337545" duration="955000" />
     </task>
     <task id="LOCAL-00093" summary="spring ioc 的xml实现">
       <created>1610191273083</created>
@@ -796,7 +799,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612188007157</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="nio零拷贝">
+      <created>1612234577384</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1612234577384</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -828,7 +838,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="分治算法求最大連續子序列和" />
     <MESSAGE value="使用动态规划（暴力递归）解决钱币兑换问题" />
     <MESSAGE value="动态规划，硬币兑换，记忆化搜索" />
     <MESSAGE value="动态规划，硬币兑换-递推" />
@@ -853,7 +862,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="聊天室" />
     <MESSAGE value="聊天室 update" />
-    <option name="LAST_COMMIT_MESSAGE" value="聊天室 update" />
+    <MESSAGE value="nio零拷贝" />
+    <option name="LAST_COMMIT_MESSAGE" value="nio零拷贝" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
