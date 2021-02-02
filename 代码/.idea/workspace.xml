@@ -8,8 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/groupChat/GroupChatClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/groupChat/GroupChatServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/zeroCopy/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/zeroCopy/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/netty学习/1.IO基础部分.md" afterDir="false" />
     </list>
@@ -219,13 +219,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -448,21 +450,8 @@
       <workItem from="1612160643942" duration="857000" />
       <workItem from="1612167184673" duration="4745000" />
       <workItem from="1612176825438" duration="2014000" />
-      <workItem from="1612182659011" duration="5214000" />
-    </task>
-    <task id="LOCAL-00090" summary="深度优先搜索的非遞歸實現">
-      <created>1610161849365</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1610161849366</updated>
-    </task>
-    <task id="LOCAL-00091" summary="拓扑排序实现">
-      <created>1610166038585</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1610166038585</updated>
+      <workItem from="1612182659011" duration="5338000" />
+      <workItem from="1612228298245" duration="1731000" />
     </task>
     <task id="LOCAL-00092" summary="测试">
       <created>1610190951801</created>
@@ -793,7 +782,21 @@
       <option name="project" value="LOCAL" />
       <updated>1612169811364</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="聊天室">
+      <created>1612187918535</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1612187918536</updated>
+    </task>
+    <task id="LOCAL-00140" summary="聊天室 update">
+      <created>1612188007157</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1612188007157</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -825,7 +828,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="贪心" />
     <MESSAGE value="分治算法求最大連續子序列和" />
     <MESSAGE value="使用动态规划（暴力递归）解决钱币兑换问题" />
     <MESSAGE value="动态规划，硬币兑换，记忆化搜索" />
@@ -850,7 +852,8 @@
     <MESSAGE value="多个buffer的使用" />
     <MESSAGE value="update" />
     <MESSAGE value="聊天室" />
-    <option name="LAST_COMMIT_MESSAGE" value="聊天室" />
+    <MESSAGE value="聊天室 update" />
+    <option name="LAST_COMMIT_MESSAGE" value="聊天室 update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
