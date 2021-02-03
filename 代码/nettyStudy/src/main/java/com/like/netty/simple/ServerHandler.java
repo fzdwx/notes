@@ -7,6 +7,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author like
@@ -28,6 +29,18 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+
+        // 1.假设我们有一个非常耗时间的业务 -> 异步执行 -> 提交channel对应的NIOEventLoop的taskQueue
+        // - 解决方案：用户程序自定义的普通程序
+        ctx.channel().eventLoop().execute(()->{
+            try {
+                TimeUnit.SECONDS.sleep(10); // 复杂业务
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
         ByteBuf buf = (ByteBuf) msg;
         System.out.println("收到客户端的消息：" + buf.toString(StandardCharsets.UTF_8));
         log.info("客户端地址：" + ctx.channel().remoteAddress());
