@@ -7,16 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ServerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../笔记/netty学习/2.Netty.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -461,14 +452,7 @@
       <workItem from="1612234325991" duration="2224000" />
       <workItem from="1612240751075" duration="607000" />
       <workItem from="1612249438009" duration="3166000" />
-      <workItem from="1612254337545" duration="955000" />
-    </task>
-    <task id="LOCAL-00093" summary="spring ioc 的xml实现">
-      <created>1610191273083</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1610191273083</updated>
+      <workItem from="1612254337545" duration="1668000" />
     </task>
     <task id="LOCAL-00094" summary="最小生成树算法prim">
       <created>1610257252848</created>
@@ -806,7 +790,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612234577384</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="netty的一个小案例">
+      <created>1612255421987</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1612255421987</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -838,7 +829,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="使用动态规划（暴力递归）解决钱币兑换问题" />
     <MESSAGE value="动态规划，硬币兑换，记忆化搜索" />
     <MESSAGE value="动态规划，硬币兑换-递推" />
     <MESSAGE value="优化硬币兑换" />
@@ -863,7 +853,8 @@
     <MESSAGE value="聊天室" />
     <MESSAGE value="聊天室 update" />
     <MESSAGE value="nio零拷贝" />
-    <option name="LAST_COMMIT_MESSAGE" value="nio零拷贝" />
+    <MESSAGE value="netty的一个小案例" />
+    <option name="LAST_COMMIT_MESSAGE" value="netty的一个小案例" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
