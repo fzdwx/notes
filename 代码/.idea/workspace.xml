@@ -8,8 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/HttpServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/ServerInit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ServerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/netty学习/2.Netty.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/netty学习/2.Netty.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +164,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Client">
+  <component name="RunManager" selected="应用程序.Server (1)">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.like.netty.simple.Client" />
       <module name="nettyStudy" />
@@ -196,12 +198,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.nio.groupChat.Main" />
+    <configuration name="Server (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.http.Server" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.nio.groupChat.*" />
+          <option name="PATTERN" value="com.like.netty.http.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -222,20 +224,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="应用程序.Main" />
       <item itemvalue="应用程序.GroupChatServer" />
       <item itemvalue="应用程序.GroupChatClient" />
       <item itemvalue="应用程序.Server" />
       <item itemvalue="应用程序.Client" />
+      <item itemvalue="应用程序.Server (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Server (1)" />
         <item itemvalue="应用程序.Client" />
         <item itemvalue="应用程序.Server" />
         <item itemvalue="应用程序.GroupChatClient" />
         <item itemvalue="应用程序.GroupChatServer" />
-        <item itemvalue="应用程序.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -447,14 +460,8 @@
       <workItem from="1612249438009" duration="3166000" />
       <workItem from="1612254337545" duration="1668000" />
       <workItem from="1612334836401" duration="1561000" />
-      <workItem from="1612343025156" duration="1231000" />
-    </task>
-    <task id="LOCAL-00096" summary="最短路径算法-dijkstra">
-      <created>1610357316429</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1610357316429</updated>
+      <workItem from="1612343025156" duration="1848000" />
+      <workItem from="1612347575333" duration="2805000" />
     </task>
     <task id="LOCAL-00097" summary="最短路径算法-dijkstra（优化是无向图的时候包含顶点）">
       <created>1610357574529</created>
@@ -792,7 +799,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612343476902</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="执行复杂业务-taskQueue -2">
+      <created>1612344295356</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1612344295356</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -824,7 +838,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="优化硬币兑换" />
     <MESSAGE value="最大连续子序列和的动态规划写法" />
     <MESSAGE value="最长上升子序列-动态规划实现" />
     <MESSAGE value="求2个序列的最大公共子序列" />
@@ -849,7 +862,8 @@
     <MESSAGE value="netty的一个小案例" />
     <MESSAGE value="笔记更新" />
     <MESSAGE value="执行复杂业务-taskQueue -1" />
-    <option name="LAST_COMMIT_MESSAGE" value="执行复杂业务-taskQueue -1" />
+    <MESSAGE value="执行复杂业务-taskQueue -2" />
+    <option name="LAST_COMMIT_MESSAGE" value="执行复杂业务-taskQueue -2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
