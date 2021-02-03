@@ -9,7 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ServerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/netty学习/2.Netty.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/netty学习/2.Netty.md" afterDir="false" />
     </list>
@@ -448,14 +447,7 @@
       <workItem from="1612249438009" duration="3166000" />
       <workItem from="1612254337545" duration="1668000" />
       <workItem from="1612334836401" duration="1561000" />
-      <workItem from="1612343025156" duration="313000" />
-    </task>
-    <task id="LOCAL-00095" summary="最小生成树kruskal算法">
-      <created>1610261871008</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1610261871008</updated>
+      <workItem from="1612343025156" duration="1231000" />
     </task>
     <task id="LOCAL-00096" summary="最短路径算法-dijkstra">
       <created>1610357316429</created>
@@ -793,7 +785,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612334861868</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="执行复杂业务-taskQueue -1">
+      <created>1612343476902</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1612343476902</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -825,7 +824,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="动态规划，硬币兑换-递推" />
     <MESSAGE value="优化硬币兑换" />
     <MESSAGE value="最大连续子序列和的动态规划写法" />
     <MESSAGE value="最长上升子序列-动态规划实现" />
@@ -850,7 +848,8 @@
     <MESSAGE value="nio零拷贝" />
     <MESSAGE value="netty的一个小案例" />
     <MESSAGE value="笔记更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="笔记更新" />
+    <MESSAGE value="执行复杂业务-taskQueue -1" />
+    <option name="LAST_COMMIT_MESSAGE" value="执行复杂业务-taskQueue -1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
