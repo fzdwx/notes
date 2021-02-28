@@ -7,7 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="`update`" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="`update`">
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/再探JUC/JUC-01.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,8 +29,8 @@
         <option value="JUnit4 Test Class" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Tag Library Descriptor" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -88,7 +93,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="google-java-format.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -167,20 +172,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Client">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.simple.Client" />
-      <module name="nettyStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.like.netty.simple.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="应用程序.Test1">
     <configuration name="GroupChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.like.nio.groupChat.GroupChatClient" />
       <module name="nettyStudy" />
@@ -227,6 +219,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test1" />
+      <module name="juc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="再探JUC.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -239,19 +244,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.Client" />
       <item itemvalue="应用程序.GroupChatClient" />
       <item itemvalue="应用程序.GroupChatServer" />
       <item itemvalue="应用程序.Server (1)" />
       <item itemvalue="应用程序.Server" />
+      <item itemvalue="应用程序.Test1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Test1" />
         <item itemvalue="应用程序.Server" />
         <item itemvalue="应用程序.Server (1)" />
         <item itemvalue="应用程序.GroupChatServer" />
         <item itemvalue="应用程序.GroupChatClient" />
-        <item itemvalue="应用程序.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -474,7 +479,7 @@
       <workItem from="1612409457951" duration="33000" />
       <workItem from="1612430679502" duration="754000" />
       <workItem from="1612434047674" duration="25000" />
-      <workItem from="1614470756385" duration="1852000" />
+      <workItem from="1614470756385" duration="5163000" />
     </task>
     <task id="LOCAL-00099" summary="最短路径算法-bellmanFort">
       <created>1610444575369</created>
