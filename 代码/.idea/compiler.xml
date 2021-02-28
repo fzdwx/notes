@@ -10,10 +10,13 @@
         <module name="juc" />
         <module name="nettyStudy" />
         <module name="DataStructureAndAlgorithm" />
+        <module name="interview" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="DataStructureAndAlgorithm" target="1.8" />
+      <module name="interview" target="1.8" />
+      <module name="Interview" target="1.8" />
       <module name="juc" target="1.8" />
       <module name="nettyStudy" target="1.8" />
       <module name="work" target="1.8" />
