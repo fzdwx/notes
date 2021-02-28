@@ -1,0 +1,218 @@
+#  								并发编程
+
+## 	1.进程和线程
+
+**进程**
+
+- 程序由指令和数据组成，但是这些指令要运行，数据要读写，就必须将指令加载至cpu，数据加载到内存。在指令运行过程中还需要用到磁盘、网络等设备。==进程就是用来加载指令、管理内存和io的==。
+- 当一个程序被运行，从磁盘加载这个程序的代码到内存，这时就开启了一个进程。
+- 进程可以视为程序的一个实例。大部分的程序可以同时运行多个实例进程，也有的程序只能启动一个实例进程。
+
+
+
+**线程**
+
+- 一个进程之内可以分为一到多个**线程**
+- 一个线程就是一个指令流，将指令流中的一条条指令以一定的顺序交给CPU 执行
+- 在Java中
+  - 线程作为最小调度单位
+  - 进程作为资源分配最小单位
+- 在windows中进程是不活动的，作为线程的容器
+
+
+
+
+
+**对比**
+
+1. 进程基本上是相互独立的，而线程在进程内部， 是进程的一个子集。
+2. 进程拥有共享的资源，如内存空间，内部的线程是共享的
+3. 进程间通信比较复杂
+   - 同一台计算机的进程通信成为IPC inter - process communication
+   - 不同计算机间的通信需要通过网络，并遵守协议。比如HTTP
+4. 线程间通信较为简单，因为他们共享进程的内存，多个线程可以访问同一个共享变量
+5. 线程更轻量，切换上下文的成本低。
+
+
+
+## 2.并行和并发
+
+在单核cpu中，线程实际上是*串行执行*的。操作系统中有一个组件叫任务调度器，将cpu的时间片分给不同的线程使用，cpu在线程的切换很快，所以感觉是同时运行的。==微观串行，宏观并行==。
+
+这种线程轮流使用 cpu 的做法成为 ==并发==，concurrent
+
+
+
+- 并发：(concurrent) 是同一时间应对多件事情的能力
+- 并行：(parallel) 是同一时间动手做多件事情的能力
+
+
+
+## 3.查看进程的方法
+
+**windows** ： 
+
+- tasklist：查看进程
+- taskkill：杀死进程
+
+**linux**
+
+- ps -fe ：查看所有进程
+- ps -fT -p < pid > 查看某个进程的所有线程
+- kill
+- top 按大写H切换是否显示线程
+- top -H -p < pid > 查看某个进程pid的所有线程 
+
+
+
+**Java**
+
+- jps：查看所有Java进程
+- jstack 查看某个Java进程的所有线程状态
+- jconsole ：连接到Java程序
+
+
+
+## 4.上下文切换
+
+**sleep**
+
+1.会让线程从running 进入 time waiting状态
+
+2.其他线程可以调用interrupt方法进行打断，并抛出interruptedExcepiton
+
+3.睡眠结束后会被立即执行
+
+
+
+**yield**
+
+1.调用yield会让线程从running进入runnable状态，然后调度执行其他同优先级的线程。如果这时没有同优先级的线程，那么不能保证让当前线程暂停
+
+2.具体的实现依赖操作系统的任务调度器
+
+
+
+
+
+**join**
+
+~~~java
+thread.join()
+~~~
+
+表示等待该线程执行完，才能执行后面的内容
+
+
+
+## 5.优雅的停止线程
+
+~~~java
+package 再探JUC.test;
+
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.concurrent.TimeUnit;
+
+/**
+ * @author like
+ * @email 980650920@qq.com
+ * @since 2021-02-28 11:31
+ */
+public class Test3 {
+
+    public static void main(String[] args) {
+        TwoPhaseTermination tpt = new TwoPhaseTermination();
+        tpt.start();
+
+        try {
+            TimeUnit.SECONDS.sleep(4);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        tpt.stop();
+    }
+}
+
+@Slf4j
+class TwoPhaseTermination {
+
+    /**
+     * 监控线程
+     */
+    private Thread monitor;
+
+    /**
+     * 启动监控线程
+     */
+    public void start() {
+        monitor = new Thread(() -> {
+            while (true) {
+                Thread curr = Thread.currentThread();
+                if (curr.isInterrupted()) {
+                    log.info("料理后事");
+                    break;
+                }
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                    log.info("执行监控记录");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    // 重新设置打断标记
+                    curr.interrupt();
+                }
+            }
+        }, "monitor");
+
+        monitor.start();
+    }
+
+    /**
+     * 停止监控线程
+     */
+    public void stop() {
+        monitor.interrupt();
+    }
+}
+~~~
+
+
+
+![image-20210228113121044](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210228113128.png)
+
+## 6.守护线程
+
+当主线程结束后，守护线程不管运行完了没有都直接结束
+
+![image-20210228115800855](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210228115800.png)
+
+```java
+@Slf4j
+public class Test5 {
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(() -> {
+            log.info("t1 开始运行");
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            log.info("t1 运行结束");
+        }, "t1");
+        // 设置为守护线程
+        t1.setDaemon(true);
+        t1.start();
+
+        log.info("main 开始运行");
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        log.info("main 运行结束");
+    }
+}
+```
+
