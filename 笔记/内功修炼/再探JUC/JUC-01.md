@@ -107,4 +107,112 @@ thread.join()
 
 ## 5.优雅的停止线程
 
+~~~java
+package 再探JUC.test;
+
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.concurrent.TimeUnit;
+
+/**
+ * @author like
+ * @email 980650920@qq.com
+ * @since 2021-02-28 11:31
+ */
+public class Test3 {
+
+    public static void main(String[] args) {
+        TwoPhaseTermination tpt = new TwoPhaseTermination();
+        tpt.start();
+
+        try {
+            TimeUnit.SECONDS.sleep(4);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        tpt.stop();
+    }
+}
+
+@Slf4j
+class TwoPhaseTermination {
+
+    /**
+     * 监控线程
+     */
+    private Thread monitor;
+
+    /**
+     * 启动监控线程
+     */
+    public void start() {
+        monitor = new Thread(() -> {
+            while (true) {
+                Thread curr = Thread.currentThread();
+                if (curr.isInterrupted()) {
+                    log.info("料理后事");
+                    break;
+                }
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                    log.info("执行监控记录");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    // 重新设置打断标记
+                    curr.interrupt();
+                }
+            }
+        }, "monitor");
+
+        monitor.start();
+    }
+
+    /**
+     * 停止监控线程
+     */
+    public void stop() {
+        monitor.interrupt();
+    }
+}
+~~~
+
+
+
 ![image-20210228113121044](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210228113128.png)
+
+## 6.守护线程
+
+当主线程结束后，守护线程不管运行完了没有都直接结束
+
+![image-20210228115800855](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210228115800.png)
+
+```java
+@Slf4j
+public class Test5 {
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(() -> {
+            log.info("t1 开始运行");
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            log.info("t1 运行结束");
+        }, "t1");
+        // 设置为守护线程
+        t1.setDaemon(true);
+        t1.start();
+
+        log.info("main 开始运行");
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        log.info("main 运行结束");
+    }
+}
+```
+
