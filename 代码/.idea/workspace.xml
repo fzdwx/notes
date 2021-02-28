@@ -7,10 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="`update`">
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test1.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/juc/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/再探JUC/JUC-01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +93,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="google-java-format.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -479,14 +479,7 @@
       <workItem from="1612409457951" duration="33000" />
       <workItem from="1612430679502" duration="754000" />
       <workItem from="1612434047674" duration="25000" />
-      <workItem from="1614470756385" duration="5163000" />
-    </task>
-    <task id="LOCAL-00099" summary="最短路径算法-bellmanFort">
-      <created>1610444575369</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1610444575369</updated>
+      <workItem from="1614470756385" duration="7358000" />
     </task>
     <task id="LOCAL-00100" summary="测试bellmanFord算法">
       <created>1610506702177</created>
@@ -824,7 +817,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614472633415</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="demo1">
+      <created>1614477737582</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1614477737582</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -856,7 +856,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="最长上升子序列-动态规划实现" />
     <MESSAGE value="求2个序列的最大公共子序列" />
     <MESSAGE value="优化成一维数组" />
     <MESSAGE value="更新" />
@@ -881,7 +880,8 @@
     <MESSAGE value="执行复杂业务-taskQueue -2" />
     <MESSAGE value="http服务器简单实例" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="demo1" />
+    <option name="LAST_COMMIT_MESSAGE" value="demo1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

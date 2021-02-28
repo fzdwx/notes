@@ -71,3 +71,22 @@
 - jstack 查看某个Java进程的所有线程状态
 - jconsole ：连接到Java程序
 
+
+
+## 4.上下文切换
+
+**sleep**
+
+1.会让线程从running 进入 time waiting状态
+
+2.其他线程可以调用interrupt方法进行打断，并抛出interruptedExcepiton
+
+3.睡眠结束后会被立即执行
+
+
+
+**yield**
+
+1.调用yield会让线程从running进入runnable状态，然后调度执行其他同优先级的线程。如果这时没有同优先级的线程，那么不能保证让当前线程暂停
+
+2.具体的实现依赖操作系统的任务调度器
