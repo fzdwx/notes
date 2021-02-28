@@ -8,8 +8,122 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/Demo_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/DataStructureAndAlgorithm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/DataStructureAndAlgorithm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/动态规划/_121买卖股票的最佳时机.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/动态规划/_121买卖股票的最佳时机.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/动态规划/_72编辑距离.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/动态规划/_72编辑距离.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/字符串/_151翻转字符串里的单词.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/字符串/_151翻转字符串里的单词.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/字符串/_3无重复字符的最长子串.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/字符串/_3无重复字符的最长子串.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/栈/_20有效的括号.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/栈/_20有效的括号.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/树/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/树/TreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/树/二叉树/_226反转二叉树.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/树/二叉树/_226反转二叉树.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/树/二叉树/计算二叉树的高度.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/树/二叉树/计算二叉树的高度.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/链表/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/链表/ListNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/链表/_141环形链表.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/链表/_141环形链表.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/链表/_206反转链表.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/链表/_206反转链表.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/链表/_237删除链表中的节点.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/链表/_237删除链表中的节点.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/队列/_用栈实现队列.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/队列/_用栈实现队列.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/刷题/面试题/_47礼物的最大价值.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/刷题/面试题/_47礼物的最大价值.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/HashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/HashSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/HashSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/LinkedHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/LinkedHashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/LinkedHashSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/LinkedHashSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/model/Asserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/model/Asserts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/model/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/model/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/model/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/model/SubKey1.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/model/SubKey1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/model/SubKey2.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/model/SubKey2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/hash/model/Times.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/hash/model/Times.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/heap/AbstractHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/heap/AbstractHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/heap/BinaryHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/heap/BinaryHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/heap/Heap.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/heap/Heap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/heap/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/heap/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/list/AbstractList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/list/AbstractList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/list/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/list/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/list/array/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/list/array/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/list/linked/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/list/linked/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/list/linked/Ring/LinkedRingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/list/linked/Ring/LinkedRingList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/list/linked/Ring/SinglyRingLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/list/linked/Ring/SinglyRingLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/list/linked/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/list/linked/SinglyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/map/TreeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/map/TreeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/queue/CircleDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/queue/CircleDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/queue/CircleQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/queue/CircleQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/queue/Deque.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/queue/Deque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/queue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/queue/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/set/ListSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/set/ListSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/set/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/set/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/set/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/set/Set.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/set/TreeSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/set/TreeSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/set/file/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/set/file/FileInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/set/file/Files.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/set/file/Files.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/stack/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/stack/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/printer/BinaryTreeInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/printer/BinaryTreeInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/printer/BinaryTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/printer/BinaryTrees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/printer/InorderPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/printer/InorderPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/printer/LevelOrderPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/printer/LevelOrderPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/printer/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/printer/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/printer/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/printer/Strings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/二叉树/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/二叉树/AVLTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/二叉树/BinaryBalanceSearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/二叉树/BinaryBalanceSearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/二叉树/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/二叉树/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/二叉树/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/二叉树/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/tree/二叉树/RedBlackTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/tree/二叉树/RedBlackTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/数据结构/trie/Trie.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/数据结构/trie/Trie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/动态规划/CoinChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/动态规划/CoinChange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/动态规划/最大连续子序列和.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/动态规划/最大连续子序列和.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/动态规划/最长上升子序列.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/动态规划/最长上升子序列.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/动态规划/最长公共子串.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/动态规划/最长公共子串.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/动态规划/最长公共子序列.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/动态规划/最长公共子序列.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/动态规划/背包问题.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/动态规划/背包问题.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/回溯/eightQueen.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/回溯/eightQueen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/图/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/图/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/图/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/图/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/图/UnionFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/图/UnionFind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/图/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/图/graph/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/图/graph/ListGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/图/graph/ListGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/字符串/BaoLi.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/字符串/BaoLi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/字符串/KMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/字符串/KMP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/布隆过滤器/BloomFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/布隆过滤器/BloomFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/并查集/QuickFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/并查集/QuickFind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/并查集/QuickUnion.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/并查集/QuickUnion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/并查集/QuickUnionRankPathCompress.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/并查集/QuickUnionRankPathCompress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/并查集/QuickUnionRankPathSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/并查集/QuickUnionRankPathSplit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/并查集/UnionFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/并查集/UnionFind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/BinarySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/Sort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/cmp/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/cmp/BubbleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/cmp/HeapSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/cmp/HeapSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/cmp/InsertSort2.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/cmp/InsertSort2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/cmp/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/cmp/InsertionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/cmp/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/cmp/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/cmp/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/cmp/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/cmp/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/cmp/SelectionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/cmp/ShellSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/cmp/ShellSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/nocmp/CountingSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/nocmp/CountingSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/sort/nocmp/RadixSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/sort/nocmp/RadixSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/tools/Asserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/tools/Asserts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/tools/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/tools/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/tools/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/tools/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/排序/tools/Times.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/排序/tools/Times.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/贪心/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/贪心/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/贪心/CoinChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/贪心/CoinChange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/贪心/Pirate.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/贪心/Pirate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/贪心/分治/最大子序列和.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/贪心/分治/最大子序列和.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/跳表/SkipList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/跳表/SkipList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/递归/ClimbStairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/递归/ClimbStairs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/递归/Fib.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/递归/Fib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/递归/Hanoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/递归/Hanoi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/算法/递归/TailCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/递归/TailCall.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +174,7 @@
   </component>
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -170,13 +285,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Test5">
-    <configuration name="Test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test1" />
-      <module name="juc" />
+  <component name="RunManager" selected="应用程序.Demo_01">
+    <configuration name="Demo_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="算法.排序.Demo_01" />
+      <module name="DataStructureAndAlgorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="再探JUC.test.*" />
+          <option name="PATTERN" value="算法.排序.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -248,19 +363,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.Test1" />
       <item itemvalue="应用程序.Test2" />
       <item itemvalue="应用程序.Test3" />
       <item itemvalue="应用程序.Test4" />
       <item itemvalue="应用程序.Test5" />
+      <item itemvalue="应用程序.Demo_01" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Demo_01" />
         <item itemvalue="应用程序.Test5" />
         <item itemvalue="应用程序.Test4" />
         <item itemvalue="应用程序.Test3" />
         <item itemvalue="应用程序.Test2" />
-        <item itemvalue="应用程序.Test1" />
       </list>
     </recent_temporary>
   </component>
@@ -483,14 +598,7 @@
       <workItem from="1612409457951" duration="33000" />
       <workItem from="1612430679502" duration="754000" />
       <workItem from="1612434047674" duration="25000" />
-      <workItem from="1614470756385" duration="10925000" />
-    </task>
-    <task id="LOCAL-00104" summary="尾遞歸優化">
-      <created>1610674213505</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1610674213505</updated>
+      <workItem from="1614470756385" duration="16439000" />
     </task>
     <task id="LOCAL-00105" summary="八皇后问题">
       <created>1610764856784</created>
@@ -828,7 +936,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614484344632</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="守护线程 demo">
+      <created>1614484693987</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1614484693987</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -860,7 +975,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="完成布隆过滤器" />
     <MESSAGE value="跳表初步" />
     <MESSAGE value="跳表完成" />
     <MESSAGE value="字符串的暴力和KMP算法" />
@@ -885,7 +999,8 @@
     <MESSAGE value="join demo" />
     <MESSAGE value="两阶段终止模式" />
     <MESSAGE value="打断park状态下的demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="打断park状态下的demo" />
+    <MESSAGE value="守护线程 demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="守护线程 demo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
