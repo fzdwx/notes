@@ -8,11 +8,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/HttpServerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/ServerInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/juc/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/juc/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/juc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/juc/juc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/BlockingQueueDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/BlockingQueueDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/CallAbleDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/CallAbleDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/CasDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/CasDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/CollectionNoSafeDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/CollectionNoSafeDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/CountDownLatchDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/CountDownLatchDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/CyclicBarrierDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/CyclicBarrierDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/DeadlockDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/DeadlockDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/HashMapDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/HashMapDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/ProduceAndConsumerWithBlockQueueDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/ProduceAndConsumerWithBlockQueueDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/ReadWriterLockDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/ReadWriterLockDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/SemaphoreDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/SemaphoreDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/SpinLockDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/SpinLockDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/SyncAndLockDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/SyncAndLockDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/ThreadLocalDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/ThreadLocalDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/ThreadPollDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/ThreadPollDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/Java并发编程_JavaUtilConcurrent/VolatileDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/Java并发编程_JavaUtilConcurrent/VolatileDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work.iml" beforeDir="false" afterPath="$PROJECT_DIR$/work.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/Blog of likelove项目过程/项目部署.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/Blog of likelove项目过程/项目部署.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/netty学习/2.Netty.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/netty学习/2.Netty.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/py爬虫/1.爬虫基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/py爬虫/1.爬虫基础.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +52,20 @@
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
@@ -79,13 +109,13 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DataStructureAndAlgorithm/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -164,7 +194,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Server (1)">
+  <component name="RunManager" selected="应用程序.Client">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.like.netty.simple.Client" />
       <module name="nettyStudy" />
@@ -236,19 +266,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.GroupChatServer" />
-      <item itemvalue="应用程序.GroupChatClient" />
-      <item itemvalue="应用程序.Server" />
       <item itemvalue="应用程序.Client" />
+      <item itemvalue="应用程序.GroupChatClient" />
+      <item itemvalue="应用程序.GroupChatServer" />
       <item itemvalue="应用程序.Server (1)" />
+      <item itemvalue="应用程序.Server" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.Server (1)" />
-        <item itemvalue="应用程序.Client" />
         <item itemvalue="应用程序.Server" />
-        <item itemvalue="应用程序.GroupChatClient" />
+        <item itemvalue="应用程序.Server (1)" />
         <item itemvalue="应用程序.GroupChatServer" />
+        <item itemvalue="应用程序.GroupChatClient" />
+        <item itemvalue="应用程序.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -461,14 +491,17 @@
       <workItem from="1612254337545" duration="1668000" />
       <workItem from="1612334836401" duration="1561000" />
       <workItem from="1612343025156" duration="1848000" />
-      <workItem from="1612347575333" duration="2805000" />
-    </task>
-    <task id="LOCAL-00097" summary="最短路径算法-dijkstra（优化是无向图的时候包含顶点）">
-      <created>1610357574529</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1610357574529</updated>
+      <workItem from="1612347575333" duration="3146000" />
+      <workItem from="1612406481823" duration="100000" />
+      <workItem from="1612407040145" duration="125000" />
+      <workItem from="1612408596565" duration="342000" />
+      <workItem from="1612408960752" duration="75000" />
+      <workItem from="1612409052544" duration="67000" />
+      <workItem from="1612409139767" duration="283000" />
+      <workItem from="1612409457951" duration="33000" />
+      <workItem from="1612430679502" duration="754000" />
+      <workItem from="1612434047674" duration="25000" />
+      <workItem from="1614470756385" duration="1550000" />
     </task>
     <task id="LOCAL-00098" summary="dijkstra算法計算路徑完成">
       <created>1610436863807</created>
@@ -806,7 +839,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612344295356</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="http服务器简单实例">
+      <created>1612350430448</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1612350430449</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -838,7 +878,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="最大连续子序列和的动态规划写法" />
     <MESSAGE value="最长上升子序列-动态规划实现" />
     <MESSAGE value="求2个序列的最大公共子序列" />
     <MESSAGE value="优化成一维数组" />
@@ -863,7 +902,8 @@
     <MESSAGE value="笔记更新" />
     <MESSAGE value="执行复杂业务-taskQueue -1" />
     <MESSAGE value="执行复杂业务-taskQueue -2" />
-    <option name="LAST_COMMIT_MESSAGE" value="执行复杂业务-taskQueue -2" />
+    <MESSAGE value="http服务器简单实例" />
+    <option name="LAST_COMMIT_MESSAGE" value="http服务器简单实例" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
