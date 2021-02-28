@@ -103,3 +103,8 @@ thread.join()
 
 表示等待该线程执行完，才能执行后面的内容
 
+
+
+## 5.优雅的停止线程
+
+![image-20210228113121044](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210228113128.png)
