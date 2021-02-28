@@ -8,9 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/内功修炼/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/内功修炼/再探JUC/JUC-01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,20 +170,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.Test3">
-    <configuration name="Server (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.http.Server" />
-      <module name="nettyStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.like.netty.http.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="应用程序.Test4">
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.like.netty.simple.Server" />
       <module name="nettyStudy" />
@@ -237,6 +223,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test4" />
+      <module name="juc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="再探JUC.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -249,19 +248,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.Server (1)" />
       <item itemvalue="应用程序.Server" />
       <item itemvalue="应用程序.Test1" />
       <item itemvalue="应用程序.Test2" />
       <item itemvalue="应用程序.Test3" />
+      <item itemvalue="应用程序.Test4" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Test4" />
         <item itemvalue="应用程序.Test3" />
         <item itemvalue="应用程序.Test2" />
         <item itemvalue="应用程序.Test1" />
         <item itemvalue="应用程序.Server" />
-        <item itemvalue="应用程序.Server (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -484,14 +483,7 @@
       <workItem from="1612409457951" duration="33000" />
       <workItem from="1612430679502" duration="754000" />
       <workItem from="1612434047674" duration="25000" />
-      <workItem from="1614470756385" duration="9725000" />
-    </task>
-    <task id="LOCAL-00102" summary="斐波拉契数列的几种写法">
-      <created>1610589331434</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1610589331434</updated>
+      <workItem from="1614470756385" duration="10628000" />
     </task>
     <task id="LOCAL-00103" summary="哈诺塔">
       <created>1610673147242</created>
@@ -829,7 +821,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614481895104</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="两阶段终止模式">
+      <created>1614483549633</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1614483549633</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -861,7 +860,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="更新" />
     <MESSAGE value="布隆过滤器初步" />
     <MESSAGE value="完成布隆过滤器" />
     <MESSAGE value="跳表初步" />
@@ -886,7 +884,8 @@
     <MESSAGE value="demo1" />
     <MESSAGE value="线程调度demo" />
     <MESSAGE value="join demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="join demo" />
+    <MESSAGE value="两阶段终止模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="两阶段终止模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
