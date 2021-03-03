@@ -7,11 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="update">
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="笔记更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interview/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/src/test/java/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/Blog of likelove项目过程/项目部署.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/Blog of likelove项目过程/项目部署.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/面试突击/第三季/01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/第三季/01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/项目/mall2.0/01-基础入门.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/mall2.0/01-基础入门.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -224,6 +224,17 @@
     <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test" />
       <module name="interview" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -467,13 +478,8 @@
       <workItem from="1614500693812" duration="10777000" />
       <workItem from="1614557834282" duration="2248000" />
       <workItem from="1614595577518" duration="103000" />
-    </task>
-    <task id="LOCAL-00108" summary="使用动态规划（暴力递归）解决钱币兑换问题">
-      <created>1610861569530</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1610861569530</updated>
+      <workItem from="1614600779263" duration="76000" />
+      <workItem from="1614732539260" duration="2564000" />
     </task>
     <task id="LOCAL-00109" summary="动态规划，硬币兑换，记忆化搜索">
       <created>1610866773900</created>
@@ -811,7 +817,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614519133565</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="笔记更新">
+      <created>1614600836596</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1614600836596</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -855,7 +868,6 @@
     <MESSAGE value="聊天室 update" />
     <MESSAGE value="nio零拷贝" />
     <MESSAGE value="netty的一个小案例" />
-    <MESSAGE value="笔记更新" />
     <MESSAGE value="执行复杂业务-taskQueue -1" />
     <MESSAGE value="执行复杂业务-taskQueue -2" />
     <MESSAGE value="http服务器简单实例" />
@@ -868,7 +880,8 @@
     <MESSAGE value="update 整合maven" />
     <MESSAGE value="&#10;hashMap demo" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="笔记更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="笔记更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
