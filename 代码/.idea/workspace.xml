@@ -7,8 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="笔记更新">
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="添加笔记">
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test6.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/src/test/java/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +95,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor.code.editing" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -171,7 +174,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunManager" selected="Application.Test6">
     <configuration name="Demo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Demo1" />
       <module name="interview" />
@@ -192,8 +195,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test4" />
+    <configuration name="Test5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test5" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
@@ -205,8 +208,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test5" />
+    <configuration name="Test6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test6" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
@@ -226,14 +229,15 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Test4" />
       <item itemvalue="Application.Test5" />
       <item itemvalue="Application.HashMapDemo" />
       <item itemvalue="Application.Demo1" />
       <item itemvalue="Application.test" />
+      <item itemvalue="Application.Test6" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test6" />
         <item itemvalue="Application.test" />
         <item itemvalue="Application.Demo1" />
         <item itemvalue="Application.HashMapDemo" />
@@ -466,20 +470,9 @@
       <workItem from="1614595577518" duration="103000" />
       <workItem from="1614600779263" duration="76000" />
       <workItem from="1614732539260" duration="2936000" />
-    </task>
-    <task id="LOCAL-00110" summary="动态规划，硬币兑换-递推">
-      <created>1610869539645</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1610869539645</updated>
-    </task>
-    <task id="LOCAL-00111" summary="优化硬币兑换">
-      <created>1610947265783</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1610947265783</updated>
+      <workItem from="1614767003449" duration="112000" />
+      <workItem from="1614767756931" duration="316000" />
+      <workItem from="1614820213371" duration="9873000" />
     </task>
     <task id="LOCAL-00112" summary="最大连续子序列和的动态规划写法">
       <created>1610955189148</created>
@@ -810,7 +803,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614735384020</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="笔记更新">
+      <created>1614767077423</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1614767077424</updated>
+    </task>
+    <task id="LOCAL-00160" summary="添加笔记">
+      <created>1614767100386</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1614767100386</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -842,7 +849,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="字符串的暴力和KMP算法" />
     <MESSAGE value="update-烂尾" />
     <MESSAGE value="目錄重構" />
     <MESSAGE value="bio测试实例" />
@@ -867,7 +873,8 @@
     <MESSAGE value="&#10;hashMap demo" />
     <MESSAGE value="update" />
     <MESSAGE value="笔记更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="笔记更新" />
+    <MESSAGE value="添加笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加笔记" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
