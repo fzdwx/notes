@@ -7,11 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="添加笔记">
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test6.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interview/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/src/test/java/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/项目/mall2.0/02-分布式基础-缓存篇.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/mall2.0/02-分布式基础-缓存篇.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -473,13 +471,7 @@
       <workItem from="1614767003449" duration="112000" />
       <workItem from="1614767756931" duration="316000" />
       <workItem from="1614820213371" duration="9873000" />
-    </task>
-    <task id="LOCAL-00112" summary="最大连续子序列和的动态规划写法">
-      <created>1610955189148</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1610955189148</updated>
+      <workItem from="1614854252915" duration="667000" />
     </task>
     <task id="LOCAL-00113" summary="最长上升子序列-动态规划实现">
       <created>1611032860090</created>
@@ -817,7 +809,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614767100386</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="更新笔记">
+      <created>1614854283138</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1614854283138</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -849,7 +848,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="update-烂尾" />
     <MESSAGE value="目錄重構" />
     <MESSAGE value="bio测试实例" />
     <MESSAGE value="对buffer的初步使用" />
@@ -874,7 +872,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="笔记更新" />
     <MESSAGE value="添加笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加笔记" />
+    <MESSAGE value="更新笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新笔记" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
