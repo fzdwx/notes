@@ -218,9 +218,168 @@ public class Test5 {
 
 
 
-# 共享模型
+# Montior
+
+## 1.对象头的概念
+
+![image-20210305104656734](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305104717.png)
+
+![image-20210305104708213](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305104713.png)
+
+
+
+## 2.Monitor-重量级锁
+
+被翻译为监视器或管程。
+
+每个Java对象都可以关联一个Monitor对象，如果使用synchronized给对象上(重量级)之后，该对象的makr word中就被设置指向monitor对象。
+
+![image-20210305105952017](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305105952.png)
+
+![image-20210305110010613](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305110010.png)
+
+![image-20210305110045536](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305110045.png)
+
+
+
+~~~
+monitor Enter  获取锁
+···
+monitor Exit   释放锁
+~~~
 
 
 
 
 
+## 3.轻量级锁-案例
+
+![image-20210305113429470](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305113429.png)
+
+![image-20210305113327344](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305113327.png)
+
+
+
+## 4.轻量级锁
+
+一个对象虽然是多线程访问的，但是访问时间是错开的(也就是没有竞争)，那么可以用轻量级锁来优化。
+
+轻量级锁对使用者是透明的，语法仍然是synchronized
+
+~~~java
+static final Object obj = new Object();
+public static void m1(){
+    synchroized(obj){
+        // ···
+        m2()
+    }
+}
+
+public static void m2(){
+    synchroized(obj){
+        // ···
+    }
+}
+~~~
+
+
+
+
+
+![image-20210305113934660](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305113934.png)
+
+![image-20210305114051803](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305114051.png)
+
+![image-20210305114138654](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305114138.png)
+
+
+
+![image-20210305114318484](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305114318.png)
+
+![image-20210305114459781](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305114459.png)
+
+
+
+
+
+## 5.锁膨胀
+
+如果在尝试加轻量级锁的过程中，cas操作无法成功，这时一种情况就是有其他线程为此对象加上了轻量级锁(有竞争)，这时需要进行锁膨胀，将轻量级锁变为重量级锁
+
+![image-20210305114858428](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305114858.png)
+
+![image-20210305114935534](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305114935.png)
+
+![image-20210305115038954](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305115039.png)
+
+
+
+## 6.自旋锁
+
+重量级锁竞争时，可以用自旋锁来优化，如果当前线程自旋成功(即这时候持有锁的线程已经释放了锁)，这时候就可以避免阻塞。
+
+![image-20210305120952416](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305120952.png)
+
+## 7.偏向锁
+
+轻量级锁在没有竞争时，每次重入仍然要进行cas操作，Java1.6就引入 偏向锁来做进一步优化：只有第一次使用CAS将线程Id设置到对象的mark word头，之后发现这个线程id是自己就表示没有竞争，不用重新cas。以后只要不发生竞争，这个对象就归该线程所有
+
+~~~java
+static final Object obj = new Object();
+public static void m1(){
+    synchroized(obj){
+        // ···
+        m2()
+    }
+}
+
+public static void m2(){
+    synchroized(obj){
+        // ···
+        m3()
+    }
+}
+public static void m3(){
+    synchroized(obj){
+        // ···
+        
+    }
+}
+~~~
+
+
+
+### 偏向状态
+
+![image-20210305121857789](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305121857.png)
+
+一个对象创建时：
+
+- 如果开启了偏向锁（默认开启）,那么对象创建后，mark word值为0x05即最后3位为101，这时他的thread、epoch、age都为0
+- 偏向锁默认是延迟的，不会在程序启动时立即生效，如果想避免延迟，可以加VM参数 
+  - -XX:BiasedLockingStartupDelay=0
+- 如果没有开启偏向锁，那么对象创建后，markword值为0x01即最后3位为001,这时他的hashcode、age都为0，第一次用hashcode的时候才会赋值
+
+
+
+禁用偏向锁
+
+~~~
+-XX:-UseBiasedLocking 
+~~~
+
+
+
+
+
+### 批量重偏向
+
+![image-20210305143411627](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305143411.png)
+
+
+
+
+
+### 批量撤销
+
+![image-20210305144152552](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305144152.png)
