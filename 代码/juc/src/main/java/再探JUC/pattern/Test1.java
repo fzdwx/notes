@@ -19,7 +19,7 @@ public class Test1 {
         new Thread(() -> {
             // 等待结果
             log.info("等待结果");
-            Object o = guarded.get(2);
+            Object o = guarded.get(1);
             log.info("结果是:{}", o);
         }, "t1").start();
         new Thread(() -> {
@@ -41,6 +41,7 @@ public class Test1 {
  * @author pdd20
  * @date 2021/03/06
  */
+@Slf4j
 class GuardedObject {
     private Object response;
 
@@ -50,7 +51,10 @@ class GuardedObject {
             long passedTime = 0;
             while (response == null) { // 没有结果
                 long waitTime = timeout - passedTime;  // 应该等待的时间
-                if (waitTime <= 0) break;  // 超时了
+                if (waitTime <= 0) {
+                    log.error("获取返回结果超时了"); // 超时了
+                    break;
+                }
                 try {
                     this.wait(waitTime);  // 等待结果
                 } catch (InterruptedException e) {
