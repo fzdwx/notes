@@ -7,9 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新笔记">
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="笔记更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/项目/mall2.0/02-分布式基础-缓存篇.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/mall2.0/02-分布式基础-缓存篇.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/src/test/java/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +66,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
@@ -172,7 +173,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test6">
+  <component name="RunManager" selected="Application.test">
     <configuration name="Demo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Demo1" />
       <module name="interview" />
@@ -235,8 +236,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test6" />
         <item itemvalue="Application.test" />
+        <item itemvalue="Application.Test6" />
         <item itemvalue="Application.Demo1" />
         <item itemvalue="Application.HashMapDemo" />
       </list>
@@ -472,13 +473,8 @@
       <workItem from="1614767756931" duration="316000" />
       <workItem from="1614820213371" duration="9873000" />
       <workItem from="1614854252915" duration="667000" />
-    </task>
-    <task id="LOCAL-00113" summary="最长上升子序列-动态规划实现">
-      <created>1611032860090</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1611032860090</updated>
+      <workItem from="1614860031528" duration="58000" />
+      <workItem from="1614905737451" duration="3712000" />
     </task>
     <task id="LOCAL-00114" summary="求2个序列的最大公共子序列">
       <created>1611055731051</created>
@@ -816,7 +812,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614854283138</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="更新笔记">
+      <created>1614860047274</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1614860047275</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

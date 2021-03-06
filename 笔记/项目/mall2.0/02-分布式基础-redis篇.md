@@ -23,13 +23,217 @@
 
 
 
+# 2.Redis介绍
 
-
-# 2.Redis的线程模型
+## Redis的线程模型
 
 阻塞和非阻塞
 
 ![image-20210303153714595](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210303153714.png)
+
+
+
+## Redis的发布和订阅
+
+![image-20210305162051568](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305162051.png)
+
+
+
+### 实例
+
+![image-20210305162311915](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305162311.png)
+
+
+
+~~~bash
+订阅频道
+	subscribe xiaoxiangge jinghanqing  # 订阅小翔哥、敬汉卿
+	SUBSCRIBE jinghanqing shangguigu   # 订阅敬汉卿、尚硅谷
+	subscribe j*					   # 订阅以j开头的
+发送消息
+	publish shangguigu kaixuele 
+~~~
+
+![image-20210305163102097](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305163102.png)
+
+
+
+## Redis持久化
+
+### **RDB机制**
+
+默认如下配置：
+
+\#表示900 秒内如果至少有 1 个 key 的值变化，则保存save 900 1#表示300 秒内如果至少有 10 个 key 的值变化，则保存save 300 10#表示60 秒内如果至少有 10000 个 key 的值变化，则保存save 60 10000
+
+不需要持久化，那么你可以注释掉所有的 save 行来停用保存功能。
+
+**②stop-writes-on-bgsave-error ：**默认值为yes。当启用了RDB且最后一次后台保存数据失败，Redis是否停止接收数据。这会让用户意识到数据没有正确持久化到磁盘上，否则没有人会注意到灾难（disaster）发生了。如果Redis重启了，那么又可以重新开始接收数据了
+
+**③rdbcompression ；**默认值是yes。对于存储到磁盘中的快照，可以设置是否进行压缩存储。
+
+**④rdbchecksum ：**默认值是yes。在存储快照后，我们还可以让redis使用CRC64算法来进行数据校验，但是这样做会增加大约10%的性能消耗，如果希望获取到最大的性能提升，可以关闭此功能。
+
+**⑤dbfilename ：**设置快照的文件名，默认是 dump.rdb
+
+**⑥dir：**设置快照文件的存放路径，这个配置项一定是个目录，而不能是文件名。
+
+![image-20210305173114009](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305173114.png)
+
+**RDB 的优势和劣势**
+
+①、优势
+
+（1）RDB文件紧凑，全量备份，非常适合用于进行备份和灾难恢复。
+
+（2）生成RDB文件的时候，redis主进程会fork()一个子进程来处理所有保存工作，主进程不需要进行任何磁盘IO操作。
+
+（3）RDB 在恢复大数据集时的速度比 AOF 的恢复速度要快。
+
+②、劣势
+
+RDB快照是一次全量备份，存储的是内存数据的二进制序列化形式，存储上非常紧凑。当进行快照持久化时，会开启一个子进程专门负责快照持久化，子进程会拥有父进程的内存数据，父进程修改内存子进程不会反应出来，所以在快照持久化期间修改的数据不会被保存，可能丢失数据。
+
+
+
+### **AOF机制**
+
+**1、持久化原理**
+
+他的原理看下面这张图：
+
+![img](https://pics3.baidu.com/feed/32fa828ba61ea8d3c2502e396b1b3848251f58b0.jpeg?token=394597ccd73bd15778c518b5c5be6998&s=2D62E7169D305F8A847546E20200B036)
+
+每当有一个写命令过来时，就直接保存在我们的AOF文件中。
+
+**2、文件重写原理**
+
+AOF的方式也同时带来了另一个问题。持久化文件会变的越来越大。为了压缩aof的持久化文件。redis提供了bgrewriteaof命令。将内存中的数据以命令的方式保存到临时文件中，同时会fork出一条新进程来将文件重写。
+
+![img](https://pics7.baidu.com/feed/09fa513d269759ee28454d2c4cea4b106c22dfd3.jpeg?token=86eda46b8bcd54a7a0e7d8a37d87bee8&s=EDB2A4579D317B824660D4DF0200E036)
+
+重写aof文件的操作，并没有读取旧的aof文件，而是将整个内存中的数据库内容用命令的方式重写了一个新的aof文件，这点和快照有点类似。
+
+**3、AOF也有三种触发机制**
+
+（1）每修改同步always：同步持久化 每次发生数据变更会被立即记录到磁盘 性能较差但数据完整性比较好
+
+（2）每秒同步everysec：异步操作，每秒记录 如果一秒内宕机，有数据丢失
+
+（3）不同no：从不同步
+
+![img](https://pics5.baidu.com/feed/b17eca8065380cd7df69859ba056a5325982816c.jpeg?token=a060f459d81c409c3d6c7208d2118888&s=AF4AA5574ED85CC841D04BE60300A036)
+
+**4、优点**
+
+（1）AOF可以更好的保护数据不丢失，一般AOF会每隔1秒，通过一个后台线程执行一次fsync操作，最多丢失1秒钟的数据。（2）AOF日志文件没有任何磁盘寻址的开销，写入性能非常高，文件不容易破损。
+
+（3）AOF日志文件即使过大的时候，出现后台重写操作，也不会影响客户端的读写。
+
+（4）AOF日志文件的命令通过非常可读的方式进行记录，这个特性非常适合做灾难性的误删除的紧急恢复。比如某人不小心用flushall命令清空了所有数据，只要这个时候后台rewrite还没有发生，那么就可以立即拷贝AOF文件，将最后一条flushall命令给删了，然后再将该AOF文件放回去，就可以通过恢复机制，自动恢复所有数据
+
+**5、缺点**
+
+（1）对于同一份数据来说，AOF日志文件通常比RDB数据快照文件更大
+
+（2）AOF开启后，支持的写QPS会比RDB支持的写QPS低，因为AOF一般会配置成每秒fsync一次日志文件，当然，每秒一次fsync，性能也还是很高的
+
+（3）以前AOF发生过bug，就是通过AOF记录的日志，进行数据恢复的时候，没有恢复一模一样的数据出来。
+
+
+
+
+
+![img](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305173226.jpeg)
+
+
+
+## Redis主从复制
+
+![image-20210305173521267](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305173521.png)
+
+
+
+### 环境搭建
+
+由于我使用的docker环境
+
+![image-20210305180231568](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305180231.png)
+
+~~~bash
+1.启动三个redis
+2.docker inspect redis |grep ess       # 查看ip地址
+	172.17.0.3                         # master
+	172.17.0.2						   # s1
+	172.17.0.5						   # s2
+~~~
+
+![image-20210305180356683](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305180356.png)
+
+~~~bash
+3.docker exec -it redis  bash 					# 进入容器内部
+  redis-cli
+  info replication     	  		                # 查看主从信息
+4.修改主从信息
+  SLAVEOF 172.17.0.3 6379
+  save
+~~~
+
+
+
+
+
+![image-20210305181645036](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305181645.png)
+
+
+
+## Redis无磁盘化复制
+
+**磁盘化传输**: Redis主进程创建一个编写RDB的新进程放入磁盘文件。稍后，文件由父进程传输进程以增量的方式传递给从进程
+
+**无磁盘化传输**：就是master会创建一个新的进程生成RDB文件，并且通过`socket`传输给slave节点，不会经过磁盘
+
+~~~bash
+repl-diskless-sync yes  
+~~~
+
+
+
+
+
+
+
+## Redis缓存过期机制
+
+定期删除(主动)
+
+~~~bash
+hz 10    								# default
+~~~
+
+惰性删除(被动)
+
+![image-20210305184953319](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305184953.png)
+
+
+
+
+
+## 哨兵模式
+
+当master节点挂掉之后，重新选一个master节点
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -268,192 +472,54 @@ private void syncShopCart(
 
 
 
-# 8.Redis的发布和订阅
+# 8.分布式会话:登录、注册、登出增加保存token的操作
 
-![image-20210305162051568](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305162051.png)
-
-
-
-## 实例
-
-![image-20210305162311915](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305162311.png)
-
-
-
-~~~bash
-订阅频道
-	subscribe xiaoxiangge jinghanqing  # 订阅小翔哥、敬汉卿
-	SUBSCRIBE jinghanqing shangguigu   # 订阅敬汉卿、尚硅谷
-	subscribe j*					   # 订阅以j开头的
-发送消息
-	publish shangguigu kaixuele 
 ~~~
-
-![image-20210305163102097](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305163102.png)
-
-
-
-# 9.Redis持久化
-
-## **RDB机制**
-
-默认如下配置：
-
-\#表示900 秒内如果至少有 1 个 key 的值变化，则保存save 900 1#表示300 秒内如果至少有 10 个 key 的值变化，则保存save 300 10#表示60 秒内如果至少有 10000 个 key 的值变化，则保存save 60 10000
-
-不需要持久化，那么你可以注释掉所有的 save 行来停用保存功能。
-
-**②stop-writes-on-bgsave-error ：**默认值为yes。当启用了RDB且最后一次后台保存数据失败，Redis是否停止接收数据。这会让用户意识到数据没有正确持久化到磁盘上，否则没有人会注意到灾难（disaster）发生了。如果Redis重启了，那么又可以重新开始接收数据了
-
-**③rdbcompression ；**默认值是yes。对于存储到磁盘中的快照，可以设置是否进行压缩存储。
-
-**④rdbchecksum ：**默认值是yes。在存储快照后，我们还可以让redis使用CRC64算法来进行数据校验，但是这样做会增加大约10%的性能消耗，如果希望获取到最大的性能提升，可以关闭此功能。
-
-**⑤dbfilename ：**设置快照的文件名，默认是 dump.rdb
-
-**⑥dir：**设置快照文件的存放路径，这个配置项一定是个目录，而不能是文件名。
-
-![image-20210305173114009](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305173114.png)
-
-**RDB 的优势和劣势**
-
-①、优势
-
-（1）RDB文件紧凑，全量备份，非常适合用于进行备份和灾难恢复。
-
-（2）生成RDB文件的时候，redis主进程会fork()一个子进程来处理所有保存工作，主进程不需要进行任何磁盘IO操作。
-
-（3）RDB 在恢复大数据集时的速度比 AOF 的恢复速度要快。
-
-②、劣势
-
-RDB快照是一次全量备份，存储的是内存数据的二进制序列化形式，存储上非常紧凑。当进行快照持久化时，会开启一个子进程专门负责快照持久化，子进程会拥有父进程的内存数据，父进程修改内存子进程不会反应出来，所以在快照持久化期间修改的数据不会被保存，可能丢失数据。
-
-
-
-## **AOF机制**
-
-**1、持久化原理**
-
-他的原理看下面这张图：
-
-![img](https://pics3.baidu.com/feed/32fa828ba61ea8d3c2502e396b1b3848251f58b0.jpeg?token=394597ccd73bd15778c518b5c5be6998&s=2D62E7169D305F8A847546E20200B036)
-
-每当有一个写命令过来时，就直接保存在我们的AOF文件中。
-
-**2、文件重写原理**
-
-AOF的方式也同时带来了另一个问题。持久化文件会变的越来越大。为了压缩aof的持久化文件。redis提供了bgrewriteaof命令。将内存中的数据以命令的方式保存到临时文件中，同时会fork出一条新进程来将文件重写。
-
-![img](https://pics7.baidu.com/feed/09fa513d269759ee28454d2c4cea4b106c22dfd3.jpeg?token=86eda46b8bcd54a7a0e7d8a37d87bee8&s=EDB2A4579D317B824660D4DF0200E036)
-
-重写aof文件的操作，并没有读取旧的aof文件，而是将整个内存中的数据库内容用命令的方式重写了一个新的aof文件，这点和快照有点类似。
-
-**3、AOF也有三种触发机制**
-
-（1）每修改同步always：同步持久化 每次发生数据变更会被立即记录到磁盘 性能较差但数据完整性比较好
-
-（2）每秒同步everysec：异步操作，每秒记录 如果一秒内宕机，有数据丢失
-
-（3）不同no：从不同步
-
-![img](https://pics5.baidu.com/feed/b17eca8065380cd7df69859ba056a5325982816c.jpeg?token=a060f459d81c409c3d6c7208d2118888&s=AF4AA5574ED85CC841D04BE60300A036)
-
-**4、优点**
-
-（1）AOF可以更好的保护数据不丢失，一般AOF会每隔1秒，通过一个后台线程执行一次fsync操作，最多丢失1秒钟的数据。（2）AOF日志文件没有任何磁盘寻址的开销，写入性能非常高，文件不容易破损。
-
-（3）AOF日志文件即使过大的时候，出现后台重写操作，也不会影响客户端的读写。
-
-（4）AOF日志文件的命令通过非常可读的方式进行记录，这个特性非常适合做灾难性的误删除的紧急恢复。比如某人不小心用flushall命令清空了所有数据，只要这个时候后台rewrite还没有发生，那么就可以立即拷贝AOF文件，将最后一条flushall命令给删了，然后再将该AOF文件放回去，就可以通过恢复机制，自动恢复所有数据
-
-**5、缺点**
-
-（1）对于同一份数据来说，AOF日志文件通常比RDB数据快照文件更大
-
-（2）AOF开启后，支持的写QPS会比RDB支持的写QPS低，因为AOF一般会配置成每秒fsync一次日志文件，当然，每秒一次fsync，性能也还是很高的
-
-（3）以前AOF发生过bug，就是通过AOF记录的日志，进行数据恢复的时候，没有恢复一模一样的数据出来。
-
-
-
-
-
-![img](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305173226.jpeg)
-
-
-
-# 10.Redis主从复制
-
-![image-20210305173521267](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305173521.png)
-
-
-
-## 环境搭建
-
-由于我使用的docker环境
-
-![image-20210305180231568](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305180231.png)
-
-~~~bash
-1.启动三个redis
-2.docker inspect redis |grep ess       # 查看ip地址
-	172.17.0.3                         # master
-	172.17.0.2						   # s1
-	172.17.0.5						   # s2
-~~~
-
-![image-20210305180356683](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305180356.png)
-
-~~~bash
-3.docker exec -it redis  bash 					# 进入容器内部
-  redis-cli
-  info replication     	  		                # 查看主从信息
-4.修改主从信息
-  SLAVEOF 172.17.0.3 6379
-  save
+思路：
+	1.注册和登录的时候生成对应的token，使用redis保存
+	2.登出的时候删除保存在redis中的token
 ~~~
 
 
 
+```java
+/**
+ * 生成返回页面的用户信息,并将当前用户的token保存 到redis中
+ * @param createUser 创建用户
+ * @return {@link UsersVO}
+ */
+private UsersVO conventUsersVO(Users createUser) {
+    String uniqueToken = UUID.randomUUID().toString().trim();
+    UsersVO toWebUser = new UsersVO();
+    BeanUtils.copyProperties(createUser, toWebUser);
+    toWebUser.setUserUniqueToken(uniqueToken);
+    redisUtil.set(REDIS_USER_TOKEN_PREFIX + toWebUser.getId(), toWebUser.getUserUniqueToken());
+    return toWebUser;
+}
+```
+
+![image-20210305212622464](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305212622.png)
+
+![image-20210305212633082](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305212633.png)
 
 
-![image-20210305181645036](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305181645.png)
 
+## 修改用户信息的时候也修改token
 
+![image-20210305215108316](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305215108.png)
 
-# 11.Redis无磁盘化复制
-
-**磁盘化传输**: Redis主进程创建一个编写RDB的新进程放入磁盘文件。稍后，文件由父进程传输进程以增量的方式传递给从进程
-
-**无磁盘化传输**：就是master会创建一个新的进程生成RDB文件，并且通过`socket`传输给slave节点，不会经过磁盘
-
-~~~bash
-repl-diskless-sync yes  
-~~~
-
-
-
-
-
-
-
-# 12.Redis缓存过期机制
-
-定期删除(主动)
-
-~~~bash
-hz 10    								# default
-~~~
-
-惰性删除(被动)
-
-![image-20210305184953319](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305184953.png)
+![image-20210305215149850](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305215149.png)
 
 
 
 
 
-# 13.哨兵模式
+# 9.引入spring-session
 
-当master节点挂掉之后，重新选一个master节点
+```xml
+<dependency>
+    <groupId>org.springframework.session</groupId>
+    <artifactId>spring-session-data-redis</artifactId>
+</dependency>
+```
+

@@ -11,18 +11,46 @@ public class test {
     static int[] lArr;
 
     public static void main(String[] args) {
-        for (int i = 0; i < arr.length; i++) {
-            int idx = i;
-            for (int j = i; j < arr.length; j++) {
-                if (arr[j] < arr[idx]) {
-                    idx = j;
-                }
-            }
-            int temp = arr[i];
-            arr[i] = arr[idx];
-            arr[idx] = temp;
-        }
+        lArr = new int[arr.length >> 1];
+        quick(0, arr.length);
         System.out.println(Arrays.toString(arr));
 
     }
+
+    private static void quick(int begin, int end) {
+        if (end - begin < 2) return;
+
+        int mid = p(begin, end);
+        quick(begin, mid);
+        quick(mid+1, end);
+    }
+
+    // 1 2 3 4 5 6
+    private static int p(int begin, int end) {
+        int p = arr[begin];
+        end--;
+        while (begin < end) {
+            while (begin < end) {
+                if (p < arr[end]) {
+                    end--;
+                } else {
+                    arr[begin++] = arr[end];
+                    break;
+                }
+            }
+            while (begin < end) {
+                if (p > arr[begin]) {
+                    begin++;
+                } else {
+                    arr[end--] = arr[begin];
+                    break;
+                }
+            }
+        }
+
+        arr[begin] = p;
+        return begin;
+    }
+
+
 }
