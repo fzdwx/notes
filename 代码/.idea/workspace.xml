@@ -7,11 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="笔记更新">
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/Test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interview/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/src/test/java/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="同步模式之保护性暂停">
+      <change beforePath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/Test1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -491,14 +488,7 @@
       <workItem from="1614854252915" duration="667000" />
       <workItem from="1614860031528" duration="58000" />
       <workItem from="1614905737451" duration="3712000" />
-      <workItem from="1614991395722" duration="2367000" />
-    </task>
-    <task id="LOCAL-00115" summary="优化成一维数组">
-      <created>1611104609405</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1611104609405</updated>
+      <workItem from="1614991395722" duration="2668000" />
     </task>
     <task id="LOCAL-00116" summary="更新">
       <created>1611107074931</created>
@@ -836,7 +826,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614991460277</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="同步模式之保护性暂停">
+      <created>1614998707355</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1614998707355</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -868,7 +865,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="目錄重構" />
     <MESSAGE value="bio测试实例" />
     <MESSAGE value="对buffer的初步使用" />
     <MESSAGE value="fileChannel读写小案例" />
@@ -893,7 +889,8 @@
     <MESSAGE value="添加笔记" />
     <MESSAGE value="更新笔记" />
     <MESSAGE value="笔记更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="笔记更新" />
+    <MESSAGE value="同步模式之保护性暂停" />
+    <option name="LAST_COMMIT_MESSAGE" value="同步模式之保护性暂停" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

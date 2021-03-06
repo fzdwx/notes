@@ -424,7 +424,7 @@ public class Test1 {
         new Thread(() -> {
             // 等待结果
             log.info("等待结果");
-            Object o = guarded.get();
+            Object o = guarded.get(2);
             log.info("结果是:{}", o);
         }, "t1").start();
         new Thread(() -> {
@@ -433,7 +433,7 @@ public class Test1 {
                 TimeUnit.SECONDS.sleep(3);
                 // 下载完成
                 log.info("下载完成");
-                guarded.complete(new Person("like",18));
+                guarded.complete(new Person("like", 18));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -449,15 +449,19 @@ public class Test1 {
 class GuardedObject {
     private Object response;
 
-    public Object get() {
+    public Object get(long timeout) {
         synchronized (this) {
-            // 没有结果
-            while (response == null) {
+            long start = System.currentTimeMillis();
+            long passedTime = 0;
+            while (response == null) { // 没有结果
+                long waitTime = timeout - passedTime;  // 应该等待的时间
+                if (waitTime <= 0) break;  // 超时了
                 try {
-                    this.wait();
+                    this.wait(waitTime);  // 等待结果
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                passedTime = System.currentTimeMillis() - start;
             }
             return response;
         }
