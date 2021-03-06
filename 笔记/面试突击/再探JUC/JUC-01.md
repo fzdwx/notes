@@ -383,3 +383,98 @@ public static void m3(){
 ### 批量撤销
 
 ![image-20210305144152552](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210305144152.png)
+
+
+
+
+
+## 8.wait、notify
+
+![image-20210306090535038](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306090542.png)
+
+~~~
+主要API： 只有获取锁才能调用这几个方法
+	wait():让获取锁的线程到waitSet等待
+	notify():让该锁在waitSet里面随机选取一个唤醒
+	notify():唤醒所有的线程
+~~~
+
+
+
+
+
+# 模式
+
+## 1.同步模式之保护性暂停
+
+guarded suspension，用在一个线程等待另一个线程的执行结果。
+
+- 有一个结果需要从一个线程传递到另一个线程，让他们关联同一个guarded object
+- 如果有结果不断从一个线程到另一个线程那么可以使用消息队列
+- jdk中，join、future的实现，采用的就是此模式
+- 因为要等待另一方的结果，所以是同步模式
+
+![image-20210306103146906](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306103147.png)
+
+```java
+@Slf4j
+public class Test1 {
+    public static void main(String[] args) {
+        GuardedObject guarded = new GuardedObject();
+        new Thread(() -> {
+            // 等待结果
+            log.info("等待结果");
+            Object o = guarded.get();
+            log.info("结果是:{}", o);
+        }, "t1").start();
+        new Thread(() -> {
+            try {
+                log.info("执行下载");
+                TimeUnit.SECONDS.sleep(3);
+                // 下载完成
+                log.info("下载完成");
+                guarded.complete(new Person("like",18));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }, "t2").start();
+    }
+}
+
+/**
+ * 保护的对象
+ * @author pdd20
+ * @date 2021/03/06
+ */
+class GuardedObject {
+    private Object response;
+
+    public Object get() {
+        synchronized (this) {
+            // 没有结果
+            while (response == null) {
+                try {
+                    this.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            return response;
+        }
+    }
+
+    public void complete(Object response) {
+        synchronized (this) {
+            this.response = response; // 处理完成
+            this.notifyAll(); // 唤醒
+        }
+    }
+}
+
+@Data
+@AllArgsConstructor
+class Person {
+    private String name;
+    private int age;
+}
+```

@@ -19,18 +19,17 @@ public class test {
 
     private static void quick(int begin, int end) {
         if (end - begin < 2) return;
-
         int mid = p(begin, end);
         quick(begin, mid);
-        quick(mid+1, end);
+        quick(mid + 1, end);
+
     }
 
-    // 1 2 3 4 5 6
     private static int p(int begin, int end) {
         int p = arr[begin];
         end--;
-        while (begin < end) {
-            while (begin < end) {
+        while (end > begin) {
+            while (end > begin) {
                 if (p < arr[end]) {
                     end--;
                 } else {
@@ -38,7 +37,7 @@ public class test {
                     break;
                 }
             }
-            while (begin < end) {
+            while (end > begin) {
                 if (p > arr[begin]) {
                     begin++;
                 } else {
@@ -47,7 +46,6 @@ public class test {
                 }
             }
         }
-
         arr[begin] = p;
         return begin;
     }

@@ -8,8 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="笔记更新">
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/Test1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interview/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/src/test/java/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +175,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunManager" selected="Application.Test1">
     <configuration name="Demo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Demo1" />
       <module name="interview" />
@@ -194,12 +196,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test5" />
+    <configuration name="Test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.pattern.Test1" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="再探JUC.test.*" />
+          <option name="PATTERN" value="再探JUC.pattern.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -227,15 +229,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Test5" />
       <item itemvalue="Application.HashMapDemo" />
       <item itemvalue="Application.Demo1" />
       <item itemvalue="Application.test" />
       <item itemvalue="Application.Test6" />
+      <item itemvalue="Application.Test1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test1" />
         <item itemvalue="Application.test" />
         <item itemvalue="Application.Test6" />
         <item itemvalue="Application.Demo1" />
@@ -475,13 +491,7 @@
       <workItem from="1614854252915" duration="667000" />
       <workItem from="1614860031528" duration="58000" />
       <workItem from="1614905737451" duration="3712000" />
-    </task>
-    <task id="LOCAL-00114" summary="求2个序列的最大公共子序列">
-      <created>1611055731051</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1611055731052</updated>
+      <workItem from="1614991395722" duration="2367000" />
     </task>
     <task id="LOCAL-00115" summary="优化成一维数组">
       <created>1611104609405</created>
@@ -819,7 +829,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614860047275</updated>
     </task>
-    <option name="localTasksCounter" value="163" />
+    <task id="LOCAL-00163" summary="笔记更新">
+      <created>1614991460276</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1614991460277</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -873,10 +890,10 @@
     <MESSAGE value="update 整合maven" />
     <MESSAGE value="&#10;hashMap demo" />
     <MESSAGE value="update" />
-    <MESSAGE value="笔记更新" />
     <MESSAGE value="添加笔记" />
     <MESSAGE value="更新笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新笔记" />
+    <MESSAGE value="笔记更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="笔记更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
