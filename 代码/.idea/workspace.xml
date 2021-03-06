@@ -7,11 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="重构">
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="使用中间类扩展该模式">
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/异步模式之生产者消费者/Test2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/GuardedObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/同步模式之保护性暂停/GuardedObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/同步模式之保护性暂停/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/同步模式之保护性暂停/Test1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,20 +174,26 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.test (1)">
-    <configuration name="Demo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Demo1" />
-      <module name="interview" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Test2">
     <configuration name="Test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="再探JUC.pattern.同步模式之保护性暂停.Test1" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="再探JUC.pattern.同步模式之保护性暂停.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.pattern.异步模式之生产者消费者.Test2" />
+      <module name="juc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="再探JUC.pattern.异步模式之生产者消费者.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -244,19 +248,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Demo1" />
       <item itemvalue="Application.test" />
       <item itemvalue="Application.Test6" />
       <item itemvalue="Application.Test1" />
       <item itemvalue="Application.test (1)" />
+      <item itemvalue="Application.Test2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test2" />
         <item itemvalue="Application.test (1)" />
         <item itemvalue="Application.Test1" />
         <item itemvalue="Application.test" />
         <item itemvalue="Application.Test6" />
-        <item itemvalue="Application.Demo1" />
       </list>
     </recent_temporary>
   </component>
@@ -492,14 +496,7 @@
       <workItem from="1614854252915" duration="667000" />
       <workItem from="1614860031528" duration="58000" />
       <workItem from="1614905737451" duration="3712000" />
-      <workItem from="1614991395722" duration="4679000" />
-    </task>
-    <task id="LOCAL-00119" summary="跳表初步">
-      <created>1611292042472</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1611292042472</updated>
+      <workItem from="1614991395722" duration="6164000" />
     </task>
     <task id="LOCAL-00120" summary="跳表完成">
       <created>1611372291286</created>
@@ -837,7 +834,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615000038475</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="使用中间类扩展该模式">
+      <created>1615001282117</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1615001282117</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -869,7 +873,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fileChannel复制文件demo" />
     <MESSAGE value="多个buffer的使用" />
     <MESSAGE value="聊天室" />
     <MESSAGE value="聊天室 update" />
@@ -894,7 +897,8 @@
     <MESSAGE value="同步模式之保护性暂停 优化" />
     <MESSAGE value="同步模式之保护性暂停 超时" />
     <MESSAGE value="重构" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构" />
+    <MESSAGE value="使用中间类扩展该模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="使用中间类扩展该模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
