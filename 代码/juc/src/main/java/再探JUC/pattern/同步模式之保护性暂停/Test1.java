@@ -1,4 +1,4 @@
-package 再探JUC.pattern;
+package 再探JUC.pattern.同步模式之保护性暂停;
 
 import lombok.extern.slf4j.Slf4j;
 
