@@ -486,3 +486,13 @@ class Person {
     private int age;
 }
 ```
+
+
+
+
+
+### 扩展：在多个内中使用该模式
+
+作为参数传递不方便，所以设计一个中间类，解耦结果等待者和结果生产者，能支持多个任务的管理
+
+![image-20210306110604641](C:%5CUsers%5Cpdd20%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210306110604641.png)
