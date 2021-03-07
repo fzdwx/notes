@@ -403,6 +403,88 @@ public static void m3(){
 
 
 
+
+
+## 9.park、unpark
+
+暂停 ，对应的线程状态-wait
+
+~~~
+1.主线程先执行unpark
+2.t1线程后执行park
+3.t1线程不会停下来
+~~~
+
+API：
+
+```java
+LockSupport.park();
+LockSupport.unpark(Thread.currentThread());
+```
+
+![image-20210307092932728](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210307092939.png)
+
+![image-20210307093013324](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210307093013.png)
+
+![image-20210307093250095](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210307093250.png)
+
+![image-20210307093347072](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210307093347.png)
+
+
+
+![image-20210307093427068](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210307093427.png)
+
+
+
+![image-20210307093436092](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210307093436.png)
+
+
+
+
+
+# 状态转换
+
+![image-20210307093626873](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210307093627.png)
+
+
+
+~~~
+1.new -> runnable
+	new Thread().start
+2.runnable <->  waiting
+	obj.wait()   runnable ->  waiting
+	obj.notify(),obj.notiflAll(),t.interrupt()
+		a.竞争锁失败: waiting -> blocked
+		b.竞争锁成功: waiting -> runnable
+3.runnable <-> watting 
+	当前线程调用t.join()（当前线程在t线程对象的监视器上等额带)当前线程: runnable -> waiting
+	t线程运行结束，或当前线程调用了interrupt()，当前线程 waiting -> runable
+4.runnable <-> watting 
+	当前线程调用LockSupport.part()   当前线程: runnable -> waiting
+	当前线程调用LockSupport.unpart() 当前线程 waiting -> runable
+~~~
+
+![image-20210307095404118](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210307095404.png)
+
+
+
+
+
+## 1.死锁
+
+两个线程分别持有A,B锁，但是又想去获得对方的锁，这就是死锁
+
+~~~
+怎么定位:
+	jps-获取线程号
+	jstack pid
+
+~~~
+
+
+
+
+
 # 模式
 
 ## 1.同步模式之保护性暂停
@@ -687,3 +769,186 @@ final class Message {
     private Object msg;
 }
 ```
+
+
+
+## 3.同步模式指定输出顺序
+
+
+
+```java
+@Slf4j
+public class Test {
+    public static void main(String[] args) {
+        WaitNotify w = new WaitNotify(1, 5);
+        new Thread(() -> {
+            w.print("a",1, 2);
+        }, "1").start(); 
+        new Thread(() -> {
+            w.print("b", 2, 3);
+        }, "2").start();
+        new Thread(() -> {
+            w.print("c", 3, 1);
+        }, "3").start();
+    }
+}
+
+class WaitNotify {
+    private int flag;
+    private int loopNumber;
+
+    public WaitNotify(int flag, int loopNumber) {
+        this.flag = flag;
+        this.loopNumber = loopNumber;
+    }
+
+    public void print(String value, int waitFlag, int nextFlag)  {
+        for (int i = 0; i < loopNumber; i++) {
+            synchronized (this) {
+                while (flag != waitFlag) {
+                    try {
+                        this.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                System.out.print(value);
+                flag = nextFlag;
+                this.notifyAll();
+            }
+        }
+    }
+}
+```
+
+
+
+# ReentranLock
+
+可重入锁
+
+~~~
+1.可中断
+2.可设置超时时间
+3.可设置公平锁
+4.支持多个条件变量
+synchronized也支持可重入
+~~~
+
+~~~java
+reentranLock.lock()
+try{
+	//
+} finally{
+	reentranLock.unlock();
+}
+~~~
+
+
+
+**可重入**
+
+指同一个线程如果首次获取了这把锁，因为他是这个把锁的持有者，所以有权利再次获取这把锁。如果不是可重入锁，那么第二次获取锁的时候，自己也会被锁住
+
+
+
+
+
+## 1.设置公平锁
+
+```java
+ReentrantLock lock = new ReentrantLock(true);
+```
+
+公平锁：
+
+按照waitSet里面的顺序获取锁
+
+
+
+
+
+## 2.条件变量
+
+```java
+public class Test7 {
+    static ReentrantLock lock = new ReentrantLock();
+
+    public static void main(String[] args) throws InterruptedException {
+        // 1.创建休息室
+        Condition c1 = lock.newCondition();
+
+        lock.lock();
+        // 释放锁，进入休息室等待唤醒
+        c1.await();
+        // 唤醒线程，重新获取锁
+        c1.signal();
+        c1.signalAll();
+    }
+}
+```
+
+## 3.指定运行顺序
+
+```java
+@Slf4j
+public class Test7 {
+    static ReentrantLock lock = new ReentrantLock();
+
+    public static void main(String[] args) {
+        Condition c1 = lock.newCondition();
+        new Thread(() -> {
+            lock.lock();
+            if (lock.isLocked()) {
+                try {
+                    c1.await();
+                    log.info("1");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            lock.unlock();
+        }, "1").start();
+
+
+        new Thread(() -> {
+           while (lock.tryLock()){
+               if (lock.isLocked()) {
+                   log.info("2");
+                   c1.signal();
+                   lock.unlock();
+                   break;
+               }
+           }
+
+        }, "2").start();
+    }
+}
+```
+
+### park
+
+```java
+@Slf4j
+public class Test7 {
+    static ReentrantLock lock = new ReentrantLock();
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(() -> {
+            LockSupport.park();
+            log.info("1");
+        }, "1");
+
+        Thread t2 = new Thread(() -> {
+            log.info("2");
+            LockSupport.unpark(t1);
+        }, "2");
+
+        t1.start();
+        t2.start();
+    }
+}
+```
+
+
+

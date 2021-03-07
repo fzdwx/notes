@@ -7,10 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="使用中间类扩展该模式">
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/异步模式之生产者消费者/Test2.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="消息隊列模擬">
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/同步模式之指定顺序执行/Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/同步模式指定输出顺序/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test7.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/src/test/java/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/项目/mall2.0/02-分布式基础-redis篇.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/mall2.0/02-分布式基础-redis篇.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,13 +178,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test2">
-    <configuration name="Test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.pattern.同步模式之保护性暂停.Test1" />
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.pattern.同步模式指定输出顺序.Test" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="再探JUC.pattern.同步模式之保护性暂停.*" />
+          <option name="PATTERN" value="再探JUC.pattern.同步模式指定输出顺序.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -201,8 +205,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test6" />
+    <configuration name="Test7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test7" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
@@ -234,33 +238,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.test" />
-      <item itemvalue="Application.Test6" />
-      <item itemvalue="Application.Test1" />
       <item itemvalue="Application.test (1)" />
       <item itemvalue="Application.Test2" />
+      <item itemvalue="Application.Test7" />
+      <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Test7" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.Test2" />
         <item itemvalue="Application.test (1)" />
-        <item itemvalue="Application.Test1" />
-        <item itemvalue="Application.test" />
-        <item itemvalue="Application.Test6" />
       </list>
     </recent_temporary>
   </component>
@@ -496,14 +498,9 @@
       <workItem from="1614854252915" duration="667000" />
       <workItem from="1614860031528" duration="58000" />
       <workItem from="1614905737451" duration="3712000" />
-      <workItem from="1614991395722" duration="6164000" />
-    </task>
-    <task id="LOCAL-00120" summary="跳表完成">
-      <created>1611372291286</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1611372291286</updated>
+      <workItem from="1614991395722" duration="7137000" />
+      <workItem from="1615079006876" duration="11000" />
+      <workItem from="1615079124769" duration="4745000" />
     </task>
     <task id="LOCAL-00121" summary="字符串的暴力和KMP算法">
       <created>1611478534954</created>
@@ -841,7 +838,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615001282117</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="消息隊列模擬">
+      <created>1615002788289</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1615002788289</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -873,7 +877,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="多个buffer的使用" />
     <MESSAGE value="聊天室" />
     <MESSAGE value="聊天室 update" />
     <MESSAGE value="nio零拷贝" />
@@ -898,7 +901,8 @@
     <MESSAGE value="同步模式之保护性暂停 超时" />
     <MESSAGE value="重构" />
     <MESSAGE value="使用中间类扩展该模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用中间类扩展该模式" />
+    <MESSAGE value="消息隊列模擬" />
+    <option name="LAST_COMMIT_MESSAGE" value="消息隊列模擬" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

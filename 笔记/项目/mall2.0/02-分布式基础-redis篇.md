@@ -516,10 +516,330 @@ private UsersVO conventUsersVO(Users createUser) {
 
 # 9.引入spring-session
 
+## 配置：
+
 ```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
 <dependency>
     <groupId>org.springframework.session</groupId>
     <artifactId>spring-session-data-redis</artifactId>
 </dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+</dependency>
 ```
 
+~~~yml
+spring: 
+  session:
+    store-type: redis
+~~~
+
+```java
+@EnableRedisHttpSession  // 开启使用redis作为spring session
+```
+
+
+
+## 测试：
+
+~~~~
+1.启动服务的时候，会自动跳转到http://localhost:8088/login
+2.在控制台会打印：
+    Using generated security password: 5699037c-ef50-4fa9-b44d-abd556eefcf7
+~~~~
+
+![image-20210306132355893](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306132355.png)
+
+
+
+## 最后
+
+```java
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+```
+
+
+
+
+
+# 10.用户登录拦截
+
+~~~
+思路：
+	1.添加拦截器
+	2.获取请求头中对应的userToken，useriId
+	3.根据userToken和redis存储的userToken对比，返回登录状态
+~~~
+
+
+
+```java
+@Slf4j
+public class UserTokenInterceptor implements HandlerInterceptor {
+
+    @Autowired
+    private RedisUtil redisUtil;
+
+    /**
+     * 前处理
+     * 拦截请求，访问controller
+     */
+    @Override
+    public boolean preHandle(
+        HttpServletRequest request, HttpServletResponse response,
+        Object handler) throws Exception {
+        String userToken = request.getHeader(BaseController.HEADER_USER_TOKEN_KEY);
+        String userId = request.getHeader(BaseController.HEADER_USER_ID_KEY);
+        boolean flag = false;
+        if (StringUtils.isNotBlank(userId) && StringUtils.isNotBlank(userToken)) {
+            String uniqueToken = redisUtil.get(BaseController.REDIS_USER_TOKEN_PREFIX + userId);
+            if (StringUtils.isBlank(uniqueToken)) {
+                returnErrorResponse(response, HttpJSONResult.errorMsg("请登录..."));
+            } else {
+                if (!uniqueToken.equals(userToken)) {
+                    returnErrorResponse(response, HttpJSONResult.errorMsg("账户在异地登录..."));
+                } else {
+                    flag = true;
+                }
+            }
+        } else {
+            returnErrorResponse(response, HttpJSONResult.errorMsg("请登录..."));
+        }
+        return flag;
+    }
+
+    /**
+     * 返回错误响应
+     * @param response 响应
+     * @param result 结果
+     * @throws IOException ioexception
+     */
+    private void returnErrorResponse(HttpServletResponse response, HttpJSONResult result) throws IOException {
+        try (ServletOutputStream os = response.getOutputStream()) {
+            response.setContentType("text/json; charset=UTF-8");
+            response.setCharacterEncoding("utf-8");
+            os.write(JsonUtils.objectToJson(result).getBytes(StandardCharsets.UTF_8));
+            os.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+![image-20210306143508034](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306143508.png)
+
+
+
+# 11.单点登录 SSO
+
+相同顶级域名的单点登录![image-20210306143928029](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306143928.png)
+
+![image-20210306144149801](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306144149.png)
+
+
+
+## 1.MTV系统检验未登录后跳转到SSO登录页面(从未登录)
+
+该步骤包含1-5步
+
+![image-20210306172548537](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306172548.png)
+
+跳转controller
+
+```java
+@Controller
+public class SSOController {
+
+    @GetMapping("/login")
+    public String hello(
+            String returnUrl, Model model,
+            HttpServletRequest request, HttpServletResponse response) {
+        model.addAttribute("returnUrl", returnUrl);
+
+        // TODO: 2021/3/6 后续完善校验是否登录
+        return "login";
+    }
+}
+```
+
+sso系统登录页面：
+
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>sso-登录</title>
+</head>
+<body>
+<h1>欢迎访问单点登录系统</h1>
+<form accept-charset="doLogin" method="post">
+    <label>
+        <input type="text" name="username" placeholder="请输入用户名"/>
+    </label>
+    <label>
+        <input type="password" name="password" placeholder="请输入密码"/>
+    </label>
+    <input type="hidden" name="returnUrl" th:value="${returnUrl}"/>
+    <input type="submit" value="提交登录"/>
+</form>
+
+<span th:if="${errmsg}!=null" style="color:red" th:text="${errmsg}"></span>
+</body>
+</html>
+```
+
+
+
+## 2.用户登录并创建redis-token信息
+
+~~~
+cas的统一登录接口：
+    1.登录后创建用户的全局会话                    -> uniqueToken
+    2.创建用户全局门票，表示在cas端是否登录         ->  userTicket
+    3.创建用户的临时票据，用于回跳回传              ->   tempTicket
+~~~
+
+
+
+图中6-8
+
+ssoController
+
+```java
+@PostMapping("doLogin")
+public String doLogin(
+        String username, String password, String returnUrl, Model model,
+        HttpServletRequest request, HttpServletResponse response) throws Exception {
+    model.addAttribute("returnUrl", returnUrl);
+    // 1.登录检验
+    if (StringUtils.isBlank(username) ||
+            StringUtils.isBlank(password)) {
+        model.addAttribute("errmsg", "用户名和密码不能为空");
+        return "login";
+    }
+    Users dbUser = usersService.queryUserForLogin(username, MD5Utils.getMD5Str(password));
+    if (dbUser == null) {
+        model.addAttribute("errmsg", "用户名或密码不正确,请检查后在试");
+        return "login";
+    }
+    // 2.实现用户的redis会话
+    String uniqueToken = UUID.randomUUID().toString().trim();
+    UsersVO toWebUser = new UsersVO();
+    BeanUtils.copyProperties(dbUser, toWebUser);
+    toWebUser.setUserUniqueToken(uniqueToken);
+    redisUtil.set(REDIS_USER_TOKEN_PREFIX + toWebUser.getId(), JsonUtils.objectToJson(toWebUser));
+    return "login";
+}
+```
+
+![image-20210306174944329](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306174944.png)
+
+![image-20210306174956004](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306174956.png)
+
+![image-20210306175038768](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306175038.png)
+
+
+
+## 3.用户全局门票和临时门票
+
+9-10
+
+~~~
+userTicket:用于表示用户在CAS端的一个登录状态：已经登录
+tempTicket:用于颁发给用户进行一次性的验证票据，有时效性 
+~~~
+
+
+
+```java
+/**
+ * CAS的统一接口
+ * 目的：
+ * 1.登录后创建用户的全局会话                    -> uniqueToken
+ * 2.创建用户全局门票，表示在cas端是否登录         ->  userTicket
+ * 3.创建用户的临时票据，用于回跳回传              ->   tempTicket
+ */
+@PostMapping("doLogin")
+public String doLogin(
+    String username, String password, String returnUrl, Model model,
+    HttpServletRequest request, HttpServletResponse response) throws Exception {
+    model.addAttribute("returnUrl", returnUrl);
+    // 1.登录检验
+    if (StringUtils.isBlank(username) ||
+        StringUtils.isBlank(password)) {
+        model.addAttribute("errmsg", "用户名和密码不能为空");
+        return "login";
+    }
+    Users dbUser = usersService.queryUserForLogin(username, MD5Utils.getMD5Str(password));
+    if (dbUser == null) {
+        model.addAttribute("errmsg", "用户名或密码不正确,请检查后在试");
+        return "login";
+    }
+    // 2.实现用户的redis会话 uniqueToken
+    String uniqueToken = UUID.randomUUID().toString().trim();   // 创建用户的全局会话
+    UsersVO toWebUser = new UsersVO();
+    BeanUtils.copyProperties(dbUser, toWebUser);
+    toWebUser.setUserUniqueToken(uniqueToken);
+    redisUtil.set(REDIS_USER_TOKEN_PREFIX + toWebUser.getId(), JsonUtils.objectToJson(toWebUser));
+
+    // 3.生成ticket门票，全局门票，代表用户在CAS登录过
+    String userTicket = UUID.randomUUID().toString().trim();
+    CookieUtils.setCookie(request,response, COOKIE_USER_TICKET, userTicket, true);
+    // 4.全局门票和用户id关联
+    redisUtil.set(REDIS_USER_TICKET_PREFIX + userTicket, toWebUser.getId());
+    // 5.生成临时票据，回跳到调用端网站，由cas端临时签发的ticket
+    String tempTicket = createTempTicket();
+
+    return "redirect:" + returnUrl + "?tempTicket=" + tempTicket;
+}
+```
+
+![image-20210306181824627](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306181824.png)
+
+![image-20210306181858417](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306181858.png)
+
+
+
+## 4.跳转到MTV页面，验证用户临时门票->登录成功
+
+```java
+@PostMapping("/verifyTmpTicket")
+@ResponseBody
+public HttpJSONResult verifyTmpTicket(
+    @RequestParam String tempTicket,
+    HttpServletRequest request, HttpServletResponse response) throws Exception {
+    // 1.获取保存在redis中的用户临时门票 验证
+    String ticket = redisUtil.get(REDIS_USER_TEMP_TICKET_PREFIX + tempTicket);
+    if (StringUtils.isBlank(ticket)) {
+        return HttpJSONResult.errorUserTicket("用户临时门票不存在");
+    }
+    if (!ticket.equals(MD5Utils.getMD5Str(tempTicket))) {
+        return HttpJSONResult.errorUserTicket("用户临时门票异常");
+    } else {
+        redisUtil.delete(REDIS_USER_TEMP_TICKET_PREFIX + tempTicket);
+    }
+    // 2.获取cookie的用户全局门票 验证并获取用户信息
+    String userTicket = CookieUtils.getCookieValue(request,COOKIE_USER_TICKET, true);
+    String userId = redisUtil.get(REDIS_USER_TICKET_PREFIX + userTicket);
+    String redisUserJson = redisUtil.get(REDIS_USER_TOKEN_PREFIX + userId);
+
+    if (StringUtils.isNotBlank(redisUserJson)) { CookieUtils.setCookie(request,response,COOKIE_FOODIE_USER_INFO_KEY,redisUserJson,true);
+    }
+    return HttpJSONResult.ok(JsonUtils.jsonToPojo(redisUserJson, UsersVO.class));
+}
+```
+
+
+
+
+
+# 12.单点登录-二次登录
+
+![image-20210306211622195](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306211622.png)
