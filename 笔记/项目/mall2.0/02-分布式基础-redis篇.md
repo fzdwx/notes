@@ -810,6 +810,17 @@ public String doLogin(
 ## 4.跳转到MTV页面，验证用户临时门票->登录成功
 
 ```java
+/**
+ * 验证临时门票
+ * - 用户验证为登录状态后会返回一个临时门票，并在redis中保存这个临时门票
+ * - 经过检验后，成功会在cookie保存用户信息
+ * - 失败就返回异常
+ * @param tempTicket 临时的机票
+ * @param request 请求
+ * @param response 响应
+ * @return {@link HttpJSONResult}
+ * @throws Exception 异常
+ */
 @PostMapping("/verifyTmpTicket")
 @ResponseBody
 public HttpJSONResult verifyTmpTicket(
@@ -826,11 +837,15 @@ public HttpJSONResult verifyTmpTicket(
         redisUtil.delete(REDIS_USER_TEMP_TICKET_PREFIX + tempTicket);
     }
     // 2.获取cookie的用户全局门票 验证并获取用户信息
-    String userTicket = CookieUtils.getCookieValue(request,COOKIE_USER_TICKET, true);
+    String userTicket = CookieUtils.getCookieValue(request, COOKIE_USER_TICKET, true);
+    if (StringUtils.isBlank(userTicket)) {
+        return HttpJSONResult.errorUserTicket("用户全局门票异常");
+    }
     String userId = redisUtil.get(REDIS_USER_TICKET_PREFIX + userTicket);
     String redisUserJson = redisUtil.get(REDIS_USER_TOKEN_PREFIX + userId);
 
-    if (StringUtils.isNotBlank(redisUserJson)) { CookieUtils.setCookie(request,response,COOKIE_FOODIE_USER_INFO_KEY,redisUserJson,true);
+    if (StringUtils.isNotBlank(redisUserJson)) {
+        CookieUtils.setCookie(request, response, COOKIE_FOODIE_USER_INFO_KEY, redisUserJson, true);
     }
     return HttpJSONResult.ok(JsonUtils.jsonToPojo(redisUserJson, UsersVO.class));
 }
@@ -843,3 +858,83 @@ public HttpJSONResult verifyTmpTicket(
 # 12.单点登录-二次登录
 
 ![image-20210306211622195](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210306211622.png)
+
+
+
+~~~
+思路：
+	1.用户第一次登录(第一次访问该接口) -> 跳转到登录界面 -> 然后填写登录信息-> doLogin
+	2.用户第二以及后面登录:验证用户全局门票
+		- 在redis中查询对应用户信息，如果存在就返回一个临时门票，返回请求来的系统
+		- 然后原系统调用verifyTmpTicket()方法，验证临时门票状态，成功后返回用户信息
+~~~
+
+
+
+```java
+/**
+ * 接收其他服务的登录请求
+ */
+@GetMapping("/login")
+public String login(
+    String returnUrl, Model model,
+    HttpServletRequest request, HttpServletResponse response) {
+    model.addAttribute("returnUrl", returnUrl);
+
+    // 第二次登陆
+    String userTicket = CookieUtils.getCookieValue(request, COOKIE_USER_TICKET, true);
+    if (verifyUserTicket(userTicket)) {
+        String tempTicket = createTempTicket();
+        return "redirect:" + returnUrl + "?tempTicket=" + tempTicket;
+    }
+    // 第一次登陆
+    return "login";
+}
+
+/**
+ * 验证用户的全局门票
+ * @param userTicket 全局门票
+ * @return boolean
+ */
+private boolean verifyUserTicket(String userTicket) {
+    if (StringUtils.isBlank(userTicket)) {
+        return false;
+    }
+    String userId = redisUtil.get(REDIS_USER_TICKET_PREFIX + userTicket);
+    if (StringUtils.isBlank(userId)) {
+        return false;
+    }
+    String userInfo = redisUtil.get(REDIS_USER_TOKEN_PREFIX + userId);
+    if (StringUtils.isBlank(userInfo)) {
+        return false;
+    }
+    return true;
+}
+```
+
+
+
+## 注销
+
+删除保存在redis以及cookie中的信息
+
+```java
+/**
+ * 注销
+ */
+@PostMapping("/logout")
+@ResponseBody
+public HttpJSONResult logout(
+        @RequestParam String userId,
+        HttpServletRequest request, HttpServletResponse response) throws Exception {
+    // 1.获取cookie中用户cas的全局门票
+    String userTicket = CookieUtils.getCookieValue(request, COOKIE_USER_TICKET, true);
+    // 2.删除cookie中的用户全局门票
+    CookieUtils.deleteCookie(request,response, COOKIE_USER_TICKET);
+    // 3.删除用户redis中的用户全局门票信息
+    redisUtil.delete(REDIS_USER_TICKET_PREFIX + userTicket);
+    // 4.清除用户全局会话 token
+    redisUtil.delete(REDIS_USER_TOKEN_PREFIX+userId);
+    return HttpJSONResult.ok();
+}
+```
