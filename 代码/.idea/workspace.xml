@@ -7,11 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="指定运行顺序">
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/同步模式指定输出顺序/Test2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/同步模式指定输出顺序/Test3.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="同步模式指定输出顺序 增加2中方法">
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/两阶段终止模式/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/pattern/两阶段终止模式/Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/juc/src/test/java/再探JUC/pattern/同步模式指定输出顺序/WaitNotifyTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interview/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/src/test/java/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/juc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/juc/juc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/juc/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,9 +30,9 @@
         <option value="JUnit3 Test Class" />
         <option value="TestNG Test Class" />
         <option value="JUnit4 Test Class" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Tag Library Descriptor" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -132,11 +134,11 @@
       <recent name="数据结构和算法.数据结构" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="再探JUC.pattern.同步模式指定输出顺序" />
       <recent name="数据结构和算法.算法.排序.sort" />
       <recent name="数据结构和算法.数据结构.tree.二叉树" />
       <recent name="数据结构和算法.数据结构.list.linked" />
       <recent name="数据结构和算法.数据结构.List" />
-      <recent name="修炼.数据结构和算法.数据结构.List" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="设计模式.结构型模式.装饰者模式" />
@@ -176,13 +178,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test3">
+  <component name="RunManager" selected="Application.Test2">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.pattern.同步模式指定输出顺序.Test" />
+      <option name="MAIN_CLASS_NAME" value="再探JUC.pattern.两阶段终止模式.Test" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="再探JUC.pattern.同步模式指定输出顺序.*" />
+          <option name="PATTERN" value="再探JUC.pattern.两阶段终止模式.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -190,12 +192,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test2 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.pattern.同步模式指定输出顺序.Test2" />
+    <configuration name="Test2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.pattern.两阶段终止模式.Test2" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="再探JUC.pattern.同步模式指定输出顺序.*" />
+          <option name="PATTERN" value="再探JUC.pattern.两阶段终止模式.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -216,22 +218,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test7" />
+    <configuration name="WaitNotifyTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.pattern.同步模式指定输出顺序.WaitNotifyTest" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="再探JUC.test.*" />
+          <option name="PATTERN" value="再探JUC.pattern.同步模式指定输出顺序.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <module name="interview" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -249,20 +244,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WaitNotifyTest.name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="juc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="再探JUC.pattern.同步模式指定输出顺序.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="再探JUC.pattern.同步模式指定输出顺序" />
+      <option name="MAIN_CLASS_NAME" value="再探JUC.pattern.同步模式指定输出顺序.WaitNotifyTest" />
+      <option name="METHOD_NAME" value="name" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.test" />
-      <item itemvalue="Application.Test7" />
-      <item itemvalue="Application.Test" />
-      <item itemvalue="Application.Test2 (1)" />
       <item itemvalue="Application.Test3" />
+      <item itemvalue="JUnit.WaitNotifyTest.name" />
+      <item itemvalue="Application.WaitNotifyTest" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.Test2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test3" />
-        <item itemvalue="Application.Test2 (1)" />
-        <item itemvalue="Application.test" />
+        <item itemvalue="Application.Test2" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Test7" />
+        <item itemvalue="Application.WaitNotifyTest" />
+        <item itemvalue="JUnit.WaitNotifyTest.name" />
+        <item itemvalue="Application.Test3" />
       </list>
     </recent_temporary>
   </component>
@@ -501,14 +512,7 @@
       <workItem from="1614991395722" duration="7137000" />
       <workItem from="1615079006876" duration="11000" />
       <workItem from="1615079124769" duration="4934000" />
-      <workItem from="1615165025863" duration="2920000" />
-    </task>
-    <task id="LOCAL-00122" summary="update">
-      <created>1611637341428</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1611637341428</updated>
+      <workItem from="1615165025863" duration="6080000" />
     </task>
     <task id="LOCAL-00123" summary="update">
       <created>1611643231376</created>
@@ -846,7 +850,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615091885704</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="同步模式指定输出顺序 增加2中方法">
+      <created>1615168051908</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1615168051909</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -878,7 +889,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="聊天室 update" />
     <MESSAGE value="nio零拷贝" />
     <MESSAGE value="netty的一个小案例" />
     <MESSAGE value="执行复杂业务-taskQueue -1" />
@@ -903,7 +913,8 @@
     <MESSAGE value="使用中间类扩展该模式" />
     <MESSAGE value="消息隊列模擬" />
     <MESSAGE value="指定运行顺序" />
-    <option name="LAST_COMMIT_MESSAGE" value="指定运行顺序" />
+    <MESSAGE value="同步模式指定输出顺序 增加2中方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="同步模式指定输出顺序 增加2中方法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

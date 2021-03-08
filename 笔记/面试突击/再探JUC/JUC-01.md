@@ -1064,3 +1064,104 @@ public class Test7 {
 
 
 
+
+
+
+
+# Java内存模型
+
+JMM
+
+~~~
+1.原子性：保存线程不会受到线程上下文切换的影响
+2.可见性：保证指令不会收cpu缓存的影响
+3.有序性：保存指令不会受到cpu指令并行优化的影响
+~~~
+
+
+
+可见性：
+
+~~~
+volatitle
+system.out.println()
+sysnchronized
+~~~
+
+
+
+
+
+## volatitle
+
+~~~
+1.保证可见性：
+	可以修饰成员变量和静态成员变量。可以避免线程从自己的工作缓存中查找变量的值，必须主内存中获取他最新的值。
+	
+~~~
+
+
+
+
+
+## 两阶段终止
+
+```java
+public class Test {
+
+    public static void main(String[] args) {
+        TwoPhaseTermination tpt = new TwoPhaseTermination();
+        tpt.start();
+
+        try {
+            TimeUnit.SECONDS.sleep(4);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        tpt.stop();
+    }
+}
+
+@Slf4j
+class TwoPhaseTermination {
+
+    /**
+     * 监控线程
+     */
+    private Thread monitor;
+    private volatile boolean stop = false;
+
+    /**
+     * 启动监控线程
+     */
+    public void start() {
+        monitor = new Thread(() -> {
+            while (true) {
+                Thread curr = Thread.currentThread();
+                if (stop) {
+                    log.info("料理后事");
+                    break;
+                }
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                    log.info("执行监控记录");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    // 重新设置打断标记
+                    curr.interrupt();
+                }
+            }
+        }, "monitor");
+
+        monitor.start();
+    }
+
+    /**
+     * 停止监控线程
+     */
+    public void stop() {
+        stop = true;
+    }
+}
+```
