@@ -774,7 +774,7 @@ final class Message {
 
 ## 3.同步模式指定输出顺序
 
-
+### wait notify
 
 ```java
 @Slf4j
@@ -820,6 +820,118 @@ class WaitNotify {
     }
 }
 ```
+
+
+
+### Await Signal
+
+```java
+public class Test2 {
+
+    public static void main(String[] args) {
+        AwaitSignal as = new AwaitSignal(5);
+        Condition a = as.newCondition();
+        Condition b = as.newCondition();
+        Condition c = as.newCondition();
+        new Thread(() -> {
+            as.print(Thread.currentThread().getName(), a, b);
+        }, "a").start();
+        new Thread(() -> {
+            as.print(Thread.currentThread().getName(), b, c);
+        }, "b").start();
+        new Thread(() -> {
+            as.print(Thread.currentThread().getName(), c, a);
+        }, "c").start();
+
+        as.lock();
+        try {
+            a.signal();
+        } finally {
+            as.unlock();
+        }
+
+    }
+}
+
+class AwaitSignal extends ReentrantLock {
+    private int loopNumber;
+
+    public AwaitSignal(int loopNumber) {
+        this.loopNumber = loopNumber;
+    }
+
+    public void print(String val, Condition curr, Condition next) {
+        for (int i = 0; i < loopNumber; i++) {
+            lock();
+            try {
+                // curr
+                curr.await();
+                // doSomething
+                System.out.print(val);
+                // next
+                next.signal();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                unlock();
+            }
+        }
+    }
+}
+```
+
+
+
+### park unpark
+
+```java
+public class Test3 {
+
+    static Thread a;
+    static Thread b;
+    static Thread c;
+
+    public static void main(String[] args) {
+        ParkUnPark pu = new ParkUnPark(5);
+        a = new Thread(() -> {
+            pu.print(Thread.currentThread().getName(), b);
+        }, "a");
+        b = new Thread(() -> {
+            pu.print(Thread.currentThread().getName(), c);
+        }, "b");
+        c = new Thread(() -> {
+            pu.print(Thread.currentThread().getName(), a);
+        }, "c");
+
+        a.start();
+        b.start();
+        c.start();
+
+        LockSupport.unpark(a);
+    }
+}
+
+class ParkUnPark {
+
+    private int loop;
+
+    public ParkUnPark(int loop) {
+        this.loop = loop;
+    }
+
+    public void print(String val, Thread next) {
+        for (int i = 0; i < loop; i++) {
+            LockSupport.park();
+            System.out.print(val);
+            LockSupport.unpark(next);
+        }
+    }
+}
+```
+
+
+
+
 
 
 
