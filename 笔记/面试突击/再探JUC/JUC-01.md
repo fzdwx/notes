@@ -931,6 +931,67 @@ class ParkUnPark {
 
 
 
+## 4.两阶段终止
+
+public class Test {
+
+    public static void main(String[] args) {
+        TwoPhaseTermination tpt = new TwoPhaseTermination();
+        tpt.start();
+    
+        try {
+            TimeUnit.SECONDS.sleep(4);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+        tpt.stop();
+    }
+}
+
+@Slf4j
+class TwoPhaseTermination {
+
+```java
+/**
+ * 监控线程
+ */
+private Thread monitor;
+private volatile boolean stop = false;
+
+/**
+ * 启动监控线程
+ */
+public void start() {
+    monitor = new Thread(() -> {
+        while (true) {
+            Thread curr = Thread.currentThread();
+            if (stop) {
+                log.info("料理后事");
+                break;
+            }
+            try {
+                TimeUnit.SECONDS.sleep(1);
+                log.info("执行监控记录");
+            } catch (Exception e) {
+                e.printStackTrace();
+                // 重新设置打断标记
+                curr.interrupt();
+            }
+        }
+    }, "monitor");
+
+    monitor.start();
+}
+
+/**
+ * 停止监控线程
+ */
+public void stop() {
+    stop = true;
+}
+}
+```
 
 
 
@@ -1090,9 +1151,21 @@ sysnchronized
 
 
 
+有序性:
+
+~~~
+JVM会在不影响正确性的前提下，可以调整语句的执行顺序，这种特性被称为指令重排
+~~~
 
 
-## volatitle
+
+
+
+
+
+
+
+## volatile
 
 ~~~
 1.保证可见性：
@@ -1100,68 +1173,312 @@ sysnchronized
 	
 ~~~
 
+### 原理
+
+- 对写指令 后 会加入写屏障
+- 对读指令 前 会加入读屏障
+
+
+
+![image-20210308112132653](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210308112933.png)
+
+### double-checked-locking问题
+
+给instance加volatile关键字，防止指令重排
+
+![image-20210308113302315](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210308113302.png)
 
 
 
 
-## 两阶段终止
+
+## 单例模式练习
+
+![image-20210308115907779](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210308115907.png)
+
+~~~
+1.防止子类重写，破坏单例
+2.添加一个方法
+	public Object readResovle(){
+		return instance;
+	}
+3.别的类都可以创建对象，不能
+4.能保证
+5. 
+~~~
+
+
+
+
+
+# 无锁
+
+
+
+## 使用无锁-保护共享资源
+
+~~~
+使用原子类可以保证原子性
+	AtomicInteger 
+~~~
+
+原理：
+
+~~~
+1.该类底层运用了CAS（compareAndSet）比较和设置。
+2.CAS的底层有是lock cmpxchg指令，在单核和多核cpu下都能保证 比较-交换的原子性
+~~~
+
+volatile
+
+~~~
+使用Atomic原子类中，变量都用了volatile修饰，保证变量的可见性。
+避免线程从自己的工作缓存中查找变量的值，必须要主内存中获取他的值。
+~~~
+
+CAS
+
+~~~
+1.基于乐观锁的思想：不断重试
+2.synchronized是基于悲观锁的控制：锁住变量，只能有一个线程操作
+3.CAS体现的是无锁并发、无阻塞并发
+~~~
+
+
+
+
+
+## ABA问题
+
+~~~
+1.A初始值为10
+2.一个线程修改A为15，然后在修改为10
+3.同时另一个线程修改A，希望原本的值为10，然后修改为11.
+4.修改成功
+
+但是第二个线程感知不到A有没有被修改过
+~~~
+
+**解决**
+
+~~~
+增加版本号这个概念，修改一次，版本号+1
+使用AtomicStampedReference类
+~~~
+
+
+
+
+
+## 原子累加器
+
+LongAdder
+
+ ~~~java
+
+    /**
+     * Table of cells. When non-null, size is a power of 2.
+     * 累加单元数组，懒惰初始化
+     */
+    transient volatile Cell[] cells;
+
+    /**
+     * Base value, used mainly when there is no contention, but also as
+     * a fallback during table initialization races. Updated via CAS.
+     * 基础值，如果没有竞争，就用cas累加这个值
+     */
+    transient volatile long base;
+
+    /**
+     * Spinlock (locked via CAS) used when resizing and/or creating Cells.
+     * 在cells 创建或扩容时，设置为1，表示加锁
+     */
+    transient volatile int cellsBusy;
+ ~~~
+
+
+
+![image-20210309104612680](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210309104619.png)
+
+
+
+![image-20210309104705790](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210309104705.png)
+
+![image-20210309104801202](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210309104801.png)
+
+![image-20210309104853596](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210309104853.png)
+
+
+
+
+
+
+
+
+
+
+
+# cas实现锁
+
+
 
 ```java
-public class Test {
+@Slf4j
+public class Test9 {
 
     public static void main(String[] args) {
-        TwoPhaseTermination tpt = new TwoPhaseTermination();
-        tpt.start();
+        CASLock lock = new CASLock();
+        new Thread(() -> {
+            log.info("start");
+            lock.lock();
+            try {
+                log.warn("加锁成功");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }finally {
+                log.warn("解锁");
+                lock.unlock();
+            }
+            log.info("end");
+        }, "t1").start();
 
-        try {
-            TimeUnit.SECONDS.sleep(4);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        tpt.stop();
+        new Thread(() -> {
+            log.info("start");
+            lock.lock();
+            try {
+                log.warn("加锁成功");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }finally {
+                log.warn("解锁");
+                lock.unlock();
+            }
+            log.info("end");
+        }, "t2").start();
     }
 }
 
 @Slf4j
-class TwoPhaseTermination {
+class CASLock {
+    private AtomicInteger flag = new AtomicInteger(0);
 
-    /**
-     * 监控线程
-     */
-    private Thread monitor;
-    private volatile boolean stop = false;
-
-    /**
-     * 启动监控线程
-     */
-    public void start() {
-        monitor = new Thread(() -> {
-            while (true) {
-                Thread curr = Thread.currentThread();
-                if (stop) {
-                    log.info("料理后事");
-                    break;
-                }
-                try {
-                    TimeUnit.SECONDS.sleep(1);
-                    log.info("执行监控记录");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    // 重新设置打断标记
-                    curr.interrupt();
-                }
+    public void lock() {
+        while (true) {
+            if (flag.compareAndSet(0, 1)) {
+                break;
             }
-        }, "monitor");
-
-        monitor.start();
+        }
     }
 
-    /**
-     * 停止监控线程
-     */
-    public void stop() {
-        stop = true;
+    public void unlock() {
+        flag.set(0);
+    }
+}
+```
+
+101-偏向锁
+
+00-无锁
+
+01-轻量级锁
+
+10-重量级锁
+
+
+
+
+
+# unsafe
+
+## 1.获取unsafe类，并给一个对象赋值
+
+```java
+public class Test10 {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
+        Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
+        theUnsafe.setAccessible(true);
+        Unsafe unsafe = (Unsafe) theUnsafe.get(null);
+
+        long idOffset = unsafe.objectFieldOffset(Teacher.class.getDeclaredField("id"));
+        long nameOffset = unsafe.objectFieldOffset(Teacher.class.getDeclaredField("name"));
+
+        Teacher t = new Teacher();
+        unsafe.compareAndSwapInt(t, idOffset,0,1);
+        unsafe.compareAndSwapObject(t, nameOffset, null, "like");
+
+        System.out.println(t);
+    }
+}
+
+@Data
+class Teacher{
+    volatile int id;
+    volatile String name;
+}
+```
+
+
+
+
+
+## 2.实现一个简单的原子int类
+
+```java
+class MyAtomicInt {
+    private static Unsafe UNSAFE;
+    public static long valueOffset;
+    private volatile int value;
+
+    public MyAtomicInt(int value) {
+        this.value = value;
+    }
+
+    static {
+        UNSAFE = UnsafeCreator.unsafe();
+        try {
+            valueOffset = UNSAFE.objectFieldOffset(MyAtomicInt.class.getDeclaredField("value"));
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public int get() {
+        return value;
+    }
+
+    public void decrement(int amount) {
+        while (true) {
+            int prev = this.value;
+            int next = prev - amount;
+
+            if (UNSAFE.compareAndSwapInt(this, valueOffset, prev, next)) {
+                break;
+            }
+        }
+    }
+}
+
+final class UnsafeCreator {
+    private static Unsafe unsafe;
+
+    static {
+        try {
+            Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
+            theUnsafe.setAccessible(true);
+            Unsafe unsafe = (Unsafe) theUnsafe.get(null);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Unsafe unsafe() {
+        return unsafe;
     }
 }
 ```
