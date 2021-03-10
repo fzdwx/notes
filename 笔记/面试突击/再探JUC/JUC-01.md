@@ -1555,3 +1555,15 @@ class DBPool {
 
 class MockConnection implements Connection {}
 ```
+
+
+
+
+
+# 并发工具类
+
+
+
+## 1.自定义线程池
+
+![image-20210310101329163](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210310101329.png)
