@@ -1482,3 +1482,76 @@ final class UnsafeCreator {
     }
 }
 ```
+
+
+
+
+
+# 享元模式
+
+![image-20210310093356081](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210310093403.png)
+
+```java
+class DBPool {
+    private int poolSize = 10;
+
+    private Connection[] connections;
+
+    /** 0 空闲  1 繁忙 */
+    private AtomicIntegerArray states;
+
+    public DBPool(int poolSize) {
+        this.poolSize = poolSize;
+        this.connections = new Connection[poolSize];
+        this.states = new AtomicIntegerArray(new int[poolSize]);
+
+        for (int i = 0; i < poolSize; i++) {
+            connections[i] = new MockConnection();
+        }
+    }
+
+    /**
+     * 借
+     * @return {@link Connection}
+     */
+    public Connection borrow() {
+        while (true) {
+            for (int i = 0; i < poolSize; i++) {
+                if (states.get(i) == 0) {
+                    if (states.compareAndSet(i, 0, 1)) {
+                        return connections[i];
+                    }
+                }
+            }
+            // 没有空闲连接
+            synchronized (this) {
+                try {
+                    this.wait();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    /**
+     * 归还
+     * @param conn
+     */
+    public void free(Connection conn) {
+        for (int i = 0; i < poolSize; i++) {
+            if (connections[i] == conn) {
+                states.set(i, 0);
+                synchronized (this) {
+                    this.notifyAll();
+                }
+                break;
+            }
+
+        }
+
+    }
+}
+
+class MockConnection implements Connection {}
+```

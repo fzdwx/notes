@@ -7,11 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="两阶段终止模式">
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Teacher11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test9.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="cas 以及 unsafe 的简单使用">
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.7/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test11.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/项目/mall2.0/03-分布式基础-elasticsearch.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/项目/mall2.0/03-分布式基础-elasticsearch.md" afterDir="false" />
@@ -100,7 +105,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -509,14 +514,9 @@
       <workItem from="1615079006876" duration="11000" />
       <workItem from="1615079124769" duration="4934000" />
       <workItem from="1615165025863" duration="6792000" />
-      <workItem from="1615249507954" duration="6556000" />
-    </task>
-    <task id="LOCAL-00124" summary="update">
-      <created>1611726056901</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1611726056902</updated>
+      <workItem from="1615249507954" duration="7216000" />
+      <workItem from="1615339179840" duration="109000" />
+      <workItem from="1615339310310" duration="2847000" />
     </task>
     <task id="LOCAL-00125" summary="update">
       <created>1611729255592</created>
@@ -854,7 +854,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615172442837</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="cas 以及 unsafe 的简单使用">
+      <created>1615259603275</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1615259603276</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -886,7 +893,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="nio零拷贝" />
     <MESSAGE value="netty的一个小案例" />
     <MESSAGE value="执行复杂业务-taskQueue -1" />
     <MESSAGE value="执行复杂业务-taskQueue -2" />
@@ -911,7 +917,8 @@
     <MESSAGE value="指定运行顺序" />
     <MESSAGE value="同步模式指定输出顺序 增加2中方法" />
     <MESSAGE value="两阶段终止模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="两阶段终止模式" />
+    <MESSAGE value="cas 以及 unsafe 的简单使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="cas 以及 unsafe 的简单使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

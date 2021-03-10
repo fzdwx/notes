@@ -70,7 +70,7 @@ vim /etc/sysctl.conf
 vm.max_map_count=262145
 sysctl -p
 
-
+su es
 /es/elasticsearch-7.9.3/bin/elasticsearch -d
 ~~~
 
@@ -386,15 +386,18 @@ output {
         # 同步的索引名
         index => "mall-items"
         # 设置_docID和数据相同
-        document_id => "%{id}"
-        # document_id => "%{itemId}"
+        #document_id => "%{id}"
+        document_id => "%{itemId}"
+		template => "/es/logstash-7.9.3/sync/logstash-ik.json"
+        template_name => "mall-ik-template"
+        template_overwrite => true
+        manage_template => false
     }
     # 日志输出
     stdout {
         codec => json_lines
     }
 }
-
 ~~~
 
 ## mall-items.sql
@@ -422,9 +425,91 @@ SELECT
 
 ![image-20210308212258434](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210308212503.png)
 
+
+
+## logstash-ik.json
+
+~~~
+{
+    "order": 0,
+    "version": 1,
+    "index_patterns": ["*"],
+    "settings": {
+        "index": {
+            "refresh_interval": "5s"
+        }
+    },
+    "mappings": {
+        "_default_": {
+            "dynamic_templates": [
+                {
+                    "message_field": {
+                        "path_match": "message",
+                        "match_mapping_type": "string",
+                        "mapping": {
+                            "type": "text",
+                            "norms": false
+                        }
+                    }
+                },
+                {
+                    "string_fields": {
+                        "match": "*",
+                        "match_mapping_type": "string",
+                        "mapping": {
+                            "type": "text",
+                            "norms": false,
+                            "analyzer": "ik_smart",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "properties": {
+                "@timestamp": {
+                    "type": "date"
+                },
+                "@version": {
+                    "type": "keyword"
+                },
+                "geoip": {
+                    "dynamic": true,
+                    "properties": {
+                        "ip": {
+                            "type": "ip"
+                        },
+                        "location": {
+                            "type": "geo_point"
+                        },
+                        "latitude": {
+                            "type": "half_float"
+                        },
+                        "longitude": {
+                            "type": "half_float"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "aliases": {}
+}
+
+~~~
+
+
+
 ~~~~
-cd /es/logstash-7.9.3/bin
-./logstash -f /es/logstash-7.9.3/sync/logstash-db-sync.conf
+su es
+/es/elasticsearch-7.9.3/bin/elasticsearch -d
+
+启动
+/es/logstash-7.9.3/bin/logstash -f /es/logstash-7.9.3/sync/logstash-db-sync.conf
 
 cd /es/logstash-7.9.3/config
 vim jvm.op
@@ -440,3 +525,91 @@ vim jvm.op
 ## 测试
 
 ![image-20210308221848200](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210308221848.png)
+
+
+
+
+
+# 3.搜索商品接口
+
+## controller
+
+```java
+@RestController
+public class SearchController {
+
+    @Autowired
+    private ItemsSearchService ItemsSearchService;
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "You Know, for Search!";
+    }
+
+    @GetMapping("/es/search/items")
+    public HttpJSONResult searchItems(String keywords, String sort, Integer page, Integer pageSize) {
+        if (StringUtils.isBlank(keywords)) {
+            return HttpJSONResult.errorMsg("关键字为空");
+        }
+        if (page == null) {
+            page = 1;
+        }
+        if (pageSize == null) {
+            pageSize = ES.PAGE_SIZE;
+        }
+
+        PagedGridResult pageGrid = ItemsSearchService.searchItems(keywords, sort, page, pageSize);
+
+        return HttpJSONResult.ok(pageGrid);
+    }
+}
+```
+
+## service
+
+```java
+@Service
+public class ItemsSearchServiceImpl implements ItemsSearchService {
+
+    @Autowired
+    private ESUtils esUtils;
+
+    @Override
+    public PagedGridResult searchItems(
+            String keywords, String sort, Integer page, Integer pageSize) {
+        // 1.构建查询条件
+        SearchSourceBuilder sb = new SearchSourceBuilder();
+//        sb.size(pageSize).from((page - 1) * ES.PAGE_SIZE);
+        sb.query(QueryBuilders.matchQuery(Items.itemNameCol, keywords))
+          .highlighter(new HighlightBuilder().field(Items.itemNameCol)
+                                             .preTags(ES.preTag)
+                                             .postTags(ES.postTag));
+        // 2.查询
+        ESRes esData = esUtils.queryDataBig(ES.ES_INDEX, sb);
+        SearchHit[] searchHits = esData.getHits();
+
+        // 3.封装返回条件
+        List<Items> rows = Arrays.stream(searchHits).map(hit -> {
+            HighlightField highInfo = (HighlightField) hit.getHighlightFields().values().toArray()[0];
+            Map<String, Object> source = hit.getSourceAsMap();
+            Items items = new Items();
+
+            items.setItemId((String) source.get(Items.itemIdCol));
+            items.setItemName(Arrays.toString(highInfo.getFragments()));
+            items.setImgUrl((String) source.get(Items.imgUrlCol));
+            items.setPrice((Integer) source.get(Items.priceCol));
+            items.setSellCounts((Integer) source.get(Items.sellCountsCol));
+
+            return items;
+        }).collect(Collectors.toList());
+
+        // 4.分页
+        PagedGridResult res = new PagedGridResult();
+        res.setRows(rows);
+        res.setRecords(esData.getRecords());
+        res.setTotal(esData.getTotal());
+        res.setPage(page);
+        return res;
+    }
+}
+```
