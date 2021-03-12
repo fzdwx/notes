@@ -1567,3 +1567,304 @@ class MockConnection implements Connection {}
 ## 1.自定义线程池
 
 ![image-20210310101329163](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210310101329.png)
+
+
+
+### 线程池类
+
+```java
+@Slf4j
+public class ThreadPool {
+
+    /** 存放任务的容器 */
+    private BlockingQueue<Runnable> tasks;
+
+    /** 核心线程数 */
+    private int coreSize;
+
+    /** 线程接到任务的超时时间 */
+    private long timeout;
+
+    /** 时间单位 */
+    private TimeUnit timeUnit;
+
+    private RejectPolicy<Runnable> rejectPolicy;
+
+    private final HashSet<Worker> workers = new HashSet<>();
+
+    public ThreadPool(
+            BlockingQueue<Runnable> tasks, int coreSize, long timeout, TimeUnit timeUnit, RejectPolicy policy) {
+        this.tasks = tasks;
+        this.coreSize = coreSize;
+        this.timeout = timeout;
+        this.timeUnit = timeUnit;
+        this.rejectPolicy = policy;
+    }
+
+    public void execute(Runnable task) {
+        // 当任务数没有超过 coreSize，直接交给worker执行
+        // 如果超过就加入任务容器
+        synchronized (workers) {
+            if (workers.size() < coreSize) {
+                Worker worker = new Worker(task);
+                log.info("新增worker{},{}", worker, task);
+                workers.add(worker);
+                worker.start();
+            } else {
+                // 拒绝策略
+                tasks.tryPut(rejectPolicy, task);
+            }
+        }
+    }
+
+    class Worker extends Thread {
+        private Runnable task;
+
+        public Worker(Runnable task) {
+            this.task = task;
+        }
+
+        @Override
+        public void run() {
+            // 执行任务
+            // 1.执行task
+            // 2.执行tasks中的任务
+            while (task != null || (task = tasks.poll(timeout, timeUnit)) != null) {
+                try {
+                    log.info("正在执行...{}", task);
+                    task.run();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    task = null;
+                }
+            }
+            synchronized (workers) {
+                log.info("worker 被移除{}", this);
+                workers.remove(this);
+            }
+        }
+    }
+}
+```
+
+
+
+### 阻塞队列类
+
+```java
+@Slf4j
+public class BlockingQueue<T> {
+
+    /** 容量 */
+    private int capacity;
+
+    public BlockingQueue(int capacity) {
+        this.capacity = capacity;
+    }
+
+    /** 队列  任务容器 */
+    private final Deque<T> queue = new ArrayDeque<>();
+    /** 锁 */
+    private final ReentrantLock lock = new ReentrantLock();
+
+    /** 生产者条件 */
+    private final Condition fullWaitSet = lock.newCondition();
+
+    /** 消费者条件 */
+    private final Condition emptyWaitSet = lock.newCondition();
+
+    /**
+     * 带超时的获取任务
+     * @param timeout 超时
+     * @param unit 单位
+     * @return {@link T}
+     */
+    public T poll(long timeout, TimeUnit unit) {
+        timeout = unit.toNanos(timeout);
+
+        T task = null;
+        lock.lock();
+        try {
+            while (queue.isEmpty()) {
+                try {
+                    // 返回的剩余时间
+                    if (timeout <= 0) {
+                        return task;
+                    }
+                    timeout = emptyWaitSet.awaitNanos(timeout);// 容器是空的，等待生产者生产
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            task = queue.removeFirst();  // 消费
+            fullWaitSet.signal();  // 生产者生成
+        } finally {
+            lock.unlock();
+        }
+        return task;
+    }
+
+    /**
+     * 带超时的存放任务
+     * @param task 任务
+     * @param timeout 超时
+     * @param unit 单位
+     * @return boolean
+     */
+    public boolean offer(T task, long timeout, TimeUnit unit) {
+        timeout = unit.toNanos(timeout);
+
+        lock.lock();
+        try {
+            while (queue.size() == capacity) {
+                try {
+                    if (timeout <= 0) {
+                        log.info("等待超时，任务被丢弃:{}", task);
+                        return false;
+                    }
+                    timeout = fullWaitSet.awaitNanos(timeout);   // 容器满了，等待消费者消费
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            queue.addLast(task);     // 生产
+            emptyWaitSet.signal();  // 消费者消费
+        } finally {
+            lock.unlock();
+        }
+
+        return true;
+    }
+
+    /**
+     * 阻塞式的获取任务
+     * @return {@link T}
+     */
+    public T take() {
+        T task = null;
+        lock.lock();
+        try {
+            while (queue.isEmpty()) {
+                try {
+                    emptyWaitSet.await();  // 容器是空的，等待生产者生产
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            task = queue.removeFirst();  // 消费
+            fullWaitSet.signal();  // 生产者生成
+        } finally {
+            lock.unlock();
+        }
+        return task;
+    }
+
+    /**
+     * 阻塞式的存放任务
+     * @param task 任务
+     */
+    public void put(T task) {
+        lock.lock();
+        try {
+            while (queue.size() == capacity) {
+                try {
+                    fullWaitSet.await();   // 容器满了，等待消费者消费
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            queue.addLast(task);     // 生产
+            emptyWaitSet.signal();  // 消费者消费
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    /**
+     * 容器大小
+     * @return int
+     */
+    public int size() {
+        lock.lock();
+        try {
+            return queue.size();
+        } finally {
+            lock.unlock();
+        }
+
+    }
+
+    /**
+     * 尝试存放
+     * @param policy 政策
+     * @param task 任务
+     */
+    public void tryPut(RejectPolicy<T> policy, T task) {
+        lock.lock();
+        try {
+            // 1.满了就调用策略处理任务
+            if (queue.size() == capacity) {
+                log.info("线程池已满，根据策略进行处理：{}", task);
+                policy.reject(this, task);
+            } else {
+                // 2.没满就放入队列等待处理
+                queue.addLast(task);     // 生产
+                emptyWaitSet.signal();  // 消费者消费r
+            }
+        } finally {
+            lock.unlock();
+        }
+
+    }
+}
+```
+
+
+
+### 拒绝策略
+
+```java
+@FunctionalInterface
+public interface RejectPolicy<T> {
+
+    void reject(BlockingQueue<T> tasks, T task);
+}
+```
+
+
+
+### 测试方法
+
+```java
+@Slf4j
+public class Test {
+
+    public static void main(String[] args) {
+        ThreadPool threadPool = new ThreadPool(new BlockingQueue<>(5), 3, 10, TimeUnit.MICROSECONDS, (q, t) -> {
+            // 1.等待执行 - 死等
+//            q.put(t);
+            // 2.等待超时
+            q.offer(t, 5,TimeUnit.MICROSECONDS);
+            // 3.放弃
+//            System.out.println("放弃执行"+t);
+            // 4.让调用者抛出异常
+//            throw new RuntimeException("线程池已满，执行失败"+t);
+            // 5.调用者自己执行
+//            ((Runnable) t).run();
+        });
+        for (int i = 0; i < 30; i++) {
+            int val = i;
+            threadPool.execute(() -> {
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                log.error("任务执行:{}",val);
+            });
+
+        }
+    }
+}
+```
