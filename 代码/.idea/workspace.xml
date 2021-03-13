@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="自定义线程池">
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新注释">
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test12.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/BlockingQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/BlockingQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/ThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/ThreadPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,19 +174,8 @@
         <option value="XSLT" />
       </set>
     </option>
-    <option name="hiddenConfigurations">
-      <map>
-        <entry key="Application">
-          <value>
-            <set>
-              <option value="Main" />
-            </set>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.Test12">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="再探JUC.自定义线程池.Test" />
       <module name="juc" />
@@ -203,6 +191,19 @@
     </configuration>
     <configuration name="Test10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test10" />
+      <module name="juc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="再探JUC.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test12" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test12" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
@@ -240,14 +241,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Test8" />
       <item itemvalue="Application.Test9" />
       <item itemvalue="Application.Test10" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Application.Test12" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test12" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Test10" />
         <item itemvalue="Application.Test9" />
@@ -494,13 +510,7 @@
       <workItem from="1615249507954" duration="7216000" />
       <workItem from="1615339179840" duration="109000" />
       <workItem from="1615339310310" duration="9788000" />
-    </task>
-    <task id="LOCAL-00127" summary="目錄重構">
-      <created>1612062420169</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1612062420169</updated>
+      <workItem from="1615599236828" duration="5050000" />
     </task>
     <task id="LOCAL-00128" summary="update">
       <created>1612068074116</created>
@@ -838,7 +848,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615350093247</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="更新注释">
+      <created>1615599472467</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1615599472467</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -870,7 +887,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="执行复杂业务-taskQueue -2" />
     <MESSAGE value="http服务器简单实例" />
     <MESSAGE value="demo1" />
     <MESSAGE value="线程调度demo" />
@@ -895,7 +911,8 @@
     <MESSAGE value="cas 以及 unsafe 的简单使用" />
     <MESSAGE value="享元模式之数据库连接池" />
     <MESSAGE value="自定义线程池" />
-    <option name="LAST_COMMIT_MESSAGE" value="自定义线程池" />
+    <MESSAGE value="更新注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新注释" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

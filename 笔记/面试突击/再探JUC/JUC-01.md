@@ -933,67 +933,82 @@ class ParkUnPark {
 
 ## 4.两阶段终止
 
-public class Test {
 
+
+```java
+public class Test {
     public static void main(String[] args) {
         TwoPhaseTermination tpt = new TwoPhaseTermination();
         tpt.start();
-    
+
         try {
             TimeUnit.SECONDS.sleep(4);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    
+
         tpt.stop();
     }
-}
-
-@Slf4j
-class TwoPhaseTermination {
-
-```java
-/**
- * 监控线程
- */
-private Thread monitor;
-private volatile boolean stop = false;
-
-/**
- * 启动监控线程
- */
-public void start() {
-    monitor = new Thread(() -> {
-        while (true) {
-            Thread curr = Thread.currentThread();
-            if (stop) {
-                log.info("料理后事");
-                break;
-            }
-            try {
-                TimeUnit.SECONDS.sleep(1);
-                log.info("执行监控记录");
-            } catch (Exception e) {
-                e.printStackTrace();
-                // 重新设置打断标记
-                curr.interrupt();
-            }
-        }
-    }, "monitor");
-
-    monitor.start();
-}
-
-/**
- * 停止监控线程
- */
-public void stop() {
-    stop = true;
-}
 }
 ```
 
 
+
+
+```java
+@Slf4j
+class TwoPhaseTermination {
+    /**
+ * 监控线程
+ */
+    private Thread monitor;
+    private volatile boolean stop = false;
+
+    /**
+ * 启动监控线程
+ */
+    public void start() {
+        monitor = new Thread(() -> {
+            while (true) {
+                Thread curr = Thread.currentThread();
+                if (stop) {
+                    log.info("料理后事");
+                    break;
+                }
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                    log.info("执行监控记录");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    // 重新设置打断标记
+                    curr.interrupt();
+                }
+            }
+        }, "monitor");
+
+        monitor.start();
+    }
+
+    /**
+ * 停止监控线程
+ */
+    public void stop() {
+        stop = true;
+    }
+}
+```
+
+
+
+
+
+
+
+## 5.异步模式之工作线程（worker-thread）
+
+![image-20210313105002411](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210313105002.png)
+
+![image-20210313110157693](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210313110157.png)
 
 
 # ReentranLock
@@ -1865,6 +1880,127 @@ public class Test {
             });
 
         }
+    }
+}
+```
+
+
+
+## 2.JDK线程池
+
+![image-20210313093910724](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210313093917.png)
+
+### a.线程池状态
+
+使用int的高三位来表示线程池状态，低29位表示线程数量
+
+目的：减少一次cas操作
+
+![image-20210313094024992](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210313094025.png)
+
+
+
+![image-20210313094610502](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210313094610.png)
+
+
+
+### b.构造函数
+
+~~~java
+public ThreadPoolExecutor(int corePoolSize,
+                          int maximumPoolSize,
+                          long keepAliveTime,
+                          TimeUnit unit,
+                          BlockingQueue<Runnable> workQueue,
+                          ThreadFactory threadFactory,
+                          RejectedExecutionHandler handler) {
+    if (corePoolSize < 0 ||
+        maximumPoolSize <= 0 ||
+        maximumPoolSize < corePoolSize ||
+        keepAliveTime < 0)
+        throw new IllegalArgumentException();
+    if (workQueue == null || threadFactory == null || handler == null)
+        throw new NullPointerException();
+    this.acc = System.getSecurityManager() == null ?
+        null :
+    AccessController.getContext();
+    this.corePoolSize = corePoolSize;
+    this.maximumPoolSize = maximumPoolSize;
+    this.workQueue = workQueue;
+    this.keepAliveTime = unit.toNanos(keepAliveTime);
+    this.threadFactory = threadFactory;
+    this.handler = handler;
+}
+~~~
+
+![image-20210313095415237](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210313095415.png)
+
+
+
+### c.创建多少线程更合适
+
+1. 过小容易导致饥饿
+2. 过大会导致线程上下文切换，占用内存更多
+
+
+
+- CPU密集型运算
+
+![image-20210313111101217](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210313111101.png)
+
+- io密集型
+
+![image-20210313111134477](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210313111134.png)
+
+
+
+### d.任务调度线程池
+
+![image-20210313114317414](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210313114317.png)
+
+
+
+
+
+# Fork/Join
+
+1.**概念**：
+
+是1.7新加入的线程池实现。体现的是一种分治思想，适用于能够进行任务拆分的cpu密集型运算。
+
+所谓任务拆分，就是将一个大任务拆分为算法上相同的小任务，直到不能拆分可以直接求解。
+
+![image-20210313114907708](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210313114907.png)
+
+
+
+
+
+```java
+public class Test12 {
+    public static void main(String[] args) {
+        ForkJoinPool pool = new ForkJoinPool(3);
+
+        System.out.println(pool.invoke(new MyTask(4)));
+    }
+}
+
+class MyTask extends RecursiveTask<Integer> {
+
+    private int n;
+
+    public MyTask(int n) {
+        this.n = n;
+    }
+
+    @Override
+    protected Integer compute() {
+        if (n <= 0) {
+            return 1;
+        }
+        MyTask myTask = new MyTask(n - 1);
+        myTask.fork();
+        return n + myTask.join();
     }
 }
 ```
