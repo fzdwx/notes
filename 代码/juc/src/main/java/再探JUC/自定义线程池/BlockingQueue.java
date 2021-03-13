@@ -24,17 +24,22 @@ public class BlockingQueue<T> {
     }
 
     /** 队列  任务容器 */
-    private Deque<T> queue = new ArrayDeque<>();
-
+    private final Deque<T> queue = new ArrayDeque<>();
     /** 锁 */
-    private ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock lock = new ReentrantLock();
 
     /** 生产者条件 */
-    private Condition fullWaitSet = lock.newCondition();
+    private final Condition fullWaitSet = lock.newCondition();
 
     /** 消费者条件 */
-    private Condition emptyWaitSet = lock.newCondition();
+    private final Condition emptyWaitSet = lock.newCondition();
 
+    /**
+     * 带超时的获取任务
+     * @param timeout 超时
+     * @param unit 单位
+     * @return {@link T}
+     */
     public T poll(long timeout, TimeUnit unit) {
         timeout = unit.toNanos(timeout);
 
@@ -60,6 +65,13 @@ public class BlockingQueue<T> {
         return task;
     }
 
+    /**
+     * 带超时的存放任务
+     * @param task 任务
+     * @param timeout 超时
+     * @param unit 单位
+     * @return boolean
+     */
     public boolean offer(T task, long timeout, TimeUnit unit) {
         timeout = unit.toNanos(timeout);
 
@@ -68,7 +80,7 @@ public class BlockingQueue<T> {
             while (queue.size() == capacity) {
                 try {
                     if (timeout <= 0) {
-                        log.info("等待超时，任务被丢弃:{}",task);
+                        log.info("等待超时，任务被丢弃:{}", task);
                         return false;
                     }
                     timeout = fullWaitSet.awaitNanos(timeout);   // 容器满了，等待消费者消费
@@ -85,6 +97,10 @@ public class BlockingQueue<T> {
         return true;
     }
 
+    /**
+     * 阻塞式的获取任务
+     * @return {@link T}
+     */
     public T take() {
         T task = null;
         lock.lock();
@@ -104,6 +120,10 @@ public class BlockingQueue<T> {
         return task;
     }
 
+    /**
+     * 阻塞式的存放任务
+     * @param task 任务
+     */
     public void put(T task) {
         lock.lock();
         try {
@@ -121,6 +141,10 @@ public class BlockingQueue<T> {
         }
     }
 
+    /**
+     * 容器大小
+     * @return int
+     */
     public int size() {
         lock.lock();
         try {
@@ -131,14 +155,20 @@ public class BlockingQueue<T> {
 
     }
 
+    /**
+     * 尝试存放
+     * @param policy 政策
+     * @param task 任务
+     */
     public void tryPut(RejectPolicy<T> policy, T task) {
         lock.lock();
         try {
+            // 1.满了就调用策略处理任务
             if (queue.size() == capacity) {
                 log.info("线程池已满，根据策略进行处理：{}", task);
-                policy.reject(this,task);
+                policy.reject(this, task);
             } else {
-
+                // 2.没满就放入队列等待处理
                 queue.addLast(task);     // 生产
                 emptyWaitSet.signal();  // 消费者消费r
             }

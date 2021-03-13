@@ -38,6 +38,10 @@ public class ThreadPool {
         this.rejectPolicy = policy;
     }
 
+    /**
+     * 执行
+     * @param task 任务
+     */
     public void execute(Runnable task) {
         // 当任务数没有超过 coreSize，直接交给worker执行
         // 如果超过就加入任务容器

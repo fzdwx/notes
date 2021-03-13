@@ -7,12 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="享元模式之数据库连接池">
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/BlockingQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/RejectPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/ThreadPool.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="自定义线程池">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/BlockingQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/BlockingQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/ThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义线程池/ThreadPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -238,17 +236,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -506,14 +493,7 @@
       <workItem from="1615165025863" duration="6792000" />
       <workItem from="1615249507954" duration="7216000" />
       <workItem from="1615339179840" duration="109000" />
-      <workItem from="1615339310310" duration="9166000" />
-    </task>
-    <task id="LOCAL-00126" summary="update-烂尾">
-      <created>1612054613879</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1612054613879</updated>
+      <workItem from="1615339310310" duration="9788000" />
     </task>
     <task id="LOCAL-00127" summary="目錄重構">
       <created>1612062420169</created>
@@ -851,7 +831,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615342229596</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="自定义线程池">
+      <created>1615350093247</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1615350093247</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -883,7 +870,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="执行复杂业务-taskQueue -1" />
     <MESSAGE value="执行复杂业务-taskQueue -2" />
     <MESSAGE value="http服务器简单实例" />
     <MESSAGE value="demo1" />
@@ -908,7 +894,8 @@
     <MESSAGE value="两阶段终止模式" />
     <MESSAGE value="cas 以及 unsafe 的简单使用" />
     <MESSAGE value="享元模式之数据库连接池" />
-    <option name="LAST_COMMIT_MESSAGE" value="享元模式之数据库连接池" />
+    <MESSAGE value="自定义线程池" />
+    <option name="LAST_COMMIT_MESSAGE" value="自定义线程池" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
