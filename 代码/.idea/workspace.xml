@@ -7,9 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="更新注释">
-      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/test/Test12.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="fork join 案例以及笔记更新">
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义锁/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/src/test/java/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +97,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -175,7 +176,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test12">
+  <component name="RunManager" selected="Application.test">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="再探JUC.自定义线程池.Test" />
       <module name="juc" />
@@ -215,8 +216,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test8" />
+    <configuration name="Test9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test9" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
@@ -228,15 +229,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test9" />
-      <module name="juc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="再探JUC.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="interview" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -255,19 +250,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Test8" />
       <item itemvalue="Application.Test9" />
       <item itemvalue="Application.Test10" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.Test12" />
+      <item itemvalue="Application.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.Test12" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Test10" />
         <item itemvalue="Application.Test9" />
-        <item itemvalue="Application.Test8" />
       </list>
     </recent_temporary>
   </component>
@@ -510,14 +505,9 @@
       <workItem from="1615249507954" duration="7216000" />
       <workItem from="1615339179840" duration="109000" />
       <workItem from="1615339310310" duration="9788000" />
-      <workItem from="1615599236828" duration="5050000" />
-    </task>
-    <task id="LOCAL-00128" summary="update">
-      <created>1612068074116</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1612068074116</updated>
+      <workItem from="1615599236828" duration="5249000" />
+      <workItem from="1615610278233" duration="1322000" />
+      <workItem from="1615689188632" duration="4745000" />
     </task>
     <task id="LOCAL-00129" summary="bio测试实例">
       <created>1612068109885</created>
@@ -855,7 +845,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615599472467</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177" summary="fork join 案例以及笔记更新">
+      <created>1615608295555</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1615608295555</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -887,7 +884,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="http服务器简单实例" />
     <MESSAGE value="demo1" />
     <MESSAGE value="线程调度demo" />
     <MESSAGE value="join demo" />
@@ -912,7 +908,8 @@
     <MESSAGE value="享元模式之数据库连接池" />
     <MESSAGE value="自定义线程池" />
     <MESSAGE value="更新注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新注释" />
+    <MESSAGE value="fork join 案例以及笔记更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="fork join 案例以及笔记更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

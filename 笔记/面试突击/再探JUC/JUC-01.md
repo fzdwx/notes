@@ -2004,3 +2004,69 @@ class MyTask extends RecursiveTask<Integer> {
     }
 }
 ```
+
+![image-20210314103324637](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210314103331.png)
+
+
+
+
+
+
+
+# AQS
+
+abstract Queue Synchronizer 是阻塞式锁和相关的同步器工具的框架
+
+- 使用==state==属性来表示资源的状态（独占模式和共享模式），子类需要定义如何维护这个状态，控制获取锁和释放锁
+  - compareAndSetState cas机制设置state状态
+  - 独占模式只让一个线程，共享模式可以让多个线程访问
+- 提供了基于FIFO的等待队列，类似于Monitor的EntryList
+- 条件变量来实现等待、唤醒机制，支持多个条件变量，类似于Monitor的waitSet
+
+![image-20210314104130849](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210314104130.png)
+
+
+
+## 获取释放锁
+
+![image-20210314104233271](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210314104233.png)
+
+
+
+todo 原理部分没看
+
+
+
+
+
+
+
+
+
+# StampedLock
+
+![image-20210314115954592](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210314115954.png)
+
+
+
+# Semaphore
+
+最多允许n个线程同时访问
+
+![image-20210314120858870](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210314120859.png)
+
+
+
+# CountdownLatch
+
+当计数为0，等待的线程开始运行
+
+![image-20210314121117430](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210314121117.png)
+
+
+
+
+
+# CyclicBarrier
+
+当线程到达指定的数量才运行
