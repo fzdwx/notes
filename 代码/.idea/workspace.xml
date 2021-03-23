@@ -7,9 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="笔记更新">
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="fork join 案例以及笔记更新">
+      <change afterPath="$PROJECT_DIR$/juc/src/main/java/再探JUC/自定义锁/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interview/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/src/test/java/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/面试突击/再探JUC/JUC-01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,13 +236,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -503,8 +507,14 @@
       <workItem from="1615339310310" duration="9788000" />
       <workItem from="1615599236828" duration="5249000" />
       <workItem from="1615610278233" duration="1322000" />
-      <workItem from="1615689188632" duration="4787000" />
-      <workItem from="1615778264676" duration="1265000" />
+      <workItem from="1615689188632" duration="4745000" />
+    </task>
+    <task id="LOCAL-00129" summary="bio测试实例">
+      <created>1612068109885</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1612068109885</updated>
     </task>
     <task id="LOCAL-00130" summary="对buffer的初步使用">
       <created>1612074523242</created>
@@ -842,14 +852,7 @@
       <option name="project" value="LOCAL" />
       <updated>1615608295555</updated>
     </task>
-    <task id="LOCAL-00178" summary="笔记更新">
-      <created>1615695778980</created>
-      <option name="number" value="00178" />
-      <option name="presentableId" value="LOCAL-00178" />
-      <option name="project" value="LOCAL" />
-      <updated>1615695778980</updated>
-    </task>
-    <option name="localTasksCounter" value="179" />
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -891,6 +894,7 @@
     <MESSAGE value="update" />
     <MESSAGE value="添加笔记" />
     <MESSAGE value="更新笔记" />
+    <MESSAGE value="笔记更新" />
     <MESSAGE value="同步模式之保护性暂停" />
     <MESSAGE value="同步模式之保护性暂停 优化" />
     <MESSAGE value="同步模式之保护性暂停 超时" />
@@ -905,8 +909,7 @@
     <MESSAGE value="自定义线程池" />
     <MESSAGE value="更新注释" />
     <MESSAGE value="fork join 案例以及笔记更新" />
-    <MESSAGE value="笔记更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="笔记更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="fork join 案例以及笔记更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
