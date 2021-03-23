@@ -14,59 +14,49 @@ public class test {
     public static void main(String[] args) {
         lArr = new int[arr.length >> 1];
 
-        quick(0, arr.length);
         int find = 2;
         int i = find(find);
         System.out.println(arr[i] == find);
         System.out.println(Arrays.toString(arr));
     }
 
-    private static void quick(int begin, int end) {
-        if (end - begin < 2) return;
-        int mid = p(begin, end);
-
-        quick(begin, mid);
-        quick(mid + 1, end);
-    }
-
-    private static int p(int begin, int end) {
-        int p = arr[begin];
-        end--;
-        while (begin < end) {
-
-            while (begin < end) {
-                if (p < arr[end]) {
-                    end--;
-                } else {
-                    arr[begin++] = arr[end];
-                    break;
-                }
-            }
-            while (begin < end) {
-                if (p > arr[begin]) {
-                    begin++;
-                } else {
-                    arr[end--] = arr[begin];
-                    break;
-                }
-            }
-        }
-
-        arr[begin] = p;
-        return begin;
-    }
-
-    private static int find(int i) {
+    private static int find(int find) {
+        divide(0, arr.length);
         int l = 0, r = arr.length;
         while (l < r) {
             int mid = (l + r) >> 1;
-            if (i >arr[mid]) {
+            if (find > arr[mid]) {
                 l = mid + 1;
             } else {
                 r = mid;
             }
         }
         return l;
+    }
+
+    private static void divide(int begin, int end) {
+        if (end - begin < 2) return;
+        int mid = (begin + end) >> 1;
+        divide(begin, mid);
+        divide(mid, end);
+        merge(begin, mid, end);
+    }
+
+    private static void merge(int begin, int mid, int end) {
+        int l1 = 0, l2 = mid - begin;
+        int r = mid, a = begin;
+
+        for (int i = l1; i < l2; i++) {
+            lArr[i] = arr[i + begin];
+        }
+
+        while (l1 < l2) {
+            if (r < end && arr[r] < lArr[l1]) {
+                arr[a++] = arr[r++];
+            } else {
+                arr[a++] = lArr[l1++];
+            }
+        }
     }
 
     public static int[] genArr(int log) {
