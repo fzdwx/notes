@@ -17,7 +17,7 @@
       <module name="interview" target="1.8" />
       <module name="juc" target="1.8" />
       <module name="nettyStudy" target="1.8" />
-      <module name="work" target="1.5" />
+      <module name="work" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
