@@ -1,33 +1,28 @@
 package com.like.security.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * @author like
  * @email 980650920@qq.com
- * @since 2021-03-28 16:23
+ * @since 2021-03-28 16:48
  */
 @Configuration
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfigWithUserDetailsService extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private UserDetailsService userDetailsService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        // 1.密码加密器
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        // 2.设置登录用户信息
-        String passwd = encoder.encode("root");
-        String uname = "root";
-        // 3.设置
-        auth.inMemoryAuthentication()
-            .withUser(uname)
-            .password(passwd)
-            .roles("admin");
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
     /**
