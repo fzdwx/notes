@@ -9,3 +9,95 @@ https://spring.io/projects/spring-security
 2.权限控制
 ~~~
 
+
+
+
+
+## 整合：
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
+
+![image-20210328150547382](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210328150554.png)
+
+![](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210328150600.png)
+
+
+
+
+
+## 测试
+
+![image-20210328150702704](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210328150702.png)
+
+![image-20210328150710305](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210328150710.png)
+
+
+
+
+
+## 基本原理
+
+本质是一个过滤器链
+
+重点看三个过滤器
+
+### FilterSecurityInterceptor
+
+是一个方法级的权限过滤器，基本位于过滤链的最底部
+
+
+
+![image-20210328151506450](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210328151506.png)
+
+
+
+
+
+### ExceptionTranslationFilter
+
+异常过滤器，用来处理在认证权限授权过程中抛出的异常
+
+
+
+
+
+
+
+### UsernamePasswordAuthenticationFilter
+
+用户名密码校验，对/login POST的请求做拦截
+
+![image-20210328151733335](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210328151733.png)
+
+
+
+
+
+
+
+## 两个重要接口
+
+UserDetailsService：查询数据库用户名和密码的过程
+
+~~~
+继承 UsernamePasswordAuthenticationFilter 重写方法
+实现 UserDetailsService 编写查询数据过程 返回 User 
+~~~
+
+
+
+PasswordEncoder
+
+~~~
+数据加密接口，用户返回User对象里面密码加密
+~~~
+
