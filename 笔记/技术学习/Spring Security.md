@@ -101,3 +101,64 @@ PasswordEncoder
 数据加密接口，用户返回User对象里面密码加密
 ~~~
 
+
+
+
+
+
+
+## 使用数据查询用户登录
+
+注册自己的userDetailsService的实现类
+
+```java
+@Configuration
+public class SecurityConfigWithUserDetailsService extends WebSecurityConfigurerAdapter {
+
+    @Qualifier("userDetailsServiceImpl")
+    @Autowired
+    private UserDetailsService userDetailsService;
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+    }
+
+    /**
+     * 在ioc中添加密码编码器
+     * @return {@link PasswordEncoder}
+     */
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}
+```
+
+
+
+实现自己的逻辑：查询数据库
+
+~~~java
+@Service
+public class UserDetailsServiceImpl implements UserDetailsService {
+
+    @Autowired
+    private UserDao userDao;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        // 1.调用userDao 根据用户名查询
+        Users users = userDao.selectOne(new QueryWrapper<Users>().eq("username", username));
+
+        // 2.判断
+        if (users == null) {
+            throw new UsernameNotFoundException("用户不存在");
+        }
+        // 3.通过校验
+        List<GrantedAuthority> roles = AuthorityUtils.commaSeparatedStringToAuthorityList("role");
+        return new User(users.getUsername(), new BCryptPasswordEncoder().encode(users.getPassword()), roles);
+    }
+}
+~~~
+
