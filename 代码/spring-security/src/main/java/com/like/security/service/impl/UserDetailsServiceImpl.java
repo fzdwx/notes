@@ -1,5 +1,9 @@
-package com.like.security.serice.impl;
+package com.like.security.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.like.security.dao.UserDao;
+import com.like.security.pojo.Users;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
@@ -9,7 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -20,10 +24,20 @@ import java.util.List;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
+    @Autowired
+    private UserDao userDao;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        List<GrantedAuthority> roles = AuthorityUtils.commaSeparatedStringToAuthorityList("role");
+        // 1.调用userDao 根据用户名查询
+        Users users = userDao.selectOne(new QueryWrapper<Users>().eq("username", username));
 
-        return new User("like",new BCryptPasswordEncoder().encode("like"),roles);
+        // 2.判断
+        if (users == null) {
+            throw new UsernameNotFoundException("用户不存在");
+        }
+        // 3.通过校验
+        List<GrantedAuthority> roles = AuthorityUtils.commaSeparatedStringToAuthorityList("role");
+        return new User(users.getUsername(), new BCryptPasswordEncoder().encode(users.getPassword()), roles);
     }
 }
