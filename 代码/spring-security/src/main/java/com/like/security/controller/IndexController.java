@@ -20,4 +20,19 @@ public class IndexController {
     public String noauth() {
         return "no auth controller!";
     }
+
+    @GetMapping("adminOnly")
+    public String adminOnly() {
+        return "adminOnly controller!";
+    }
+
+    @GetMapping("adminAndRole")
+    public String adminAndRole() {
+        return "adminAndRole controller!";
+    }
+
+    @GetMapping("producer")
+    public String producer() {
+        return "producer controller!";
+    }
 }

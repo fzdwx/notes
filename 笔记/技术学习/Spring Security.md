@@ -168,3 +168,60 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 # 自定义登录页面
 
+```java
+/**
+ * 配置 登录页面 以及 允许哪些请求可以不用通过登录就可以访问
+ * @param http http
+ * @throws Exception 异常
+ */
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http.formLogin()
+        .loginPage("/login.html")                              // 自定义登录的页面
+        .loginProcessingUrl("/user/login")                    // 登录信息提交到哪个controller 具体逻辑不用管
+        .defaultSuccessUrl("/hello").permitAll()             // 登录成功只有，跳转路径
+        .and().authorizeRequests()
+        .antMatchers("/", "/noauth").permitAll().anyRequest().authenticated()  // 访问这些路径不需要认证
+        .and().csrf().disable();             // 关闭csrf 防护
+}
+```
+
+
+
+
+
+# 基于角色或权限进行访问控制
+
+## 	1.hasAuthority
+
+如果当前主体具有指定权限，则返回true
+
+做不到多个
+
+![image-20210329200930688](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210329200930.png)
+
+![image-20210329201221275](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210329201221.png)
+
+
+
+## 2.hasAnyAuthority
+
+可以用多个权限访问
+
+![image-20210329201651693](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210329201651.png)
+
+
+
+
+
+## 3.hasRole
+
+![image-20210329202419863](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210329202420.png)
+
+![image-20210329202427981](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210329202428.png)
+
+
+
+## 4.hasAnyRoles
+
+同上

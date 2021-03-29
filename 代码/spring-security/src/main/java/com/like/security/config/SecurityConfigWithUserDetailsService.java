@@ -44,8 +44,13 @@ public class SecurityConfigWithUserDetailsService extends WebSecurityConfigurerA
             .loginProcessingUrl("/user/login")                    // 登录信息提交到哪个controller 具体逻辑不用管
             .defaultSuccessUrl("/hello").permitAll()             // 登录成功只有，跳转路径
             .and().authorizeRequests()
-            .antMatchers("/", "/noauth").permitAll().anyRequest().authenticated()  // 访问这些路径不需要忍者
+            .antMatchers("/", "/noauth").permitAll() // 访问这些路径不需要认证
+            .antMatchers("/adminOnly").hasAuthority("admin")
+            .antMatchers("/adminAndRole").hasAnyAuthority("admin,role")  // 使用多个权限
+            .antMatchers("/producer").hasRole("producer")  // 是producer 这个角色才可以访问
+            .anyRequest().authenticated()
             .and().csrf().disable();             // 关闭csrf 防护
+
     }
 
     /**
