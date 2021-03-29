@@ -39,6 +39,8 @@ public class SecurityConfigWithUserDetailsService extends WebSecurityConfigurerA
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.exceptionHandling().   accessDeniedPage("/noAuth.html");  // 没有权限访问 跳转的一个url
+
         http.formLogin()
             .loginPage("/login.html")                              // 自定义登录的页面
             .loginProcessingUrl("/user/login")                    // 登录信息提交到哪个controller 具体逻辑不用管
@@ -48,6 +50,7 @@ public class SecurityConfigWithUserDetailsService extends WebSecurityConfigurerA
             .antMatchers("/adminOnly").hasAuthority("admin")
             .antMatchers("/adminAndRole").hasAnyAuthority("admin,role")  // 使用多个权限
             .antMatchers("/producer").hasRole("producer")  // 是producer 这个角色才可以访问
+            .antMatchers("/gamer").hasRole("gamer")  // 是gamer 这个角色才可以访问
             .anyRequest().authenticated()
             .and().csrf().disable();             // 关闭csrf 防护
 

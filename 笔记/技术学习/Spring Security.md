@@ -225,3 +225,15 @@ protected void configure(HttpSecurity http) throws Exception {
 ## 4.hasAnyRoles
 
 同上
+
+
+
+
+
+## 定义没有权限访问的资源 跳转到统一的页面
+
+![image-20210329204213801](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210329204213.png)
+
+![image-20210329204228307](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210329204228.png)
+
+![image-20210329204238247](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210329204238.png)

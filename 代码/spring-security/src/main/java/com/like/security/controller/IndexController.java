@@ -35,4 +35,9 @@ public class IndexController {
     public String producer() {
         return "producer controller!";
     }
+
+    @GetMapping("gamer")
+    public String gamer() {
+        return "gamer controller!";
+    }
 }
