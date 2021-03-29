@@ -1,14 +1,15 @@
 package com.like.security.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import javax.annotation.Resource;
 
 /**
  * @author like
@@ -18,13 +19,33 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class SecurityConfigWithUserDetailsService extends WebSecurityConfigurerAdapter {
 
-    @Qualifier("userDetailsServiceImpl")
-    @Autowired
+    @Resource
     private UserDetailsService userDetailsService;
 
+    /**
+     * 配置 使用自定义的service
+     * @param auth 身份验证
+     * @throws Exception 异常
+     */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+    }
+
+    /**
+     * 配置 登录页面 以及 允许哪些请求可以不用通过登录就可以访问
+     * @param http http
+     * @throws Exception 异常
+     */
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.formLogin()
+            .loginPage("/login.html")                              // 自定义登录的页面
+            .loginProcessingUrl("/user/login")                    // 登录信息提交到哪个controller 具体逻辑不用管
+            .defaultSuccessUrl("/hello").permitAll()             // 登录成功只有，跳转路径
+            .and().authorizeRequests()
+            .antMatchers("/", "/noauth").permitAll().anyRequest().authenticated()  // 访问这些路径不需要忍者
+            .and().csrf().disable();             // 关闭csrf 防护
     }
 
     /**

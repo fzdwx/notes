@@ -15,4 +15,9 @@ public class IndexController {
     public String hello() {
         return "welcome to me web!";
     }
+
+    @GetMapping("noauth")
+    public String noauth() {
+        return "no auth controller!";
+    }
 }
