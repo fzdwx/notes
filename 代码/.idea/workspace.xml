@@ -8,82 +8,229 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="fork join 案例以及笔记更新">
-      <change afterPath="$PROJECT_DIR$/spring-security/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/src/main/java/com/like/security/SecurityApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-security/src/test/java/com/like/security/SecurityApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../笔记/技术学习/Spring Security.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dictionaries" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/intellij-javadocs-4.0.1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__cglib_cglib_3_2_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__cn_hutool_hutool_all_5_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_11_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__io_netty_netty_all_4_1_58_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__junit_junit_4_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_ant_ant_1_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_ant_ant_launcher_1_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_13_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_37.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_37.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_4_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_4_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_4_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_4_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_ow2_asm_asm_6_0_ALPHA.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_projectlombok_lombok_1_18_16.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_2_3_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_3_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_3_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_3_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_3_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_3_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_3_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_aop_5_2_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_beans_5_2_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_context_5_2_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_core_5_2_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_expression_5_2_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_jcl_5_2_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_web_5_2_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_yaml_snakeyaml_1_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/notes.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPattern/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPattern/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jvm/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jvm/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interview/interview.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/interview.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/nettyStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/nettyStudy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructureAndAlgorithm/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/DesignPattern.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/单例模式/懒汉式/双重检查/Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/单例模式/懒汉式/双重检查/Singleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/单例模式/懒汉式/线程不安全/Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/单例模式/懒汉式/线程不安全/Singleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/单例模式/懒汉式/静态内部类/Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/单例模式/懒汉式/静态内部类/Singleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/单例模式/枚举/Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/单例模式/枚举/Singleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/单例模式/饿汉式/静态代码块/Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/单例模式/饿汉式/静态代码块/Singleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/单例模式/饿汉式/静态成员变量/Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/单例模式/饿汉式/静态成员变量/Singleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/原型模式/浅克隆/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/原型模式/浅克隆/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/原型模式/浅克隆/People.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/原型模式/浅克隆/People.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/原型模式/深克隆/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/原型模式/深克隆/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/原型模式/深克隆/People.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/原型模式/深克隆/People.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/原型模式/深克隆/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/原型模式/深克隆/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/before/Coffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/before/Coffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/before/CoffeeStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/before/CoffeeStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/before/LatteCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/before/LatteCoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/before/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/before/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/before/USACoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/before/USACoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/实际使用/Coffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/实际使用/Coffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/实际使用/CoffeeStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/实际使用/CoffeeStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/实际使用/LatteCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/实际使用/LatteCoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/实际使用/SimpleCoffeeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/实际使用/SimpleCoffeeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/实际使用/USACoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/实际使用/USACoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/工厂方法模式/Coffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/工厂方法模式/Coffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/工厂方法模式/CoffeeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/工厂方法模式/CoffeeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/工厂方法模式/CoffeeStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/工厂方法模式/CoffeeStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/工厂方法模式/LatteCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/工厂方法模式/LatteCoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/工厂方法模式/LatteCoffeeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/工厂方法模式/LatteCoffeeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/工厂方法模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/工厂方法模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/工厂方法模式/USACoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/工厂方法模式/USACoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/工厂方法模式/USACoffeeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/工厂方法模式/USACoffeeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/抽象工厂/Coffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/抽象工厂/Coffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/抽象工厂/Dessert.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/抽象工厂/Dessert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/抽象工厂/FoodFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/抽象工厂/FoodFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/抽象工厂/LatteCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/抽象工厂/LatteCoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/抽象工厂/LatteFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/抽象工厂/LatteFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/抽象工厂/MatchaMousse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/抽象工厂/MatchaMousse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/抽象工厂/Tiramisu.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/抽象工厂/Tiramisu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/抽象工厂/USACoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/抽象工厂/USACoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/抽象工厂/USAFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/抽象工厂/USAFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/简单工厂模式/Coffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/简单工厂模式/Coffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/简单工厂模式/CoffeeStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/简单工厂模式/CoffeeStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/简单工厂模式/LatteCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/简单工厂模式/LatteCoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/简单工厂模式/SimpleCoffeeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/简单工厂模式/SimpleCoffeeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/工厂模式/简单工厂模式/USACoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/工厂模式/简单工厂模式/USACoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/建造者模式/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/建造者模式/Bike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/建造者模式/Builder.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/建造者模式/Builder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/建造者模式/Director.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/建造者模式/Director.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/建造者模式/MobileBikeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/建造者模式/MobileBikeBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/建造者模式/builder/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/建造者模式/builder/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/创建者模式/建造者模式/builder/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/创建者模式/建造者模式/builder/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/享元模式/AbstractBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/享元模式/AbstractBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/享元模式/BoxFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/享元模式/BoxFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/享元模式/Ibox.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/享元模式/Ibox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/享元模式/Lbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/享元模式/Lbox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/享元模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/享元模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/享元模式/Obox.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/享元模式/Obox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/代理模式/Jdk动态代理/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/代理模式/Jdk动态代理/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/代理模式/Jdk动态代理/ProxyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/代理模式/Jdk动态代理/ProxyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/代理模式/Jdk动态代理/SellTickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/代理模式/Jdk动态代理/SellTickets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/代理模式/Jdk动态代理/TrainStation.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/代理模式/Jdk动态代理/TrainStation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/代理模式/cglib动态代理/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/代理模式/cglib动态代理/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/代理模式/cglib动态代理/ProxyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/代理模式/cglib动态代理/ProxyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/代理模式/cglib动态代理/TrainStation.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/代理模式/cglib动态代理/TrainStation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/代理模式/静态代理/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/代理模式/静态代理/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/代理模式/静态代理/ProxyPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/代理模式/静态代理/ProxyPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/代理模式/静态代理/SellTickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/代理模式/静态代理/SellTickets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/代理模式/静态代理/TrainStation.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/代理模式/静态代理/TrainStation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/外观模式/AirCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/外观模式/AirCondition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/外观模式/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/外观模式/Light.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/外观模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/外观模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/外观模式/SmartAppFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/外观模式/SmartAppFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/外观模式/TV.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/外观模式/TV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/桥接模式/AviFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/桥接模式/AviFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/桥接模式/Linux.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/桥接模式/Linux.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/桥接模式/Mac.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/桥接模式/Mac.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/桥接模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/桥接模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/桥接模式/OperatingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/桥接模式/OperatingSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/桥接模式/RmvbFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/桥接模式/RmvbFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/桥接模式/VideoFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/桥接模式/VideoFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/桥接模式/Windows.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/桥接模式/Windows.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/组合模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/组合模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/组合模式/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/组合模式/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/组合模式/MenuComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/组合模式/MenuComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/组合模式/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/组合模式/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/装饰者模式/Bacon.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/装饰者模式/Bacon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/装饰者模式/Egg.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/装饰者模式/Egg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/装饰者模式/FastFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/装饰者模式/FastFood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/装饰者模式/FriedNoodles.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/装饰者模式/FriedNoodles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/装饰者模式/FriedRice.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/装饰者模式/FriedRice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/装饰者模式/Garnish.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/装饰者模式/Garnish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/装饰者模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/装饰者模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/对象适配器/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/Computer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/对象适配器/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/对象适配器/SDAdapterTF.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/SDAdapterTF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/对象适配器/SDCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/SDCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/对象适配器/SDCardImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/SDCardImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/对象适配器/TFCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/TFCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/对象适配器/TFCardImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/对象适配器/TFCardImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/类适配器/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/类适配器/Computer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/类适配器/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/类适配器/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/类适配器/SDAdapterTF.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/类适配器/SDAdapterTF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/类适配器/SDCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/类适配器/SDCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/类适配器/SDCardImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/类适配器/SDCardImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/类适配器/TFCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/类适配器/TFCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/结构型模式/适配器模式/类适配器/TFCardImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/结构型模式/适配器模式/类适配器/TFCardImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/beans/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/beans/BeanDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/beans/MutablePropertyValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/beans/MutablePropertyValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/beans/PropertyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/beans/PropertyValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/beans/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/beans/factory/BeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/beans/factory/support/BeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/beans/factory/support/BeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/beans/factory/support/BeanDefinitionRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/beans/factory/support/BeanDefinitionRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/beans/factory/support/SimpleBeanDefinitionRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/beans/factory/support/SimpleBeanDefinitionRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/beans/factory/xml/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/beans/factory/xml/XmlBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/context/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/context/ApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/context/support/AbstractApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/context/support/AbstractApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/context/support/ClassPathSXmlApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/context/support/ClassPathSXmlApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/自定义SpringIoc/com/like/framework/util/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/自定义SpringIoc/com/like/framework/util/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/中介者模式/HostOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/中介者模式/HostOwner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/中介者模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/中介者模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/中介者模式/Mediator.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/中介者模式/Mediator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/中介者模式/MediatorStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/中介者模式/MediatorStructure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/中介者模式/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/中介者模式/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/中介者模式/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/中介者模式/Tenant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/命令模式/Chef.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/命令模式/Chef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/命令模式/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/命令模式/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/命令模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/命令模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/命令模式/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/命令模式/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/命令模式/OrderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/命令模式/OrderCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/命令模式/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/命令模式/Waiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/备忘录模式/white/GameRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/备忘录模式/white/GameRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/备忘录模式/white/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/备忘录模式/white/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/备忘录模式/white/RoleStateCaretaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/备忘录模式/white/RoleStateCaretaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/备忘录模式/white/RoleStateMemento.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/备忘录模式/white/RoleStateMemento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/模板方法模式/AbstractClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/模板方法模式/AbstractClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/模板方法模式/BaoCai.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/模板方法模式/BaoCai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/模板方法模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/模板方法模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/状态模式/after/CloseState.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/状态模式/after/CloseState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/状态模式/after/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/状态模式/after/Context.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/状态模式/after/LifeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/状态模式/after/LifeState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/状态模式/after/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/状态模式/after/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/状态模式/after/OpeningState.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/状态模式/after/OpeningState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/状态模式/after/RunningState.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/状态模式/after/RunningState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/状态模式/after/StoppingState.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/状态模式/after/StoppingState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/状态模式/before/ILift.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/状态模式/before/ILift.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/状态模式/before/Lift.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/状态模式/before/Lift.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/状态模式/before/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/状态模式/before/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/策略模式/SaleMan.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/策略模式/SaleMan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/策略模式/Strategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/策略模式/Strategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/策略模式/StrategyA.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/策略模式/StrategyA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/策略模式/StrategyB.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/策略模式/StrategyB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/观察者模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/观察者模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/观察者模式/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/观察者模式/Observer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/观察者模式/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/观察者模式/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/观察者模式/SubscriptionSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/观察者模式/SubscriptionSubject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/观察者模式/WeiXinUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/观察者模式/WeiXinUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/解释器模式/AbstractExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/解释器模式/AbstractExp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/解释器模式/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/解释器模式/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/解释器模式/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/解释器模式/Context.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/解释器模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/解释器模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/解释器模式/Sub.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/解释器模式/Sub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/解释器模式/Var.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/解释器模式/Var.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/责任链模式/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/责任链模式/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/责任链模式/code/GeneralManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/责任链模式/code/GeneralManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/责任链模式/code/GroupLeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/责任链模式/code/GroupLeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/责任链模式/code/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/责任链模式/code/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/责任链模式/code/LeaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/责任链模式/code/LeaveRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/责任链模式/code/Manger.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/责任链模式/code/Manger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/迭代器模式/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/迭代器模式/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/迭代器模式/StudentAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/迭代器模式/StudentAggregate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/迭代器模式/StudentAggregateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/迭代器模式/StudentAggregateImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/迭代器模式/StudentIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/迭代器模式/StudentIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPattern/src/设计模式/行为模式/迭代器模式/StudentIteratorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPattern/src/main/java/设计模式/行为模式/迭代器模式/StudentIteratorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview/interview.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Interview/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/juc.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/juc/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juc/src/test/java/再探JUC/pattern/同步模式指定输出顺序/WaitNotifyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/juc/src/test/java/再探JUC/pattern/同步模式指定输出顺序/WaitNotifyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/jvm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/jvm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/GCRootDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/GCRootDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/HelloGc.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/HelloGc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/OOMErrorDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/OOMErrorDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/ReferenceDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/ReferenceDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/loader/ClassLoaderDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/loader/ClassLoaderDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/loader/ParentDelegationDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/loader/ParentDelegationDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/runttimedata/EscapeAnalysisDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/runttimedata/EscapeAnalysisDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/runttimedata/HeapDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/runttimedata/HeapDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/runttimedata/JVMStackDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/runttimedata/JVMStackDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/runttimedata/LocalVariablesDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/runttimedata/LocalVariablesDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/runttimedata/MethodAreaDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/runttimedata/MethodAreaDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm/src/Java虚拟机_JavaVirtualMachine/runttimedata/OOMDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/jvm/src/main/java/Java虚拟机_JavaVirtualMachine/runttimedata/OOMDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/nettyStudy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/bio/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/http/HttpServerHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/http/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/http/ServerInit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/Client$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/ClientHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/Server$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/ServerHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/demo/BasicBuffer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/demo/NIOFileChannelD1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/demo/NIOFileChannelD2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/demo/NIOFileChannelD3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/demo/ScatteringAndGatheringTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/deno2/NIOClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/deno2/NIOServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/groupChat/GroupChatClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/groupChat/GroupChatServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/zeroCopy/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/zeroCopy/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/技术学习/模板/freemarker.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/技术学习/模板/freemarker.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,15 +268,6 @@
     <option name="projectConfigVersion" value="2" />
   </component>
   <component name="JupyterTrust" id="e87d2562-cb4c-443b-9004-07cc024fa906" />
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="localRepository" value="D:\Java\mvean\repository" />
-        <option name="userSettingsFile" value="D:\Java\tool\apache-maven-3.6.3-bin\apache-maven-3.6.3\conf\settings.xml" />
-        <option name="workOffline" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1hdhC0jsbcufICB5U9GsAMLo03R" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -153,7 +291,6 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -164,13 +301,13 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-security/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -249,7 +386,33 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunManager" selected="Application.Server">
+    <configuration name="GCRootDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Java虚拟机_JavaVirtualMachine.GCRootDemo" />
+      <module name="jvm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Java虚拟机_JavaVirtualMachine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.http.Server" />
+      <module name="nettyStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.like.netty.http.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="再探JUC.自定义线程池.Test" />
       <module name="juc" />
@@ -263,34 +426,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test10" />
-      <module name="juc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="再探JUC.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Test12" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test12" />
-      <module name="juc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="再探JUC.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test9" />
       <module name="juc" />
       <extension name="coverage">
         <pattern>
@@ -328,20 +465,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Test9" />
-      <item itemvalue="Application.Test10" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.Test12" />
       <item itemvalue="Application.test" />
+      <item itemvalue="Application.Server" />
       <item itemvalue="Spring Boot.SecurityApplication" />
+      <item itemvalue="Application.GCRootDemo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.GCRootDemo" />
         <item itemvalue="Application.test" />
         <item itemvalue="Application.Test12" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Test10" />
-        <item itemvalue="Application.Test9" />
       </list>
     </recent_temporary>
   </component>
@@ -588,6 +725,9 @@
       <workItem from="1615610278233" duration="1322000" />
       <workItem from="1615689188632" duration="4745000" />
       <workItem from="1616905210410" duration="1441000" />
+      <workItem from="1617333055919" duration="476000" />
+      <workItem from="1617333620338" duration="1399000" />
+      <workItem from="1617336163284" duration="255000" />
     </task>
     <task id="LOCAL-00129" summary="bio测试实例">
       <created>1612068109885</created>

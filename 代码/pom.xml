@@ -4,13 +4,18 @@
          xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>groupId</groupId>
+	<groupId>com.like</groupId>
 	<artifactId>work</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>nettyStudy</module>
-		<module>toface</module>
+		<module>Interview</module>
+		<module>DataStructureAndAlgorithm</module>
+		<module>juc</module>
+<!--		<module>spring-security</module>-->
+		<module>DesignPattern</module>
+		<module>jvm</module>
 	</modules>
 
 
@@ -47,7 +52,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.16</version>
+			<version>1.18.10</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
