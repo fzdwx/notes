@@ -326,3 +326,40 @@ public String update(){
 
 
 # 用户注销
+
+## 配置
+
+添加登出跳转信息
+
+![image-20210404134456990](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404134457.png)
+
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录成功</title>
+
+</head>
+<body>
+<H1>登录成功</H1>
+<a href="/logout">登出</a>
+</body>
+</html>
+```
+
+
+
+
+
+## 测试
+
+![image-20210404134633469](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404134633.png)
+
+
+
+
+
+# 基于数据库实现“记住我”（自动登录）

@@ -39,12 +39,13 @@ public class SecurityConfigWithUserDetailsService extends WebSecurityConfigurerA
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.exceptionHandling().   accessDeniedPage("/noAuth.html");  // 没有权限访问 跳转的一个url
+        http.exceptionHandling().accessDeniedPage("/noAuth.html");  // 没有权限访问 跳转的一个url
+        http.logout().logoutUrl("/logout").logoutSuccessUrl("/index").permitAll();  // 退出访问url 成功跳转页面
 
         http.formLogin()
             .loginPage("/login.html")                              // 自定义登录的页面
             .loginProcessingUrl("/user/login")                    // 登录信息提交到哪个controller 具体逻辑不用管
-            .defaultSuccessUrl("/hello").permitAll()             // 登录成功只有，跳转路径
+            .defaultSuccessUrl("/loginSuccess.html").permitAll()             // 登录成功只有，跳转路径
             .and().authorizeRequests()
             .antMatchers("/", "/noauth").permitAll() // 访问这些路径不需要认证
             .antMatchers("/adminOnly").hasAuthority("admin")
