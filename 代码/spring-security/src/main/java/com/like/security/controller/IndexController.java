@@ -1,5 +1,7 @@
 package com.like.security.controller;
 
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,5 +41,19 @@ public class IndexController {
     @GetMapping("gamer")
     public String gamer() {
         return "gamer controller!";
+    }
+
+    @Secured({
+                     "ROLE_SALE", "ROLE_MANAGER"
+             })
+    @GetMapping("update")
+    public String update() {
+        return "hello update";
+    }
+
+    @GetMapping("preAuthorize")
+    @PreAuthorize("hasAnyAuthority('admin')")
+    public String preAuthorize() {
+        return " this preAuthorize";
     }
 }

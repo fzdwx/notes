@@ -1,4 +1,4 @@
-# Spring Security
+# 	Spring Security
 
 https://spring.io/projects/spring-security
 
@@ -230,10 +230,99 @@ protected void configure(HttpSecurity http) throws Exception {
 
 
 
-## 定义没有权限访问的资源 跳转到统一的页面
+# 定义没有权限访问的资源 跳转到统一的页面
 
 ![image-20210329204213801](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210329204213.png)
 
 ![image-20210329204228307](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210329204228.png)
 
 ![image-20210329204238247](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210329204238.png)
+
+
+
+
+
+
+
+# 注解
+
+```
+@EnableGlobalMethodSecurity(securedEnabled = true)  开启
+```
+
+~~~
+@Secured
+@PreAuthorize
+@PostAuthorize
+@
+~~~
+
+
+
+
+
+## @Secured
+
+作用：用户有某权限，才可以访问
+
+没有配置权限：
+
+```java
+@Secured({
+    "ROLE_SALE","ROLE_MANAGER"
+})
+@GetMapping("update")
+public String update(){
+    return "hello update";
+}
+```
+
+![image-20210404131624326](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404131631.png)
+
+配置权限后
+
+![image-20210404131721865](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404131721.png)
+
+![image-20210404131955494](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404131955.png)
+
+
+
+## @PreAuthorize
+
+使用前，开启注解
+
+![image-20210404133153747](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404133153.png)
+
+进入方法前的权限验证
+
+![image-20210404133046140](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404133046.png)
+
+
+
+## @PostAuthorize
+
+方法执行之后，检验权限
+
+
+
+
+
+## @PostFilter 
+
+方法返回数据过滤
+
+![image-20210404133941204](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404133941.png)
+
+
+
+
+
+## @PreFilter
+
+方法传入数据
+
+
+
+
+
+# 用户注销
