@@ -363,3 +363,36 @@ public String update(){
 
 
 # 基于数据库实现“记住我”（自动登录）
+
+![image-20210404135306662](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404135306.png)
+
+
+
+RememberMeServices 
+
+
+
+```
+PersistentTokenBasedRememberMeServices
+
+JdbcTokenRepositoryImpl  有建表语句
+```
+
+
+
+![image-20210404140117854](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404140117.png)
+
+
+
+## 实现步骤
+
+![image-20210404141109136](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404141109.png)
+
+![image-20210404141120470](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404141120.png)
+
+
+
+![image-20210404141543627](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404141543.png)
+
+![image-20210404141538320](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404141538.png)
+

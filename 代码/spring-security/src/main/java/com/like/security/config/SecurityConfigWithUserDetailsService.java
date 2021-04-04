@@ -1,5 +1,6 @@
 package com.like.security.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -8,8 +9,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 import javax.annotation.Resource;
+import javax.sql.DataSource;
 
 /**
  * @author like
@@ -22,6 +26,19 @@ public class SecurityConfigWithUserDetailsService extends WebSecurityConfigurerA
     @Resource
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private DataSource dataSource;
+
+    /**
+     * 持续的令牌库 remember me
+     * @return {@link PersistentTokenRepository}
+     */
+    @Bean
+    public PersistentTokenRepository persistentTokenRepository() {
+        JdbcTokenRepositoryImpl jdbcTokenRepository = new JdbcTokenRepositoryImpl();
+        jdbcTokenRepository.setDataSource(dataSource);
+        return jdbcTokenRepository;
+    }
     /**
      * 配置 使用自定义的service
      * @param auth 身份验证
@@ -53,6 +70,7 @@ public class SecurityConfigWithUserDetailsService extends WebSecurityConfigurerA
             .antMatchers("/producer").hasRole("producer")  // 是producer 这个角色才可以访问
             .antMatchers("/gamer").hasRole("gamer")  // 是gamer 这个角色才可以访问
             .anyRequest().authenticated()
+            .and().rememberMe().tokenRepository(persistentTokenRepository()).tokenValiditySeconds(60).userDetailsService(userDetailsService)
             .and().csrf().disable();             // 关闭csrf 防护
 
     }
