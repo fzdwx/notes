@@ -396,3 +396,51 @@ JdbcTokenRepositoryImpl  有建表语句
 
 ![image-20210404141538320](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404141538.png)
 
+
+
+
+
+
+
+# CSRF 
+
+跨域请求伪造，默认对除GET请求外进行保护
+
+
+
+
+
+
+
+
+
+# 分布式授权
+
+统一认证授权
+
+应用接入认证
+
+
+
+## oauth 2.0
+
+是一个开放标准，允许用户授权第三方应用访问他们存储在另外的服务提供者上的信息，而不需要将用户名和密码提供给第三方应用。
+
+![image-20210404144353899](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210404144354.png)
+
+
+
+## Spring Cloud Security OAuth 2
+
+- AuthorizationEndpoint 服务用于认证请求 /oauth/autorize
+- TokenEndpoint 服务用于访问令牌的请求  /oauth/token
+- OAuth2AuthenticationProcessingFilter 用来对请求给出的身份令牌解析鉴权
+
+UAA授权服务 Order订单资源服务
+
+认证请求流程：
+
+1. 客户端请求UAA授权符文进行认证
+2. 认证通过后UAA颁发令牌
+3. 客户端携带token请求资源服务
+4. 资源服务验证令牌合法性，合法返回资源
