@@ -7,10 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="byte方法使用">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/c1/TestNianBaoAdndBanBao.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="笔记更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/TestBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/c1/TestBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/c1/TestNianBaoAdndBanBao.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/c1/TestNianBaoAdndBanBao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +174,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestBufferReadWrite">
+  <component name="RunManager" selected="Application.TestNianBaoAdndBanBao">
     <configuration name="GCRootDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Java虚拟机_JavaVirtualMachine.GCRootDemo" />
       <module name="jvm" />
@@ -227,9 +227,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <module name="interview" />
+    <configuration name="TestNianBaoAdndBanBao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.c1.TestNianBaoAdndBanBao" />
+      <module name="nettyStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.like.netty.c1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -253,20 +259,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.test" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GCRootDemo" />
       <item itemvalue="Spring Boot.SecurityApplication" />
       <item itemvalue="Application.TestBuffer" />
       <item itemvalue="Application.TestBufferReadWrite" />
+      <item itemvalue="Application.TestNianBaoAdndBanBao" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestNianBaoAdndBanBao" />
         <item itemvalue="Application.TestBufferReadWrite" />
         <item itemvalue="Application.TestBuffer" />
         <item itemvalue="Application.Server" />
         <item itemvalue="Application.GCRootDemo" />
-        <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -517,14 +523,7 @@
       <workItem from="1617333620338" duration="1399000" />
       <workItem from="1617336163284" duration="255000" />
       <workItem from="1617519434794" duration="589000" />
-      <workItem from="1617611275475" duration="8443000" />
-    </task>
-    <task id="LOCAL-00131" summary="对buffer的初步使用">
-      <created>1612076945060</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1612076945060</updated>
+      <workItem from="1617611275475" duration="10070000" />
     </task>
     <task id="LOCAL-00132" summary="fileChannel读写小案例">
       <created>1612078206114</created>
@@ -862,7 +861,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617624616957</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="笔记更新">
+      <created>1617626744908</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1617626744908</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -902,7 +908,6 @@
     <MESSAGE value="update" />
     <MESSAGE value="添加笔记" />
     <MESSAGE value="更新笔记" />
-    <MESSAGE value="笔记更新" />
     <MESSAGE value="同步模式之保护性暂停" />
     <MESSAGE value="同步模式之保护性暂停 优化" />
     <MESSAGE value="同步模式之保护性暂停 超时" />
@@ -919,7 +924,8 @@
     <MESSAGE value="fork join 案例以及笔记更新" />
     <MESSAGE value="buffer的初步使用" />
     <MESSAGE value="byte方法使用" />
-    <option name="LAST_COMMIT_MESSAGE" value="byte方法使用" />
+    <MESSAGE value="笔记更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="笔记更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

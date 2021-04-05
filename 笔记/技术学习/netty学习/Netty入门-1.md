@@ -175,6 +175,7 @@ ByteBuffer wrap = ByteBuffer.wrap("hello".getBytes(StandardCharsets.UTF_8));
 byteBuffer -> str	
 
 ```java
+buffer.flip();
 String str = StandardCharsets.UTF_8.decode(buffer).toString();
 ```
 
@@ -188,15 +189,48 @@ String str = StandardCharsets.UTF_8.decode(buffer).toString();
 
 ~~~java
 /*
-Hello , world\n
-I'm zhangsan\n
+Hello , netty\n
+I'm like\n
 How are you?\n
 变成了下面的两个 byteBuffer(黏包，半包)
-Hello , world\nI 'm zhangsan\n Ho
+Hello , world\nI 'm like\n Ho
 w are you?\n
 */
 ~~~
 
 现在要编写程序，将数据回复成原始的\n分割的数据
 
-123
+
+
+
+
+```java
+public static void main(String[] args) {
+    ByteBuffer source = ByteBuffer.allocate(1024);
+    String msg1 = "Hello , netty\nI 'm like\n Ho";
+    String msg2 = "w are you?\n";
+
+    source.put(msg1.getBytes());
+    split(source);
+    source.put(msg2.getBytes());
+    split(source);
+}
+
+private static void split(ByteBuffer source) {
+    // 切换模式
+    source.flip();
+    for (int i = 0; i < source.limit(); i++) {
+        if (source.get(i) == '\n') {
+            int length = i + 1 - source.position();
+            ByteBuffer target = ByteBuffer.allocate(length);
+            // 读取source中[0,length)长度的数据到target
+            for (int j = 0; j < length; j++) {
+                target.put(source.get());
+            }
+            debugAll(target);
+        }
+    }
+    // 上次未读取的位置开始
+    source.compact();
+}
+```
