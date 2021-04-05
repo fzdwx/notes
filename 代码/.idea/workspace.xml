@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="笔记更新">
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="nio 模拟处理粘包和半包">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/c1/TestNianBaoAdndBanBao.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/c1/TestNianBaoAdndBanBao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -523,14 +522,7 @@
       <workItem from="1617333620338" duration="1399000" />
       <workItem from="1617336163284" duration="255000" />
       <workItem from="1617519434794" duration="589000" />
-      <workItem from="1617611275475" duration="10070000" />
-    </task>
-    <task id="LOCAL-00132" summary="fileChannel读写小案例">
-      <created>1612078206114</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1612078206114</updated>
+      <workItem from="1617611275475" duration="11049000" />
     </task>
     <task id="LOCAL-00133" summary="fileChannel复制文件demo">
       <created>1612079021687</created>
@@ -868,7 +860,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617626744908</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="nio 模拟处理粘包和半包">
+      <created>1617628433538</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1617628433538</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -900,7 +899,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="join demo" />
     <MESSAGE value="打断park状态下的demo" />
     <MESSAGE value="守护线程 demo" />
     <MESSAGE value="update 整合maven" />
@@ -925,7 +923,8 @@
     <MESSAGE value="buffer的初步使用" />
     <MESSAGE value="byte方法使用" />
     <MESSAGE value="笔记更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="笔记更新" />
+    <MESSAGE value="nio 模拟处理粘包和半包" />
+    <option name="LAST_COMMIT_MESSAGE" value="nio 模拟处理粘包和半包" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

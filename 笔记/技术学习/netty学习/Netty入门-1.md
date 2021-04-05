@@ -183,7 +183,7 @@ String str = StandardCharsets.UTF_8.decode(buffer).toString();
 
 
 
-## byteBuffer 粘包和半包
+### byteBuffer 粘包和半包
 
 网络上有多条数据发送给服务端，数据之间使用\n进行分隔,网络上有多条数据发送给服务端，数据之间使用\n进行分隔
 
@@ -234,3 +234,82 @@ private static void split(ByteBuffer source) {
     source.compact();
 }
 ```
+
+
+
+
+
+## 3.文件编程
+
+
+
+### FileChannel
+
+不能直接打开FileChannel,必须通过FileInputStream,FileOutputStream或者RandomAccessFile来获取FilChannel，使用他们的getChannel()方法
+
+- RandomAccessFile 是否能读写要根据构造RandomAccessFile时的读写模式决定
+
+
+
+**读取**
+
+从channel读取数据填充buffer，返回值表示读取到了多少字节，-1表示文件的末尾
+
+~~~java
+int readBytes = channel.read(buffer);
+~~~
+
+
+
+**写入**
+
+正确姿势
+
+~~~java
+Bytebuffer buffer = ByteBuffer.allocate(...);  // 实例化一个buffer
+buffer.put(...);    // 在buffer中存入数据
+buffer.flip();     // 切换模式
+while(buffer.hasReamaining()){
+    channel.write(buffer);  // 将buffer中的数据写入channel
+}
+~~~
+
+在while中调用channel.write是因为不能保证一次就写完.
+
+
+
+**关闭**
+
+用try resource方法 自动关闭close
+
+
+
+**位置**
+
+~~~java
+long pos =  channel.position();
+~~~
+
+设置当前位置
+
+~~~java
+long newPos = ...;
+channel.position(newPos);
+~~~
+
+设置当前位置时，如果设置为文件末尾
+
+- 这时读取会返回-1
+- 这时写入，会追加内容，但要注意如果position超过了文件末尾，在写入时在新内容和原末尾之间会有空洞(00)
+
+
+
+**大小**
+
+使用size方法获取文件的大小
+
+
+
+**强制写入**
+
+不会立刻将数据写入磁盘，而是缓存。调用force(true)方法将文件内容和数据（文件的权限等信息）立刻写入磁盘
