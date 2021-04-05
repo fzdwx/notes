@@ -7,56 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="fork join 案例以及笔记更新">
-      <change afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo1/TestBuffer.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="buffer的初步使用">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/util/ByteBufferUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/c1/TestBufferReadWrite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jvm/jvm.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/bio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/bio/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/HttpServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/http/HttpServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/http/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/ServerInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/http/ServerInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/http/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/http/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/simple/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/simple/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/simple/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/simple/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/simple/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/simple/ServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/BasicBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/demo/BasicBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/NIOFileChannelD1.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/demo/NIOFileChannelD1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/NIOFileChannelD2.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/demo/NIOFileChannelD2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/NIOFileChannelD3.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/demo/NIOFileChannelD3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/demo/ScatteringAndGatheringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/demo/ScatteringAndGatheringTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/deno2/NIOClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/deno2/NIOClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/deno2/NIOServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/deno2/NIOServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/groupChat/GroupChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/groupChat/GroupChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/groupChat/GroupChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/groupChat/GroupChatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/zeroCopy/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/zeroCopy/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/nio/zeroCopy/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/zeroCopy/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/bio/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/http/HttpServerHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/http/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/http/ServerInit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/Client$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/ClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/Server$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/netty/simple/ServerHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/demo/BasicBuffer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/demo/NIOFileChannelD1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/demo/NIOFileChannelD2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/demo/NIOFileChannelD3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/demo/ScatteringAndGatheringTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/deno2/NIOClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/deno2/NIOServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/groupChat/GroupChatClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/groupChat/GroupChatServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/zeroCopy/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/target/classes/com/like/nio/zeroCopy/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/技术学习/Spring Security.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/技术学习/Spring Security.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo1/TestBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/TestBuffer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +89,7 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/util" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.1507799" />
@@ -152,11 +107,11 @@
       <recent name="设计模式.自定义SpringIoc.com.like.framework.beans.factory.support.xml" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\notes\代码\nettyStudy\src\main\java\com\like\netty\util" />
       <recent name="D:\github\notes\代码" />
       <recent name="D:\github\notes\代码\DataStructureAndAlgorithm\src" />
       <recent name="D:\github\notes\代码\DataStructureAndAlgorithm" />
       <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\算法\图" />
-      <recent name="D:\github\notes\代码\src\main\java\数据结构和算法\算法\排序" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -172,6 +127,7 @@
       <recent name="FizzOrBuzz" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.like.netty" />
       <recent name="数据结构和算法.数据结构" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -182,11 +138,11 @@
       <recent name="数据结构和算法.数据结构.List" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="设计模式.结构型模式.装饰者模式" />
       <recent name="设计模式.结构型模式.适配器模式.对象适配器" />
       <recent name="设计模式.结构型模式.代理模式.cglib动态代理" />
       <recent name="设计模式.创建者模式.原型模式.深克隆" />
-      <recent name="设计模式.创建者模式.工厂模式.抽象工厂" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -219,7 +175,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestBuffer">
+  <component name="RunManager" selected="Application.TestBufferReadWrite">
     <configuration name="GCRootDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Java虚拟机_JavaVirtualMachine.GCRootDemo" />
       <module name="jvm" />
@@ -246,12 +202,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test12" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="再探JUC.test.Test12" />
-      <module name="juc" />
+    <configuration name="TestBuffer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.demo1.TestBuffer" />
+      <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="再探JUC.test.*" />
+          <option name="PATTERN" value="com.like.netty.demo1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -259,12 +215,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestBuffer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.demo1.TestBuffer" />
+    <configuration name="TestBufferReadWrite" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.c1.TestBufferReadWrite" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.netty.demo1.*" />
+          <option name="PATTERN" value="com.like.netty.c1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -298,20 +254,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Test12" />
       <item itemvalue="Application.test" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.GCRootDemo" />
       <item itemvalue="Spring Boot.SecurityApplication" />
       <item itemvalue="Application.TestBuffer" />
+      <item itemvalue="Application.TestBufferReadWrite" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestBufferReadWrite" />
         <item itemvalue="Application.TestBuffer" />
         <item itemvalue="Application.Server" />
         <item itemvalue="Application.GCRootDemo" />
         <item itemvalue="Application.test" />
-        <item itemvalue="Application.Test12" />
       </list>
     </recent_temporary>
   </component>
@@ -562,14 +518,7 @@
       <workItem from="1617333620338" duration="1399000" />
       <workItem from="1617336163284" duration="255000" />
       <workItem from="1617519434794" duration="589000" />
-      <workItem from="1617611275475" duration="2735000" />
-    </task>
-    <task id="LOCAL-00129" summary="bio测试实例">
-      <created>1612068109885</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1612068109885</updated>
+      <workItem from="1617611275475" duration="6725000" />
     </task>
     <task id="LOCAL-00130" summary="对buffer的初步使用">
       <created>1612074523242</created>
@@ -907,7 +856,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615608295555</updated>
     </task>
-    <option name="localTasksCounter" value="178" />
+    <task id="LOCAL-00178" summary="buffer的初步使用">
+      <created>1617614931032</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1617614931033</updated>
+    </task>
+    <option name="localTasksCounter" value="179" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -939,7 +895,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="demo1" />
     <MESSAGE value="线程调度demo" />
     <MESSAGE value="join demo" />
     <MESSAGE value="打断park状态下的demo" />
@@ -964,7 +919,8 @@
     <MESSAGE value="自定义线程池" />
     <MESSAGE value="更新注释" />
     <MESSAGE value="fork join 案例以及笔记更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="fork join 案例以及笔记更新" />
+    <MESSAGE value="buffer的初步使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="buffer的初步使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

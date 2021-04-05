@@ -1,4 +1,4 @@
-package com.like.netty.demo1;
+package com.like.netty;
 
 import lombok.extern.slf4j.Slf4j;
 
