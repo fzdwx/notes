@@ -7,18 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="filechannel 笔记">
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/c1/TestFileChannelTransferTo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/test/resources/data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/to.txt" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="文件复制案例">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/c1/PathTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" afterDir="false" />
     </list>
@@ -39,7 +29,12 @@
         <option value="Interface" />
         <option value="Tag Library Descriptor" />
         <option value="Class" />
+        <option value="JUnit4 &amp; Mockito" />
         <option value="JUnit5 Test Class" />
+        <option value="JUnit5 &amp; Mockito" />
+        <option value="TestNG &amp; Mockito" />
+        <option value="Test" />
+        <option value="A-test" />
       </list>
     </option>
   </component>
@@ -104,7 +99,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -141,11 +136,11 @@
       <recent name="数据结构和算法.数据结构" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.like.netty.c1" />
       <recent name="com.like.netty.util" />
       <recent name="再探JUC.pattern.同步模式指定输出顺序" />
       <recent name="数据结构和算法.算法.排序.sort" />
       <recent name="数据结构和算法.数据结构.tree.二叉树" />
-      <recent name="数据结构和算法.数据结构.list.linked" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -177,7 +172,6 @@
       <set>
         <option value="Application" />
         <option value="CucumberJavaRunConfigurationType" />
-        <option value="JUnit" />
         <option value="JarApplication" />
         <option value="SwaggerCodegen" />
         <option value="TestNG" />
@@ -185,7 +179,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestFileChannelTransferTo.testT1">
+  <component name="RunManager" selected="JUnit.PathTest.testEndWithJar">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -197,7 +191,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestFileChannelTransferTo.testT1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PathTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
@@ -206,8 +200,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.like.netty.c1" />
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.c1.TestFileChannelTransferTo" />
-      <option name="METHOD_NAME" value="testT1" />
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.c1.PathTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PathTest.testEndWithJar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nettyStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.like.netty.c1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.like.netty.c1" />
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.c1.PathTest" />
+      <option name="METHOD_NAME" value="testEndWithJar" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -221,12 +231,14 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestFileChannelTransferTo.testT1" />
+      <item itemvalue="JUnit.PathTest.test" />
       <item itemvalue="Spring Boot.SecurityApplication" />
+      <item itemvalue="JUnit.PathTest.testEndWithJar" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestFileChannelTransferTo.testT1" />
+        <item itemvalue="JUnit.PathTest.testEndWithJar" />
+        <item itemvalue="JUnit.PathTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -481,14 +493,11 @@
       <workItem from="1617707984898" duration="782000" />
       <workItem from="1617708796693" duration="1937000" />
       <workItem from="1617711035796" duration="293000" />
-      <workItem from="1617711348139" duration="225000" />
-    </task>
-    <task id="LOCAL-00134" summary="多个buffer的使用">
-      <created>1612086109573</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1612086109573</updated>
+      <workItem from="1617711348139" duration="712000" />
+      <workItem from="1617712091492" duration="496000" />
+      <workItem from="1617712613073" duration="1515000" />
+      <workItem from="1617714159356" duration="152000" />
+      <workItem from="1617714333075" duration="665000" />
     </task>
     <task id="LOCAL-00135" summary="update">
       <created>1612153035949</created>
@@ -826,7 +835,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617629929960</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="文件复制案例">
+      <created>1617711792452</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1617711792452</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TestCherrySettings">
@@ -861,7 +877,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="守护线程 demo" />
     <MESSAGE value="update 整合maven" />
     <MESSAGE value="&#10;hashMap demo" />
     <MESSAGE value="update" />
@@ -886,7 +901,8 @@
     <MESSAGE value="笔记更新" />
     <MESSAGE value="nio 模拟处理粘包和半包" />
     <MESSAGE value="filechannel 笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="filechannel 笔记" />
+    <MESSAGE value="文件复制案例" />
+    <option name="LAST_COMMIT_MESSAGE" value="文件复制案例" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -926,6 +942,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/work$TestFileChannelTransferTo_testT1.ic" NAME="TestFileChannelTransferTo.testT1 Coverage Results" MODIFIED="1617710470042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.like.netty.c1.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/work$PathTest_testAdd.ic" NAME="PathTest.testAdd Coverage Results" MODIFIED="1617712879432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.like.netty.c1.*</FILTER>
     </SUITE>
   </component>

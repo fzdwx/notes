@@ -318,7 +318,7 @@ channel.position(newPos);
 
 
 
-#### a.文件复制案例
+### 文件复制案例
 
 ```java
 @Test
@@ -336,5 +336,63 @@ void testT1() {
     } catch (Exception e) {
         e.printStackTrace();
     }
+}
+```
+
+
+
+### Path 以及 Files
+
+- path 用来表示文件路径
+- paths是工具类，用来获取path实例
+
+
+
+遍历文件夹
+
+```java
+Path path = Paths.get("D:\\Java\\jdk-8");
+
+@Test
+void testEndWithJar() throws IOException {
+    AtomicInteger jarCount = new AtomicInteger();
+    Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
+        @Override
+        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+            if (file.toString().endsWith(".jar")) {
+                System.out.println(file);
+                jarCount.incrementAndGet();
+            }
+            return super.visitFile(file, attrs);
+        }
+    });
+
+    System.out.println("jar 包数量" + jarCount);
+}
+
+@Test
+void testDirCountAndFileCount() throws IOException {
+
+    AtomicInteger dirCount = new AtomicInteger();
+    AtomicInteger fileCount = new AtomicInteger();
+    // 循环访问
+    Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
+        @Override
+        public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+            System.out.println("===>" + dir);
+            dirCount.incrementAndGet();
+            return super.preVisitDirectory(dir, attrs);
+        }
+
+        @Override
+        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+            System.out.println(file);
+            fileCount.incrementAndGet();
+            return super.visitFile(file, attrs);
+        }
+    });
+
+    System.out.println("文件夹数量" + dirCount);
+    System.out.println("文件数量：" + fileCount);
 }
 ```
