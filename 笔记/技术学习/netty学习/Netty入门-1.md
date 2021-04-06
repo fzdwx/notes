@@ -313,3 +313,28 @@ channel.position(newPos);
 **强制写入**
 
 不会立刻将数据写入磁盘，而是缓存。调用force(true)方法将文件内容和数据（文件的权限等信息）立刻写入磁盘
+
+
+
+
+
+#### a.文件复制案例
+
+```java
+@Test
+void testT1() {
+    try (
+        FileChannel read = new FileInputStream("D:\\github\\notes\\代码\\data.txt").getChannel();
+        FileChannel write = new FileOutputStream("D:\\github\\notes\\代码\\to.txt").getChannel()
+    ) {
+        // size ： read文件的大小  left : 还剩数据的大小
+        long size = read.size();
+        for (long left = size; left > 0;) {
+            // 底层是零拷贝，效率高，最大2g数据
+            left -= read.transferTo(size - left, left, write);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+```
