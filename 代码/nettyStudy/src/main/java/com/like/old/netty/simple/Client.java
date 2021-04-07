@@ -7,7 +7,9 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+
+import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * @author like
@@ -15,8 +17,10 @@ import lombok.extern.slf4j.Slf4j;
  * @contactMe 980650920@qq.com
  * @description
  */
-@Slf4j
+
 public class Client {
+    private final static Logger log = getLogger(Client.class);
+
     public static void main(String[] args) throws InterruptedException {
         EventLoopGroup group = new NioEventLoopGroup();
 

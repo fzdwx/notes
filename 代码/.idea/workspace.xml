@@ -7,9 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="文件复制案例">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/c1/PathTest.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="测试 files 循环文件夹">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/simple/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/simple/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/deno2/NIOClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/deno2/NIOClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,13 +30,13 @@
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
         <option value="Tag Library Descriptor" />
-        <option value="Class" />
         <option value="JUnit4 &amp; Mockito" />
         <option value="JUnit5 Test Class" />
         <option value="JUnit5 &amp; Mockito" />
         <option value="TestNG &amp; Mockito" />
         <option value="Test" />
         <option value="A-test" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -99,7 +101,7 @@
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -179,7 +181,33 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PathTest.testEndWithJar">
+  <component name="RunManager" selected="Application.NIOClient">
+    <configuration name="NIOClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.old.nio.deno2.NIOClient" />
+      <module name="nettyStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.like.old.nio.deno2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.demo.Server" />
+      <module name="nettyStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.like.netty.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -232,11 +260,15 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PathTest.test" />
-      <item itemvalue="Spring Boot.SecurityApplication" />
       <item itemvalue="JUnit.PathTest.testEndWithJar" />
+      <item itemvalue="Spring Boot.SecurityApplication" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.NIOClient" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NIOClient" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.PathTest.testEndWithJar" />
         <item itemvalue="JUnit.PathTest.test" />
       </list>
@@ -497,14 +529,9 @@
       <workItem from="1617712091492" duration="496000" />
       <workItem from="1617712613073" duration="1515000" />
       <workItem from="1617714159356" duration="152000" />
-      <workItem from="1617714333075" duration="665000" />
-    </task>
-    <task id="LOCAL-00135" summary="update">
-      <created>1612153035949</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1612153035950</updated>
+      <workItem from="1617714333075" duration="3058000" />
+      <workItem from="1617718500786" duration="82000" />
+      <workItem from="1617787488479" duration="9795000" />
     </task>
     <task id="LOCAL-00136" summary="update">
       <created>1612153582209</created>
@@ -842,7 +869,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617711792452</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="测试 files 循环文件夹">
+      <created>1617715133760</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1617715133761</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="TestCherrySettings">
@@ -877,7 +911,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="update 整合maven" />
     <MESSAGE value="&#10;hashMap demo" />
     <MESSAGE value="update" />
     <MESSAGE value="添加笔记" />
@@ -902,7 +935,8 @@
     <MESSAGE value="nio 模拟处理粘包和半包" />
     <MESSAGE value="filechannel 笔记" />
     <MESSAGE value="文件复制案例" />
-    <option name="LAST_COMMIT_MESSAGE" value="文件复制案例" />
+    <MESSAGE value="测试 files 循环文件夹" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试 files 循环文件夹" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -928,10 +962,6 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="8" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="9" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

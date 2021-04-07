@@ -396,3 +396,53 @@ void testDirCountAndFileCount() throws IOException {
     System.out.println("文件数量：" + fileCount);
 }
 ```
+
+
+
+
+
+## 4.网络编程
+
+~~~java
+1.处理过的key要及时删除
+	iter.remove(); 
+2.异常断开的时候要try 且要关闭连接
+	 key.cancel();
+3.正常关闭，要根据read的长度是否为-1来关闭连接
+	int read = client.read(buf);
+    	if (read == -1) {
+    key.cancel();  // * 正常断开 也要取消连接
+    } else {
+    	buf.flip();
+    }
+~~~
+
+
+
+
+
+### 处理消息边界问题
+
+服务器是一个固定大小的byteBuffer
+
+![image-20210407202458534](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210407202505.png)
+
+1. 固定消息长度，每个数据包的大小都一样，服务器按预定长度读取，缺点是浪费带宽
+2. 按分隔符拆分，缺点是效率低
+3. TLV格式，即Type类型，Length长度，Value数据，类型和长度已知的情况下，就可以方便获取消息大小，分配合适的buffer，缺点是buffer需要提前分配，如果内容过大，则影响server吞吐量
+   - http 1.1 是TLV格式
+   - http 2.0 是LTV格式
+
+
+
+**扩容**
+
+![image-20210407211338274](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210407211345.png)
+
+写入数据
+
+![image-20210407211359691](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210407211359.png)
+
+测试结果
+
+![image-20210407211413961](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210407211414.png)
