@@ -7,12 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="测试 files 循环文件夹">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/simple/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/netty/simple/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/deno2/NIOClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/old/nio/deno2/NIOClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="nio 网络编程 常见问题">
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -531,14 +527,7 @@
       <workItem from="1617714159356" duration="152000" />
       <workItem from="1617714333075" duration="3058000" />
       <workItem from="1617718500786" duration="82000" />
-      <workItem from="1617787488479" duration="9795000" />
-    </task>
-    <task id="LOCAL-00136" summary="update">
-      <created>1612153582209</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1612153582209</updated>
+      <workItem from="1617787488479" duration="10122000" />
     </task>
     <task id="LOCAL-00137" summary="update">
       <created>1612169493184</created>
@@ -876,7 +865,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617715133761</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="nio 网络编程 常见问题">
+      <created>1617801292470</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1617801292470</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TestCherrySettings">
@@ -911,7 +907,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="&#10;hashMap demo" />
     <MESSAGE value="update" />
     <MESSAGE value="添加笔记" />
     <MESSAGE value="更新笔记" />
@@ -936,7 +931,8 @@
     <MESSAGE value="filechannel 笔记" />
     <MESSAGE value="文件复制案例" />
     <MESSAGE value="测试 files 循环文件夹" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试 files 循环文件夹" />
+    <MESSAGE value="nio 网络编程 常见问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="nio 网络编程 常见问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

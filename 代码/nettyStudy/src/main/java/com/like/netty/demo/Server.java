@@ -52,8 +52,7 @@ public class Server {
 
                 // 7.区分事件类型
                 if (key.isAcceptable()) {  // 连接
-                    ServerSocketChannel ssc = (ServerSocketChannel) key.channel();
-                    SocketChannel client = ssc.accept();
+                    SocketChannel client = server.accept();
                     client.configureBlocking(false);
 
 
