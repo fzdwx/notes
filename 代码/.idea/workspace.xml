@@ -7,8 +7,211 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="nio 网络编程 常见问题">
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo/Server.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="docs: 多线程优化">
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/c1/BinarySearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/c1/GCD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/AVLTreeST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Accumulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/AcyclicLP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/AcyclicSP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/AdjMatrixEdgeWeightedDigraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/AllowFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Allowlist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Alphabet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/AmericanFlag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/AmericanFlagX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Arbitrage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/AssignmentProblem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Average.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Bag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BellmanFordSP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BinaryDump.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BinaryIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BinaryInsertion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BinaryOut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BinarySearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BinarySearchST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BinaryStdIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BinaryStdOut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BinomialMinPQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Bipartite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BipartiteMatching.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BipartiteX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BlockFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BoruvkaMST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BoyerMoore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BreadthFirstDirectedPaths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/BreadthFirstPaths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/CC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/CPM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/ClosestPair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/CollisionSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Complex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Count.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Counter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Cycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Date.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DeDup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DegreesOfSeparation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DepthFirstDirectedPaths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DepthFirstOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DepthFirstPaths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DepthFirstSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Digraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DigraphGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DijkstraAllPairsSP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DijkstraSP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DijkstraUndirectedSP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DirectedCycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DirectedCycleX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DirectedDFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DirectedEdge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DirectedEulerianCycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DirectedEulerianPath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DoublingRatio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DoublingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Draw.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/DrawListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Edge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/EdgeWeightedDigraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/EdgeWeightedDirectedCycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/EdgeWeightedGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/EulerianCycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/EulerianPath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/FFT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/FarthestPair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/FenwickTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/FibonacciMinPQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/FileIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/FlowEdge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/FlowNetwork.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/FloydWarshall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/FordFulkerson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/FrequencyCounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/GREP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/GabowSCC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/GaussJordanElimination.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/GaussianElimination.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Genome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/GlobalMincut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/GrahamScan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/GraphGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/GrayscalePicture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Heap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/HexDump.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/HopcroftKarp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Huffman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/In.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/IndexBinomialMinPQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/IndexFibonacciMinPQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/IndexMaxPQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/IndexMinPQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/IndexMultiwayMinPQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/InplaceMSD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Insertion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/InsertionX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Interval1D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Interval2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Inversions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/KMP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/KWIK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Knuth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/KosarajuSharirSCC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/KruskalMST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LSD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LZW.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LazyPrimMST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LinearProbingHashST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LinearProgramming.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LinearRegression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LinkedBag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LinkedQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LinkedStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LongestCommonSubstring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LongestRepeatedSubstring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LookupCSV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/LookupIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/MSD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/MaxPQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Merge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/MergeBU.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/MergeX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/MinPQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Multiway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/MultiwayMinPQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/NFA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/NonrecursiveDFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/NonrecursiveDirectedDFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Out.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Particle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/PatriciaSET.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/PatriciaST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Picture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/PictureDump.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Point2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Polynomial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/PrimMST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Queue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Quick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Quick3string.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Quick3way.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/QuickBentleyMcIlroy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/QuickFindUF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/QuickUnionUF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/QuickX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/RabinKarp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/RandomSeq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/RectHV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/RedBlackBST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/ResizingArrayBag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/ResizingArrayQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/ResizingArrayStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/RunLength.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/SET.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/ST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/SegmentTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Selection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/SeparateChainingHashST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/SequentialSearchST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Shell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/SparseVector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Stack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/StaticSETofInts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/StdArrayIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/StdAudio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/StdDraw.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/StdIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/StdOut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/StdRandom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/StdStats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Stopwatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/StopwatchCPU.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/SuffixArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/SuffixArrayX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/SymbolDigraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/SymbolGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/TST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/TarjanSCC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/ThreeSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/ThreeSumFast.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/TopM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Topological.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/TopologicalX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/TransitiveClosure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/TrieSET.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/TrieST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/TwoPersonZeroSumGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/UF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/Vector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructureAndAlgorithm/src/main/java/算法/A4/edu/princeton/cs/algs4/WeightedQuickUnionUF.java" afterDir="false" />
+    </list>
+    <list id="bac6a37d-dd42-4db7-a78a-c99c267d3d34" name="nopush" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +220,64 @@
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/demo">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/demogradle">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/testgradle">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/demo">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -71,6 +332,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="LombokPluginIS_LOMBOK_VERSION_CHECK_Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
@@ -82,6 +344,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -90,14 +353,15 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/nettyStudy/src/test/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DataStructureAndAlgorithm" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -109,11 +373,11 @@
       <recent name="设计模式.自定义SpringIoc.com.like.framework.beans.factory.support.xml" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\notes\代码\DataStructureAndAlgorithm\src\main\java\算法\A4\edu\princeton\cs\algs4" />
+      <recent name="D:\github\notes\代码\DataStructureAndAlgorithm\src\main\java\算法\A4" />
       <recent name="D:\github\notes\代码\nettyStudy\src\test\resources" />
       <recent name="D:\github\notes\代码\nettyStudy\src\test\java" />
       <recent name="D:\github\notes\代码\nettyStudy\src\main\java\com\like\netty\util" />
-      <recent name="D:\github\notes\代码" />
-      <recent name="D:\github\notes\代码\DataStructureAndAlgorithm\src" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -150,11 +414,13 @@
   </component>
   <component name="RunAnythingCache">
     <myKeys>
+      <visibility group="Gradle Tasks" flag="true" />
       <visibility group="Gradle tasks" flag="true" />
       <visibility group="Grunt" flag="true" />
       <visibility group="Grunt tasks" flag="true" />
       <visibility group="Gulp" flag="true" />
       <visibility group="Gulp tasks" flag="true" />
+      <visibility group="Maven Goals" flag="true" />
       <visibility group="Maven goals" flag="true" />
       <visibility group="Node.js" flag="true" />
       <visibility group="Recent projects" flag="true" />
@@ -164,6 +430,9 @@
       <visibility group="最近的项目" flag="true" />
       <visibility group="运行配置" flag="true" />
     </myKeys>
+    <option name="myCommands">
+      <command value="gradle --dry-run" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -171,13 +440,53 @@
         <option value="Application" />
         <option value="CucumberJavaRunConfigurationType" />
         <option value="JarApplication" />
+        <option value="SpringBootApplicationConfigurationType" />
         <option value="SwaggerCodegen" />
         <option value="TestNG" />
         <option value="XSLT" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.NIOClient">
+  <component name="RunManager" selected="Application._121买卖股票的最佳时机">
+    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="算法.A4.c1.BinarySearch" />
+      <module name="DataStructureAndAlgorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="算法.A4.c1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoinChange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="算法.动态规划.CoinChange" />
+      <module name="DataStructureAndAlgorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="算法.动态规划.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GCD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="算法.A4.c1.GCD" />
+      <module name="DataStructureAndAlgorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="算法.A4.c1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NIOClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.like.old.nio.deno2.NIOClient" />
       <module name="nettyStudy" />
@@ -191,12 +500,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.demo.Server" />
-      <module name="nettyStudy" />
+    <configuration name="_121买卖股票的最佳时机" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="刷题.动态规划._121买卖股票的最佳时机" />
+      <module name="DataStructureAndAlgorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.netty.demo.*" />
+          <option name="PATTERN" value="刷题.动态规划.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -204,45 +513,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PathTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="nettyStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.like.netty.c1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.like.netty.c1" />
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.c1.PathTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PathTest.testEndWithJar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="nettyStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.like.netty.c1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.like.netty.c1" />
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.c1.PathTest" />
-      <option name="METHOD_NAME" value="testEndWithJar" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -255,18 +534,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PathTest.test" />
-      <item itemvalue="JUnit.PathTest.testEndWithJar" />
-      <item itemvalue="Spring Boot.SecurityApplication" />
-      <item itemvalue="Application.Server" />
       <item itemvalue="Application.NIOClient" />
+      <item itemvalue="Application.BinarySearch" />
+      <item itemvalue="Application.GCD" />
+      <item itemvalue="Application.CoinChange" />
+      <item itemvalue="Spring Boot.SecurityApplication" />
+      <item itemvalue="Application._121买卖股票的最佳时机" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application._121买卖股票的最佳时机" />
+        <item itemvalue="Application.BinarySearch" />
+        <item itemvalue="Application.CoinChange" />
+        <item itemvalue="Application.GCD" />
         <item itemvalue="Application.NIOClient" />
-        <item itemvalue="Application.Server" />
-        <item itemvalue="JUnit.PathTest.testEndWithJar" />
-        <item itemvalue="JUnit.PathTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -277,6 +558,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="" />
+      <changelist id="bac6a37d-dd42-4db7-a78a-c99c267d3d34" name="nopush" comment="" />
       <created>1600346746098</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -527,28 +809,10 @@
       <workItem from="1617714159356" duration="152000" />
       <workItem from="1617714333075" duration="3058000" />
       <workItem from="1617718500786" duration="82000" />
-      <workItem from="1617787488479" duration="10122000" />
-    </task>
-    <task id="LOCAL-00137" summary="update">
-      <created>1612169493184</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1612169493185</updated>
-    </task>
-    <task id="LOCAL-00138" summary="update">
-      <created>1612169811364</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1612169811364</updated>
-    </task>
-    <task id="LOCAL-00139" summary="聊天室">
-      <created>1612187918535</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1612187918536</updated>
+      <workItem from="1617787488479" duration="11428000" />
+      <workItem from="1617879596946" duration="671000" />
+      <workItem from="1617880641935" duration="10912000" />
+      <workItem from="1617891678068" duration="246000" />
     </task>
     <task id="LOCAL-00140" summary="聊天室 update">
       <created>1612188007157</created>
@@ -872,7 +1136,28 @@
       <option name="project" value="LOCAL" />
       <updated>1617801292470</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="upadte">
+      <created>1617801452841</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1617801452841</updated>
+    </task>
+    <task id="LOCAL-00187" summary="remove .gradle">
+      <created>1617881492846</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1617881492846</updated>
+    </task>
+    <task id="LOCAL-00188" summary="docs: 多线程优化">
+      <created>1617887722020</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1617887722020</updated>
+    </task>
+    <option name="localTasksCounter" value="189" />
     <servers />
   </component>
   <component name="TestCherrySettings">
@@ -907,9 +1192,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="update" />
-    <MESSAGE value="添加笔记" />
-    <MESSAGE value="更新笔记" />
     <MESSAGE value="同步模式之保护性暂停" />
     <MESSAGE value="同步模式之保护性暂停 优化" />
     <MESSAGE value="同步模式之保护性暂停 超时" />
@@ -932,7 +1214,10 @@
     <MESSAGE value="文件复制案例" />
     <MESSAGE value="测试 files 循环文件夹" />
     <MESSAGE value="nio 网络编程 常见问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="nio 网络编程 常见问题" />
+    <MESSAGE value="upadte" />
+    <MESSAGE value="remove .gradle" />
+    <MESSAGE value="docs: 多线程优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: 多线程优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -967,10 +1252,10 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/work$TestFileChannelTransferTo_testT1.ic" NAME="TestFileChannelTransferTo.testT1 Coverage Results" MODIFIED="1617710470042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/work$PathTest_testAdd.ic" NAME="PathTest.testAdd Coverage Results" MODIFIED="1617712879432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.like.netty.c1.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/work$PathTest_testAdd.ic" NAME="PathTest.testAdd Coverage Results" MODIFIED="1617712879432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/work$TestFileChannelTransferTo_testT1.ic" NAME="TestFileChannelTransferTo.testT1 Coverage Results" MODIFIED="1617710470042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.like.netty.c1.*</FILTER>
     </SUITE>
   </component>
