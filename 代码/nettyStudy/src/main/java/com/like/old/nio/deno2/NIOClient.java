@@ -41,8 +41,7 @@ public class NIOClient {
                 buffer.clear();
 
             }*/
-            client.write(Charset.defaultCharset().encode("asdasd\nasdasdasd"));
-            client.write(Charset.defaultCharset().encode("h1231231231231231233333333\n"));
+            client.write(Charset.defaultCharset().encode("asdasd"));
         } catch (Exception e) {
             e.printStackTrace();
         }

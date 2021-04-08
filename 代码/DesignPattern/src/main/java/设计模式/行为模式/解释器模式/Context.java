@@ -1,6 +1,7 @@
 package 设计模式.行为模式.解释器模式;
 
-import 数据结构和算法.数据结构.hash.HashMap;
+
+import java.util.HashMap;
 
 /**
  * @author like
