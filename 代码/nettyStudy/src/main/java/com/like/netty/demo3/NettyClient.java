@@ -22,7 +22,7 @@ public class NettyClient {
                             ch.pipeline().addLast(new StringEncoder());
                         }
                     })
-                    .connect("localhost", 6666)
+                    .connect("localhost", 8888)
                     .sync()
                     .channel()
                     .writeAndFlush("hello netty server");

@@ -855,3 +855,45 @@ public class EventLoopTest {
 
 ​	
 
+#### 	
+
+pipLine 可以绑定一个其他的 eventLoopGroup
+
+```java
+public class BossAndWorker {
+    private final static Logger log = LoggerFactory.getLogger(BossAndWorker.class);
+
+    public static void main(String[] args) {
+
+        NioEventLoopGroup boss = new NioEventLoopGroup();
+        NioEventLoopGroup worker = new NioEventLoopGroup();
+
+        DefaultEventLoopGroup defaultGroup = new DefaultEventLoopGroup();
+        new ServerBootstrap()
+            .group(boss, worker)
+            .channel(NioServerSocketChannel.class)
+            .childHandler(
+            new ChannelInitializer<NioSocketChannel>() {
+                @Override
+                protected void initChannel(NioSocketChannel ch) throws Exception {
+                    ch.pipeline().addLast(new StringDecoder());
+                    ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
+                        @Override
+                        public void channelRead(
+                            ChannelHandlerContext ctx, Object msg) throws Exception {
+                            log.info("#channelRead(..): {}", msg);
+                        }
+                    });
+                    // 可以在添加一個group
+                    ch.pipeline().addLast(defaultGroup, new ChannelInboundHandlerAdapter() {
+                        @Override
+                        public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+                            log.info("#channelRead(..):{}",msg);
+                        }
+                    });
+                }
+            })
+            .bind(8888);
+    }
+}
+```
