@@ -789,3 +789,69 @@ public class NettyClient {
 ### 调用流程
 
 ![image-20210410114539392](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410114546.png)
+
+### 理解
+
+![image-20210410115451427](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410115451.png)
+
+
+
+
+
+## 2.组件
+
+
+
+### EventLoop
+
+事件循环对象，是一个单线程执行器（同时维护了一个selector），里面有run方法处理channel上源源不断的io时间。
+
+继承关系：
+
+- juc下的SecheduledExecutorService因此包含了线程池中的所有方法
+- netty中的orderedWEventExecutor
+  - 提供了boolean isEventLoop(Thread thread)方法判断一个线程是否属于次EventLoop
+  - 提供parent方法来查看自己属于哪个EventLoopGroup
+
+
+
+**EventLoopGroup**
+
+是一组EventLoop，Channel一般会调用EventLoopGroup的register方法来绑定其中一个EventLoop，后续这个Channel上的io事件都由此EventLoop来处理，保证了Io事件处理的线程安全；
+
+- 继承netty自己的EventExecutorGroup
+  - 实现iterable接口提高遍历能力
+  - next获取下一个EventLoop
+
+
+
+##### 在eventLoopGroup中提交任务
+
+```java
+public class EventLoopTest {
+    private final static Logger log = LoggerFactory.getLogger(EventLoopTest.class);
+
+    @Test
+    void testThreadCount() {
+        EventLoopGroup boss = new NioEventLoopGroup(4);
+        // 1.遍历eventLoop
+        /* for (EventExecutor eventExecutor : boss) {
+            System.out.println(eventExecutor);
+        }*/
+
+        // 2.提交一个普通任务
+        boss.next().submit(()->{
+            log.info(EventLoopTest.class.getName() + "#testThreadCount(..): 普通任务");
+        });
+
+        // 3.提交一个定时任务
+        boss.next().scheduleAtFixedRate(()->{
+            log.info(EventLoopTest.class.getName() + "#testThreadCount(..): 定时任务");
+            // 延迟3秒运行  每隔1秒执行一次
+        }, 3, 1, TimeUnit.SECONDS);
+    }
+}
+```
+
+​	
+
