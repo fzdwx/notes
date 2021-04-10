@@ -685,3 +685,107 @@ public class MultiThreadServer {
     }
 }
 ```
+
+
+
+
+
+# Netty
+
+是一个异步的，基于事件驱动的网络应用框架，用于快速开发可维护，高性能的网络服务器和客户端。调用时的异步，同步非阻塞，基于多路复用。 Trustin Lee 
+
+Netty在Java网络编程的地位X相当于JavaEE中的Spring
+
+- Cassandra nosql数据库
+- Spark 大数据分布式计算
+- Hadoop 大数据看分布式存储
+- RocketMQ -ali 开源消息队列
+- elasticSearch 搜索引擎
+- gRPC 
+- Dubbo
+- Spring 5 flux
+- Zookeeper 分布式协调框架
+
+
+
+
+
+
+
+
+
+## 1.Server以及Client demo
+
+
+
+### server
+
+~~~java
+public class NettyServer {
+
+    public static void main(String[] args) {
+        // 1.启动器 负责组装netty 组件，启动服务器
+        new ServerBootstrap()
+                // 2. boosEventLoop workerEventLoop(selector,thread) group 组
+                .group(new NioEventLoopGroup())
+                // 3. 选择服务器的 serverSocketChannel 实现
+                .channel(NioServerSocketChannel.class)
+                // 4. boos 负责处理连接 worker(child) 负责处理读写 决定worker 能执行哪些操作
+                .childHandler(
+                        // 5. channel代表和客户端进行数据读写的通道 initializer 初始化，负责添加别的handler
+                        new ChannelInitializer<NioSocketChannel>() {
+                            @Override
+                            protected void initChannel(NioSocketChannel ch) throws Exception {
+                                // 6.添加具体handler
+                                ch.pipeline().addLast(new StringDecoder()); // 将ByteBuf 转换为字符串
+                                ch.pipeline().addLast(new ChannelInboundHandlerAdapter() { // 自己的自定义handler
+                                    @Override
+                                    public void channelRead(
+                                            ChannelHandlerContext ctx, Object msg) throws Exception {
+                                        System.out.println(msg);
+                                    }
+                                });
+                            }
+                        })
+                // 7.绑定监听端口 8888
+                .bind(6666);
+    }
+}
+~~~
+
+
+
+### client
+
+~~~java
+public class NettyClient {
+
+    public static void main(String[] args) {
+        try {
+            new Bootstrap()
+                    .group(new NioEventLoopGroup())
+                    .channel(NioSocketChannel.class)
+                    .handler(new ChannelInitializer<NioSocketChannel>() {
+                        @Override
+                        protected void initChannel(NioSocketChannel ch) throws Exception {
+                            ch.pipeline().addLast(new StringEncoder());
+                        }
+                    })
+                    .connect("localhost", 6666)
+                    .sync()
+                    .channel()
+                    .writeAndFlush("hello netty server");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+~~~
+
+
+
+
+
+### 调用流程
+
+![image-20210410114539392](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410114546.png)
