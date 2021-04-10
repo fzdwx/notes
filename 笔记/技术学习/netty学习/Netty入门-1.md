@@ -825,7 +825,7 @@ public class NettyClient {
 
 
 
-##### 在eventLoopGroup中提交任务
+#### 在eventLoopGroup中提交任务
 
 ```java
 public class EventLoopTest {
@@ -855,7 +855,7 @@ public class EventLoopTest {
 
 ​	
 
-#### 	
+#### boss And workder 和绑定其他group
 
 pipLine 可以绑定一个其他的 eventLoopGroup
 
@@ -897,3 +897,148 @@ public class BossAndWorker {
     }
 }
 ```
+
+
+
+
+
+#### eventLoop是如何切换的
+
+![image-20210410133020080](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410133020.png)
+
+
+
+
+
+
+
+### channel
+
+channel的主要左右
+
+- close()
+- closeFuture() 用来处理channel的关闭
+  - sync() 方法作用是同步等待channel关闭
+  - addListener() 是异步等待channel方法关闭
+- pipline() 方法添加处理器
+- write() 写入数据
+- writeAndFlush()写入数据并刷出
+
+
+
+
+
+
+
+### Future Promise 
+
+在异步处理时，经常用到这两个接口。
+
+netty中的Future继承于JDK中的Futrure。Promise又对netty Future进行了扩展
+
+- JDK Future 只能同步等待任务结束，才能得到结果
+- netty Future可以同步等待任务结束得到结果，也可以异步，但都要等任务结束
+- netty Promise不仅有netty Future的功能，而且脱离了任务独立存在，只作为两个线程间穿阿迪结果的容器
+
+
+
+
+
+
+
+### pipline
+
+执行顺序
+
+~~~
+inbound  1-2-3 ···
+
+outbount  6-5-4···
+~~~
+
+
+
+![image-20210410182809952](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410182810.png)
+
+
+
+### EmbeddedChannel
+
+用来测试channel![image-20210410183155957](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410183156.png)
+
+
+
+
+
+### byteBuf
+
+会自动扩容
+
+![image-20210410183650499](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410183650.png)
+
+
+
+
+
+- 直接内存创建和销毁的代价高昂，但读写性能高（少一次内存复制），配合池化功能一起用
+- 直接内存对gc压力小，因为这部分内存不受JVM垃圾回收的管理，但是也要及时主动释放
+
+```java
+ByteBuf hBuf = ByteBufAllocator.DEFAULT.heapBuffer();  // 堆内存
+ByteBuf dBuf = ByteBufAllocator.DEFAULT.directBuffer(); // 直接内存
+```
+
+
+
+
+
+#### 池化
+
+~~~bash
+-Dio.netty.alloctor.type={unpooled | pooled}
+~~~
+
+
+
+![image-20210410184130928](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410184131.png)
+
+
+
+#### 组成
+
+读取过的
+
+可读部分
+
+可写部分
+
+可扩容部分
+
+![image-20210410184832521](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410184832.png)
+
+
+
+
+
+#### 扩容
+
+- 如果写入后的大小没有超过512字节 则按照16的整数倍扩容
+
+  - 8 -> 16
+  - 17-> 32
+
+- 如果超过，则安装2 ^ n扩容
+
+  -  513 - > 1024
+
+    
+
+
+
+#### 回收
+
+每个byteBuf都会实现ReferenceCounted
+
+调用release回收
+
+在头和为handler 会调用回收
