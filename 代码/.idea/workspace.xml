@@ -7,10 +7,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="模拟 redis 协议发送set命令">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/TestHttp.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/AbstractResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/ChatRequestMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/ChatResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupChatRequestMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupChatResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupCreateRequestMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupCreateResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupJoinRequestMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupJoinResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupMembersRequestMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupMembersResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupQuitRequestMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupQuitResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/LoginRequestMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/LoginResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/PingMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/PongMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/RpcRequestMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/RpcResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/protocol/MessageCodec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/protocol/custom/protocol/MessageCodecTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo/TestRedis.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/TestRedis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo2/MultiThreadServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo2/MultiThreadServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" afterDir="false" />
     </list>
     <list id="bac6a37d-dd42-4db7-a78a-c99c267d3d34" name="nopush" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +112,6 @@
         <option value="Interface" />
         <option value="Tag Library Descriptor" />
         <option value="JUnit4 &amp; Mockito" />
-        <option value="JUnit5 Test Class" />
         <option value="JUnit5 &amp; Mockito" />
         <option value="TestNG &amp; Mockito" />
         <option value="Test" />
@@ -97,6 +120,7 @@
         <option value="Kotlin Script" />
         <option value="JavaFXApplication" />
         <option value="Swagger" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -159,7 +183,7 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/nest-demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.1507799" />
@@ -177,11 +201,11 @@
       <recent name="设计模式.自定义SpringIoc.com.like.framework.beans.factory.support.xml" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github\notes\代码\nettyStudy\src\main\java\com\like\netty\protocol\custom\message" />
       <recent name="D:\github\notes\代码\DataStructureAndAlgorithm\src\main\java\算法\A4\edu\princeton\cs\algs4" />
       <recent name="D:\github\notes\代码\DataStructureAndAlgorithm\src\main\java\算法\A4" />
       <recent name="D:\github\notes\代码\nettyStudy\src\test\resources" />
       <recent name="D:\github\notes\代码\nettyStudy\src\test\java" />
-      <recent name="D:\github\notes\代码\nettyStudy\src\main\java\com\like\netty\util" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -202,11 +226,11 @@
       <recent name="数据结构和算法.数据结构" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.like.netty.protocol.custom.protocol" />
       <recent name="com.like.netty.c1" />
       <recent name="com.like.netty.util" />
       <recent name="再探JUC.pattern.同步模式指定输出顺序" />
       <recent name="数据结构和算法.算法.排序.sort" />
-      <recent name="数据结构和算法.数据结构.tree.二叉树" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.like.netty.demoNBBB" />
@@ -252,13 +276,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.TestHttp">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.demoNBBB.Client" />
+  <component name="RunManager" selected="应用程序.MessageCodecTest">
+    <configuration name="MessageCodec" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.custom.protocol.MessageCodec" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.netty.demoNBBB.*" />
+          <option name="PATTERN" value="com.like.netty.protocol.custom.protocol.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -266,12 +290,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.demoNBBB.Server" />
+    <configuration name="MessageCodecTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.custom.protocol.MessageCodecTest" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.netty.demoNBBB.*" />
+          <option name="PATTERN" value="com.like.netty.protocol.custom.protocol.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -330,19 +354,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.Server" />
       <item itemvalue="应用程序.TestRedis" />
-      <item itemvalue="应用程序.Client" />
       <item itemvalue="应用程序.TestLengthFiledDecoder" />
       <item itemvalue="应用程序.TestHttp" />
+      <item itemvalue="应用程序.MessageCodec" />
+      <item itemvalue="应用程序.MessageCodecTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.MessageCodecTest" />
+        <item itemvalue="应用程序.MessageCodec" />
         <item itemvalue="应用程序.TestHttp" />
         <item itemvalue="应用程序.TestRedis" />
         <item itemvalue="应用程序.TestLengthFiledDecoder" />
-        <item itemvalue="应用程序.Client" />
-        <item itemvalue="应用程序.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -614,14 +638,7 @@
       <workItem from="1618047418988" duration="2447000" />
       <workItem from="1618056056953" duration="69000" />
       <workItem from="1618058090358" duration="980000" />
-      <workItem from="1618108373361" duration="5971000" />
-    </task>
-    <task id="LOCAL-00146" summary="http服务器简单实例">
-      <created>1612350430448</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1612350430449</updated>
+      <workItem from="1618108373361" duration="12313000" />
     </task>
     <task id="LOCAL-00147" summary="update">
       <created>1614472633415</created>
@@ -959,7 +976,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618114520307</updated>
     </task>
-    <option name="localTasksCounter" value="195" />
+    <task id="LOCAL-00195" summary="模拟http协议">
+      <created>1618115694952</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1618115694953</updated>
+    </task>
+    <option name="localTasksCounter" value="196" />
     <servers />
   </component>
   <component name="TestCherrySettings">
@@ -994,7 +1018,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="指定运行顺序" />
     <MESSAGE value="同步模式指定输出顺序 增加2中方法" />
     <MESSAGE value="两阶段终止模式" />
     <MESSAGE value="cas 以及 unsafe 的简单使用" />
@@ -1019,7 +1042,8 @@
     <MESSAGE value="byteByf" />
     <MESSAGE value="netty 粘包半包 解决" />
     <MESSAGE value="模拟 redis 协议发送set命令" />
-    <option name="LAST_COMMIT_MESSAGE" value="模拟 redis 协议发送set命令" />
+    <MESSAGE value="模拟http协议" />
+    <option name="LAST_COMMIT_MESSAGE" value="模拟http协议" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
