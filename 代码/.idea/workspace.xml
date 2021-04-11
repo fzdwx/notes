@@ -7,8 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="boss And workder 和绑定其他group">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/byteBuf/ByteBufTest.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="byteByf">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo3/TestLengthFiledDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demoNBBB/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demoNBBB/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" afterDir="false" />
     </list>
@@ -209,11 +211,11 @@
       <recent name="数据结构和算法.数据结构.tree.二叉树" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.like.netty.demoNBBB" />
       <recent name="" />
       <recent name="设计模式.结构型模式.装饰者模式" />
       <recent name="设计模式.结构型模式.适配器模式.对象适配器" />
       <recent name="设计模式.结构型模式.代理模式.cglib动态代理" />
-      <recent name="设计模式.创建者模式.原型模式.深克隆" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -252,20 +254,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.ByteBufTest">
-    <configuration name="BossAndWorkerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.eventloop.BossAndWorkerTest" />
-      <module name="nettyStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.like.netty.eventloop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="应用程序.TestLengthFiledDecoder">
     <configuration name="ByteBufTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.like.netty.byteBuf.ByteBufTest" />
       <module name="nettyStudy" />
@@ -279,12 +268,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EventLoopTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.eventloop.EventLoopTest" />
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.demoNBBB.Client" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.netty.eventloop.*" />
+          <option name="PATTERN" value="com.like.netty.demoNBBB.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -305,36 +294,57 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EventLoopTest.testThreadCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.demoNBBB.Server" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.netty.eventloop.*" />
+          <option name="PATTERN" value="com.like.netty.demoNBBB.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.like.netty.eventloop" />
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.eventloop.EventLoopTest" />
-      <option name="METHOD_NAME" value="testThreadCount" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLengthFiledDecoder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.demo3.TestLengthFiledDecoder" />
+      <module name="nettyStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.like.netty.demo3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.EventLoopTest.testThreadCount" />
       <item itemvalue="应用程序.NettyClient" />
-      <item itemvalue="应用程序.EventLoopTest" />
-      <item itemvalue="应用程序.BossAndWorkerTest" />
       <item itemvalue="应用程序.ByteBufTest" />
+      <item itemvalue="应用程序.Server" />
+      <item itemvalue="应用程序.Client" />
+      <item itemvalue="应用程序.TestLengthFiledDecoder" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.TestLengthFiledDecoder" />
+        <item itemvalue="应用程序.Client" />
+        <item itemvalue="应用程序.Server" />
         <item itemvalue="应用程序.ByteBufTest" />
         <item itemvalue="应用程序.NettyClient" />
-        <item itemvalue="应用程序.BossAndWorkerTest" />
-        <item itemvalue="应用程序.EventLoopTest" />
-        <item itemvalue="JUnit.EventLoopTest.testThreadCount" />
       </list>
     </recent_temporary>
   </component>
@@ -605,14 +615,8 @@
       <workItem from="1618024769055" duration="7947000" />
       <workItem from="1618047418988" duration="2447000" />
       <workItem from="1618056056953" duration="69000" />
-      <workItem from="1618058090358" duration="682000" />
-    </task>
-    <task id="LOCAL-00143" summary="笔记更新">
-      <created>1612334861867</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1612334861868</updated>
+      <workItem from="1618058090358" duration="980000" />
+      <workItem from="1618108373361" duration="3187000" />
     </task>
     <task id="LOCAL-00144" summary="执行复杂业务-taskQueue -1">
       <created>1612343476902</created>
@@ -950,7 +954,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618031532031</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="byteByf">
+      <created>1618059596710</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1618059596711</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="TestCherrySettings">
@@ -985,7 +996,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="重构" />
     <MESSAGE value="使用中间类扩展该模式" />
     <MESSAGE value="消息隊列模擬" />
     <MESSAGE value="指定运行顺序" />
@@ -1010,7 +1020,8 @@
     <MESSAGE value="netty server and client demo" />
     <MESSAGE value="在eventLoopGroup中提交任务" />
     <MESSAGE value="boss And workder 和绑定其他group" />
-    <option name="LAST_COMMIT_MESSAGE" value="boss And workder 和绑定其他group" />
+    <MESSAGE value="byteByf" />
+    <option name="LAST_COMMIT_MESSAGE" value="byteByf" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

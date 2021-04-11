@@ -1042,3 +1042,187 @@ ByteBuf dBuf = ByteBufAllocator.DEFAULT.directBuffer(); // 直接内存
 调用release回收
 
 在头和为handler 会调用回收
+
+
+
+
+
+
+
+
+
+# Netty进阶
+
+
+
+## 1.粘包和半包
+
+```java
+public static void main(String[] args) {
+
+    NioEventLoopGroup boss = new NioEventLoopGroup();
+    NioEventLoopGroup worker = new NioEventLoopGroup();
+    new ServerBootstrap()
+        .group(boss, worker)
+        .channel(NioServerSocketChannel.class)
+        // .option(ChannelOption.SO_RCVBUF, 10)  // 设置缓冲区  10个字节
+        .childHandler(
+        new ChannelInitializer<NioSocketChannel>() {
+            @Override
+            protected void initChannel(NioSocketChannel ch) throws Exception {
+                ch.pipeline().addLast(new LoggingHandler(LogLevel.DEBUG));
+                ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
+                    @Override
+                    public void channelRead(
+                        ChannelHandlerContext ctx, Object msg) throws Exception {
+                        System.out.println(msg);
+                    }
+                });
+            }
+        })
+        // 7.绑定监听端口 8888
+        .bind(8888);
+}
+
+
+
+public static void main(String[] args) {
+    try {
+        Channel ch = new Bootstrap()
+            .group(new NioEventLoopGroup())
+            .channel(NioSocketChannel.class)
+            .handler(new ChannelInitializer<NioSocketChannel>() {
+                @Override
+                protected void initChannel(NioSocketChannel ch) throws Exception {
+                    ch.pipeline().addLast(new ChannelInboundHandlerAdapter(){
+                        @Override
+                        public void channelActive(ChannelHandlerContext ctx) throws Exception {
+                            for (int i = 0; i < 12; i++) {
+                                ByteBuf buf = ByteBufAllocator.DEFAULT.buffer();
+                                buf.writeBytes(new byte[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15});
+                                ctx.writeAndFlush(buf);
+                            }
+                        }
+                    });
+                }
+            })
+            .connect("localhost", 8888)
+            .sync()
+            .channel();
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+### 粘包现象
+
+![image-20210411105746833](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411105746.png)
+
+### 半包现象
+
+![image-20210411105845961](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411105846.png)
+
+![image-20210411105851280](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411105851.png)
+
+
+
+### 滑动窗口
+
+![image-20210411110112370](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411110112.png)
+
+
+
+### 现象分析
+
+粘包
+
+- 现象：发送abc def 接收 abcdef
+- 原因
+  - 应用层：接收方 ByteBuf设置太大 (netty 默认 1024)
+  - 滑动窗口：假设发送方256字节表示一个完整报文，但由于接收方处理不及时且窗口大小足够大，这256字节就会缓冲在接收方的滑动窗口中，当滑动窗口中缓冲了多个报文就会发生粘包
+  - Nagle算法：会造成粘包
+
+
+
+半包
+
+- 现象：发送 abcdef 接收 abc  def
+- 原因：
+  - 应用层：接收方ByteBuf小于发送数据的字节大小
+  - 滑动窗口：接收方的窗口只有128个字节，但发送了256个字节，放不下了，所以只能先发送128，等ack后在发送剩余的。
+  - MSS限制：当发送的数据超过mss限制后，将数据切分发送，造成半包
+
+
+
+### 解决方案
+
+> LengthFieldBasedFrameDecoder
+
+1.长度字节从第几个字节开始
+
+2.长度字节占多少个字节
+
+3.长度字节过后几个字节是内容字节
+
+4.前几个字节不要了
+
+~~~
+长度字节从第2个字节开始，占2个字节，长度字节后1个字节过后是内容，前3个字节去掉
+~~~
+
+
+
+![image-20210411113535928](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411113536.png)
+
+
+
+
+
+### 测试
+
+```java
+public static void main(String[] args) {
+    EmbeddedChannel lch = new EmbeddedChannel(
+            new LengthFieldBasedFrameDecoder(1024,
+                    0,          // 长度字节从0开始
+                    4,         // 长度字节占4个
+                    1,        // 因为添加了版本号，版本号占一个字节 所以跳过一个字节
+                    5),      // 剥离前5个字节
+            new LoggingHandler(LogLevel.DEBUG)
+    );
+
+    ByteBuf buf = ByteBufAllocator.DEFAULT.buffer();
+
+    writeInBuf(buf,  "Hello,world");
+    writeInBuf(buf,  "Hi!");
+    writeInBuf(buf, "this is server");
+
+    lch.writeInbound(buf);
+}
+
+private static void writeInBuf(ByteBuf buf, String content) {
+    byte[] bytes = content.getBytes();
+    int length = bytes.length;
+
+    buf.writeInt(length);    // 前4个字节表示长度
+    buf.writeByte(1); // 第5个字节表示版本号
+    buf.writeBytes(bytes); // 写入的内容
+}
+```
+
+
+
+
+
+#### 剥离前5个字节
+
+![image-20210411114917348](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411114917.png)
+
+#### 剥离前4个字节
+
+![image-20210411114943397](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411114943.png)
+
+#### 不剥离
+
+![image-20210411115001186](C:%5CUsers%5Cpdd20%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210411115001186.png)
