@@ -1,4 +1,4 @@
-package com.like.netty.protocol;
+package com.like.netty.protocol.test;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
