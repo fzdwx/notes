@@ -1,10 +1,12 @@
 package com.like.netty.protocol.custom.message;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.Set;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @ToString(callSuper = true)
 public class GroupMembersResponseMessage extends Message {
