@@ -7,10 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="netty 粘包半包 解决">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo/TestRedis.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="模拟 redis 协议发送set命令">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/TestHttp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/技术学习/netty学习/Netty入门-1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo/TestRedis.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/TestRedis.java" afterDir="false" />
     </list>
     <list id="bac6a37d-dd42-4db7-a78a-c99c267d3d34" name="nopush" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -252,20 +252,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.TestRedis">
-    <configuration name="ByteBufTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.byteBuf.ByteBufTest" />
-      <module name="nettyStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.like.netty.byteBuf.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="应用程序.TestHttp">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.like.netty.demoNBBB.Client" />
       <module name="nettyStudy" />
@@ -292,6 +279,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestHttp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.TestHttp" />
+      <module name="nettyStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.like.netty.protocol.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestLengthFiledDecoder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.like.netty.demo3.TestLengthFiledDecoder" />
       <module name="nettyStudy" />
@@ -306,11 +306,11 @@
       </method>
     </configuration>
     <configuration name="TestRedis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.demo.TestRedis" />
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.TestRedis" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.netty.demo.*" />
+          <option name="PATTERN" value="com.like.netty.protocol.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -330,19 +330,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.ByteBufTest" />
       <item itemvalue="应用程序.Server" />
+      <item itemvalue="应用程序.TestRedis" />
       <item itemvalue="应用程序.Client" />
       <item itemvalue="应用程序.TestLengthFiledDecoder" />
-      <item itemvalue="应用程序.TestRedis" />
+      <item itemvalue="应用程序.TestHttp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.TestHttp" />
         <item itemvalue="应用程序.TestRedis" />
         <item itemvalue="应用程序.TestLengthFiledDecoder" />
         <item itemvalue="应用程序.Client" />
         <item itemvalue="应用程序.Server" />
-        <item itemvalue="应用程序.ByteBufTest" />
       </list>
     </recent_temporary>
   </component>
@@ -614,14 +614,7 @@
       <workItem from="1618047418988" duration="2447000" />
       <workItem from="1618056056953" duration="69000" />
       <workItem from="1618058090358" duration="980000" />
-      <workItem from="1618108373361" duration="4739000" />
-    </task>
-    <task id="LOCAL-00145" summary="执行复杂业务-taskQueue -2">
-      <created>1612344295356</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1612344295356</updated>
+      <workItem from="1618108373361" duration="5971000" />
     </task>
     <task id="LOCAL-00146" summary="http服务器简单实例">
       <created>1612350430448</created>
@@ -959,7 +952,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618113024813</updated>
     </task>
-    <option name="localTasksCounter" value="194" />
+    <task id="LOCAL-00194" summary="模拟 redis 协议发送set命令">
+      <created>1618114520307</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1618114520307</updated>
+    </task>
+    <option name="localTasksCounter" value="195" />
     <servers />
   </component>
   <component name="TestCherrySettings">
@@ -994,7 +994,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="消息隊列模擬" />
     <MESSAGE value="指定运行顺序" />
     <MESSAGE value="同步模式指定输出顺序 增加2中方法" />
     <MESSAGE value="两阶段终止模式" />
@@ -1019,7 +1018,8 @@
     <MESSAGE value="boss And workder 和绑定其他group" />
     <MESSAGE value="byteByf" />
     <MESSAGE value="netty 粘包半包 解决" />
-    <option name="LAST_COMMIT_MESSAGE" value="netty 粘包半包 解决" />
+    <MESSAGE value="模拟 redis 协议发送set命令" />
+    <option name="LAST_COMMIT_MESSAGE" value="模拟 redis 协议发送set命令" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
