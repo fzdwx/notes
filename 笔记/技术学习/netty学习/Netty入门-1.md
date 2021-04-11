@@ -1225,4 +1225,64 @@ private static void writeInBuf(ByteBuf buf, String content) {
 
 #### 不剥离
 
-![image-20210411115001186](C:%5CUsers%5Cpdd20%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210411115001186.png)
+![image-20210411115001186](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411115001.png)
+
+
+
+
+
+## 2.协议设计和解析
+
+### 模拟redis的协议
+
+模拟redis协议，使用netty发送set命令
+
+```java
+static final String LINE = "\r\n";
+
+public static void main(String[] args) {
+    try {
+       new Bootstrap()
+                .group(new NioEventLoopGroup())
+                .channel(NioSocketChannel.class)
+                .handler(new ChannelInitializer<NioSocketChannel>() {
+                    @Override
+                    protected void initChannel(NioSocketChannel ch) throws Exception {
+                        ch.pipeline().addLast(new LoggingHandler(LogLevel.DEBUG));
+                        ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
+                            @Override
+                            public void channelActive(ChannelHandlerContext ctx) throws Exception {
+                                ByteBuf buf = ctx.alloc().buffer();
+                                write(buf, "*3");
+                                write(buf, "$3");
+                                write(buf, "set");
+                                write(buf, "$4");
+                                write(buf, "name");
+                                write(buf, "$4");    // $ +  发送内容的长度
+                                write(buf, "like");
+                                // set name like
+                                ctx.writeAndFlush(buf);
+                            }
+                        });
+                    }
+                    @Override
+                    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+                        ByteBuf buf = (ByteBuf) msg;
+                        System.out.println(buf.toString(Charset.defaultCharset()));
+                    }
+                })
+                .connect("localhost", 6379);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+private static void write(ByteBuf buf, String value) {
+    buf.writeBytes(value.getBytes());
+    buf.writeBytes(LINE.getBytes());
+}
+```
+
+![image-20210411121442226](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411121442.png)
+
+![image-20210411121456985](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411121457.png)
