@@ -1,6 +1,7 @@
 package com.like.netty.protocol.custom.protocol;
 
 import com.like.netty.protocol.custom.message.LoginRequestMessage;
+import com.like.netty.protocol.custom.message.protocol.MessageCodec;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 import io.netty.channel.embedded.EmbeddedChannel;
@@ -26,7 +27,7 @@ class MessageCodecTest {
 
         // test decode
         ByteBuf buf = ByteBufAllocator.DEFAULT.buffer();
-        new MessageCodec().encode(null, msg, buf);
+        // new MessageCodec().encode(null, msg, buf);
         ByteBuf s1 = buf.slice(0, 100);
         ByteBuf s2 = buf.slice(100, buf.readableBytes() - 100);
         // test.writeInbound(buf);
