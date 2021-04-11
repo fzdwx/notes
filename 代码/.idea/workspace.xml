@@ -7,11 +7,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="自定义消息解析器">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/LikeChannelPipeline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/protocol/MessageCodecSharable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="目录更新">
       <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/handler/LikeChannelPipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/LikeChannelPipeline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/AbstractResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/AbstractResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/ChatRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/ChatRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/ChatResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/ChatResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/GroupChatRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupChatRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/GroupChatResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupChatResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/GroupCreateRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupCreateRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/GroupCreateResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupCreateResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/GroupJoinRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupJoinRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/GroupJoinResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupJoinResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/GroupMembersRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupMembersRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/GroupMembersResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupMembersResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/GroupQuitRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupQuitRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/GroupQuitResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupQuitResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/LoginRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/LoginRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/LoginResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/LoginResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/PingMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/PingMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/PongMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/PongMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/RpcRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/RpcRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/message/RpcResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/RpcResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/protocol/MessageCodec.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/protocol/MessageCodec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/protocol/MessageCodecSharable.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/protocol/MessageCodecSharable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/protocol/custom/chat/protocol/MessageCodecTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/test/java/com/like/netty/protocol/custom/protocol/MessageCodecTest.java" afterDir="false" />
     </list>
     <list id="bac6a37d-dd42-4db7-a78a-c99c267d3d34" name="nopush" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -199,6 +220,7 @@
       <recent name="FizzOrBuzz" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.like.netty.protocol.custom" />
       <recent name="com.like.netty" />
       <recent name="数据结构和算法.数据结构" />
     </key>
@@ -268,11 +290,11 @@
       </method>
     </configuration>
     <configuration name="MessageCodec" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.custom.chat.protocol.MessageCodec" />
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.custom.protocol.MessageCodec" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.netty.protocol.custom.chat.protocol.*" />
+          <option name="PATTERN" value="com.like.netty.protocol.custom.protocol.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -281,11 +303,11 @@
       </method>
     </configuration>
     <configuration name="MessageCodecTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.custom.chat.protocol.MessageCodecTest" />
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.custom.protocol.MessageCodecTest" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.netty.protocol.custom.chat.protocol.*" />
+          <option name="PATTERN" value="com.like.netty.protocol.custom.protocol.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -615,14 +637,7 @@
       <workItem from="1618047418988" duration="2447000" />
       <workItem from="1618056056953" duration="69000" />
       <workItem from="1618058090358" duration="980000" />
-      <workItem from="1618108373361" duration="13688000" />
-    </task>
-    <task id="LOCAL-00148" summary="demo1">
-      <created>1614477737582</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1614477737582</updated>
+      <workItem from="1618108373361" duration="14006000" />
     </task>
     <task id="LOCAL-00149" summary="线程调度demo">
       <created>1614480918087</created>
@@ -960,7 +975,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618122828921</updated>
     </task>
-    <option name="localTasksCounter" value="197" />
+    <task id="LOCAL-00197" summary="目录更新">
+      <created>1618124303011</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1618124303011</updated>
+    </task>
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TestCherrySettings">
@@ -995,7 +1017,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="两阶段终止模式" />
     <MESSAGE value="cas 以及 unsafe 的简单使用" />
     <MESSAGE value="享元模式之数据库连接池" />
     <MESSAGE value="自定义线程池" />
@@ -1020,7 +1041,8 @@
     <MESSAGE value="模拟 redis 协议发送set命令" />
     <MESSAGE value="模拟http协议" />
     <MESSAGE value="自定义消息解析器" />
-    <option name="LAST_COMMIT_MESSAGE" value="自定义消息解析器" />
+    <MESSAGE value="目录更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="目录更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

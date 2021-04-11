@@ -6,7 +6,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
-import static com.like.netty.protocol.custom.chat.handler.LikeChannelPipeline.*;
+import static com.like.netty.protocol.custom.handler.LikeChannelPipeline.*;
 
 /**
  * Create By like On 2021-04-11 14:30

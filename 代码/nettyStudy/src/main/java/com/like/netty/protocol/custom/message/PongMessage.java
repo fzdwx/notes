@@ -1,4 +1,4 @@
-package com.like.netty.protocol.custom.chat.message;
+package com.like.netty.protocol.custom.message;
 
 public class PongMessage extends Message {
     @Override

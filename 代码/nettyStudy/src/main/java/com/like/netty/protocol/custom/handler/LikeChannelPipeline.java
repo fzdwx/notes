@@ -1,7 +1,7 @@
-package com.like.netty.protocol.custom.chat.handler;
+package com.like.netty.protocol.custom.handler;
 
-import com.like.netty.protocol.custom.chat.protocol.MessageCodec;
-import com.like.netty.protocol.custom.chat.protocol.MessageCodecSharable;
+import com.like.netty.protocol.custom.protocol.MessageCodec;
+import com.like.netty.protocol.custom.protocol.MessageCodecSharable;
 import com.sun.istack.internal.NotNull;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.logging.LogLevel;

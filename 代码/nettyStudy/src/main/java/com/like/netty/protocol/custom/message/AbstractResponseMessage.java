@@ -1,4 +1,4 @@
-package com.like.netty.protocol.custom.chat.message;
+package com.like.netty.protocol.custom.message;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
