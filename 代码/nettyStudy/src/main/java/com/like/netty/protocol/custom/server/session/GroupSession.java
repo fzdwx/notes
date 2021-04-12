@@ -13,15 +13,18 @@ import java.util.Set;
 public interface GroupSession {
 
     /**
+     * 创建组
      * 创建聊天组,如果不存在就创建成功，否则返回null
      *
      * @param name    group的名字
      *                {@link String}
      * @param members 成员
      *                {@link Set<String>}
+     * @param creator 聊天室所有者
+     *                 {@link String}
      * @return {@link Group}
      */
-    Group createGroup(String name, Set<String> members);
+    Group createGroup(String name, Set<String> members,String creator);
 
     /**
      * 解散聊天组

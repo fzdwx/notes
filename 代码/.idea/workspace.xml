@@ -7,15 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="聊天室 登录检测">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/ChatRequestMessageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/LoginRequestMessageHandler.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="私聊完成">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/GroupCreateRequestMessageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/LikeChannelPipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/LikeChannelMustPipeline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/ChatRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/ChatRequestMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/protocol/MessageCodecSharable.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/protocol/MessageCodecSharable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/ChatRequestMessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/ChatRequestMessageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupCreateRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupCreateRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/GroupSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/GroupSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/impl/GroupSessionMemoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/impl/GroupSessionMemoryImpl.java" afterDir="false" />
     </list>
     <list id="bac6a37d-dd42-4db7-a78a-c99c267d3d34" name="nopush" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -584,14 +585,7 @@
       <workItem from="1618108373361" duration="27941000" />
       <workItem from="1618220924960" duration="1397000" />
       <workItem from="1618222946095" duration="94000" />
-      <workItem from="1618227660378" duration="2360000" />
-    </task>
-    <task id="LOCAL-00153" summary="守护线程 demo">
-      <created>1614484693987</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1614484693987</updated>
+      <workItem from="1618227660378" duration="4194000" />
     </task>
     <task id="LOCAL-00154" summary="update 整合maven">
       <created>1614493037597</created>
@@ -929,7 +923,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618137968125</updated>
     </task>
-    <option name="localTasksCounter" value="202" />
+    <task id="LOCAL-00202" summary="私聊完成">
+      <created>1618230072523</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1618230072524</updated>
+    </task>
+    <option name="localTasksCounter" value="203" />
     <servers />
   </component>
   <component name="TestCherrySettings">
@@ -964,7 +965,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fork join 案例以及笔记更新" />
     <MESSAGE value="buffer的初步使用" />
     <MESSAGE value="byte方法使用" />
     <MESSAGE value="笔记更新" />
@@ -989,7 +989,8 @@
     <MESSAGE value="add factory" />
     <MESSAGE value="聊天室业务" />
     <MESSAGE value="聊天室 登录检测" />
-    <option name="LAST_COMMIT_MESSAGE" value="聊天室 登录检测" />
+    <MESSAGE value="私聊完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="私聊完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

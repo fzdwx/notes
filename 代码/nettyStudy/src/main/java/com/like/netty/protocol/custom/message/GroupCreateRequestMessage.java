@@ -11,11 +11,13 @@ import java.util.Set;
 @ToString(callSuper = true)
 public class GroupCreateRequestMessage extends Message {
     private String groupName;
+    private String creator;
     private Set<String> members;
 
-    public GroupCreateRequestMessage(String groupName, Set<String> members) {
+    public GroupCreateRequestMessage(String groupName, Set<String> members, String creator) {
         this.groupName = groupName;
         this.members = members;
+        this.creator = creator;
     }
 
     @Override

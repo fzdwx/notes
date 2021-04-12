@@ -13,8 +13,8 @@ public class GroupSessionMemoryImpl implements GroupSession {
     private final Map<String, Group> groupMap = new ConcurrentHashMap<>();
 
     @Override
-    public Group createGroup(String name, Set<String> members) {
-        Group group = new Group(name, members);
+    public Group createGroup(String name, Set<String> members,String creator) {
+        Group group = new Group(name, members,creator);
         return groupMap.putIfAbsent(name, group);
     }
 

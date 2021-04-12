@@ -12,9 +12,11 @@ import java.util.Objects;
 
 /**
  * Create By like On 2021-04-12 19:48
- *
- * 聊天信息处理器
+ * <p>
+ * 私聊 聊天信息处理器
  * from -> to
+ * @see ChatRequestMessage   私聊消息请求
+ * @see ChatResponseMessage  私聊消息响应
  */
 @ChannelHandler.Sharable
 public class ChatRequestMessageHandler extends SimpleChannelInboundHandler<ChatRequestMessage> {

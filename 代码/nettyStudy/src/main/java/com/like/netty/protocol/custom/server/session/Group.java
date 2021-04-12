@@ -10,15 +10,21 @@ import java.util.Set;
  * 聊天组，即聊天室
  */
 public class Group {
-    // 聊天室名称
+    /** 聊天室名称 */
     private String name;
-    // 聊天室成员
+    /** 创造者 */
+    private String creator;
+    /** 聊天室成员 */
     private Set<String> members;
 
-    public static final Group EMPTY_GROUP = new Group("empty", Collections.emptySet());
+    /** 空 */
+    private static final String empty = "empty";
+    /** 空的组 */
+    public static final Group EMPTY_GROUP = new Group(empty, Collections.emptySet(), empty);
 
-    public Group(String name, Set<String> members) {
+    public Group(String name, Set<String> members, String creator) {
         this.name = name;
         this.members = members;
+        this.creator = creator;
     }
 }

@@ -1,6 +1,7 @@
 package com.like.netty.protocol.custom.chat;
 
 import com.like.netty.protocol.custom.handler.server.ChatRequestMessageHandler;
+import com.like.netty.protocol.custom.handler.server.GroupCreateRequestMessageHandler;
 import com.like.netty.protocol.custom.handler.server.LoginRequestMessageHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
@@ -9,7 +10,8 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
-import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.*;
+import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolCodecSharable;
+import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolFrameDecoder;
 
 /**
  * Create By like On 2021-04-11 14:30
@@ -38,7 +40,8 @@ public class ChatServer {
                                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
 
                                     ch.pipeline().addLast(new LoginRequestMessageHandler());  // 登录消息处理器
-                                    ch.pipeline().addLast(new ChatRequestMessageHandler());  // 聊天消息处理器
+                                    ch.pipeline().addLast(new ChatRequestMessageHandler());  // 私聊消息处理器
+                                    ch.pipeline().addLast(new GroupCreateRequestMessageHandler());  // 创建群聊处理器
                                 }
                             });
             Channel channel = boot.bind(serverPort).sync().channel();
