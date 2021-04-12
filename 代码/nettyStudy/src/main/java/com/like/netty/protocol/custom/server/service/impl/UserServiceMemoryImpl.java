@@ -1,7 +1,11 @@
 package com.like.netty.protocol.custom.server.service.impl;
 
+import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.core.util.StrUtil;
+import com.like.netty.protocol.custom.message.LoginResponseMessage;
 import com.like.netty.protocol.custom.server.service.UserService;
-import org.springframework.util.StringUtils;
+import com.like.netty.protocol.custom.server.session.SessionFactory;
+import io.netty.channel.Channel;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -27,9 +31,32 @@ public class UserServiceMemoryImpl implements UserService {
     };
 
     @Override
-    public boolean login(String username, String password) {
+    public LoginStats login(String username, String password) {
         final String pwd = users.get(username);
-        if (StringUtils.isEmpty(pwd)) return false;
-        return pwd.equals(password);
+        if (StrUtil.isBlank(pwd)) return new LoginStats(LoginStats.noUserInformation, false);
+        final boolean equalsPwd = password.equals(pwd);
+
+        if (equalsPwd) {
+            final Channel channel = SessionFactory.getSession().getChannel(username);
+            if (ObjectUtil.isNotNull(channel)) {
+                channel.writeAndFlush(new LoginResponseMessage(false, "账户异地登录，您已被挤下线"));
+                channel.close();
+            } // END 判断用户是否重复登录
+        } else {
+            new LoginStats(LoginStats.passwordMistake, false);
+        }
+        return new LoginStats(LoginStats.success, true);
+
+
+    }
+
+    @Override
+    public boolean register(String username, String password) {
+        final String pwd = users.get(username);
+        // 用户已经注册过了
+        if (StrUtil.isNotBlank(pwd)) { return false;}
+
+        users.putIfAbsent(username, password);
+        return true;
     }
 }

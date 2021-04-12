@@ -29,7 +29,7 @@ public class GroupCreateRequestMessageHandler extends SimpleChannelInboundHandle
         final Group group = groupSession.createGroup(groupName, members, creator);
         if (ObjectUtil.isNull(group)) {
             // 创建失败
-            ctx.writeAndFlush(new GroupCreateResponseMessage(true, groupName + "创建失败，组名已经存在"));
+            ctx.writeAndFlush(new GroupCreateResponseMessage(true, groupName + "创建失败！！！"));
         } else {
             // 创建成功
             ctx.writeAndFlush(new GroupCreateResponseMessage(true, groupName + "创建成功！"));

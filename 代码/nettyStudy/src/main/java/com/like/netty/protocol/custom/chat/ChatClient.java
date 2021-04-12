@@ -1,6 +1,7 @@
 package com.like.netty.protocol.custom.chat;
 
 import com.like.netty.protocol.custom.message.*;
+import com.like.netty.protocol.custom.server.service.UserService;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
@@ -18,7 +19,8 @@ import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.*;
+import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolCodecSharable;
+import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolFrameDecoder;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
@@ -47,12 +49,15 @@ public class ChatClient {
                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
 
                     ch.pipeline().addLast("client handler", new ChannelInboundHandlerAdapter() {
+                        LoginResponseMessage response = null;
+
                         // 接收响应消息
                         @Override
                         public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
                             log.debug("msg: {}", msg);
+
                             if ((msg instanceof LoginResponseMessage)) {
-                                LoginResponseMessage response = (LoginResponseMessage) msg;
+                                response = (LoginResponseMessage) msg;
                                 if (response.isSuccess()) {
                                     // 如果登录成功
                                     loginBol.set(true);
@@ -61,6 +66,10 @@ public class ChatClient {
                                 // 唤醒 system in 线程
                                 waitForLogin.countDown();
                             }
+                            if (msg instanceof RegisterResponseMessage) {
+                                System.out.println(((RegisterResponseMessage) msg).getReason());
+                            }
+
                         }
 
                         // 在连接建立后触发 active 事件
@@ -91,8 +100,21 @@ public class ChatClient {
                                 }
                                 // 如果登录失败
                                 if (!loginBol.get()) {
-                                    ctx.channel().close();
-                                    return;
+                                    final String reason = response.getReason();
+                                    if (reason.equals(UserService.LoginStats.noUserInformation)) {
+                                        System.out.println(reason + ",请问您是否需要注册？[[y/n]");
+                                        if (scanner.nextLine().equals("y")) {
+                                            System.out.println("请输入用户名:");
+                                            username = scanner.nextLine();
+
+                                            System.out.println("请输入密码:");
+                                            password = scanner.nextLine();
+                                            ctx.writeAndFlush(new RegisterRequestMessage(username, password));
+                                        } else {
+                                            ctx.channel().close(); // 不需要注册
+                                            return;
+                                        }
+                                    } // END IF 判断是否需要注册
                                 }
                                 while (true) {
                                     outMenu();  // 输出菜单
@@ -166,6 +188,7 @@ public class ChatClient {
 
     private static void outMenu() {
         System.out.println("==================================");
+        System.out.println("register [username] [password]");
         System.out.println("send [username] [content]");
         System.out.println("gsend [group name] [content]");
         System.out.println("gcreate [group name] [m1,m2,m3...]");

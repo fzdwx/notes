@@ -19,6 +19,8 @@ public abstract class Message implements Serializable {
 
     public abstract int getMessageType();
 
+    public static final int RegisterRequestMessage = -1;
+    public static final int RegisterResponseMessage = -2;
     public static final int LoginRequestMessage = 0;
     public static final int LoginResponseMessage = 1;
     public static final int ChatRequestMessage = 2;
@@ -36,6 +38,8 @@ public abstract class Message implements Serializable {
     private static final Map<Integer, Class<?>> messageClasses = new HashMap<>();
 
     static {
+        messageClasses.put(RegisterRequestMessage, RegisterRequestMessage.class);
+        messageClasses.put(RegisterResponseMessage, RegisterResponseMessage.class);
         messageClasses.put(LoginRequestMessage, LoginRequestMessage.class);
         messageClasses.put(LoginResponseMessage, LoginResponseMessage.class);
         messageClasses.put(ChatRequestMessage, ChatRequestMessage.class);
