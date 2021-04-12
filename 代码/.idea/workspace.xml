@@ -7,11 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="">
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="聊天室 登录检测">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/ChatRequestMessageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/LoginRequestMessageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/LoginResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/LoginResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/LikeChannelPipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/LikeChannelMustPipeline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/ChatRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/ChatRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/protocol/MessageCodecSharable.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/protocol/MessageCodecSharable.java" afterDir="false" />
     </list>
     <list id="bac6a37d-dd42-4db7-a78a-c99c267d3d34" name="nopush" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,14 +163,14 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -202,6 +206,10 @@
       <recent name="com.like.netty.protocol.custom" />
       <recent name="com.like.netty" />
       <recent name="数据结构和算法.数据结构" />
+    </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="com.like.netty.protocol.custom.handler" />
+      <recent name="com.like.netty.protocol.custom.chat" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.like.netty.protocol.custom.protocol" />
@@ -253,22 +261,9 @@
         <option value="XSLT" />
       </set>
     </option>
-    <option name="hiddenConfigurations">
-      <map>
-        <entry key="Application">
-          <value>
-            <set>
-              <option value="MessageCodec" />
-              <option value="MessageCodecTest" />
-              <option value="TestHttp" />
-            </set>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="RunManager" selected="应用程序.ChatClient">
-    <configuration name="ChatClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.custom.chat.ChatClient" />
       <module name="nettyStudy" />
       <extension name="coverage">
@@ -294,13 +289,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -584,14 +581,10 @@
       <workItem from="1618047418988" duration="2447000" />
       <workItem from="1618056056953" duration="69000" />
       <workItem from="1618058090358" duration="980000" />
-      <workItem from="1618108373361" duration="27302000" />
-    </task>
-    <task id="LOCAL-00152" summary="打断park状态下的demo">
-      <created>1614484344632</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1614484344632</updated>
+      <workItem from="1618108373361" duration="27941000" />
+      <workItem from="1618220924960" duration="1397000" />
+      <workItem from="1618222946095" duration="94000" />
+      <workItem from="1618227660378" duration="2360000" />
     </task>
     <task id="LOCAL-00153" summary="守护线程 demo">
       <created>1614484693987</created>
@@ -929,7 +922,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618128246934</updated>
     </task>
-    <option name="localTasksCounter" value="201" />
+    <task id="LOCAL-00201" summary="聊天室 登录检测">
+      <created>1618137968125</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1618137968125</updated>
+    </task>
+    <option name="localTasksCounter" value="202" />
     <servers />
   </component>
   <component name="TestCherrySettings">
@@ -964,8 +964,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="自定义线程池" />
-    <MESSAGE value="更新注释" />
     <MESSAGE value="fork join 案例以及笔记更新" />
     <MESSAGE value="buffer的初步使用" />
     <MESSAGE value="byte方法使用" />
@@ -989,7 +987,9 @@
     <MESSAGE value="目录更新" />
     <MESSAGE value="准备完成" />
     <MESSAGE value="add factory" />
-    <option name="LAST_COMMIT_MESSAGE" value="add factory" />
+    <MESSAGE value="聊天室业务" />
+    <MESSAGE value="聊天室 登录检测" />
+    <option name="LAST_COMMIT_MESSAGE" value="聊天室 登录检测" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

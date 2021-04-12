@@ -18,7 +18,7 @@ import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.like.netty.protocol.custom.handler.LikeChannelPipeline.*;
+import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.*;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
@@ -42,24 +42,10 @@ public class ChatClient {
             bootstrap.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected void initChannel(SocketChannel ch) throws Exception {
-                    ch.pipeline().addLast(getLogHandler());
+                    // ch.pipeline().addLast(getLogHandler());
                     ch.pipeline().addLast(getLikeProtocolCodecSharable());
                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
 
-                    // ch.pipeline().addLast(new IdleStateHandler(0, 3, 0));
-                    // ChannelDuplexHandler 可以同时作为入站和出站处理器
-                    /*ch.pipeline().addLast(new ChannelDuplexHandler() {
-                        // 用来触发特殊事件
-                        @Override
-                        public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
-                            IdleStateEvent event = (IdleStateEvent) evt;
-                            // 触发了写空闲事件
-                            if (event.state() == IdleState.WRITER_IDLE) {
-                                //                                log.debug("3s 没有写数据了，发送一个心跳包");
-                                ctx.writeAndFlush(new PingMessage());
-                            }
-                        }
-                    });*/
                     ch.pipeline().addLast("client handler", new ChannelInboundHandlerAdapter() {
                         // 接收响应消息
                         @Override
@@ -84,21 +70,21 @@ public class ChatClient {
                             new Thread(() -> {
                                 System.out.println("请输入用户名:");
                                 String username = scanner.nextLine();
-                                if (exitBol.get()) {
-                                    return;
-                                }
+
+                                if (exitBol.get()) return;
+
                                 System.out.println("请输入密码:");
                                 String password = scanner.nextLine();
-                                if (exitBol.get()) {
-                                    return;
-                                }
+
+                                if (exitBol.get()) return;
+
                                 // 构造消息对象
                                 LoginRequestMessage message = new LoginRequestMessage(username, password);
                                 System.out.println(message);
                                 // 发送消息
                                 ctx.writeAndFlush(message);
                                 System.out.println("等待后续操作...");
-                                try {
+                                try {  // 阻塞  等待登录业务处理
                                     waitForLogin.await();
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
@@ -109,50 +95,16 @@ public class ChatClient {
                                     return;
                                 }
                                 while (true) {
-                                    System.out.println("==================================");
-                                    System.out.println("send [username] [content]");
-                                    System.out.println("gsend [group name] [content]");
-                                    System.out.println("gcreate [group name] [m1,m2,m3...]");
-                                    System.out.println("gmembers [group name]");
-                                    System.out.println("gjoin [group name]");
-                                    System.out.println("gquit [group name]");
-                                    System.out.println("quit");
-                                    System.out.println("==================================");
+                                    outMenu();  // 输出菜单
                                     String command = null;
                                     try {
                                         command = scanner.nextLine();
                                     } catch (Exception e) {
                                         break;
                                     }
-                                    if (exitBol.get()) {
-                                        return;
-                                    }
-                                    String[] s = command.split(" ");
-                                    switch (s[0]) {
-                                        case "send":
-                                            ctx.writeAndFlush(new ChatRequestMessage(username, s[1], s[2]));
-                                            break;
-                                        case "gsend":
-                                            ctx.writeAndFlush(new GroupChatRequestMessage(username, s[1], s[2]));
-                                            break;
-                                        case "gcreate":
-                                            Set<String> set = new HashSet<>(Arrays.asList(s[2].split(",")));
-                                            set.add(username); // 加入自己
-                                            ctx.writeAndFlush(new GroupCreateRequestMessage(s[1], set));
-                                            break;
-                                        case "gmembers":
-                                            ctx.writeAndFlush(new GroupMembersRequestMessage(s[1]));
-                                            break;
-                                        case "gjoin":
-                                            ctx.writeAndFlush(new GroupJoinRequestMessage(username, s[1]));
-                                            break;
-                                        case "gquit":
-                                            ctx.writeAndFlush(new GroupQuitRequestMessage(username, s[1]));
-                                            break;
-                                        case "quit":
-                                            ctx.channel().close();
-                                            return;
-                                    }
+                                    if (exitBol.get()) return;
+
+                                    if (switchCommand(ctx, username, command)) return;
                                 }
                             }, "system in").start();
                         }
@@ -180,6 +132,48 @@ public class ChatClient {
         } finally {
             group.shutdownGracefully();
         }
+    }
+
+    private static boolean switchCommand(ChannelHandlerContext ctx, String username, String command) {
+        String[] s = command.split(" ");
+        switch (s[0]) {
+            case "send":
+                ctx.writeAndFlush(new ChatRequestMessage(username, s[1], s[2]));
+                break;
+            case "gsend":
+                ctx.writeAndFlush(new GroupChatRequestMessage(username, s[1], s[2]));
+                break;
+            case "gcreate":
+                Set<String> set = new HashSet<>(Arrays.asList(s[2].split(",")));
+                set.add(username); // 加入自己
+                ctx.writeAndFlush(new GroupCreateRequestMessage(s[1], set));
+                break;
+            case "gmembers":
+                ctx.writeAndFlush(new GroupMembersRequestMessage(s[1]));
+                break;
+            case "gjoin":
+                ctx.writeAndFlush(new GroupJoinRequestMessage(username, s[1]));
+                break;
+            case "gquit":
+                ctx.writeAndFlush(new GroupQuitRequestMessage(username, s[1]));
+                break;
+            case "quit":
+                ctx.channel().close();
+                return true;
+        }
+        return false;
+    }
+
+    private static void outMenu() {
+        System.out.println("==================================");
+        System.out.println("send [username] [content]");
+        System.out.println("gsend [group name] [content]");
+        System.out.println("gcreate [group name] [m1,m2,m3...]");
+        System.out.println("gmembers [group name]");
+        System.out.println("gjoin [group name]");
+        System.out.println("gquit [group name]");
+        System.out.println("quit");
+        System.out.println("==================================");
     }
 }
 
@@ -214,7 +208,7 @@ public class ChatClient {
                                         }
                                         // 唤醒 system in 线程
                                         waitForLogin.countDown();
-                                    }
+                                   }
                                 }
 
                                 // 在连接建立后触发 active 事件
@@ -251,7 +245,7 @@ public class ChatClient {
                                             System.out.println("==================================");
                                             System.out.println("send [username] [content]");
                                             System.out.println("gsend [group name] [content]");
-                                            System.out.println("gcreate [group name] [m1,m2,m3...]");
+                  *                         System.out.println("gcreate [group name] [m1,m2,m3...]");
                                             System.out.println("gmembers [group name]");
                                             System.out.println("gjoin [group name]");
                                             System.out.println("gquit [group name]");

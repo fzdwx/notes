@@ -15,7 +15,7 @@ import io.netty.handler.logging.LoggingHandler;
  * @see this#getLikeProtocolCodecSharable()
  * @see this#getLikeProtocolFrameDecoder()
  */
-public class LikeChannelPipeline {
+public class LikeChannelMustPipeline {
     /** 日志处理handler */
     private static final LoggingHandler loggingHandler = new LoggingHandler(LogLevel.DEBUG);
     /** like 协议编解码器可分享的 */
@@ -36,6 +36,7 @@ public class LikeChannelPipeline {
      * 协议主要实现
      * order 2
      * MessageCodecSharable extents {@link MessageCodec}
+     *
      * @return {@link MessageCodecSharable}
      */
     public static MessageCodecSharable getLikeProtocolCodecSharable() {

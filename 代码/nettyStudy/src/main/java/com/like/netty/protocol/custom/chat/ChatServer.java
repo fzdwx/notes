@@ -1,19 +1,15 @@
 package com.like.netty.protocol.custom.chat;
 
-import com.like.netty.protocol.custom.message.LoginRequestMessage;
-import com.like.netty.protocol.custom.message.LoginResponseMessage;
-import com.like.netty.protocol.custom.server.service.UserServiceFactory;
-import com.like.netty.protocol.custom.server.session.SessionFactory;
+import com.like.netty.protocol.custom.handler.server.ChatRequestMessageHandler;
+import com.like.netty.protocol.custom.handler.server.LoginRequestMessageHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
-import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
-import static com.like.netty.protocol.custom.handler.LikeChannelPipeline.*;
+import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.*;
 
 /**
  * Create By like On 2021-04-11 14:30
@@ -37,25 +33,12 @@ public class ChatServer {
                             new ChannelInitializer<NioSocketChannel>() {
                                 @Override
                                 protected void initChannel(NioSocketChannel ch) throws Exception {
-                                    ch.pipeline().addLast(getLogHandler());
+                                    // ch.pipeline().addLast(getLogHandler());
                                     ch.pipeline().addLast(getLikeProtocolCodecSharable());
                                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
 
-                                    ch.pipeline().addLast(new SimpleChannelInboundHandler<LoginRequestMessage>() {
-                                        @Override
-                                        protected void channelRead0(ChannelHandlerContext ctx, LoginRequestMessage msg) throws Exception {
-                                            boolean login = UserServiceFactory.getUserService().login(msg.getUsername(), msg.getPassword());
-                                            LoginResponseMessage message;
-                                            if (login) {
-                                                SessionFactory.getSession().bind(ctx.channel(), msg.getUsername());
-                                                message = new LoginResponseMessage(true, "登录成功:" + msg.getUsername());
-                                            } else {
-                                                message = new LoginResponseMessage(false, "用户名或密码不正确");
-                                            }
-                                            System.out.println(message);
-                                            ctx.writeAndFlush(message);
-                                        }
-                                    });
+                                    ch.pipeline().addLast(new LoginRequestMessageHandler());  // 登录消息处理器
+                                    ch.pipeline().addLast(new ChatRequestMessageHandler());  // 聊天消息处理器
                                 }
                             });
             Channel channel = boot.bind(serverPort).sync().channel();

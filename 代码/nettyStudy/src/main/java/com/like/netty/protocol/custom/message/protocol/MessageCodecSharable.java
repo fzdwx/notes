@@ -1,6 +1,6 @@
 package com.like.netty.protocol.custom.message.protocol;
 
-import com.like.netty.protocol.custom.handler.LikeChannelPipeline;
+import com.like.netty.protocol.custom.handler.LikeChannelMustPipeline;
 import com.like.netty.protocol.custom.message.Message;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandler;
@@ -19,7 +19,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * Create By like On 2021-04-11 14:41
- * 必须 配合该解码器使用 {@link LikeChannelPipeline#getLikeProtocolFrameDecoder()}
+ * 必须 配合该解码器使用 {@link LikeChannelMustPipeline#getLikeProtocolFrameDecoder()}
  */
 @ChannelHandler.Sharable
 public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message> {
@@ -65,13 +65,13 @@ public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message
         ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(msg));
         Message message = (Message) ois.readObject();
         // }
-        log.info("#decode(..):magicNumber:{}", magicNumber);
+      /*  log.info("#decode(..):magicNumber:{}", magicNumber);
         log.info("#decode(..):version:{}", version);
         log.info("#decode(..):serializationType:{}", serializationType);
         log.info("#decode(..):messageType:{}", messageType);
         log.info("#decode(..):seqId:{}", seqId);
         log.info("#decode(..):msgArrayLen:{}", msgArrayLen);
-        log.info("#decode(..):message:{}", message);
+        log.info("#decode(..):message:{}", message);*/
 
         out.add(message);
     }
