@@ -1,5 +1,6 @@
-package com.like.netty.protocol.custom.server.session;
+package com.like.netty.protocol.custom.server.session.factory;
 
+import com.like.netty.protocol.custom.server.session.Session;
 import com.like.netty.protocol.custom.server.session.impl.SessionMemoryImpl;
 
 public abstract class SessionFactory {

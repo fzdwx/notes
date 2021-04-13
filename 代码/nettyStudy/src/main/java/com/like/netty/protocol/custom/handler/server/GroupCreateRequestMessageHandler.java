@@ -4,7 +4,7 @@ import cn.hutool.core.util.ObjectUtil;
 import com.like.netty.protocol.custom.message.chat.GroupCreateRequestMessage;
 import com.like.netty.protocol.custom.message.chat.GroupCreateResponseMessage;
 import com.like.netty.protocol.custom.server.session.GroupSession;
-import com.like.netty.protocol.custom.server.session.GroupSessionFactory;
+import com.like.netty.protocol.custom.server.session.factory.GroupSessionFactory;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;

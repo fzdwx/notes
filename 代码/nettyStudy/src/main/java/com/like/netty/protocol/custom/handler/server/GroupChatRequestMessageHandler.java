@@ -3,7 +3,7 @@ package com.like.netty.protocol.custom.handler.server;
 import com.like.netty.protocol.custom.message.chat.GroupChatRequestMessage;
 import com.like.netty.protocol.custom.message.chat.GroupChatResponseMessage;
 import com.like.netty.protocol.custom.server.session.GroupSession;
-import com.like.netty.protocol.custom.server.session.GroupSessionFactory;
+import com.like.netty.protocol.custom.server.session.factory.GroupSessionFactory;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

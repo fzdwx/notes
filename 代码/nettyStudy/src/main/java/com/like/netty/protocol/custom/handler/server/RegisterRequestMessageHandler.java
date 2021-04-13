@@ -2,8 +2,8 @@ package com.like.netty.protocol.custom.handler.server;
 
 import com.like.netty.protocol.custom.message.chat.RegisterRequestMessage;
 import com.like.netty.protocol.custom.message.chat.RegisterResponseMessage;
-import com.like.netty.protocol.custom.server.service.UserServiceFactory;
-import com.like.netty.protocol.custom.server.session.SessionFactory;
+import com.like.netty.protocol.custom.server.service.factory.UserServiceFactory;
+import com.like.netty.protocol.custom.server.session.factory.SessionFactory;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 

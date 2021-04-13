@@ -1,6 +1,6 @@
 package com.like.netty.protocol.custom.handler.server;
 
-import com.like.netty.protocol.custom.server.session.SessionFactory;
+import com.like.netty.protocol.custom.server.session.factory.SessionFactory;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

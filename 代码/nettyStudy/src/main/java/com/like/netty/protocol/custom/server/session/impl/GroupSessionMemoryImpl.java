@@ -3,7 +3,7 @@ package com.like.netty.protocol.custom.server.session.impl;
 import cn.hutool.core.util.ObjectUtil;
 import com.like.netty.protocol.custom.server.session.Group;
 import com.like.netty.protocol.custom.server.session.GroupSession;
-import com.like.netty.protocol.custom.server.session.SessionFactory;
+import com.like.netty.protocol.custom.server.session.factory.SessionFactory;
 import io.netty.channel.Channel;
 
 import java.util.*;
