@@ -1,10 +1,16 @@
 package com.like.netty.protocol.custom.chat;
 
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONUtil;
 import com.like.netty.protocol.custom.handler.HeatBeatPongMessageHandler;
+import com.like.netty.protocol.custom.message.Message;
 import com.like.netty.protocol.custom.message.chat.*;
 import com.like.netty.protocol.custom.server.service.UserService;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.*;
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -16,6 +22,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.*;
 import static org.slf4j.LoggerFactory.getLogger;
@@ -34,6 +41,7 @@ public class ChatClient {
         AtomicBoolean loginBol = new AtomicBoolean(false);
         AtomicBoolean exitBol = new AtomicBoolean(false);
         Scanner scanner = new Scanner(System.in);
+        AtomicReference<String> username = new AtomicReference<>("null");
         try {
             Bootstrap bootstrap = new Bootstrap();
             bootstrap.channel(NioSocketChannel.class);
@@ -45,7 +53,7 @@ public class ChatClient {
                     ch.pipeline().addLast(getLikeProtocolCodecSharable());
                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
                     ch.pipeline().addLast(getIdleWriteStateHandler());  // 写空闲事件
-                    ch.pipeline().addLast(new HeatBeatPongMessageHandler());
+                    ch.pipeline().addLast(new HeatBeatPongMessageHandler(username));
 
                     ch.pipeline().addLast("client handler", new ChannelInboundHandlerAdapter() {
                         LoginResponseMessage response = null;
@@ -53,17 +61,28 @@ public class ChatClient {
                         // 接收响应消息
                         @Override
                         public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-                            log.debug("msg: {}", msg);
+                            final JSON parse = JSONUtil.parse(msg);
+                            log.info("#channelRead(..): msg :{}", parse.toBean(Message.getMessageClass((Integer) parse.getByPath("messageType"))));
 
                             if ((msg instanceof LoginResponseMessage)) {
                                 response = (LoginResponseMessage) msg;
+                                System.out.println(response.getReason());
                                 if (response.isSuccess()) {
                                     // 如果登录成功
                                     loginBol.set(true);
-                                    System.out.println(response.getReason());
-                                }
-                                // 唤醒 system in 线程
-                                waitForLogin.countDown();
+
+                                    // 唤醒 system in 线程
+                                    waitForLogin.countDown();
+                                } else {
+                                    System.out.println("请重新输入用户名");
+
+                                    username.set(scanner.nextLine());
+
+                                    System.out.println("请输入密码:");
+                                    String password = scanner.nextLine();
+
+                                    ctx.writeAndFlush(new LoginRequestMessage(username.get(), password));
+                                } // END IF 密码不成功 继续输入
                             }
                             if (msg instanceof RegisterResponseMessage) {
                                 System.out.println(((RegisterResponseMessage) msg).getReason());
@@ -80,7 +99,8 @@ public class ChatClient {
                             // 负责接收用户在控制台的输入，负责向服务器发送各种消息
                             new Thread(() -> {
                                 System.out.println("请输入用户名:");
-                                String username = scanner.nextLine();
+
+                                username.set(scanner.nextLine());
 
                                 if (exitBol.get()) return;
 
@@ -89,11 +109,8 @@ public class ChatClient {
 
                                 if (exitBol.get()) return;
 
-                                // 构造消息对象
-                                LoginRequestMessage message = new LoginRequestMessage(username, password);
-                                System.out.println(message);
                                 // 发送消息
-                                ctx.writeAndFlush(message);
+                                ctx.writeAndFlush(new LoginRequestMessage(username.get(), password));
                                 System.out.println("等待后续操作...");
                                 try {  // 阻塞  等待登录业务处理
                                     waitForLogin.await();
@@ -107,11 +124,11 @@ public class ChatClient {
                                         System.out.println(reason + ",请问您是否需要注册？[[y/n]");
                                         if (scanner.nextLine().equals("y")) {
                                             System.out.println("请输入用户名:");
-                                            username = scanner.nextLine();
+                                            username.set(scanner.nextLine());
 
                                             System.out.println("请输入密码:");
                                             password = scanner.nextLine();
-                                            ctx.writeAndFlush(new RegisterRequestMessage(username, password));
+                                            ctx.writeAndFlush(new RegisterRequestMessage(username.get(), password));
                                         } else {
                                             ctx.channel().close(); // 不需要注册
                                             return;
@@ -128,7 +145,7 @@ public class ChatClient {
                                     }
                                     if (exitBol.get()) return;
 
-                                    if (switchCommand(ctx, username, command)) return;
+                                    if (switchCommand(ctx, username.get(), command)) return;
                                 }
                             }, "system in").start();
                         }

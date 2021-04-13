@@ -114,14 +114,6 @@ public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message
 
 
         Message message = JSONDeserialization(msg);
-      /*  log.info("#decode(..):magicNumber:{}", magicNumber);
-        log.info("#decode(..):version:{}", version);
-        log.info("#decode(..):serializationType:{}", serializationType);
-        log.info("#decode(..):messageType:{}", messageType);
-        log.info("#decode(..):seqId:{}", seqId);
-        log.info("#decode(..):msgArrayLen:{}", msgArrayLen);
-        log.info("#decode(..):message:{}", message);*/
-
         out.add(message);
     }
 

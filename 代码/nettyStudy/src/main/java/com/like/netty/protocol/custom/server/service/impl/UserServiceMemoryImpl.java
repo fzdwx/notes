@@ -34,18 +34,16 @@ public class UserServiceMemoryImpl implements UserService {
     public LoginStats login(String username, String password) {
         final String pwd = users.get(username);
         if (StrUtil.isBlank(pwd)) return new LoginStats(LoginStats.noUserInformation, false);
-        final boolean equalsPwd = password.equals(pwd);
-
+        boolean equalsPwd = password.equals(pwd);
         if (equalsPwd) {
             final Channel channel = SessionFactory.getSession().getChannel(username);
             if (ObjectUtil.isNotNull(channel)) {
                 channel.writeAndFlush(new LoginResponseMessage(false, "账户异地登录，您已被挤下线"));
                 channel.close();
             } // END 判断用户是否重复登录
-        } else {
-            new LoginStats(LoginStats.passwordMistake, false);
+            return new LoginStats(LoginStats.success, true);
         }
-        return new LoginStats(LoginStats.success, true);
+        return new LoginStats(LoginStats.passwordMistake, false);
 
 
     }

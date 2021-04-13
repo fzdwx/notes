@@ -33,6 +33,8 @@ import static org.slf4j.LoggerFactory.getLogger;
  * |00000010| 00 00 00 00 00 ec                               |......           |
  *
  * 固定长度 22
+ *
+ * @see MessageCodecSharable
  */
 public class MessageCodec extends ByteToMessageCodec<Message> {
     public static final byte[] magicNumber = "LikeLove".getBytes();

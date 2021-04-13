@@ -1512,4 +1512,86 @@ class MessageCodecTest {
 
 
 
-### 连接假死判断
+### 连接假死判断-心跳机制
+
+server监听读事件
+
+client监听写事件
+
+```java
+/**
+ * 空闲处理器 - 读取状态
+ * <p>
+ * 设置为 readerIdleTimeSeconds s内未读取到数据就触发
+ *
+ * @return {@link IdleStateHandler}
+ */
+public static IdleStateHandler getIdleReadStateHandler() {
+    return new LikeIdleStateHandler(15, 0, 0);
+}
+
+/**
+ * 空闲处理器 - 写状态
+ * <p>
+ * 设置为 writerIdleTimeSeconds s未写入数据触发
+ *
+ * @return {@link IdleStateHandler}
+ */
+public static IdleStateHandler getIdleWriteStateHandler() {
+    return new LikeIdleStateHandler(0, 10, 0);
+}
+```
+
+
+
+#### 心跳handler
+
+```java
+/**
+ * Create By like On 2021-04-13 15:09
+ * <p>
+ * 心跳消息 发送 ping
+ * extends {@link ChannelDuplexHandler} 双向通道
+ *
+ * @see LikeChannelMustPipeline#getIdleReadStateHandler
+ */
+public class HeatBeatPingMessageHandler extends ChannelDuplexHandler {  // 双向通道
+
+    private final static Logger log = LoggerFactory.getLogger(HeatBeatPingMessageHandler.class);
+
+    @Override
+    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+        final IdleStateEvent event = (IdleStateEvent) evt;
+        if (event.state().equals(IdleState.READER_IDLE)) {
+            final String userName = SessionFactory.getSession().getUserName(ctx.channel());
+            SessionFactory.getSession().getChannel(userName).writeAndFlush(new PingMessage("ping-0"));
+            log.info("#userEventTriggered(..): 心跳检测：{}", userName);
+        }
+    }
+}
+```
+
+```java
+/**
+ * Create By like On 2021-04-13 15:04
+ * <p>
+ * 心跳消息 发送 pong
+ * extends {@link ChannelDuplexHandler} 双向通道
+ *
+ * @see LikeChannelMustPipeline#getIdleWriteStateHandler
+ */
+public class HeatBeatPongMessageHandler extends ChannelDuplexHandler {
+
+    private final static Logger log = LoggerFactory.getLogger(HeatBeatPongMessageHandler.class);
+
+    @Override
+    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+        final IdleStateEvent event = (IdleStateEvent) evt;
+        if (event.state().equals(IdleState.WRITER_IDLE)) {
+            final String userName = SessionFactory.getSession().getUserName(ctx.channel());
+            ctx.writeAndFlush(new PongMessage("pong-1"));
+            log.info("#userEventTriggered(..):{} 心跳数据包发送-pong", userName);
+        }
+    }
+}
+```
