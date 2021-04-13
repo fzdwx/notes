@@ -1,5 +1,9 @@
 package com.like.netty.protocol.custom.message.protocol;
 
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.like.netty.protocol.custom.handler.LikeChannelMustPipeline;
 import com.like.netty.protocol.custom.message.Message;
 import io.netty.buffer.ByteBuf;
@@ -8,10 +12,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageCodec;
 import org.slf4j.Logger;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.util.List;
 
@@ -23,6 +24,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  */
 @ChannelHandler.Sharable
 public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message> {
+    private final ObjectMapper mapper = new ObjectMapper();
     public static final byte[] magicNumber = "LikeLove".getBytes();
     public int version = 1;
     public int serializationType = 0;
@@ -35,10 +37,9 @@ public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message
         out.writeByte(serializationType);
         out.writeByte(msg.getMessageType());
         out.writeInt(msg.getSequenceId());
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(baos);
-        oos.writeObject(msg);
-        byte[] msgArray = baos.toByteArray();
+        JSONUtil.toJsonStr(msg);
+
+        byte[] msgArray = JSONSerialization(msg); ;
 
         out.writeInt(msgArray.length);
         // 不可变 共22 个字节
@@ -46,6 +47,56 @@ public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message
         out.writeBytes(msgArray);
 
         outList.add(out);
+    }
+
+    /**
+     * json serialization
+     *
+     * @param msg message
+     * @return {@link byte[]}
+     */
+    private byte[] JSONSerialization(Message msg) throws JsonProcessingException {
+        return mapper.writeValueAsString(msg).getBytes();
+        // return JSONUtil.toJsonStr(msg).getBytes();
+    }
+
+    /**
+     * json deserialization
+     *
+     * @param msg message
+     * @return {@link Message}
+     */
+    private Message JSONDeserialization(byte[] msg) throws JsonProcessingException {
+        // return mapper.readValue(StrUtil.str(msg, Charset.defaultCharset()), Message.class);
+        String json = StrUtil.str(msg, Charset.defaultCharset());
+        return (Message) JSONUtil.toBean(json, Message.getMessageClass(JSONUtil.parse(json).getByPath("messageType", Integer.class)));
+    }
+
+    /**
+     * jdk serialization
+     *
+     * @param msg message
+     * @return {@link byte[]}
+     * @throws IOException ioexception
+     */
+    private byte[] JDKSerialization(Message msg) throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+        oos.writeObject(msg);
+        return baos.toByteArray();
+    }
+
+    /**
+     * jdk deserialization
+     *
+     * @param msg message
+     * @return {@link Message}
+     * @throws IOException            ioexception
+     * @throws ClassNotFoundException 类没有发现异常
+     */
+    private Message JDKDeserialization(byte[] msg) throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(msg));
+        return (Message) ois.readObject();
     }
 
     @Override
@@ -61,10 +112,8 @@ public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message
         byte[] msg = new byte[msgArrayLen];
         in.readBytes(msg, 0, msgArrayLen);
 
-        // if (0 == serializationType) {
-        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(msg));
-        Message message = (Message) ois.readObject();
-        // }
+
+        Message message = JSONDeserialization(msg);
       /*  log.info("#decode(..):magicNumber:{}", magicNumber);
         log.info("#decode(..):version:{}", version);
         log.info("#decode(..):serializationType:{}", serializationType);

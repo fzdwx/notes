@@ -12,8 +12,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import org.slf4j.Logger;
 
-import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolCodecSharable;
-import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolFrameDecoder;
+import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.*;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
@@ -40,7 +39,7 @@ public class ChatServer {
                             new ChannelInitializer<NioSocketChannel>() {
                                 @Override
                                 protected void initChannel(NioSocketChannel ch) throws Exception {
-                                    // ch.pipeline().addLast(getLogHandler());
+                                    ch.pipeline().addLast(getLogHandler());
                                     ch.pipeline().addLast(getLikeProtocolCodecSharable());
                                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
 
