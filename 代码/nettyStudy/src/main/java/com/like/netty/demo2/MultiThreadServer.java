@@ -1,6 +1,6 @@
 package com.like.netty.demo2;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -13,14 +13,15 @@ import java.util.Random;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import static com.like.netty.util.ByteBufferUtil.debugAll;
+import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * Create By like On 2021-04-08 20:26
  * @Description: 多线程下的nio  server
  */
-@Slf4j
-public class MultiThreadServer {
 
+public class MultiThreadServer {
+    private final static Logger log = getLogger(MultiThreadServer.class);
     public static void main(String[] args) throws IOException {
         Thread.currentThread().setName("Boss");
         ServerSocketChannel ssc = ServerSocketChannel.open();

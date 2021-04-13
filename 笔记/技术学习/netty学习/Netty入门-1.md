@@ -685,3 +685,825 @@ public class MultiThreadServer {
     }
 }
 ```
+
+
+
+
+
+# Netty
+
+是一个异步的，基于事件驱动的网络应用框架，用于快速开发可维护，高性能的网络服务器和客户端。调用时的异步，同步非阻塞，基于多路复用。 Trustin Lee 
+
+Netty在Java网络编程的地位X相当于JavaEE中的Spring
+
+- Cassandra nosql数据库
+- Spark 大数据分布式计算
+- Hadoop 大数据看分布式存储
+- RocketMQ -ali 开源消息队列
+- elasticSearch 搜索引擎
+- gRPC 
+- Dubbo
+- Spring 5 flux
+- Zookeeper 分布式协调框架
+
+
+
+
+
+
+
+
+
+## 1.Server以及Client demo
+
+
+
+### server
+
+~~~java
+public class NettyServer {
+
+    public static void main(String[] args) {
+        // 1.启动器 负责组装netty 组件，启动服务器
+        new ServerBootstrap()
+                // 2. boosEventLoop workerEventLoop(selector,thread) group 组
+                .group(new NioEventLoopGroup())
+                // 3. 选择服务器的 serverSocketChannel 实现
+                .channel(NioServerSocketChannel.class)
+                // 4. boos 负责处理连接 worker(child) 负责处理读写 决定worker 能执行哪些操作
+                .childHandler(
+                        // 5. channel代表和客户端进行数据读写的通道 initializer 初始化，负责添加别的handler
+                        new ChannelInitializer<NioSocketChannel>() {
+                            @Override
+                            protected void initChannel(NioSocketChannel ch) throws Exception {
+                                // 6.添加具体handler
+                                ch.pipeline().addLast(new StringDecoder()); // 将ByteBuf 转换为字符串
+                                ch.pipeline().addLast(new ChannelInboundHandlerAdapter() { // 自己的自定义handler
+                                    @Override
+                                    public void channelRead(
+                                            ChannelHandlerContext ctx, Object msg) throws Exception {
+                                        System.out.println(msg);
+                                    }
+                                });
+                            }
+                        })
+                // 7.绑定监听端口 8888
+                .bind(6666);
+    }
+}
+~~~
+
+
+
+### client
+
+~~~java
+public class NettyClient {
+
+    public static void main(String[] args) {
+        try {
+            new Bootstrap()
+                    .group(new NioEventLoopGroup())
+                    .channel(NioSocketChannel.class)
+                    .handler(new ChannelInitializer<NioSocketChannel>() {
+                        @Override
+                        protected void initChannel(NioSocketChannel ch) throws Exception {
+                            ch.pipeline().addLast(new StringEncoder());
+                        }
+                    })
+                    .connect("localhost", 6666)
+                    .sync()
+                    .channel()
+                    .writeAndFlush("hello netty server");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+~~~
+
+
+
+
+
+### 调用流程
+
+![image-20210410114539392](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410114546.png)
+
+### 理解
+
+![image-20210410115451427](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410115451.png)
+
+
+
+
+
+## 2.组件
+
+
+
+### EventLoop
+
+事件循环对象，是一个单线程执行器（同时维护了一个selector），里面有run方法处理channel上源源不断的io时间。
+
+继承关系：
+
+- juc下的SecheduledExecutorService因此包含了线程池中的所有方法
+- netty中的orderedWEventExecutor
+  - 提供了boolean isEventLoop(Thread thread)方法判断一个线程是否属于次EventLoop
+  - 提供parent方法来查看自己属于哪个EventLoopGroup
+
+
+
+**EventLoopGroup**
+
+是一组EventLoop，Channel一般会调用EventLoopGroup的register方法来绑定其中一个EventLoop，后续这个Channel上的io事件都由此EventLoop来处理，保证了Io事件处理的线程安全；
+
+- 继承netty自己的EventExecutorGroup
+  - 实现iterable接口提高遍历能力
+  - next获取下一个EventLoop
+
+
+
+#### 在eventLoopGroup中提交任务
+
+```java
+public class EventLoopTest {
+    private final static Logger log = LoggerFactory.getLogger(EventLoopTest.class);
+
+    @Test
+    void testThreadCount() {
+        EventLoopGroup boss = new NioEventLoopGroup(4);
+        // 1.遍历eventLoop
+        /* for (EventExecutor eventExecutor : boss) {
+            System.out.println(eventExecutor);
+        }*/
+
+        // 2.提交一个普通任务
+        boss.next().submit(()->{
+            log.info(EventLoopTest.class.getName() + "#testThreadCount(..): 普通任务");
+        });
+
+        // 3.提交一个定时任务
+        boss.next().scheduleAtFixedRate(()->{
+            log.info(EventLoopTest.class.getName() + "#testThreadCount(..): 定时任务");
+            // 延迟3秒运行  每隔1秒执行一次
+        }, 3, 1, TimeUnit.SECONDS);
+    }
+}
+```
+
+​	
+
+#### boss And workder 和绑定其他group
+
+pipLine 可以绑定一个其他的 eventLoopGroup
+
+```java
+public class BossAndWorker {
+    private final static Logger log = LoggerFactory.getLogger(BossAndWorker.class);
+
+    public static void main(String[] args) {
+
+        NioEventLoopGroup boss = new NioEventLoopGroup();
+        NioEventLoopGroup worker = new NioEventLoopGroup();
+
+        DefaultEventLoopGroup defaultGroup = new DefaultEventLoopGroup();
+        new ServerBootstrap()
+            .group(boss, worker)
+            .channel(NioServerSocketChannel.class)
+            .childHandler(
+            new ChannelInitializer<NioSocketChannel>() {
+                @Override
+                protected void initChannel(NioSocketChannel ch) throws Exception {
+                    ch.pipeline().addLast(new StringDecoder());
+                    ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
+                        @Override
+                        public void channelRead(
+                            ChannelHandlerContext ctx, Object msg) throws Exception {
+                            log.info("#channelRead(..): {}", msg);
+                        }
+                    });
+                    // 可以在添加一個group
+                    ch.pipeline().addLast(defaultGroup, new ChannelInboundHandlerAdapter() {
+                        @Override
+                        public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+                            log.info("#channelRead(..):{}",msg);
+                        }
+                    });
+                }
+            })
+            .bind(8888);
+    }
+}
+```
+
+
+
+
+
+#### eventLoop是如何切换的
+
+![image-20210410133020080](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410133020.png)
+
+
+
+
+
+
+
+### channel
+
+channel的主要左右
+
+- close()
+- closeFuture() 用来处理channel的关闭
+  - sync() 方法作用是同步等待channel关闭
+  - addListener() 是异步等待channel方法关闭
+- pipline() 方法添加处理器
+- write() 写入数据
+- writeAndFlush()写入数据并刷出
+
+
+
+
+
+
+
+### Future Promise 
+
+在异步处理时，经常用到这两个接口。
+
+netty中的Future继承于JDK中的Futrure。Promise又对netty Future进行了扩展
+
+- JDK Future 只能同步等待任务结束，才能得到结果
+- netty Future可以同步等待任务结束得到结果，也可以异步，但都要等任务结束
+- netty Promise不仅有netty Future的功能，而且脱离了任务独立存在，只作为两个线程间穿阿迪结果的容器
+
+
+
+
+
+
+
+### pipline
+
+执行顺序
+
+~~~
+inbound  1-2-3 ···
+
+outbount  6-5-4···
+~~~
+
+
+
+![image-20210410182809952](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410182810.png)
+
+
+
+### EmbeddedChannel
+
+用来测试channel![image-20210410183155957](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410183156.png)
+
+
+
+
+
+### byteBuf
+
+会自动扩容
+
+![image-20210410183650499](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410183650.png)
+
+
+
+
+
+- 直接内存创建和销毁的代价高昂，但读写性能高（少一次内存复制），配合池化功能一起用
+- 直接内存对gc压力小，因为这部分内存不受JVM垃圾回收的管理，但是也要及时主动释放
+
+```java
+ByteBuf hBuf = ByteBufAllocator.DEFAULT.heapBuffer();  // 堆内存
+ByteBuf dBuf = ByteBufAllocator.DEFAULT.directBuffer(); // 直接内存
+```
+
+
+
+
+
+#### 池化
+
+~~~bash
+-Dio.netty.alloctor.type={unpooled | pooled}
+~~~
+
+
+
+![image-20210410184130928](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410184131.png)
+
+
+
+#### 组成
+
+读取过的
+
+可读部分
+
+可写部分
+
+可扩容部分
+
+![image-20210410184832521](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210410184832.png)
+
+
+
+
+
+#### 扩容
+
+- 如果写入后的大小没有超过512字节 则按照16的整数倍扩容
+
+  - 8 -> 16
+  - 17-> 32
+
+- 如果超过，则安装2 ^ n扩容
+
+  -  513 - > 1024
+
+    
+
+
+
+#### 回收
+
+每个byteBuf都会实现ReferenceCounted
+
+调用release回收
+
+在头和为handler 会调用回收
+
+
+
+
+
+
+
+
+
+# Netty进阶
+
+
+
+## 1.粘包和半包
+
+```java
+public static void main(String[] args) {
+
+    NioEventLoopGroup boss = new NioEventLoopGroup();
+    NioEventLoopGroup worker = new NioEventLoopGroup();
+    new ServerBootstrap()
+        .group(boss, worker)
+        .channel(NioServerSocketChannel.class)
+        // .option(ChannelOption.SO_RCVBUF, 10)  // 设置缓冲区  10个字节
+        .childHandler(
+        new ChannelInitializer<NioSocketChannel>() {
+            @Override
+            protected void initChannel(NioSocketChannel ch) throws Exception {
+                ch.pipeline().addLast(new LoggingHandler(LogLevel.DEBUG));
+                ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
+                    @Override
+                    public void channelRead(
+                        ChannelHandlerContext ctx, Object msg) throws Exception {
+                        System.out.println(msg);
+                    }
+                });
+            }
+        })
+        // 7.绑定监听端口 8888
+        .bind(8888);
+}
+
+
+
+public static void main(String[] args) {
+    try {
+        Channel ch = new Bootstrap()
+            .group(new NioEventLoopGroup())
+            .channel(NioSocketChannel.class)
+            .handler(new ChannelInitializer<NioSocketChannel>() {
+                @Override
+                protected void initChannel(NioSocketChannel ch) throws Exception {
+                    ch.pipeline().addLast(new ChannelInboundHandlerAdapter(){
+                        @Override
+                        public void channelActive(ChannelHandlerContext ctx) throws Exception {
+                            for (int i = 0; i < 12; i++) {
+                                ByteBuf buf = ByteBufAllocator.DEFAULT.buffer();
+                                buf.writeBytes(new byte[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15});
+                                ctx.writeAndFlush(buf);
+                            }
+                        }
+                    });
+                }
+            })
+            .connect("localhost", 8888)
+            .sync()
+            .channel();
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+### 粘包现象
+
+![image-20210411105746833](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411105746.png)
+
+### 半包现象
+
+![image-20210411105845961](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411105846.png)
+
+![image-20210411105851280](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411105851.png)
+
+
+
+### 滑动窗口
+
+![image-20210411110112370](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411110112.png)
+
+
+
+### 现象分析
+
+粘包
+
+- 现象：发送abc def 接收 abcdef
+- 原因
+  - 应用层：接收方 ByteBuf设置太大 (netty 默认 1024)
+  - 滑动窗口：假设发送方256字节表示一个完整报文，但由于接收方处理不及时且窗口大小足够大，这256字节就会缓冲在接收方的滑动窗口中，当滑动窗口中缓冲了多个报文就会发生粘包
+  - Nagle算法：会造成粘包
+
+
+
+半包
+
+- 现象：发送 abcdef 接收 abc  def
+- 原因：
+  - 应用层：接收方ByteBuf小于发送数据的字节大小
+  - 滑动窗口：接收方的窗口只有128个字节，但发送了256个字节，放不下了，所以只能先发送128，等ack后在发送剩余的。
+  - MSS限制：当发送的数据超过mss限制后，将数据切分发送，造成半包
+
+
+
+### 解决方案
+
+> LengthFieldBasedFrameDecoder
+
+1.长度字节从第几个字节开始
+
+2.长度字节占多少个字节
+
+3.长度字节过后几个字节是内容字节
+
+4.前几个字节不要了
+
+~~~
+长度字节从第2个字节开始，占2个字节，长度字节后1个字节过后是内容，前3个字节去掉
+~~~
+
+
+
+![image-20210411113535928](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411113536.png)
+
+
+
+
+
+### 测试
+
+```java
+public static void main(String[] args) {
+    EmbeddedChannel lch = new EmbeddedChannel(
+            new LengthFieldBasedFrameDecoder(1024,
+                    0,          // 长度字节从0开始
+                    4,         // 长度字节占4个
+                    1,        // 因为添加了版本号，版本号占一个字节 所以跳过一个字节
+                    5),      // 剥离前5个字节
+            new LoggingHandler(LogLevel.DEBUG)
+    );
+
+    ByteBuf buf = ByteBufAllocator.DEFAULT.buffer();
+
+    writeInBuf(buf,  "Hello,world");
+    writeInBuf(buf,  "Hi!");
+    writeInBuf(buf, "this is server");
+
+    lch.writeInbound(buf);
+}
+
+private static void writeInBuf(ByteBuf buf, String content) {
+    byte[] bytes = content.getBytes();
+    int length = bytes.length;
+
+    buf.writeInt(length);    // 前4个字节表示长度
+    buf.writeByte(1); // 第5个字节表示版本号
+    buf.writeBytes(bytes); // 写入的内容
+}
+```
+
+
+
+
+
+#### 剥离前5个字节
+
+![image-20210411114917348](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411114917.png)
+
+#### 剥离前4个字节
+
+![image-20210411114943397](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411114943.png)
+
+#### 不剥离
+
+![image-20210411115001186](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411115001.png)
+
+
+
+
+
+## 2.协议设计和解析
+
+### 模拟redis的协议
+
+模拟redis协议，使用netty发送set命令
+
+```java
+static final String LINE = "\r\n";
+
+public static void main(String[] args) {
+    try {
+       new Bootstrap()
+                .group(new NioEventLoopGroup())
+                .channel(NioSocketChannel.class)
+                .handler(new ChannelInitializer<NioSocketChannel>() {
+                    @Override
+                    protected void initChannel(NioSocketChannel ch) throws Exception {
+                        ch.pipeline().addLast(new LoggingHandler(LogLevel.DEBUG));
+                        ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
+                            @Override
+                            public void channelActive(ChannelHandlerContext ctx) throws Exception {
+                                ByteBuf buf = ctx.alloc().buffer();
+                                write(buf, "*3");
+                                write(buf, "$3");
+                                write(buf, "set");
+                                write(buf, "$4");
+                                write(buf, "name");
+                                write(buf, "$4");    // $ +  发送内容的长度
+                                write(buf, "like");
+                                // set name like
+                                ctx.writeAndFlush(buf);
+                            }
+                        });
+                    }
+                    @Override
+                    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+                        ByteBuf buf = (ByteBuf) msg;
+                        System.out.println(buf.toString(Charset.defaultCharset()));
+                    }
+                })
+                .connect("localhost", 6379);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+private static void write(ByteBuf buf, String value) {
+    buf.writeBytes(value.getBytes());
+    buf.writeBytes(LINE.getBytes());
+}
+```
+
+![image-20210411121442226](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411121442.png)
+
+![image-20210411121456985](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411121457.png)
+
+
+
+
+
+
+
+### 利用netty提供的http协议
+
+```java
+public class TestHttp {
+
+    private final static Logger log = getLogger(TestHttp.class);
+
+    public static void main(String[] args) {
+
+        NioEventLoopGroup boss = new NioEventLoopGroup();
+        NioEventLoopGroup worker = new NioEventLoopGroup();
+
+        try {
+            ServerBootstrap serverBoot = new ServerBootstrap()
+                .group(boss, worker)
+                .channel(NioServerSocketChannel.class)
+                .childHandler(
+                new ChannelInitializer<NioSocketChannel>() {
+                    @Override
+                    protected void initChannel(NioSocketChannel ch) throws Exception {
+                        ch.pipeline().addLast(new LoggingHandler(LogLevel.DEBUG));
+                        ch.pipeline().addLast(new HttpServerCodec()); // http 编解码器
+                        ch.pipeline().addLast(new SimpleChannelInboundHandler<HttpRequest>() {
+                            @Override
+                            protected void channelRead0(ChannelHandlerContext ctx, HttpRequest msg) throws Exception {
+                                // 获取请求的信息
+                                log.info("#channelRead0(..): uri: {}", msg.uri());
+
+                                // 返回响应信息                                               http协议版本           响应状态
+                                DefaultFullHttpResponse resp = new DefaultFullHttpResponse(msg.protocolVersion(), HttpResponseStatus.OK);
+                                byte[] content = "<h1>hello my web</h1>".getBytes();
+                                resp.content().writeBytes(content);         // 响应信息
+                                resp.headers().add(HttpHeaderNames.CONTENT_LENGTH, content.length);   // 请求头  响应长度
+
+                                // 写入channel
+                                ctx.writeAndFlush(resp);
+                            }
+                        });
+                        ch.pipeline().addLast(new SimpleChannelInboundHandler<HttpContent>() {
+                            @Override
+                            protected void channelRead0(ChannelHandlerContext ctx, HttpContent msg) throws Exception {
+                                log.info("#channelRead0(..): HttpContent: {}", msg);
+                            }
+                        });
+                        /* ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
+                                        @Override
+                                        public void channelRead(
+                                                ChannelHandlerContext ctx, Object msg) throws Exception {
+                                            log.info("#channelRead(..): msg classs :{}", msg.getClass());
+                                            // msg classs :class io.netty.handler.codec.http.DefaultHttpRequest
+                                            // msg classs :class io.netty.handler.codec.http.LastHttpContent$1
+                                            if (msg instanceof HttpRequest) {
+
+                                            } else if (msg instanceof HttpContent) {
+
+                                            } else {
+
+                                            }
+                                        }
+                                    });*/
+
+                    }
+                });
+            ChannelFuture cf = serverBoot.bind(80).sync();
+            cf.channel().closeFuture().sync();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            boss.shutdownGracefully();
+            worker.shutdownGracefully();
+        }
+    }
+}
+```
+
+![image-20210411123403865](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411123403.png)
+
+![image-20210411123409618](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411123409.png)
+
+
+
+
+
+### 自定义协议
+
+要素
+
+~~~
+魔数：用来在第一时间判断是否无效数据包
+版本号：可以支持协议的升级
+序列化算法：消息正文到底采用哪种序列化反序列化方式
+	JSON protobuf  hessian jdk
+指令类型：是登录、注册、单聊、群聊... 跟业务相关
+请求序号：为了双工通信，提供异步能力
+正文长度：
+消息正文：
+~~~
+
+
+
+![image-20210411135123248](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210411135123.png)
+
+
+
+
+
+
+
+#### 自定义 协议
+
+```java
+/**
+ * Create By like On 2021-04-11 12:42
+ * <p>
+ * 魔数：用来在第一时间判断是否无效数据包
+ * 版本号：可以支持协议的升级
+ * 序列化算法：消息正文到底采用哪种序列化反序列化方式
+ * JSON protobuf  hessian jdk
+ * 指令类型：是登录、注册、单聊、群聊... 跟业务相关
+ * 请求序号：为了双工通信，提供异步能力
+ * 正文长度：
+ * 消息正文：
+ */
+public class MessageCodec extends ByteToMessageCodec<Message> {
+    public static final byte[] magicNumber = "LikeLove".getBytes();
+    public int version = 1;
+    public int serializationType = 0;
+
+    @Override
+    protected void encode(ChannelHandlerContext ctx, Message msg, ByteBuf out) throws Exception {
+        // 1. 8 魔数
+        out.writeBytes(magicNumber);
+        // 2. 4 版本号
+        out.writeInt(version);
+        // 3. 1 序列化算法  0 jdk 1 json
+        out.writeByte(serializationType);
+        // 4. 1 指令类型
+        out.writeByte(msg.getMessageType());
+        // 5. 4 请求序列号
+        out.writeInt(msg.getSequenceId());
+        // 消息转成字节数组
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+        oos.writeObject(msg);
+        byte[] msgArray = baos.toByteArray();
+        // 6. 4 消息内容正文长度
+        out.writeInt(msgArray.length);
+        // 不可变 共22 个字节
+        // 7.写入消息
+        out.writeBytes(msgArray);
+    }
+
+
+    @Override
+    protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
+        String magicNumber = in.readBytes(8).toString(Charset.defaultCharset());
+        // if (!"LikeLove".equals(magicNumber)) return;
+
+        int version = in.readInt();
+        byte serializationType = in.readByte();
+        byte messageType = in.readByte();
+        int seqId = in.readInt();
+        int msgArrayLen = in.readInt();
+        byte[] msg = new byte[msgArrayLen];
+        in.readBytes(msg, 0, msgArrayLen);
+
+        // if (0 == serializationType) {
+        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(msg));
+        Message message = (Message) ois.readObject();
+        // }
+        log.info("#decode(..):magicNumber:{}", magicNumber);
+        log.info("#decode(..):version:{}", version);
+        log.info("#decode(..):serializationType:{}", serializationType);
+        log.info("#decode(..):messageType:{}", messageType);
+        log.info("#decode(..):seqId:{}", seqId);
+        log.info("#decode(..):msgArrayLen:{}", msgArrayLen);
+        log.info("#decode(..):message:{}", message);
+
+        out.add(message);
+    }
+
+    private final static Logger log = getLogger(MessageCodec.class);
+}
+```
+
+
+
+#### 测试
+
+```java
+class MessageCodecTest {
+
+    public static void main(String[] args) throws Exception {
+        EmbeddedChannel test = new EmbeddedChannel(
+                new LoggingHandler(),
+                new LengthFieldBasedFrameDecoder(1024,18,4,0,0)
+                ,new MessageCodec());
+
+        // test encode
+        LoginRequestMessage msg = new LoginRequestMessage("like", "123");
+        // test.writeOutbound(msg);
+
+        // test decode
+        ByteBuf buf = ByteBufAllocator.DEFAULT.buffer();
+        new MessageCodec().encode(null, msg, buf);
+        ByteBuf s1 = buf.slice(0, 100);
+        ByteBuf s2 = buf.slice(100, buf.readableBytes() - 100);
+        // test.writeInbound(buf);
+        s1.retain(); // 引用计数
+        test.writeInbound(s1);
+        test.writeInbound(s2);
+    }
+}
+```

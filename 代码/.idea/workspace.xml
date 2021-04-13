@@ -7,9 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="nio 网络编程 常见问题">
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/demo/Server.java" afterDir="false" />
+    <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="私聊完成">
+      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/GroupCreateRequestMessageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/ChatRequestMessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/ChatRequestMessageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupCreateRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupCreateRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/GroupSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/GroupSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/impl/GroupSessionMemoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/impl/GroupSessionMemoryImpl.java" afterDir="false" />
     </list>
+    <list id="bac6a37d-dd42-4db7-a78a-c99c267d3d34" name="nopush" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +26,64 @@
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/demo">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/demogradle">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/testgradle">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/demo">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -27,11 +94,15 @@
         <option value="Interface" />
         <option value="Tag Library Descriptor" />
         <option value="JUnit4 &amp; Mockito" />
-        <option value="JUnit5 Test Class" />
         <option value="JUnit5 &amp; Mockito" />
         <option value="TestNG &amp; Mockito" />
         <option value="Test" />
         <option value="A-test" />
+        <option value="Kotlin Worksheet" />
+        <option value="Kotlin Script" />
+        <option value="JavaFXApplication" />
+        <option value="Swagger" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -71,6 +142,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="LombokPluginIS_LOMBOK_VERSION_CHECK_Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
@@ -82,6 +154,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -90,30 +163,31 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/设计模式/创建者模式/单例模式/懒汉式" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/nettyStudy/src/test/resources" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.21489161" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.like.netty.protocol.custom.server.session.impl" />
+      <recent name="com.like.netty.protocol.custom.server.service.impl" />
       <recent name="数据结构和算法.算法.图.graph" />
       <recent name="设计模式.自定义SpringIoc.com.like.framework.util" />
       <recent name="设计模式.自定义SpringIoc.com.like.framework.context.support" />
-      <recent name="设计模式.自定义SpringIoc.com.like.framework.context" />
-      <recent name="设计模式.自定义SpringIoc.com.like.framework.beans.factory.support.xml" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\github\notes\代码\nettyStudy\src\test\resources" />
-      <recent name="D:\github\notes\代码\nettyStudy\src\test\java" />
-      <recent name="D:\github\notes\代码\nettyStudy\src\main\java\com\like\netty\util" />
-      <recent name="D:\github\notes\代码" />
-      <recent name="D:\github\notes\代码\DataStructureAndAlgorithm\src" />
+      <recent name="D:\github\notes\代码\nettyStudy\src\main\java\com\like\netty\protocol\custom\server\session" />
+      <recent name="D:\github\notes\代码\nettyStudy\src\main\java\com\like\netty\protocol\custom\server\service" />
+      <recent name="D:\github\notes\代码\nettyStudy\src\main\java\com\like\netty\protocol\custom\message" />
+      <recent name="D:\github\notes\代码\nettyStudy\src\main\java\com\like\netty\protocol\custom\server\session\impl" />
+      <recent name="D:\github\notes\代码\DataStructureAndAlgorithm\src\main\java\算法\A4\edu\princeton\cs\algs4" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -130,31 +204,38 @@
       <recent name="FizzOrBuzz" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.like.netty.protocol.custom" />
       <recent name="com.like.netty" />
       <recent name="数据结构和算法.数据结构" />
     </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="com.like.netty.protocol.custom.handler" />
+      <recent name="com.like.netty.protocol.custom.chat" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.like.netty.protocol.custom.protocol" />
       <recent name="com.like.netty.c1" />
       <recent name="com.like.netty.util" />
       <recent name="再探JUC.pattern.同步模式指定输出顺序" />
       <recent name="数据结构和算法.算法.排序.sort" />
-      <recent name="数据结构和算法.数据结构.tree.二叉树" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.like.netty.demoNBBB" />
       <recent name="" />
       <recent name="设计模式.结构型模式.装饰者模式" />
       <recent name="设计模式.结构型模式.适配器模式.对象适配器" />
       <recent name="设计模式.结构型模式.代理模式.cglib动态代理" />
-      <recent name="设计模式.创建者模式.原型模式.深克隆" />
     </key>
   </component>
   <component name="RunAnythingCache">
     <myKeys>
+      <visibility group="Gradle Tasks" flag="true" />
       <visibility group="Gradle tasks" flag="true" />
       <visibility group="Grunt" flag="true" />
       <visibility group="Grunt tasks" flag="true" />
       <visibility group="Gulp" flag="true" />
       <visibility group="Gulp tasks" flag="true" />
+      <visibility group="Maven Goals" flag="true" />
       <visibility group="Maven goals" flag="true" />
       <visibility group="Node.js" flag="true" />
       <visibility group="Recent projects" flag="true" />
@@ -164,26 +245,31 @@
       <visibility group="最近的项目" flag="true" />
       <visibility group="运行配置" flag="true" />
     </myKeys>
+    <option name="myCommands">
+      <command value="gradle --dry-run" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
         <option value="Application" />
         <option value="CucumberJavaRunConfigurationType" />
+        <option value="JUnit" />
         <option value="JarApplication" />
+        <option value="SpringBootApplicationConfigurationType" />
         <option value="SwaggerCodegen" />
         <option value="TestNG" />
         <option value="XSLT" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.NIOClient">
-    <configuration name="NIOClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.old.nio.deno2.NIOClient" />
+  <component name="RunManager" selected="应用程序.ChatClient">
+    <configuration name="ChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.custom.chat.ChatClient" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.old.nio.deno2.*" />
+          <option name="PATTERN" value="com.like.netty.protocol.custom.chat.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -191,12 +277,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.demo.Server" />
+    <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.custom.chat.ChatServer" />
       <module name="nettyStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.like.netty.demo.*" />
+          <option name="PATTERN" value="com.like.netty.protocol.custom.chat.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -204,69 +290,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PathTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="nettyStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.like.netty.c1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.like.netty.c1" />
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.c1.PathTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PathTest.testEndWithJar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="nettyStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.like.netty.c1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.like.netty.c1" />
-      <option name="MAIN_CLASS_NAME" value="com.like.netty.c1.PathTest" />
-      <option name="METHOD_NAME" value="testEndWithJar" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="security" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.like.security.SecurityApplication" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PathTest.test" />
-      <item itemvalue="JUnit.PathTest.testEndWithJar" />
-      <item itemvalue="Spring Boot.SecurityApplication" />
-      <item itemvalue="Application.Server" />
-      <item itemvalue="Application.NIOClient" />
+      <item itemvalue="应用程序.ChatServer" />
+      <item itemvalue="应用程序.ChatClient" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NIOClient" />
-        <item itemvalue="Application.Server" />
-        <item itemvalue="JUnit.PathTest.testEndWithJar" />
-        <item itemvalue="JUnit.PathTest.test" />
+        <item itemvalue="应用程序.ChatClient" />
+        <item itemvalue="应用程序.ChatServer" />
       </list>
     </recent_temporary>
   </component>
@@ -277,6 +321,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="" />
+      <changelist id="bac6a37d-dd42-4db7-a78a-c99c267d3d34" name="nopush" comment="" />
       <created>1600346746098</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -527,126 +572,20 @@
       <workItem from="1617714159356" duration="152000" />
       <workItem from="1617714333075" duration="3058000" />
       <workItem from="1617718500786" duration="82000" />
-      <workItem from="1617787488479" duration="10122000" />
-    </task>
-    <task id="LOCAL-00137" summary="update">
-      <created>1612169493184</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1612169493185</updated>
-    </task>
-    <task id="LOCAL-00138" summary="update">
-      <created>1612169811364</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1612169811364</updated>
-    </task>
-    <task id="LOCAL-00139" summary="聊天室">
-      <created>1612187918535</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1612187918536</updated>
-    </task>
-    <task id="LOCAL-00140" summary="聊天室 update">
-      <created>1612188007157</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1612188007157</updated>
-    </task>
-    <task id="LOCAL-00141" summary="nio零拷贝">
-      <created>1612234577384</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1612234577384</updated>
-    </task>
-    <task id="LOCAL-00142" summary="netty的一个小案例">
-      <created>1612255421987</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1612255421987</updated>
-    </task>
-    <task id="LOCAL-00143" summary="笔记更新">
-      <created>1612334861867</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1612334861868</updated>
-    </task>
-    <task id="LOCAL-00144" summary="执行复杂业务-taskQueue -1">
-      <created>1612343476902</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1612343476902</updated>
-    </task>
-    <task id="LOCAL-00145" summary="执行复杂业务-taskQueue -2">
-      <created>1612344295356</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1612344295356</updated>
-    </task>
-    <task id="LOCAL-00146" summary="http服务器简单实例">
-      <created>1612350430448</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1612350430449</updated>
-    </task>
-    <task id="LOCAL-00147" summary="update">
-      <created>1614472633415</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1614472633415</updated>
-    </task>
-    <task id="LOCAL-00148" summary="demo1">
-      <created>1614477737582</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1614477737582</updated>
-    </task>
-    <task id="LOCAL-00149" summary="线程调度demo">
-      <created>1614480918087</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1614480918087</updated>
-    </task>
-    <task id="LOCAL-00150" summary="join demo">
-      <created>1614481895104</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1614481895104</updated>
-    </task>
-    <task id="LOCAL-00151" summary="两阶段终止模式">
-      <created>1614483549633</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1614483549633</updated>
-    </task>
-    <task id="LOCAL-00152" summary="打断park状态下的demo">
-      <created>1614484344632</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1614484344632</updated>
-    </task>
-    <task id="LOCAL-00153" summary="守护线程 demo">
-      <created>1614484693987</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1614484693987</updated>
+      <workItem from="1617787488479" duration="11428000" />
+      <workItem from="1617879596946" duration="671000" />
+      <workItem from="1617880641935" duration="10912000" />
+      <workItem from="1617891678068" duration="246000" />
+      <workItem from="1618019492949" duration="341000" />
+      <workItem from="1618019853963" duration="2603000" />
+      <workItem from="1618024769055" duration="7947000" />
+      <workItem from="1618047418988" duration="2447000" />
+      <workItem from="1618056056953" duration="69000" />
+      <workItem from="1618058090358" duration="980000" />
+      <workItem from="1618108373361" duration="27941000" />
+      <workItem from="1618220924960" duration="1397000" />
+      <workItem from="1618222946095" duration="94000" />
+      <workItem from="1618227660378" duration="4194000" />
     </task>
     <task id="LOCAL-00154" summary="update 整合maven">
       <created>1614493037597</created>
@@ -872,7 +811,126 @@
       <option name="project" value="LOCAL" />
       <updated>1617801292470</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="upadte">
+      <created>1617801452841</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1617801452841</updated>
+    </task>
+    <task id="LOCAL-00187" summary="remove .gradle">
+      <created>1617881492846</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1617881492846</updated>
+    </task>
+    <task id="LOCAL-00188" summary="docs: 多线程优化">
+      <created>1617887722020</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1617887722020</updated>
+    </task>
+    <task id="LOCAL-00189" summary="netty server and client demo">
+      <created>1618026478768</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1618026478768</updated>
+    </task>
+    <task id="LOCAL-00190" summary="在eventLoopGroup中提交任务">
+      <created>1618029499590</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1618029499590</updated>
+    </task>
+    <task id="LOCAL-00191" summary="boss And workder 和绑定其他group">
+      <created>1618031532031</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1618031532031</updated>
+    </task>
+    <task id="LOCAL-00192" summary="byteByf">
+      <created>1618059596710</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1618059596711</updated>
+    </task>
+    <task id="LOCAL-00193" summary="netty 粘包半包 解决">
+      <created>1618113024813</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1618113024813</updated>
+    </task>
+    <task id="LOCAL-00194" summary="模拟 redis 协议发送set命令">
+      <created>1618114520307</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1618114520307</updated>
+    </task>
+    <task id="LOCAL-00195" summary="模拟http协议">
+      <created>1618115694952</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1618115694953</updated>
+    </task>
+    <task id="LOCAL-00196" summary="自定义消息解析器">
+      <created>1618122828921</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1618122828921</updated>
+    </task>
+    <task id="LOCAL-00197" summary="目录更新">
+      <created>1618124303011</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1618124303011</updated>
+    </task>
+    <task id="LOCAL-00198" summary="目录更新">
+      <created>1618124532729</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1618124532729</updated>
+    </task>
+    <task id="LOCAL-00199" summary="准备完成">
+      <created>1618127971653</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1618127971653</updated>
+    </task>
+    <task id="LOCAL-00200" summary="add factory">
+      <created>1618128246934</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1618128246934</updated>
+    </task>
+    <task id="LOCAL-00201" summary="聊天室 登录检测">
+      <created>1618137968125</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1618137968125</updated>
+    </task>
+    <task id="LOCAL-00202" summary="私聊完成">
+      <created>1618230072523</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1618230072524</updated>
+    </task>
+    <option name="localTasksCounter" value="203" />
     <servers />
   </component>
   <component name="TestCherrySettings">
@@ -907,23 +965,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="update" />
-    <MESSAGE value="添加笔记" />
-    <MESSAGE value="更新笔记" />
-    <MESSAGE value="同步模式之保护性暂停" />
-    <MESSAGE value="同步模式之保护性暂停 优化" />
-    <MESSAGE value="同步模式之保护性暂停 超时" />
-    <MESSAGE value="重构" />
-    <MESSAGE value="使用中间类扩展该模式" />
-    <MESSAGE value="消息隊列模擬" />
-    <MESSAGE value="指定运行顺序" />
-    <MESSAGE value="同步模式指定输出顺序 增加2中方法" />
-    <MESSAGE value="两阶段终止模式" />
-    <MESSAGE value="cas 以及 unsafe 的简单使用" />
-    <MESSAGE value="享元模式之数据库连接池" />
-    <MESSAGE value="自定义线程池" />
-    <MESSAGE value="更新注释" />
-    <MESSAGE value="fork join 案例以及笔记更新" />
     <MESSAGE value="buffer的初步使用" />
     <MESSAGE value="byte方法使用" />
     <MESSAGE value="笔记更新" />
@@ -932,22 +973,39 @@
     <MESSAGE value="文件复制案例" />
     <MESSAGE value="测试 files 循环文件夹" />
     <MESSAGE value="nio 网络编程 常见问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="nio 网络编程 常见问题" />
+    <MESSAGE value="upadte" />
+    <MESSAGE value="remove .gradle" />
+    <MESSAGE value="docs: 多线程优化" />
+    <MESSAGE value="netty server and client demo" />
+    <MESSAGE value="在eventLoopGroup中提交任务" />
+    <MESSAGE value="boss And workder 和绑定其他group" />
+    <MESSAGE value="byteByf" />
+    <MESSAGE value="netty 粘包半包 解决" />
+    <MESSAGE value="模拟 redis 协议发送set命令" />
+    <MESSAGE value="模拟http协议" />
+    <MESSAGE value="自定义消息解析器" />
+    <MESSAGE value="目录更新" />
+    <MESSAGE value="准备完成" />
+    <MESSAGE value="add factory" />
+    <MESSAGE value="聊天室业务" />
+    <MESSAGE value="聊天室 登录检测" />
+    <MESSAGE value="私聊完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="私聊完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../jdk-8/src.zip!/java/util/HashMap.java</url>
           <line>156</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/数据结构和算法/算法/排序/Main.java</url>
           <line>27</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint type="java-method">
           <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.2.8.RELEASE/spring-beans-5.2.8.RELEASE-sources.jar!/org/springframework/beans/factory/support/AbstractBeanFactory.java</url>
           <line>1945</line>
           <properties class="org.springframework.beans.factory.support.AbstractBeanFactory" method="createBean">
@@ -955,22 +1013,27 @@
           </properties>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="8" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((DefaultChannelHandlerContext)ctx).next" custom="io.netty.channel.DefaultChannelHandlerContext" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/work$TestFileChannelTransferTo_testT1.ic" NAME="TestFileChannelTransferTo.testT1 Coverage Results" MODIFIED="1617710470042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/work$PathTest_testAdd.ic" NAME="PathTest.testAdd Coverage Results" MODIFIED="1617712879432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.like.netty.c1.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/work$PathTest_testAdd.ic" NAME="PathTest.testAdd Coverage Results" MODIFIED="1617712879432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/work$TestFileChannelTransferTo_testT1.ic" NAME="TestFileChannelTransferTo.testT1 Coverage Results" MODIFIED="1617710470042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.like.netty.c1.*</FILTER>
     </SUITE>
   </component>
