@@ -14,17 +14,27 @@ public interface GroupSession {
 
     /**
      * 创建组
-     * 创建聊天组,如果不存在就创建成功，否则返回null
      *
      * @param name    group的名字
      *                {@link String}
      * @param members 成员
      *                {@link Set<String>}
      * @param creator 聊天室所有者
-     *                 {@link String}
+     *                {@link String}
      * @return {@link Group}
+     * @Description: 创建聊天组, 如果不存在就创建成功。
+     *         返回null: 创建成功
+     *         否者: 创建失败
      */
-    Group createGroup(String name, Set<String> members,String creator);
+    Group createGroup(String name, Set<String> members, String creator);
+
+    /**
+     * 判断是否存在该聊天室
+     * @param name group的名字
+     *             {@link String}
+     * @return boolean
+     */
+    boolean hasGroup(String name);
 
     /**
      * 解散聊天组

@@ -1,5 +1,6 @@
 package com.like.netty.protocol.custom.server.session.impl;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.like.netty.protocol.custom.server.session.Group;
 import com.like.netty.protocol.custom.server.session.GroupSession;
 import com.like.netty.protocol.custom.server.session.SessionFactory;
@@ -15,7 +16,12 @@ public class GroupSessionMemoryImpl implements GroupSession {
     @Override
     public Group createGroup(String name, Set<String> members,String creator) {
         Group group = new Group(name, members,creator);
-        return groupMap.putIfAbsent(name, group);
+        return groupMap.putIfAbsent(name, group); // 存在key:value 不替换
+    }
+
+    @Override
+    public boolean hasGroup(String name) {
+        return ObjectUtil.isNotNull(groupMap.get(name));
     }
 
     @Override

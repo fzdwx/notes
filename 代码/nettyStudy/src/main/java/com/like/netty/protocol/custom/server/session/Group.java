@@ -5,10 +5,10 @@ import lombok.Data;
 import java.util.Collections;
 import java.util.Set;
 
-@Data
 /**
  * 聊天组，即聊天室
  */
+@Data
 public class Group {
     /** 聊天室名称 */
     private String name;
