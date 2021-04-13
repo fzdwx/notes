@@ -1,8 +1,13 @@
 package com.like.netty.protocol.custom.message;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 /**
  * Create By like On 2021-04-12 21:29
  */
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class RegisterRequestMessage extends Message {
 
     /** 用户名 */

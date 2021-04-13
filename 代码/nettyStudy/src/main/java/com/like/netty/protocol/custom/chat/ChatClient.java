@@ -68,6 +68,9 @@ public class ChatClient {
                             }
                             if (msg instanceof RegisterResponseMessage) {
                                 System.out.println(((RegisterResponseMessage) msg).getReason());
+                                if (!((RegisterResponseMessage) msg).isSuccess()) {
+                                    ctx.close();
+                                } // END IF 失败就关闭通道
                             }
 
                         }

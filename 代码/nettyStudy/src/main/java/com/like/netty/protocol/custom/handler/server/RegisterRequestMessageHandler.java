@@ -22,7 +22,7 @@ public class RegisterRequestMessageHandler extends SimpleChannelInboundHandler<R
             SessionFactory.getSession().bind(ctx.channel(), msg.getUsername());
             res = "注册成功";
         } else {
-            res = "注册失败，用户名已经存";
+            res = "注册失败，用户名已经存在";
         }
         ctx.writeAndFlush(new RegisterResponseMessage(register,res));
     }
