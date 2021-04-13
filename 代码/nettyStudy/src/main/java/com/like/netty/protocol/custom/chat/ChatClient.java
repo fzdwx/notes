@@ -163,10 +163,10 @@ public class ChatClient {
         String[] s = command.split(" ");
         switch (s[0]) {
             case "send":
-                ctx.writeAndFlush(new ChatRequestMessage(username, s[1], s[2]));
+                ctx.writeAndFlush(new ChatRequestMessage(username, s[1], contentOf(s).toString()));
                 break;
             case "gsend":
-                ctx.writeAndFlush(new GroupChatRequestMessage(username, s[1], s[2]));
+                ctx.writeAndFlush(new GroupChatRequestMessage(username, s[1], contentOf(s).toString()));
                 break;
             case "gcreate":
                 Set<String> set = new HashSet<>(Arrays.asList(s[2].split(",")));
@@ -189,6 +189,21 @@ public class ChatClient {
         return false;
     }
 
+    /**
+     * 获取用户发送的内容
+     *
+     * @param s string[]
+     * @return {@link StringBuilder}
+     * @Description: 例如 gsend xxx hello world -> hello world
+     */
+    private static StringBuilder contentOf(String[] s) {
+        StringBuilder content = new StringBuilder();
+        for (int i = 2; i < s.length; i++) {
+            content.append(s[i]).append(" ");
+        }
+        return content;
+    }
+
     private static void outMenu() {
         System.out.println("==================================");
         System.out.println("register [username] [password]");
@@ -202,100 +217,6 @@ public class ChatClient {
         System.out.println("==================================");
     }
 }
-
-    /*public static void main(String[] args) {
-        NioEventLoopGroup boss = new NioEventLoopGroup();
-
-        CountDownLatch waitForLogin = new CountDownLatch(1);
-        AtomicBoolean isLogin = new AtomicBoolean(false);
-        Scanner sc = new Scanner(System.in);
-        try {
-            final Bootstrap boot = new Bootstrap()
-                    .group(boss)
-                    .channel(NioSocketChannel.class)
-                    .handler(new ChannelInitializer<NioSocketChannel>() {
-                        @Override
-                        protected void initChannel(NioSocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(getLikeProtocolCodecSharable());
-                            ch.pipeline().addLast(getLogHandler());
-                            ch.pipeline().addLast(getLikeProtocolFrameDecoder());
-
-
-                            ch.pipeline().addLast("client handler", new ChannelInboundHandlerAdapter() {
-                                // 接收响应消息
-                                @Override
-                                public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-                                    log.debug("msg: {}", msg);
-                                    if ((msg instanceof LoginResponseMessage)) {
-                                        LoginResponseMessage response = (LoginResponseMessage) msg;
-                                        if (response.isSuccess()) {
-                                            // 如果登录成功
-                                            isLogin.set(true);
-                                        }
-                                        // 唤醒 system in 线程
-                                        waitForLogin.countDown();
-                                   }
-                                }
-
-                                // 在连接建立后触发 active 事件
-                                @Override
-                                public void channelActive(ChannelHandlerContext ctx) throws Exception {
-                                    // 负责接收用户在控制台的输入，负责向服务器发送各种消息
-                                    new Thread(() -> {
-                                        System.out.println("请输入用户名:");
-                                        String username = sc.nextLine();
-
-                                        System.out.println("请输入密码:");
-                                        String password = sc.nextLine();
-
-                                        // 构造消息对象
-                                        LoginRequestMessage message = new LoginRequestMessage(username, password);
-                                        System.out.println(message);
-                                        // 发送消息
-                                        final ChannelFuture channelFuture = ch.writeAndFlush(message);
-                                        // final ChannelFuture channelFuture = ctx.writeAndFlush(message);
-
-                                        System.out.println(channelFuture.isSuccess());
-                                        System.out.println("等待后续操作...");
-                                        try {
-                                            waitForLogin.await();
-                                        } catch (InterruptedException e) {
-                                            e.printStackTrace();
-                                        }
-                                        // 如果登录失败
-                                        if (!isLogin.get()) {
-                                            ctx.channel().close();
-                                            return;
-                                        }
-                                        while (true) {
-                                            System.out.println("==================================");
-                                            System.out.println("send [username] [content]");
-                                            System.out.println("gsend [group name] [content]");
-                  *                         System.out.println("gcreate [group name] [m1,m2,m3...]");
-                                            System.out.println("gmembers [group name]");
-                                            System.out.println("gjoin [group name]");
-                                            System.out.println("gquit [group name]");
-                                            System.out.println("quit");
-                                            System.out.println("==================================");
-
-                                        }
-                                    }, "system in").start();
-                                }
-                            });
-                        }
-                    });
-            Channel ch = boot
-                    .connect("localhost", ChatServer.serverPort)
-                    .sync()
-                    .channel();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
-            boss.shutdownGracefully();
-        }
-
-        }
-    }*/
 
 
 
