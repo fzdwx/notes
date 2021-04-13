@@ -43,8 +43,10 @@ public class ChatServer {
                                     ch.pipeline().addLast(new LoginRequestMessageHandler());      // 登录消息处理器
                                     ch.pipeline().addLast(new RegisterRequestMessageHandler());  // 注册消息处理器
                                     ch.pipeline().addLast(new ChatRequestMessageHandler());     // 私聊消息处理器
-                                    ch.pipeline().addLast(new GroupCreateRequestMessageHandler());  // 创建群聊处理器
+                                    ch.pipeline().addLast(new GroupCreateRequestMessageHandler()); // 创建群聊处理器
                                     ch.pipeline().addLast(new GroupChatRequestMessageHandler());  // 群聊消息处理器
+                                    ch.pipeline().addLast(new QuitHandler()); // 退出聊天服务器处理器
+
                                 }
                             });
             Channel channel = boot.bind(serverPort).sync().channel();

@@ -3,6 +3,7 @@ package com.like.netty.protocol.custom.server.session.impl;
 import com.like.netty.protocol.custom.server.session.Session;
 
 import io.netty.channel.Channel;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -30,10 +31,11 @@ public class SessionMemoryImpl implements Session {
     }
 
     @Override
-    public void unbind(Channel channel) {
+    public String unbind(Channel channel) {
         final String user = channelMapUser.remove(channel);
-        userMapChannel.remove(user);
         channelAttrMap.remove(channel);
+        userMapChannel.remove(user);
+        return user;
     }
 
     @Override

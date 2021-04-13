@@ -24,8 +24,9 @@ public interface Session {
      *
      * @param channel 哪个channel 要解开绑定
      *                {@link Channel}
+     * @return
      */
-    void unbind(Channel channel);
+    String unbind(Channel channel);
 
 
     /**

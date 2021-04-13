@@ -4,14 +4,16 @@ import com.like.netty.protocol.custom.message.GroupChatRequestMessage;
 import com.like.netty.protocol.custom.message.GroupChatResponseMessage;
 import com.like.netty.protocol.custom.server.session.GroupSession;
 import com.like.netty.protocol.custom.server.session.GroupSessionFactory;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 /**
  * Create By like On 2021-04-13 10:40
- *
- * @Description: 发送 群聊消息
+ * <p>
+ * 发送 群聊消息
  */
+@ChannelHandler.Sharable
 public class GroupChatRequestMessageHandler extends SimpleChannelInboundHandler<GroupChatRequestMessage> {
 
     @Override

@@ -6,6 +6,7 @@ import com.like.netty.protocol.custom.message.GroupCreateResponseMessage;
 import com.like.netty.protocol.custom.server.session.GroupSession;
 import com.like.netty.protocol.custom.server.session.GroupSessionFactory;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -14,8 +15,10 @@ import java.util.Set;
 
 /**
  * Create By like On 2021-04-12 20:22
+ * <p>
  * 创建群
  */
+@ChannelHandler.Sharable
 public class GroupCreateRequestMessageHandler extends SimpleChannelInboundHandler<GroupCreateRequestMessage> {
 
     @Override
