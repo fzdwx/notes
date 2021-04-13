@@ -1,15 +1,15 @@
 package com.like.netty.protocol.custom.message.protocol;
 
-import cn.hutool.core.util.StrUtil;
-import cn.hutool.json.JSONUtil;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.like.netty.protocol.custom.handler.LikeChannelMustPipeline;
 import com.like.netty.protocol.custom.message.Message;
+import com.like.netty.protocol.custom.serializer.MessageSerializer;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageCodec;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.slf4j.Logger;
 
 import java.nio.charset.Charset;
@@ -20,25 +20,23 @@ import static org.slf4j.LoggerFactory.getLogger;
 /**
  * Create By like On 2021-04-11 14:41
  * 必须 配合该解码器使用 {@link LikeChannelMustPipeline#getLikeProtocolFrameDecoder()}
+ * 必须传入 {@link MessageCodecSharable}
  */
+@EqualsAndHashCode(callSuper = true)
 @ChannelHandler.Sharable
+@Data
 public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message> {
-    private final ObjectMapper mapper = new ObjectMapper();
+
+    /** 魔数 */
     public static final byte[] magicNumber = "LikeLove".getBytes();
-    public int version = 1;
+    /** 日志 */
+    private final static Logger log = getLogger(MessageCodecSharable.class);
+    /** json 映射器 */
+    private final ObjectMapper mapper = new ObjectMapper();
+
+    private int version = 1;
 
     private MessageSerializer messageSerializer;
-
-    public MessageCodecSharable() {
-    }
-
-    public MessageSerializer getMessageSerializer() {
-        return messageSerializer;
-    }
-
-    public void setMessageSerializer(MessageSerializer messageSerializer) {
-        this.messageSerializer = messageSerializer;
-    }
 
     public MessageCodecSharable(MessageSerializer messageSerializer) {
         this.messageSerializer = messageSerializer;
@@ -52,39 +50,14 @@ public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message
         out.writeByte(messageSerializer.algorithmType());
         out.writeByte(msg.getMessageType());
         out.writeInt(msg.getSequenceId());
-        JSONUtil.toJsonStr(msg);
 
-        byte[] msgArray = JSONSerialization(msg); ;
+        byte[] msgArray = messageSerializer.serialization(msg); // 序列化
 
         out.writeInt(msgArray.length);
         // 不可变 共22 个字节
-        // 7.写入消息
         out.writeBytes(msgArray);
 
         outList.add(out);
-    }
-
-    /**
-     * json serialization
-     *
-     * @param msg message
-     * @return {@link byte[]}
-     */
-    private byte[] JSONSerialization(Message msg) throws JsonProcessingException {
-        return mapper.writeValueAsString(msg).getBytes();
-        // return JSONUtil.toJsonStr(msg).getBytes();
-    }
-
-    /**
-     * json deserialization
-     *
-     * @param msg message
-     * @return {@link Message}
-     */
-    private Message JSONDeserialization(byte[] msg) throws JsonProcessingException {
-        // return mapper.readValue(StrUtil.str(msg, Charset.defaultCharset()), Message.class);
-        String json = StrUtil.str(msg, Charset.defaultCharset());
-        return (Message) JSONUtil.toBean(json, Message.getMessageClass(JSONUtil.parse(json).getByPath("messageType", Integer.class)));
     }
 
     @Override
@@ -97,13 +70,10 @@ public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message
         byte messageType = in.readByte();
         int seqId = in.readInt();
         int msgArrayLen = in.readInt();
+
         byte[] msg = new byte[msgArrayLen];
         in.readBytes(msg, 0, msgArrayLen);
 
-
-        Message message = JSONDeserialization(msg);
-        out.add(message);
+        out.add(messageSerializer.deserialization(Message.getMessageClass(messageType), msg));  // 反序列化
     }
-
-    private final static Logger log = getLogger(MessageCodecSharable.class);
 }

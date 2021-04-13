@@ -1,0 +1,5 @@
+# 应用名字
+app.name="like - netty test server"
+
+# Message 序列化方法  JSON / JDK
+message.Serializer= asd

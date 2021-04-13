@@ -10,7 +10,7 @@ import io.netty.handler.codec.http.*;
 import java.io.BufferedInputStream;
 import java.nio.charset.StandardCharsets;
 
-import static org.springframework.http.HttpHeaders.CONTENT_LENGTH;
+
 
 /**
  * @author like
@@ -49,7 +49,7 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<HttpObject> {
                 }
                 ByteBuf buf = Unpooled.copiedBuffer(ico);
                 FullHttpResponse resp = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, buf);
-                resp.headers().set(CONTENT_LENGTH, buf.readableBytes());
+                resp.headers().set("content-length", buf.readableBytes());
 
                 bis.close();
                 buf.clear();
@@ -92,7 +92,7 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<HttpObject> {
         ByteBuf buf = Unpooled.copiedBuffer(res, StandardCharsets.UTF_8);
         FullHttpResponse resp = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, buf);
         resp.headers().set(HttpHeaderNames.CONTENT_TYPE, "application/json; charset=UTF-8");
-        resp.headers().set(CONTENT_LENGTH, buf.readableBytes());
+        resp.headers().set("content-length", buf.readableBytes());
 
         ctx.writeAndFlush(resp);
     }
@@ -102,7 +102,7 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<HttpObject> {
         ByteBuf buf = Unpooled.copiedBuffer(res, StandardCharsets.UTF_8);
         FullHttpResponse resp = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, buf);
         resp.headers().set(HttpHeaderNames.CONTENT_TYPE, "text/html; charset=UTF-8");
-        resp.headers().set(CONTENT_LENGTH, buf.readableBytes());
+        resp.headers().set("content-length", buf.readableBytes());
 
         ctx.writeAndFlush(resp);
     }

@@ -27,7 +27,7 @@ public class HeatBeatPongMessageHandler extends ChannelDuplexHandler {
 
     private final static Logger log = LoggerFactory.getLogger(HeatBeatPongMessageHandler.class);
 
-    private AtomicReference<String> username;
+    private final AtomicReference<String> username;
 
     public HeatBeatPongMessageHandler(AtomicReference<String> username) {
         this.username = username;
@@ -43,11 +43,11 @@ public class HeatBeatPongMessageHandler extends ChannelDuplexHandler {
             System.out.println("channel = " + channel);
             if (ObjectUtil.isNotNull(channel)) {
                 // TODO: 2021/4/13  内存实现为null
-                channel.writeAndFlush(new PingMessage("自己写个自己"));
+                channel.writeAndFlush(new PingMessage("自己写给自己"));
                 System.out.println("SessionFactory.getSession().getUserName(channel) = " + SessionFactory.getSession().getUserName(channel));
             }
             ctx.writeAndFlush(new PongMessage("pong-1"));
-            log.info("#userEventTriggered(..):{} 心跳数据包发送-pong", username.get());
+            log.debug("#userEventTriggered(..):{} 心跳数据包发送-pong", username.get());
         }
     }
 }

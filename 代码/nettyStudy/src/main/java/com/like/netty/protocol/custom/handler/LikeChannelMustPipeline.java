@@ -1,8 +1,8 @@
 package com.like.netty.protocol.custom.handler;
 
+import com.like.netty.protocol.custom.config.Config;
 import com.like.netty.protocol.custom.message.protocol.MessageCodec;
 import com.like.netty.protocol.custom.message.protocol.MessageCodecSharable;
-import com.like.netty.protocol.custom.message.protocol.MessageSerializer;
 import com.sun.istack.internal.NotNull;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.logging.LogLevel;
@@ -21,8 +21,9 @@ public class LikeChannelMustPipeline {
 
     /** 日志处理handler */
     private static final LoggingHandler loggingHandler = new LoggingHandler(LogLevel.DEBUG);
-    /** like 协议编解码器可分享的 */
-    private static final MessageCodecSharable likeProtocolCodecSharable = new MessageCodecSharable();
+    /** 安全的 like 协议编解码器 */
+    private final static MessageCodecSharable likeProtocolCodecSharable = new MessageCodecSharable((Config.getMessageSerializer()));
+
 
     /**
      * netty日志处理器 default level debug
@@ -34,15 +35,14 @@ public class LikeChannelMustPipeline {
     }
 
     /**
-     * like 协议编解码器 安全的
+     * 安全的 like 协议编解码器
      * 协议主要实现
      * <p>
      * MessageCodecSharable extents {@link MessageCodec}
      *
      * @return {@link MessageCodecSharable}
      */
-    public static MessageCodecSharable getLikeProtocolCodecSharable(MessageSerializer messageSerializer) {
-        likeProtocolCodecSharable.setMessageSerializer(messageSerializer);
+    public static MessageCodecSharable getLikeProtocolCodecSharable() {
         return likeProtocolCodecSharable;
     }
 

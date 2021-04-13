@@ -13,6 +13,7 @@
     <artifactId>nettyStudy</artifactId>
 
     <dependencies>
+
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
@@ -32,6 +33,22 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.18</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.skjolber.json-log-filter</groupId>-->
+<!--            <artifactId>spring-boot-starter-logbook</artifactId>-->
+<!--            <version>1.0.20</version>-->
+<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+            <version>2.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.11.4</version>
         </dependency>
     </dependencies>
 
