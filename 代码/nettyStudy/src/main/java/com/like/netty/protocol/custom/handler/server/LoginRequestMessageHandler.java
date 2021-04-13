@@ -1,7 +1,7 @@
 package com.like.netty.protocol.custom.handler.server;
 
-import com.like.netty.protocol.custom.message.LoginRequestMessage;
-import com.like.netty.protocol.custom.message.LoginResponseMessage;
+import com.like.netty.protocol.custom.message.chat.LoginRequestMessage;
+import com.like.netty.protocol.custom.message.chat.LoginResponseMessage;
 import com.like.netty.protocol.custom.server.service.UserService;
 import com.like.netty.protocol.custom.server.service.UserServiceFactory;
 import com.like.netty.protocol.custom.server.session.SessionFactory;
@@ -25,7 +25,7 @@ public class LoginRequestMessageHandler extends SimpleChannelInboundHandler<Logi
         if (loginStats.getStatus()) {
             // 用户登录状态管理:channel连接绑定用户名
             SessionFactory.getSession().bind(ctx.channel(), msg.getUsername());
-            message = new LoginResponseMessage(loginStats.getStatus(), loginStats.getType() + msg.getUsername());
+            message = new LoginResponseMessage(loginStats.getStatus(), loginStats.getType() + ": " + msg.getUsername());
         } else {
             message = new LoginResponseMessage(loginStats.getStatus(), loginStats.getType());
         }

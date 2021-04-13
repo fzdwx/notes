@@ -1,7 +1,7 @@
 package com.like.netty.protocol.custom.handler.server;
 
-import com.like.netty.protocol.custom.message.ChatRequestMessage;
-import com.like.netty.protocol.custom.message.ChatResponseMessage;
+import com.like.netty.protocol.custom.message.chat.ChatRequestMessage;
+import com.like.netty.protocol.custom.message.chat.ChatResponseMessage;
 import com.like.netty.protocol.custom.server.session.SessionFactory;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;

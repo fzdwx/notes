@@ -1,5 +1,6 @@
 package com.like.netty.protocol.custom.chat;
 
+import com.like.netty.protocol.custom.handler.HeatBeatPingMessageHandler;
 import com.like.netty.protocol.custom.handler.server.*;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
@@ -40,11 +41,16 @@ public class ChatServer {
                                     ch.pipeline().addLast(getLikeProtocolCodecSharable());
                                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
 
+                                    ch.pipeline().addLast(getIdleReadStateHandler());  // IdleState.READER_IDLE 事件(读空闲)
+                                    ch.pipeline().addLast(new HeatBeatPingMessageHandler());
+
                                     ch.pipeline().addLast(new LoginRequestMessageHandler());      // 登录消息处理器
                                     ch.pipeline().addLast(new RegisterRequestMessageHandler());  // 注册消息处理器
                                     ch.pipeline().addLast(new ChatRequestMessageHandler());     // 私聊消息处理器
                                     ch.pipeline().addLast(new GroupCreateRequestMessageHandler()); // 创建群聊处理器
                                     ch.pipeline().addLast(new GroupChatRequestMessageHandler());  // 群聊消息处理器
+
+
                                     ch.pipeline().addLast(new QuitHandler()); // 退出聊天服务器处理器
 
                                 }

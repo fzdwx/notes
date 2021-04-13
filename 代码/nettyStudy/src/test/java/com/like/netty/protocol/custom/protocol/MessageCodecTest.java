@@ -1,6 +1,6 @@
 package com.like.netty.protocol.custom.protocol;
 
-import com.like.netty.protocol.custom.message.LoginRequestMessage;
+import com.like.netty.protocol.custom.message.chat.LoginRequestMessage;
 import com.like.netty.protocol.custom.message.protocol.MessageCodec;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;

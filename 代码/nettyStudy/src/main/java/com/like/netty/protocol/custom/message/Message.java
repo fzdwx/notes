@@ -1,6 +1,7 @@
 package com.like.netty.protocol.custom.message;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.like.netty.protocol.custom.message.chat.*;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -19,6 +20,15 @@ public abstract class Message implements Serializable {
     private int messageType;
 
     public abstract int getMessageType();
+
+    @JsonIgnore
+    public static final int ServerMessage = -3;
+    @JsonIgnore
+    public static final int PingMessage = -4;
+    @JsonIgnore
+    public static final int PongMessage = -5;
+
+
     @JsonIgnore
     public static final int RegisterRequestMessage = -1;
     @JsonIgnore
@@ -55,20 +65,25 @@ public abstract class Message implements Serializable {
     private static final Map<Integer, Class<?>> messageClasses = new HashMap<>();
 
     static {
+        messageClasses.put(ServerMessage, ServerMessage.class);
+        messageClasses.put(PingMessage, PingMessage.class);
+        messageClasses.put(PongMessage, PongMessage.class);
+
+
         messageClasses.put(RegisterRequestMessage, RegisterRequestMessage.class);
         messageClasses.put(RegisterResponseMessage, RegisterResponseMessage.class);
         messageClasses.put(LoginRequestMessage, LoginRequestMessage.class);
         messageClasses.put(LoginResponseMessage, LoginResponseMessage.class);
-        messageClasses.put(ChatRequestMessage, ChatRequestMessage.class);
-        messageClasses.put(ChatResponseMessage, ChatResponseMessage.class);
-        messageClasses.put(GroupCreateRequestMessage, GroupCreateRequestMessage.class);
+        messageClasses.put(ChatRequestMessage, com.like.netty.protocol.custom.message.chat.ChatRequestMessage.class);
+        messageClasses.put(ChatResponseMessage, com.like.netty.protocol.custom.message.chat.ChatResponseMessage.class);
+        messageClasses.put(GroupCreateRequestMessage, com.like.netty.protocol.custom.message.chat.GroupCreateRequestMessage.class);
         messageClasses.put(GroupCreateResponseMessage, GroupCreateResponseMessage.class);
         messageClasses.put(GroupJoinRequestMessage, GroupJoinRequestMessage.class);
         messageClasses.put(GroupJoinResponseMessage, GroupJoinResponseMessage.class);
         messageClasses.put(GroupQuitRequestMessage, GroupQuitRequestMessage.class);
         messageClasses.put(GroupQuitResponseMessage, GroupQuitResponseMessage.class);
-        messageClasses.put(GroupChatRequestMessage, GroupChatRequestMessage.class);
-        messageClasses.put(GroupChatResponseMessage, GroupChatResponseMessage.class);
+        messageClasses.put(GroupChatRequestMessage, com.like.netty.protocol.custom.message.chat.GroupChatRequestMessage.class);
+        messageClasses.put(GroupChatResponseMessage, com.like.netty.protocol.custom.message.chat.GroupChatResponseMessage.class);
         messageClasses.put(GroupMembersRequestMessage, GroupMembersRequestMessage.class);
         messageClasses.put(GroupMembersResponseMessage, GroupMembersResponseMessage.class);
     }

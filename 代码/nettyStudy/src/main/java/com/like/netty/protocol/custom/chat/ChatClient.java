@@ -1,12 +1,10 @@
 package com.like.netty.protocol.custom.chat;
 
-import com.like.netty.protocol.custom.message.*;
+import com.like.netty.protocol.custom.handler.HeatBeatPongMessageHandler;
+import com.like.netty.protocol.custom.message.chat.*;
 import com.like.netty.protocol.custom.server.service.UserService;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
-import io.netty.channel.ChannelInitializer;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -19,8 +17,7 @@ import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolCodecSharable;
-import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolFrameDecoder;
+import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.*;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
@@ -47,6 +44,8 @@ public class ChatClient {
                     // ch.pipeline().addLast(getLogHandler());
                     ch.pipeline().addLast(getLikeProtocolCodecSharable());
                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
+                    ch.pipeline().addLast(getIdleWriteStateHandler());  // 写空闲事件
+                    ch.pipeline().addLast(new HeatBeatPongMessageHandler());
 
                     ch.pipeline().addLast("client handler", new ChannelInboundHandlerAdapter() {
                         LoginResponseMessage response = null;
@@ -216,6 +215,7 @@ public class ChatClient {
         System.out.println("quit");
         System.out.println("==================================");
     }
+
 }
 
 

@@ -1,5 +1,6 @@
-package com.like.netty.protocol.custom.message;
+package com.like.netty.protocol.custom.message.chat;
 
+import com.like.netty.protocol.custom.message.AbstractResponseMessage;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;

@@ -2,7 +2,7 @@ package com.like.netty.protocol.custom.server.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
-import com.like.netty.protocol.custom.message.LoginResponseMessage;
+import com.like.netty.protocol.custom.message.chat.LoginResponseMessage;
 import com.like.netty.protocol.custom.server.service.UserService;
 import com.like.netty.protocol.custom.server.session.SessionFactory;
 import io.netty.channel.Channel;

@@ -24,7 +24,7 @@ public interface Session {
      *
      * @param channel 哪个channel 要解开绑定
      *                {@link Channel}
-     * @return
+     * @return username
      */
     String unbind(Channel channel);
 
@@ -38,6 +38,13 @@ public interface Session {
      */
     Channel getChannel(String username);
 
+    /**
+     * 获得用户名
+     *
+     * @param channel 通道 - 用户绑定的channel
+     * @return {@link String}
+     */
+    String getUserName(Channel channel);
     /**
      * 获取属性
      *
