@@ -5,6 +5,7 @@ import cn.hutool.json.JSONUtil;
 import com.like.netty.protocol.custom.handler.HeatBeatPongMessageHandler;
 import com.like.netty.protocol.custom.message.Message;
 import com.like.netty.protocol.custom.message.chat.*;
+import com.like.netty.protocol.custom.message.protocol.MessageSerializer;
 import com.like.netty.protocol.custom.server.service.UserService;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -50,7 +51,7 @@ public class ChatClient {
                 @Override
                 protected void initChannel(SocketChannel ch) throws Exception {
                     // ch.pipeline().addLast(getLogHandler());
-                    ch.pipeline().addLast(getLikeProtocolCodecSharable());
+                    ch.pipeline().addLast(getLikeProtocolCodecSharable(MessageSerializer.Algorithm.JDK));
                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
                     ch.pipeline().addLast(getIdleWriteStateHandler());  // 写空闲事件
                     ch.pipeline().addLast(new HeatBeatPongMessageHandler(username));

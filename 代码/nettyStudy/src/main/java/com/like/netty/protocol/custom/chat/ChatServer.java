@@ -2,6 +2,7 @@ package com.like.netty.protocol.custom.chat;
 
 import com.like.netty.protocol.custom.handler.HeatBeatPingMessageHandler;
 import com.like.netty.protocol.custom.handler.server.*;
+import com.like.netty.protocol.custom.message.protocol.MessageSerializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
@@ -38,7 +39,7 @@ public class ChatServer {
                                 @Override
                                 protected void initChannel(NioSocketChannel ch) throws Exception {
                                     ch.pipeline().addLast(getLogHandler());
-                                    ch.pipeline().addLast(getLikeProtocolCodecSharable());
+                                    ch.pipeline().addLast(getLikeProtocolCodecSharable(MessageSerializer.Algorithm.JDK));
                                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
 
                                     ch.pipeline().addLast(getIdleReadStateHandler());  // IdleState.READER_IDLE 事件(读空闲)

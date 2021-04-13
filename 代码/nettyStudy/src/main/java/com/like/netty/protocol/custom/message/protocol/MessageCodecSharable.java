@@ -12,7 +12,6 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageCodec;
 import org.slf4j.Logger;
 
-import java.io.*;
 import java.nio.charset.Charset;
 import java.util.List;
 
@@ -27,14 +26,30 @@ public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message
     private final ObjectMapper mapper = new ObjectMapper();
     public static final byte[] magicNumber = "LikeLove".getBytes();
     public int version = 1;
-    public int serializationType = 0;
+
+    private MessageSerializer messageSerializer;
+
+    public MessageCodecSharable() {
+    }
+
+    public MessageSerializer getMessageSerializer() {
+        return messageSerializer;
+    }
+
+    public void setMessageSerializer(MessageSerializer messageSerializer) {
+        this.messageSerializer = messageSerializer;
+    }
+
+    public MessageCodecSharable(MessageSerializer messageSerializer) {
+        this.messageSerializer = messageSerializer;
+    }
 
     @Override
     protected void encode(ChannelHandlerContext ctx, Message msg, List<Object> outList) throws Exception {
         final ByteBuf out = ctx.alloc().buffer();
         out.writeBytes(magicNumber);
-        out.writeInt(version);
-        out.writeByte(serializationType);
+        out.writeInt(version);  // TODO: 2021/4/13 暂时全为1
+        out.writeByte(messageSerializer.algorithmType());
         out.writeByte(msg.getMessageType());
         out.writeInt(msg.getSequenceId());
         JSONUtil.toJsonStr(msg);
@@ -70,33 +85,6 @@ public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message
         // return mapper.readValue(StrUtil.str(msg, Charset.defaultCharset()), Message.class);
         String json = StrUtil.str(msg, Charset.defaultCharset());
         return (Message) JSONUtil.toBean(json, Message.getMessageClass(JSONUtil.parse(json).getByPath("messageType", Integer.class)));
-    }
-
-    /**
-     * jdk serialization
-     *
-     * @param msg message
-     * @return {@link byte[]}
-     * @throws IOException ioexception
-     */
-    private byte[] JDKSerialization(Message msg) throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(baos);
-        oos.writeObject(msg);
-        return baos.toByteArray();
-    }
-
-    /**
-     * jdk deserialization
-     *
-     * @param msg message
-     * @return {@link Message}
-     * @throws IOException            ioexception
-     * @throws ClassNotFoundException 类没有发现异常
-     */
-    private Message JDKDeserialization(byte[] msg) throws IOException, ClassNotFoundException {
-        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(msg));
-        return (Message) ois.readObject();
     }
 
     @Override

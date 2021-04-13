@@ -2,6 +2,7 @@ package com.like.netty.protocol.custom.handler;
 
 import com.like.netty.protocol.custom.message.protocol.MessageCodec;
 import com.like.netty.protocol.custom.message.protocol.MessageCodecSharable;
+import com.like.netty.protocol.custom.message.protocol.MessageSerializer;
 import com.sun.istack.internal.NotNull;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.logging.LogLevel;
@@ -40,7 +41,8 @@ public class LikeChannelMustPipeline {
      *
      * @return {@link MessageCodecSharable}
      */
-    public static MessageCodecSharable getLikeProtocolCodecSharable() {
+    public static MessageCodecSharable getLikeProtocolCodecSharable(MessageSerializer messageSerializer) {
+        likeProtocolCodecSharable.setMessageSerializer(messageSerializer);
         return likeProtocolCodecSharable;
     }
 
