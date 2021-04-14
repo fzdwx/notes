@@ -1,5 +1,6 @@
 package com.like.netty.protocol.custom.chat;
 
+import com.like.netty.protocol.custom.config.Config;
 import com.like.netty.protocol.custom.handler.HeatBeatPingMessageHandler;
 import com.like.netty.protocol.custom.handler.server.*;
 import io.netty.bootstrap.ServerBootstrap;
@@ -23,7 +24,8 @@ public class ChatServer {
     private final static Logger log = getLogger(ChatServer.class);
 
     /** chart server port */
-    public static final int serverPort = 9999;
+    public static final int serverPort = Integer.parseInt(Config.getServerPort());
+    public static final String serverHost = Config.getServerHost();
 
     public static void main(String[] args) {
         NioEventLoopGroup boss = new NioEventLoopGroup();

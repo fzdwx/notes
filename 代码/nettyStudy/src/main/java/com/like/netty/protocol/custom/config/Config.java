@@ -20,16 +20,25 @@ public class Config {
 
     private String appName;
     private String serverPort;
+    private String serverHost;
+
     private String messageSerializer;
 
     static {
-
         setting = new Setting(configPath);
         setting.autoLoad(true);
     }
 
     public static String getAppName() {
         return setting.get("app.name");
+    }
+
+    public static String getServerHost() {
+        return setting.get("server.host");
+    }
+
+    public static String getServerPort() {
+        return setting.get("server.port");
     }
 
     public static MessageSerializer getMessageSerializer() {

@@ -166,7 +166,7 @@ public class ChatClient {
                     });
                 }
             });
-            Channel channel = bootstrap.connect("localhost", ChatServer.serverPort).sync().channel();
+            Channel channel = bootstrap.connect(ChatServer.serverHost, ChatServer.serverPort).sync().channel();
             channel.closeFuture().sync();
         } catch (Exception e) {
             log.error("client error", e);

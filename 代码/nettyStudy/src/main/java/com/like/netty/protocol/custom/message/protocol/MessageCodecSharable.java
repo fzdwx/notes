@@ -53,8 +53,7 @@ public class MessageCodecSharable extends MessageToMessageCodec<ByteBuf, Message
 
         byte[] msgArray = messageSerializer.serialization(msg); // 序列化
 
-        out.writeInt(msgArray.length);
-        // 不可变 共22 个字节
+        out.writeInt(msgArray.length); // 不可变 共22 个字节
         out.writeBytes(msgArray);
 
         outList.add(out);
