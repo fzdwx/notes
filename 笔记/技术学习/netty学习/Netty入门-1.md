@@ -1595,3 +1595,55 @@ public class HeatBeatPongMessageHandler extends ChannelDuplexHandler {
     }
 }
 ```
+
+
+
+
+
+
+
+## 3.参数调优
+
+
+
+![image-20210414103531458](https://i.loli.net/2021/04/14/yq7sRTx3Pzrg9cV.png)
+
+### a.CONNECT_TIMEOUT_MILLIS
+
+- 属于socketChannel参数
+- 用在客户端建立连接的时候，如果在指定毫秒事件内无法连接，就会抛出timeout异常
+- SO_TIMEOUT主要用在阻塞IO，阻塞IO中accept，read等都是无线等待的，如果不希望永远阻塞，使用它调整等待时间
+
+
+
+
+
+
+
+### b.SO_BACKLOG
+
+- 属于serverSocketChannel调优参数
+
+![image-20210414103941301](https://i.loli.net/2021/04/14/NM6P8QTgqFBwEHo.png)
+
+
+
+第一次握手，client 发送syn到server，状态修改为syn_send,server收到，状态改为syn_revd，并将这次请求放入sync queue队列
+
+第二次握手，server回复ack+syn给client，client收到，状态该为established，并发送ack给server
+
+第三次握手，server收到client发送的ack，状态该为established，将请求从sync queue放入accpet queue
+
+
+
+![image-20210414104553754](https://i.loli.net/2021/04/14/PJs7oX38EpSxmBz.png)
+
+backlog指定了内核为此套接口排队的最大连接个数，对于给定的监听套接口，内核要维护两个队列：未连接队列和已连接队列，根据tcp三次握手过程中三个分节来分隔这两个队列。服务器处于listen状态时，收到客户端syn分节（connect）时在未完成队列中创建一个新的条目，然后用三次握手的第二个分节即服务器的syn响应客户端，此条目在第三个分节到达前（客户端对服务器syn的ack）一直保留在未完成连接队列中，如果三路握手完成，该条目从未完成连接队列搬到已完成连接队列的尾部。当**进程调用accept时，从已完成队列中的头部取出一个条目给进程，当已完成队列为空时进程将睡眠，直到有条目在已完成连接队列中才唤醒**。**backlog被规定为两个队列总和的最大值**，大多数默认值为5，但在高并发的web服务器中此值显然是不够的，Lighttpd中此值达到128x8。需要设置此值更大一些的原因是为完成连接队列的长度可能因为客户端syn的到达及等待三路握手第三个分节到达延时而增大。netty默认的backlog为100，当然，用户可以修改默认值，这需要根据实际场景和网络状态进行灵活设置。
+
+
+
+### c.other
+
+![image-20210414110654580](https://i.loli.net/2021/04/14/H8niYNuoACqrIMG.png)
+
+![image-20210414110728115](https://i.loli.net/2021/04/14/6o5vkHB2MXKAjZP.png)
