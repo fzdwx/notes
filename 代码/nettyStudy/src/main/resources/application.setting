@@ -6,4 +6,4 @@ server.port = 8888
 server.host = localhost
 
 # Message 序列化方法  JSON / JDK
-message.Serializer= asd
+message.Serializer= JSON

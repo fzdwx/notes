@@ -27,7 +27,10 @@ public abstract class Message implements Serializable {
     public static final int PingMessage = -4;
     @JsonIgnore
     public static final int PongMessage = -5;
-
+    @JsonIgnore
+    public static final int RpcResponseMessage = -6;
+    @JsonIgnore
+    public static final int RpcRequestMessage = -7;
 
     @JsonIgnore
     public static final int RegisterRequestMessage = -1;
@@ -65,6 +68,8 @@ public abstract class Message implements Serializable {
     private static final Map<Integer, Class<?>> messageClasses = new HashMap<>();
 
     static {
+        messageClasses.put(RpcResponseMessage, com.like.netty.protocol.custom.message.rpc.RpcResponseMessage.class);
+        messageClasses.put(RpcRequestMessage, com.like.netty.protocol.custom.message.rpc.RpcRequestMessage.class);
         messageClasses.put(ServerMessage, ServerMessage.class);
         messageClasses.put(PingMessage, PingMessage.class);
         messageClasses.put(PongMessage, PongMessage.class);

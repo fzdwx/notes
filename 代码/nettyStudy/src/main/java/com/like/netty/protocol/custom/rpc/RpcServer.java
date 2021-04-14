@@ -1,8 +1,8 @@
-package com.like.netty.protocol.custom.chat;
+package com.like.netty.protocol.custom.rpc;
 
+import com.like.netty.protocol.custom.chat.ChatServer;
 import com.like.netty.protocol.custom.config.Config;
-import com.like.netty.protocol.custom.handler.HeatBeatPingMessageHandler;
-import com.like.netty.protocol.custom.handler.chat.*;
+import com.like.netty.protocol.custom.handler.rpc.RpcRequestMessageHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
@@ -15,11 +15,9 @@ import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.*;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
- * Create By like On 2021-04-11 14:30
- *
- * @Description: 聊天服务器
+ * Create By like On 2021-04-14 15:15
  */
-public class ChatServer {
+public class RpcServer {
 
     private final static Logger log = getLogger(ChatServer.class);
 
@@ -42,18 +40,7 @@ public class ChatServer {
                                     ch.pipeline().addLast(getLikeProtocolCodecSharable());
                                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
 
-                                    ch.pipeline().addLast(getIdleReadStateHandler());  // IdleState.READER_IDLE 事件(读空闲)
-                                    ch.pipeline().addLast(new HeatBeatPingMessageHandler());
-
-                                    ch.pipeline().addLast(new LoginRequestMessageHandler());      // 登录消息处理器
-                                    ch.pipeline().addLast(new RegisterRequestMessageHandler());  // 注册消息处理器
-                                    ch.pipeline().addLast(new ChatRequestMessageHandler());     // 私聊消息处理器
-                                    ch.pipeline().addLast(new GroupCreateRequestMessageHandler()); // 创建群聊处理器
-                                    ch.pipeline().addLast(new GroupChatRequestMessageHandler());  // 群聊消息处理器
-
-
-                                    ch.pipeline().addLast(new QuitHandler()); // 退出聊天服务器处理器
-
+                                    ch.pipeline().addLast(new RpcRequestMessageHandler());
                                 }
                             });
             Channel channel = boot.bind(serverPort).sync().channel();
@@ -65,6 +52,4 @@ public class ChatServer {
             worker.shutdownGracefully();
         }
     }
-
-
 }

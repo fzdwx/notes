@@ -1,4 +1,4 @@
-package com.like.netty.protocol.custom.handler.server;
+package com.like.netty.protocol.custom.handler.chat;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.like.netty.protocol.custom.message.chat.GroupCreateRequestMessage;

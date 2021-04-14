@@ -1,4 +1,4 @@
-package com.like.netty.protocol.custom.handler.server;
+package com.like.netty.protocol.custom.handler.chat;
 
 import com.like.netty.protocol.custom.message.chat.ChatRequestMessage;
 import com.like.netty.protocol.custom.message.chat.ChatResponseMessage;
