@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class RpcRequestMessage extends Message {
 
-    public RpcRequestMessage(int sequenceId, String interfaceName, String methodName, Class<?> returnType, Class[] parameterTypes, Object[] parameterValue) {
+    public RpcRequestMessage(int sequenceId, String interfaceName, String methodName,String returnType, String[]  parameterTypes, Object[] parameterValue) {
         this.setSequenceId(sequenceId);
 
         this.interfaceName = interfaceName;
@@ -24,9 +24,9 @@ public class RpcRequestMessage extends Message {
     /** 调用的方法名称 */
     private String methodName;
     /** 方法返回类型 */
-    private Class<?> returnType;
+    private String returnType;
     /** 方法参数类型 */
-    private Class[] parameterTypes;
+    private String[] parameterTypes;
     /** 方法参数值 */
     private Object[] parameterValue;
 

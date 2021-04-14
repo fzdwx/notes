@@ -4,6 +4,7 @@ import com.like.netty.protocol.custom.handler.rpc.RpcResponseMessageHandler;
 import com.like.netty.protocol.custom.message.rpc.RpcRequestMessage;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
@@ -16,8 +17,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolCodecSharable;
-import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolFrameDecoder;
+import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.*;
 
 /**
  * Create By like On 2021-04-14 15:18
@@ -41,7 +41,7 @@ public class RpcClient {
             bootstrap.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected void initChannel(SocketChannel ch) throws Exception {
-                    // ch.pipeline().addLast(getLogHandler());
+                    ch.pipeline().addLast(getLogHandler());
                     ch.pipeline().addLast(getLikeProtocolCodecSharable());
                     ch.pipeline().addLast(getLikeProtocolFrameDecoder());
 
@@ -50,11 +50,12 @@ public class RpcClient {
             });
             Channel channel = bootstrap.connect(RpcServer.serverHost, RpcServer.serverPort).sync().channel();
 
-
-            channel.writeAndFlush(new RpcRequestMessage(
-                    1, "com.like.netty.protocol.custom.server.service", "hello", String.class,
-                    new Class[]{String.class}, new Object[]{"like"}
-            ));
+            ChannelFuture cf = channel.writeAndFlush(new RpcRequestMessage(
+                    1, "com.like.netty.protocol.custom.server.service.impl.HelloServiceImpl", "hello", String.class.getName(),
+                    new String[]{String.class.getName()}, new Object[]{"like"}
+            )).addListener(p -> {
+                System.out.println(p.isSuccess());
+            });
             channel.closeFuture().sync();
         } catch (Exception e) {
             log.error("client error", e);

@@ -21,13 +21,18 @@ public class RpcRequestMessageHandler extends SimpleChannelInboundHandler<RpcReq
         try {  // 反射调用目标方法 invoke
             final Class<?> clazz = Class.forName(msg.getInterfaceName());
             final Object impl = clazz.newInstance();
-            final Method method = impl.getClass().getMethod(msg.getMethodName(), msg.getParameterTypes());
+
+            Class<?>[] parameterType = new Class[msg.getParameterTypes().length];
+            for (int i = 0; i < msg.getParameterTypes().length; i++) {
+                parameterType[i] = Class.forName(msg.getParameterTypes()[i]);
+            }
+            final Method method = impl.getClass().getMethod(msg.getMethodName(), parameterType);
             final Object res = method.invoke(impl, msg.getParameterValue());
 
             resp.setReturnValue(res);
         } catch (Exception e) {  // 异常
             e.printStackTrace();
-            resp.setExceptionValue(e);
+            resp.setExMessage(e.getMessage());
         }
 
         ctx.writeAndFlush(resp);

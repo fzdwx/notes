@@ -2,12 +2,14 @@ package com.like.netty.protocol.custom.message.rpc;
 
 import com.like.netty.protocol.custom.message.AbstractResponseMessage;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * Create By like On 2021-04-14 15:23
  * <p>
  * rpc 响应消息
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class RpcResponseMessage extends AbstractResponseMessage {
 
@@ -15,7 +17,7 @@ public class RpcResponseMessage extends AbstractResponseMessage {
     private Object returnValue;
 
     /** 异常值 */
-    private Exception exceptionValue;
+    private String exMessage;
 
     @Override
     public int getMessageType() {
