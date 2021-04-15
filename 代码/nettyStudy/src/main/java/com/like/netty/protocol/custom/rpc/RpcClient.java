@@ -1,10 +1,8 @@
 package com.like.netty.protocol.custom.rpc;
 
 import com.like.netty.protocol.custom.handler.rpc.RpcResponseMessageHandler;
-import com.like.netty.protocol.custom.message.rpc.RpcRequestMessage;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
-import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
@@ -49,13 +47,13 @@ public class RpcClient {
                 }
             });
             Channel channel = bootstrap.connect(RpcServer.serverHost, RpcServer.serverPort).sync().channel();
-
+/*
             ChannelFuture cf = channel.writeAndFlush(new RpcRequestMessage(
                     1, "com.like.netty.protocol.custom.server.service.impl.HelloServiceImpl", "hello", String.class.getName(),
                     new String[]{String.class.getName()}, new Object[]{"like"}
             )).addListener(p -> {
                 System.out.println(p.isSuccess());
-            });
+            });*/
             channel.closeFuture().sync();
         } catch (Exception e) {
             log.error("client error", e);

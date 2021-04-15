@@ -17,7 +17,7 @@ public class RpcResponseMessage extends AbstractResponseMessage {
     private Object returnValue;
 
     /** 异常值 */
-    private String exMessage;
+    private Throwable exMessage;
 
     @Override
     public int getMessageType() {

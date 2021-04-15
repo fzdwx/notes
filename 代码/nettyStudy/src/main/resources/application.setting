@@ -5,5 +5,17 @@ server.port = 8888
 # 服务器 的ip地址
 server.host = localhost
 
-# Message 序列化方法  JSON / JDK
+# Message 序列化方法  JSON . JDK
 message.Serializer= JSON
+
+
+
+# service 实现类配置
+com.like.netty.protocol.custom.server.service.HelloService=com.like.netty.protocol.custom.server.service.impl.HelloServiceImpl
+
+
+
+
+
+
+

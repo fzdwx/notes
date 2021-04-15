@@ -29,6 +29,10 @@ public class Config {
         setting.autoLoad(true);
     }
 
+    public static Setting getSetting() {
+        return setting;
+    }
+
     public static String getAppName() {
         return setting.get("app.name");
     }
