@@ -17,7 +17,8 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.Proxy;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.*;
+import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolCodecSharable;
+import static com.like.netty.protocol.custom.handler.LikeChannelMustPipeline.getLikeProtocolFrameDecoder;
 
 /**
  * Create By like On 2021-04-14 15:18
@@ -29,12 +30,12 @@ public class RpcBetterClient {
 
     public static void main(String[] args) {
         HelloService hello = getProxyService(HelloService.class);
-        hello.hello("like");
+        System.out.println(hello.hello("like"));
 
 
-        hello.hello("keke");
+        System.out.println(hello.hello("keke"));
 
-        hello.hello("xiaowang");
+        System.out.println(hello.hello("xiaowang"));
     }
 
     /**
@@ -70,7 +71,11 @@ public class RpcBetterClient {
             DefaultPromise<Object> promise = new DefaultPromise<>(getChannel().eventLoop());
             RpcResponseMessageHandler.RPC_PROMISES.put(sqeId, promise);
 
-            // 4.返回结果
+            promise.addListener(future -> {
+                // 异步调用 ..
+
+            });
+            // 4. 同步返回结果
             promise.sync();
             if (promise.isSuccess()) {
                 return promise.getNow();
@@ -80,25 +85,27 @@ public class RpcBetterClient {
         return (T) o;
     }
 
-    static {
-        initChannel();
-    }
-
     /** 通道 */
     public static Channel channel;
+    private static final Object LOCK = new Object();
 
     /**
      * get channel
      *
      * @return {@link Channel}
      */
+
     public static Channel getChannel() {
         if (channel != null) {
             return channel;
-        } else {
-
         }
-        return channel;
+        synchronized (LOCK) { //  t2
+            if (channel != null) { // t1
+                return channel;
+            }
+            initChannel();
+            return channel;
+        }
     }
 
     /**
@@ -114,7 +121,7 @@ public class RpcBetterClient {
         bootstrap.handler(new ChannelInitializer<SocketChannel>() {
             @Override
             protected void initChannel(SocketChannel ch) throws Exception {
-                ch.pipeline().addLast(getLogHandler());  // log
+                // ch.pipeline().addLast(getLogHandler());  // log
                 ch.pipeline().addLast(getLikeProtocolCodecSharable());  // codec
                 ch.pipeline().addLast(getLikeProtocolFrameDecoder());  // LengthFieldBasedFrameDecoder
 

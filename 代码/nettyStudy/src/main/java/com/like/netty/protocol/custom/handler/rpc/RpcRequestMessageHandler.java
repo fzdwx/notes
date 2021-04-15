@@ -29,7 +29,7 @@ public class RpcRequestMessageHandler extends SimpleChannelInboundHandler<RpcReq
             resp.setReturnValue(res);
         } catch (Exception e) {  // 异常
             e.printStackTrace();
-            resp.setExMessage(e.getCause());
+            resp.setExMessage(new Exception("远程调用出错: "+e.getCause().getMessage()));
         }
 
         ctx.writeAndFlush(resp);

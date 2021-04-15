@@ -26,8 +26,8 @@ public class RpcResponseMessageHandler extends SimpleChannelInboundHandler<RpcRe
     protected void channelRead0(ChannelHandlerContext ctx, RpcResponseMessage msg) throws Exception {
         log.info("#channelRead0(..):rpc 调用{} ",msg.getReturnValue());
 
-        // 返回promise
-        Promise<Object> promise = RPC_PROMISES.get(msg.getSequenceId());
+        // 返回 promise
+        Promise<Object> promise = RPC_PROMISES.remove(msg.getSequenceId());
         if (promise != null) {
             if (Objects.isNull(msg.getExMessage())) {
                 promise.setSuccess(msg.getReturnValue());
