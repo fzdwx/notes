@@ -3,7 +3,6 @@ package com.like.netty.protocol.custom.handler;
 import com.like.netty.protocol.custom.config.Config;
 import com.like.netty.protocol.custom.message.protocol.MessageCodec;
 import com.like.netty.protocol.custom.message.protocol.MessageCodecSharable;
-import com.sun.istack.internal.NotNull;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
@@ -52,7 +51,6 @@ public class LikeChannelMustPipeline {
      *
      * @return {@link LengthFieldBasedFrameDecoder}
      */
-    @NotNull
     public static LengthFieldBasedFrameDecoder getLikeProtocolFrameDecoder() {
         return new LikeProtocolFrameDecoder();
     }
