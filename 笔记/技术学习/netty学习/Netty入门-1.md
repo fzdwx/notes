@@ -1647,3 +1647,27 @@ backlog指定了内核为此套接口排队的最大连接个数，对于给定�
 ![image-20210414110654580](https://i.loli.net/2021/04/14/H8niYNuoACqrIMG.png)
 
 ![image-20210414110728115](https://i.loli.net/2021/04/14/6o5vkHB2MXKAjZP.png)
+
+
+
+
+
+
+
+# Netty源码初步
+
+## 1.启动剖析
+
+netty 对nio下面的代码是怎么处理的
+
+~~~
+netty把serverSocketChannel当成一个附件
+~~~
+
+![image-20210418115900528](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210418115909.png)
+
+
+
+**nio启动一个服务器的主要代码**
+
+![image-20210418120110455](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20210418120110.png)
