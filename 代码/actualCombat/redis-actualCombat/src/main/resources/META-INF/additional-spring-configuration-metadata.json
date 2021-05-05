@@ -1,0 +1,28 @@
+{
+  "properties": [
+    {
+      "name": "lettuce.single",
+      "type": "cn.like.redis.customizeLettuceConfig.properties.LettuceSingleProperties",
+      "description": "单机配置.",
+      "sourceType": "cn.like.redis.customizeLettuceConfig.properties.LettuceProperties"
+    },
+    {
+      "name": "lettuce.replica",
+      "type": "cn.like.redis.customizeLettuceConfig.properties.LettuceReplicaProperties",
+      "description": "主从配置.",
+      "sourceType": "cn.like.redis.customizeLettuceConfig.properties.LettuceProperties"
+    },
+    {
+      "name": "lettuce.sentinel",
+      "type": "cn.like.redis.customizeLettuceConfig.properties.LettuceSentinelProperties",
+      "description": "哨兵配置.",
+      "sourceType": "cn.like.redis.customizeLettuceConfig.properties.LettuceProperties"
+    },
+    {
+      "name": "lettuce.cluster",
+      "type": "cn.like.redis.customizeLettuceConfig.properties.LettuceClusterProperties",
+      "description": "集群配置.",
+      "sourceType": "cn.like.redis.customizeLettuceConfig.properties.LettuceProperties"
+    }
+  ]
+}
