@@ -1,4 +1,4 @@
-package cn.like.redis.testCase;
+package cn.like.redis.testCase.str;
 
 import io.lettuce.core.KeyValue;
 import org.slf4j.Logger;

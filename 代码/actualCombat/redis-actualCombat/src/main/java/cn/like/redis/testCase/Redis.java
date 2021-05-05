@@ -27,20 +27,25 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class Redis {
 
     private final static Logger log = getLogger(Redis.class);
+    private static final StatefulRedisConnection<String, String> connect;
+    private static final RedisReactiveCommands<String, String> cmd;
 
     private Redis() {
     }
-    public static RedisReactiveCommands<String, String> cmd()  {
+
+    static {
+
         RedisURI uri = RedisURI.builder()
                 .withHost("localhost")
                 .withPort(6379)
                 .withTimeout(Duration.of(10, ChronoUnit.SECONDS))
                 .build();
         RedisClient redisClient = RedisClient.create(uri);
-        StatefulRedisConnection<String, String> connect = redisClient.connect();
+        connect = redisClient.connect();
+        cmd = connect.reactive();
+    }
 
-        RedisReactiveCommands<String, String> cmd = connect.reactive();
-
+    public static RedisReactiveCommands<String, String> cmd() {
       /*  GenericObjectPoolConfig poolConfig = new GenericObjectPoolConfig();
         poolConfig.setMaxIdle(10);
         poolConfig.setMaxTotal(10);

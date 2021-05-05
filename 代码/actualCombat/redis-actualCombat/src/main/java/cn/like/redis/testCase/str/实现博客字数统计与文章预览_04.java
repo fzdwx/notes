@@ -1,4 +1,4 @@
-package cn.like.redis.testCase;
+package cn.like.redis.testCase.str;
 
 import java.util.concurrent.TimeUnit;
 

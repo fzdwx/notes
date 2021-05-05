@@ -1,4 +1,4 @@
-package cn.like.redis.testCase;
+package cn.like.redis.testCase.str;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
