@@ -4,9 +4,12 @@ import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.reactive.RedisReactiveCommands;
+import org.slf4j.Logger;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
+
+import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * .____    .__ __
@@ -23,10 +26,11 @@ import java.time.temporal.ChronoUnit;
  */
 public class Redis {
 
+    private final static Logger log = getLogger(Redis.class);
+
     private Redis() {
     }
-
-    public static RedisReactiveCommands<String, String> cmd() {
+    public static RedisReactiveCommands<String, String> cmd()  {
         RedisURI uri = RedisURI.builder()
                 .withHost("localhost")
                 .withPort(6379)
@@ -36,6 +40,15 @@ public class Redis {
         StatefulRedisConnection<String, String> connect = redisClient.connect();
 
         RedisReactiveCommands<String, String> cmd = connect.reactive();
+
+      /*  GenericObjectPoolConfig poolConfig = new GenericObjectPoolConfig();
+        poolConfig.setMaxIdle(10);
+        poolConfig.setMaxTotal(10);
+        GenericObjectPool<StatefulRedisConnection<String, String>> pool
+                = ConnectionPoolSupport.createGenericObjectPool(redisClient::connect, poolConfig);
+
+        pool.close();
+        redisClient.shutdown();*/
 
         while (true) {
             if (cmd.isOpen()) {
