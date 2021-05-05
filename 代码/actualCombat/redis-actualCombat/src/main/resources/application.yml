@@ -1,9 +1,0 @@
-spring:
-  redis:
-    host: localhost
-    port: 6379
-    database: 0
-lettuce:
-  single:
-      host: localhost
-      port: 6379
