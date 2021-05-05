@@ -30,30 +30,37 @@ public class 实现一个最简单的分布式锁_02 {
         String lock = "lock_test";
 
         // 第一次加锁
-        cmd().set(lock, String.valueOf(++count), SetArgs.Builder.ex(100).nx())
-                .subscribe(res -> {
-                    log.info("[main] [第 1 次 加锁 ]： {}", res);
-                });
+        count = lock(count, lock);
 
         // 第二次加锁
-        cmd().set(lock , String.valueOf(++count), SetArgs.Builder.ex(100).nx())
-                .subscribe(res -> {
-                    log.info("[main] [第 2 次 加锁 ]： {}", res);
-                });
-
+        count = lock(count, lock);
         // 删除lock
-        cmd().del(lock + count).block();
+        cmd().del(lock).block();
 
         // 第三次加锁
-        cmd().set(lock, String.valueOf(++count), SetArgs.Builder.ex(100).nx())
-                .subscribe(res -> {
-                    log.info("[main] [第 3 次 加锁 ]： {}", res);
-                });
+        lock(count, lock);
 
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static int lock(int count, String lock) {
+        int finalCount = count;
+      /*  cmd().set(lock, String.valueOf(++count), SetArgs.Builder.ex(100).nx())
+                .subscribe(s -> {
+                    log.info("[main] [第 " + finalCount + " 次 加锁 ]： {}", s);
+                }, t -> {
+                    System.out.println(t);
+                    log.info("[main] [第 " + finalCount + "次 加锁 ]： {}", t.getMessage().getBytes(StandardCharsets.UTF_8));
+                });*/
+
+        String res = cmd().set(lock, String.valueOf(++count), SetArgs.Builder.ex(100).nx())
+                .block();
+
+        System.out.println("[main] [第  " + count + " 次 加锁 ]" + res);
+        return count;
     }
 }
