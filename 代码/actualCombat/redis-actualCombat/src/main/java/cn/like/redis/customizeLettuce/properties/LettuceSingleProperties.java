@@ -1,4 +1,4 @@
-package cn.like.redis.customizeLettuceConfig.properties;
+package cn.like.redis.customizeLettuce.properties;
 
 import lombok.Data;
 

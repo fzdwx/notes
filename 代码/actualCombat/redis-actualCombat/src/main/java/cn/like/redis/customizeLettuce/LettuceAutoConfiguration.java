@@ -1,6 +1,6 @@
-package cn.like.redis.customizeLettuceConfig;
+package cn.like.redis.customizeLettuce;
 
-import cn.like.redis.customizeLettuceConfig.properties.*;
+import cn.like.redis.customizeLettuce.properties.*;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
 import io.lettuce.core.api.StatefulRedisConnection;

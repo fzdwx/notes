@@ -2,27 +2,27 @@
   "properties": [
     {
       "name": "lettuce.single",
-      "type": "cn.like.redis.customizeLettuceConfig.properties.LettuceSingleProperties",
+      "type": "cn.like.redis.customizeLettuce.properties.LettuceSingleProperties",
       "description": "单机配置.",
-      "sourceType": "cn.like.redis.customizeLettuceConfig.properties.LettuceProperties"
+      "sourceType": "cn.like.redis.customizeLettuce.properties.LettuceProperties"
     },
     {
       "name": "lettuce.replica",
-      "type": "cn.like.redis.customizeLettuceConfig.properties.LettuceReplicaProperties",
+      "type": "cn.like.redis.customizeLettuce.properties.LettuceReplicaProperties",
       "description": "主从配置.",
-      "sourceType": "cn.like.redis.customizeLettuceConfig.properties.LettuceProperties"
+      "sourceType": "cn.like.redis.customizeLettuce.properties.LettuceProperties"
     },
     {
       "name": "lettuce.sentinel",
-      "type": "cn.like.redis.customizeLettuceConfig.properties.LettuceSentinelProperties",
+      "type": "cn.like.redis.customizeLettuce.properties.LettuceSentinelProperties",
       "description": "哨兵配置.",
-      "sourceType": "cn.like.redis.customizeLettuceConfig.properties.LettuceProperties"
+      "sourceType": "cn.like.redis.customizeLettuce.properties.LettuceProperties"
     },
     {
       "name": "lettuce.cluster",
-      "type": "cn.like.redis.customizeLettuceConfig.properties.LettuceClusterProperties",
+      "type": "cn.like.redis.customizeLettuce.properties.LettuceClusterProperties",
       "description": "集群配置.",
-      "sourceType": "cn.like.redis.customizeLettuceConfig.properties.LettuceProperties"
+      "sourceType": "cn.like.redis.customizeLettuce.properties.LettuceProperties"
     }
   ]
 }
