@@ -53,6 +53,7 @@ public class LettuceAutoConfiguration {
 
     }
     // ======================= single ==================================================
+
     /**
      * 单机redis url 配置
      *
@@ -62,11 +63,16 @@ public class LettuceAutoConfiguration {
     @ConditionalOnProperty(name = "lettuce.host")
     public RedisURI singleRedisUri() {
         RedisURI.Builder builder = RedisURI.builder()
-                                           .withHost(lettuceProperties.getHost())
-                                           .withPort(lettuceProperties.getPort());
+                .withHost(lettuceProperties.getHost())
+                .withPort(lettuceProperties.getPort())
+                .withDatabase(lettuceProperties.getDatabase());
         if (!lettuceProperties.getPassword().isEmpty()) {
             builder.withPassword(lettuceProperties.getPassword().toCharArray());
         }
+        if (lettuceProperties.getTimeout() != null) {
+            builder.withTimeout(lettuceProperties.getTimeout());
+        }
+
         return builder.build();
     }
 
@@ -131,14 +137,20 @@ public class LettuceAutoConfiguration {
         LettuceProperties.Cluster cluster = lettuceProperties.getCluster();
 
         // 集群url
-        RedisClusterClient client = RedisClusterClient
-                .create(clientResources, cluster.getNodes().stream().map(s -> {
+        RedisClusterClient client = RedisClusterClient.create(clientResources, cluster.getNodes()
+                .stream().map(s -> {
                     String[] split = s.split(":");
                     String host = split[0];
                     String port = split[1];
-                    RedisURI.Builder builder = RedisURI.builder().withHost(host).withPort(Integer.parseInt(port));
+                    RedisURI.Builder builder = RedisURI.builder()
+                            .withHost(host)
+                            .withPort(Integer.parseInt(port))
+                            .withDatabase(lettuceProperties.getDatabase());
                     if (!lettuceProperties.getPassword().isEmpty()) {
                         builder.withPassword(lettuceProperties.getPassword().toCharArray());
+                    }
+                    if (lettuceProperties.getTimeout() != null) {
+                        builder.withTimeout(lettuceProperties.getTimeout());
                     }
                     return builder.build();
                 }).collect(Collectors.toList()));
@@ -149,6 +161,7 @@ public class LettuceAutoConfiguration {
     }
 
     // ====================== pool ==================================================
+
     /**
      * 单机 连接池
      *
