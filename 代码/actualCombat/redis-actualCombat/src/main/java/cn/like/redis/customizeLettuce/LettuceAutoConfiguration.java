@@ -110,7 +110,7 @@ public class LettuceAutoConfiguration {
         config.setMaxIdle(properties.getMaxIdle());
         config.setMinIdle(properties.getMinIdle());
 
-        config.setJmxEnabled(false);
+        config.setJmxEnabled(false);  // 关掉监控 这个异常就不会抛出了~  MXBean already registered with name org.apache.commons.pool2:type=GenericObjectPool,name=pool
 
         if (properties.getTimeBetweenEvictionRuns() != null) {
             config.setTimeBetweenEvictionRunsMillis(properties.getTimeBetweenEvictionRuns().toMillis());
