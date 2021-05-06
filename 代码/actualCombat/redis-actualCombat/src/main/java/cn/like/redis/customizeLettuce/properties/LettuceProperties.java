@@ -67,7 +67,9 @@ public class LettuceProperties {
 
     private Cluster cluster;
 
-    private final Lettuce lettuce = new Lettuce();
+    private Pool pool;
+
+    /*private final Lettuce lettuce = new Lettuce();*/
 
     /**
      * Pool properties.
@@ -153,20 +155,20 @@ public class LettuceProperties {
     }
     
 
-    /**
+   /* *//**
      * Lettuce client properties.
-     */
+     *//*
     @Data
     public static class Lettuce {
 
-        /**
+        *//**
          * Shutdown timeout.
-         */
+         *//*
         private Duration shutdownTimeout = Duration.ofMillis(100);
 
-        /**
+        *//**
          * Lettuce pool configuration.
-         */
+         *//*
         private Pool pool;
 
         private final Lettuce.Cluster cluster = new Lettuce.Cluster();
@@ -177,22 +179,22 @@ public class LettuceProperties {
 
             public static class Refresh {
 
-                /**
+                *//**
                  * Whether to discover and query all cluster nodes for obtaining the
                  * cluster topology. When set to false, only the initial seed nodes are
                  * used as sources for topology discovery.
-                 */
+                 *//*
                 private boolean dynamicRefreshSources = true;
 
-                /**
+                *//**
                  * Cluster topology refresh period.
-                 */
+                 *//*
                 private Duration period;
 
-                /**
+                *//**
                  * Whether adaptive topology refreshing using all available refresh
                  * triggers should be used.
-                 */
+                 *//*
                 private boolean adaptive;
 
                 public boolean isDynamicRefreshSources() {
@@ -205,6 +207,6 @@ public class LettuceProperties {
 
             }
         }
-    }
+    }*/
 }
  
