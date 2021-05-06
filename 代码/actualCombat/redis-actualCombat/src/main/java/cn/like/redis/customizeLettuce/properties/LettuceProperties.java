@@ -58,6 +58,9 @@ public class LettuceProperties {
      */
     private Duration connectTimeout;
 
+    /** 自动重新连接 */
+    private boolean autoReconnect;
+
     /**
      * Client name to be set on connections with CLIENT SETNAME.
      */
@@ -78,34 +81,28 @@ public class LettuceProperties {
     public static class Pool {
 
         /**
-         * Maximum number of "idle" connections in the pool. Use a negative value to
-         * indicate an unlimited number of idle connections.
+         * 池中“空闲”连接的最大数量。使用负值表示无限数量的空闲连接。
          */
         private int maxIdle = 8;
 
         /**
-         * Target for the minimum number of idle connections to maintain in the pool. This
-         * setting only has an effect if both it and time between eviction runs are
-         * positive.
+         * 目标是要在池中维护的最小空闲连接数。此设置仅在 timeBetweenEvictionRuns 间隔为正时才有效。
+         *
          */
         private int minIdle = 0;
 
         /**
-         * Maximum number of connections that can be allocated by the pool at a given
-         * time. Use a negative value for no limit.
+         * 在给定时间池可以分配的最大连接数。使用负值表示没有限制。
          */
         private int maxActive = 8;
 
         /**
-         * Maximum amount of time a connection allocation should block before throwing an
-         * exception when the pool is exhausted. Use a negative value to block
-         * indefinitely.
+         * 当池耗尽时，在引发异常之前，连接分配应阻塞的最长时间。使用负值无限期阻止。
          */
         private Duration maxWait = Duration.ofMillis(-1);
 
         /**
-         * Time between runs of the idle object evictor thread. When positive, the idle
-         * object evictor thread starts, otherwise no idle object eviction is performed.
+         * 空闲对象退出线程的运行之间的时间。当为正时，空闲对象逐出线程启动，否则不执行空闲对象逐出。
          */
         private Duration timeBetweenEvictionRuns;
     }
@@ -117,17 +114,49 @@ public class LettuceProperties {
     public static class Cluster {
 
         /**
-         * Comma-separated list of "host:port" pairs to bootstrap from. This represents an
-         * "initial" list of cluster nodes and is required to have at least one entry.
+         * 以逗号分隔的“ host：port”对列表，从中进行引导。这表示群集节点的“初始”列表，并且要求至少具有一个条目。
          */
         private List<String> nodes;
 
         /**
-         * Maximum number of redirects to follow when executing commands across the
-         * cluster.
+         * 在整个集群中执行命令时要遵循的最大重定向数。
          */
         private Integer maxRedirects;
 
+        /**
+         * 关机超时。
+         */
+        private Duration shutdownTimeout = Duration.ofMillis(100);
+
+        private final Cluster.Refresh refresh = new Cluster.Refresh();
+
+        @Data
+        public static class Refresh {
+
+            /**
+             * 是否发现和查询所有集群节点以获取集群拓扑。设置为false时，仅将初始种子节点用作拓扑发现的源。
+             */
+            private boolean dynamicRefreshSources = true;
+
+            /**
+             * 集群拓扑刷新周期。
+             */
+            private Duration period;
+
+            /**
+             * 是否应该使用使用所有可用刷新触发器的自适应拓扑刷新。
+             */
+            private boolean adaptive;
+
+            public boolean isDynamicRefreshSources() {
+                return this.dynamicRefreshSources;
+            }
+
+            public boolean isAdaptive() {
+                return this.adaptive;
+            }
+
+        }
 
     }
 
@@ -153,60 +182,5 @@ public class LettuceProperties {
         private String password;
 
     }
-    
-
-   /* *//**
-     * Lettuce client properties.
-     *//*
-    @Data
-    public static class Lettuce {
-
-        *//**
-         * Shutdown timeout.
-         *//*
-        private Duration shutdownTimeout = Duration.ofMillis(100);
-
-        *//**
-         * Lettuce pool configuration.
-         *//*
-        private Pool pool;
-
-        private final Lettuce.Cluster cluster = new Lettuce.Cluster();
-
-        public static class Cluster {
-
-            private final Lettuce.Cluster.Refresh refresh = new Lettuce.Cluster.Refresh();
-
-            public static class Refresh {
-
-                *//**
-                 * Whether to discover and query all cluster nodes for obtaining the
-                 * cluster topology. When set to false, only the initial seed nodes are
-                 * used as sources for topology discovery.
-                 *//*
-                private boolean dynamicRefreshSources = true;
-
-                *//**
-                 * Cluster topology refresh period.
-                 *//*
-                private Duration period;
-
-                *//**
-                 * Whether adaptive topology refreshing using all available refresh
-                 * triggers should be used.
-                 *//*
-                private boolean adaptive;
-
-                public boolean isDynamicRefreshSources() {
-                    return this.dynamicRefreshSources;
-                }
-
-                public boolean isAdaptive() {
-                    return this.adaptive;
-                }
-
-            }
-        }
-    }*/
 }
  
