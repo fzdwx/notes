@@ -1,11 +1,15 @@
 package cn.like.redis.customizeLettuce;
 
 import cn.like.redis.customizeLettuce.properties.LettuceProperties;
+import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
+import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.cluster.RedisClusterClient;
 import io.lettuce.core.cluster.api.StatefulRedisClusterConnection;
 import io.lettuce.core.resource.ClientResources;
+import io.lettuce.core.resource.DefaultClientResources;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -22,13 +26,7 @@ public class LettuceAutoConfiguration {
 
     private final LettuceProperties lettuceProperties;
 
-    @Bean
-    public ClientResources clientResources() {
-        return ClientResources.builder()
-                .build();
-    }
- 
-  /*  @Bean(destroyMethod = "shutdown")
+    @Bean(destroyMethod = "shutdown")
     public ClientResources clientResources() {
         return DefaultClientResources.create();
     }
@@ -54,7 +52,7 @@ public class LettuceAutoConfiguration {
     @ConditionalOnProperty(name = "lettuce.host")
     public StatefulRedisConnection<String, String> singleRedisConnection(@Qualifier("singleRedisClient") RedisClient singleRedisClient) {
         return singleRedisClient.connect();
-    }*/
+    }
 
     // ====================== cluster ==================================================
 

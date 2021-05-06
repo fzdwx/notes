@@ -1,5 +1,7 @@
 package cn.like.redis.customizeLettuce;
 
+import io.lettuce.core.RedisClient;
+import io.lettuce.core.api.reactive.RedisReactiveCommands;
 import io.lettuce.core.cluster.RedisClusterClient;
 import io.lettuce.core.cluster.api.reactive.RedisAdvancedClusterReactiveCommands;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +28,11 @@ public class Lettuce {
     @ConditionalOnProperty(name = "lettuce.cluster.nodes")
     public RedisAdvancedClusterReactiveCommands<String, String> reactiveClusterCMD(@Autowired RedisClusterClient redisClusterClient) {
         return redisClusterClient.connect().reactive();
+    }
+
+    @Bean
+    @ConditionalOnProperty(name = "lettuce.host")
+    public RedisReactiveCommands<String, String> reactiveCMD(@Autowired RedisClient redisClient) {
+        return redisClient.connect().reactive();
     }
 }

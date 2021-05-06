@@ -1,5 +1,6 @@
 package cn.like.redis.controller;
 
+import io.lettuce.core.api.reactive.RedisReactiveCommands;
 import io.lettuce.core.cluster.api.reactive.RedisAdvancedClusterReactiveCommands;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +22,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @Autowired
+    @Autowired(required = false)
     RedisAdvancedClusterReactiveCommands<String, String> reactiveClusterCMD;
+
+    @Autowired
+    RedisReactiveCommands<String, String> reactiveCMD;
+
+    @GetMapping("/hello")
+    public String hello() {
+        return reactiveCMD.get("hello").block();
+    }
 
     @GetMapping("/test")
     public String test() {
