@@ -7,54 +7,60 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import java.time.Duration;
 import java.util.List;
 
+/**
+ * lettuce 配置项
+ *
+ * @author like
+ */
 @Data
 @ConfigurationProperties(prefix = "lettuce")
 @EnableConfigurationProperties
 public class LettuceProperties {
 
     /**
-     * Database index used by the connection factory.
+     * 连接工厂使用的数据库索引。
      */
     private int database = 0;
 
     /**
-     * Connection URL. Overrides host, port, and password. User is ignored. Example:
-     * redis://user:password@example.com:6379
+     * 连接URL,覆盖主机,端口和密码,用户被忽略。
+     * 例子：
+     * redis：//user:password@example.com:6379
      */
     private String url;
 
     /**
-     * Redis server host.
+     * Redis服务器主机。
      */
     private String host = "localhost";
 
     /**
-     * Login username of the redis server.
+     * Redis服务器的登录用户名。
      */
     private String username;
 
     /**
-     * Login password of the redis server.
+     * Redis服务器的登录密码。
      */
     private String password;
 
     /**
-     * Redis server port.
+     * Redis服务器端口。
      */
     private int port = 6379;
 
     /**
-     * Whether to enable SSL support.
+     * 是否启用SSL支持。
      */
     private boolean ssl;
 
     /**
-     * Read timeout.
+     * 读取超时。
      */
     private Duration timeout;
 
     /**
-     * Connection timeout.
+     * 连接超时。
      */
     private Duration connectTimeout;
 
@@ -62,7 +68,7 @@ public class LettuceProperties {
     private boolean autoReconnect;
 
     /**
-     * Client name to be set on connections with CLIENT SETNAME.
+     * 在与CLIENT SETNAME的连接上设置的客户端名称
      */
     private String clientName;
 
@@ -87,7 +93,6 @@ public class LettuceProperties {
 
         /**
          * 目标是要在池中维护的最小空闲连接数。此设置仅在 timeBetweenEvictionRuns 间隔为正时才有效。
-         *
          */
         private int minIdle = 0;
 
@@ -161,23 +166,23 @@ public class LettuceProperties {
     }
 
     /**
-     * Redis sentinel properties.
+     * Redis哨兵属性
      */
     @Data
     public static class Sentinel {
 
         /**
-         * Name of the Redis server.
+         * Redis服务器名称
          */
         private String master;
 
         /**
-         * Comma-separated list of "host:port" pairs.
+         * 以逗号分隔的“ host：port”对列表。
          */
         private List<String> nodes;
 
         /**
-         * Password for authenticating with sentinel(s).
+         * 用于使用哨兵进行身份验证的密码。
          */
         private String password;
 
