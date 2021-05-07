@@ -3,7 +3,9 @@ package cn.like.redis.testCase;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
 import io.lettuce.core.api.StatefulRedisConnection;
+import io.lettuce.core.api.async.RedisAsyncCommands;
 import io.lettuce.core.api.reactive.RedisReactiveCommands;
+import io.lettuce.core.api.sync.RedisCommands;
 import org.slf4j.Logger;
 
 import java.time.Duration;
@@ -22,13 +24,14 @@ import static org.slf4j.LoggerFactory.getLogger;
  * redis 连接程序
  *
  * @author like
- * @date 2021-05-05 13:46
  */
 public class Redis {
 
     private final static Logger log = getLogger(Redis.class);
     private static final StatefulRedisConnection<String, String> connect;
     private static final RedisReactiveCommands<String, String> cmd;
+    public static final RedisCommands<String, String> sync;
+    public static final RedisAsyncCommands<String, String> async;
 
     private Redis() {
     }
@@ -43,9 +46,29 @@ public class Redis {
         RedisClient redisClient = RedisClient.create(uri);
         connect = redisClient.connect();
         cmd = connect.reactive();
+
+        sync = connect.sync();
+
+        async = connect.async();
     }
 
-    public static RedisReactiveCommands<String, String> cmd() {
+    public static RedisAsyncCommands<String, String> async() {
+        while (true) {
+            if (sync.isOpen()) {
+                return async;
+            }
+        }
+    }
+
+    public static RedisCommands<String, String> sync() {
+        while (true) {
+            if (sync.isOpen()) {
+                return sync;
+            }
+        }
+    }
+
+    public static RedisReactiveCommands<String, String> reactive() {
       /*  GenericObjectPoolConfig poolConfig = new GenericObjectPoolConfig();
         poolConfig.setMaxIdle(10);
         poolConfig.setMaxTotal(10);

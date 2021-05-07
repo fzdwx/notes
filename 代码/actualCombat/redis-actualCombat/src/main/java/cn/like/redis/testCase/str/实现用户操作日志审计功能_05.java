@@ -4,7 +4,7 @@ import cn.hutool.core.date.DateUtil;
 
 import java.util.concurrent.TimeUnit;
 
-import static cn.like.redis.testCase.Redis.cmd;
+import static cn.like.redis.testCase.Redis.reactive;
 
 /**
  * .____    .__ __
@@ -24,13 +24,13 @@ public class 实现用户操作日志审计功能_05 {
     public static void main(String[] args) {
         String now = DateUtil.now();
         String key = "operation_log_"+ now;
-        cmd().setnx(key, "").block();
+        reactive().setnx(key, "").block();
 
         for (int i = 1; i < 10; i++) {
-            cmd().append(key, "今天的第" + (i) + "条操作日志\n").block();
+            reactive().append(key, "今天的第" + (i) + "条操作日志\n").block();
         }
 
-        cmd().get(key).subscribe(System.out::println);
+        reactive().get(key).subscribe(System.out::println);
 
         try {
             TimeUnit.SECONDS.sleep(1);

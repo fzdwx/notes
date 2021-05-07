@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
-import static cn.like.redis.testCase.Redis.cmd;
+import static cn.like.redis.testCase.Redis.reactive;
 
 
 /**
@@ -25,9 +25,9 @@ public class 普通的基于redis的缓存_01 {
     private static final Logger log = LoggerFactory.getLogger(普通的基于redis的缓存_01.class);
 
     public static void main(String[] args) {
-        cmd().set("hello", "world").block();
+        reactive().set("hello", "world").block();
 
-        cmd().get("hello").subscribe(v -> {
+        reactive().get("hello").subscribe(v -> {
             log.info("[main] [hello]: {}", v);
         });
 

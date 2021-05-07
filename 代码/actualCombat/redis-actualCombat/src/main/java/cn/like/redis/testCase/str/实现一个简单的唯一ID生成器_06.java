@@ -1,6 +1,6 @@
 package cn.like.redis.testCase.str;
 
-import static cn.like.redis.testCase.Redis.cmd;
+import static cn.like.redis.testCase.Redis.reactive;
 
 /**
  * .____    .__ __
@@ -18,6 +18,6 @@ import static cn.like.redis.testCase.Redis.cmd;
 public class 实现一个简单的唯一ID生成器_06 {
 
     public static void main(String[] args) {
-        cmd().incr("test");
+        reactive().incr("test");
     }
 }

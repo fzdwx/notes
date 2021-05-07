@@ -1,6 +1,6 @@
 package cn.like.redis.testCase.str;
 
-import static cn.like.redis.testCase.Redis.cmd;
+import static cn.like.redis.testCase.Redis.reactive;
 
 /**
  * .____    .__ __
@@ -18,6 +18,6 @@ import static cn.like.redis.testCase.Redis.cmd;
 public class 实现博客点赞次数计数器_07 {
 
     public static void main(String[] args) {
-        cmd().incr("article:1:goodCount");
+        reactive().incr("article:1:goodCount");
     }
 }

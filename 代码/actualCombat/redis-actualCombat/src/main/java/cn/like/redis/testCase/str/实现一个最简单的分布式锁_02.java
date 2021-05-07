@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
-import static cn.like.redis.testCase.Redis.cmd;
+import static cn.like.redis.testCase.Redis.reactive;
 
 /**
  * .____    .__ __
@@ -35,7 +35,7 @@ public class 实现一个最简单的分布式锁_02 {
         // 第二次加锁
         count = lock(count, lock);
         // 删除lock
-        cmd().del(lock).block();
+        reactive().del(lock).block();
 
         // 第三次加锁
         lock(count, lock);
@@ -57,7 +57,7 @@ public class 实现一个最简单的分布式锁_02 {
                     log.info("[main] [第 " + finalCount + "次 加锁 ]： {}", t.getMessage().getBytes(StandardCharsets.UTF_8));
                 });*/
 
-        String res = cmd().set(lock, String.valueOf(++count), SetArgs.Builder.ex(100).nx())
+        String res = reactive().set(lock, String.valueOf(++count), SetArgs.Builder.ex(100).nx())
                 .block();
 
         System.out.println("[main] [第  " + count + " 次 加锁 ]" + res);

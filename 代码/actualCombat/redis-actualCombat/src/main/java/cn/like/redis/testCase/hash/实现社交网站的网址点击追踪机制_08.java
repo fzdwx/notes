@@ -1,6 +1,6 @@
 package cn.like.redis.testCase.hash;
 
-import static cn.like.redis.testCase.Redis.cmd;
+import static cn.like.redis.testCase.Redis.reactive;
 
 /**
  * .____    .__ __
@@ -60,7 +60,7 @@ public class 实现社交网站的网址点击追踪机制_08 {
      * @return {@link String}
      */
     public String getShortUrl(String url) {
-        Long shortUrlSeed = cmd().incr(KEY_SHORT_URL_SEED).block();
+        Long shortUrlSeed = reactive().incr(KEY_SHORT_URL_SEED).block();
 
         StringBuilder sb = new StringBuilder();
 
@@ -78,8 +78,8 @@ public class 实现社交网站的网址点击追踪机制_08 {
         sb.reverse();
         String shortUrl = sb.insert(0, WEB_PREFIX).toString();
 
-        cmd().hset(KEY_SHORT_URL_ACCESS_COUNT, shortUrl, "0").subscribe();
-        cmd().hset(KEY_URL_MAPPING, shortUrl, url).subscribe();
+        reactive().hset(KEY_SHORT_URL_ACCESS_COUNT, shortUrl, "0").subscribe();
+        reactive().hset(KEY_URL_MAPPING, shortUrl, url).subscribe();
 
         return shortUrl;
     }
@@ -90,7 +90,7 @@ public class 实现社交网站的网址点击追踪机制_08 {
      * @param shortUrl 短网址
      */
     public void incrementShortURLAccessCount(String shortUrl) {
-        cmd().hincrby(KEY_SHORT_URL_ACCESS_COUNT, shortUrl, 1).subscribe();
+        reactive().hincrby(KEY_SHORT_URL_ACCESS_COUNT, shortUrl, 1).subscribe();
     }
 
     /**
@@ -99,6 +99,6 @@ public class 实现社交网站的网址点击追踪机制_08 {
      * @param shortUrl 短网址
      */
     public Long getShortURLAccessCount(String shortUrl) {
-        return Long.valueOf(cmd().hget(KEY_SHORT_URL_ACCESS_COUNT, shortUrl).block());
+        return Long.valueOf(reactive().hget(KEY_SHORT_URL_ACCESS_COUNT, shortUrl).block());
     }
 }

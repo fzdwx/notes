@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-import static cn.like.redis.testCase.Redis.cmd;
+import static cn.like.redis.testCase.Redis.reactive;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
@@ -38,12 +38,12 @@ public class 实现博客网站的文章发布与查看_03 {
         map.put("article:1:author", "like");
         map.put("article:1:time", sdf.format(new Date()));
 
-        String res = cmd().mset(map).block();
+        String res = reactive().mset(map).block();
 
         System.out.println(res);
 
         // 取
-        Flux<KeyValue<String, String>> flux = cmd().mget("article:1:title");
+        Flux<KeyValue<String, String>> flux = reactive().mget("article:1:title");
         KeyValue<String, String> s = flux.blockLast();
         System.out.println(s);
 
