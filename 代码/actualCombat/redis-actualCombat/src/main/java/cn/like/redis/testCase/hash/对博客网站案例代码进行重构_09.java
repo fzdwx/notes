@@ -2,10 +2,10 @@ package cn.like.redis.testCase.hash;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
+import com.google.common.collect.Sets;
 import io.lettuce.core.KeyValue;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.text.SimpleDateFormat;
@@ -35,19 +35,24 @@ public class 对博客网站案例代码进行重构_09 {
         对博客网站案例代码进行重构_09 test = new 对博客网站案例代码进行重构_09();
         // 1.发布博客
         String id = UUID.randomUUID().toString();
-        test.publishBlog(id, "我喜欢学习redis", "学习redis和lettuce很快乐", "like", new Date()).subscribe(res -> {
+        test.publishBlog(id, "我喜欢学习redis", "学习redis和lettuce很快乐", "like", new Date(), Sets.newHashSet("Java", "redis")).subscribe(res -> {
             for (int i = 0; i < 10; i++) {
                 test.incrViewBlogCount(id).subscribe();
                 test.likeBlog(id).subscribe();
             }
 
-            // 2.查看博客
-            test.getBlog(id).subscribe(list->{
-                Blog blog = BeanUtil.mapToBean(list.stream().collect(Collectors.toMap(KeyValue::getKey, KeyValue::getValue)), Blog.class, false, null);
-                System.out.println(blog);
-            });
 
         });
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // 2.查看博客
+        Blog blog = test.getBlog(id);
+        System.out.println("blog = " + blog);
 
         try {
             TimeUnit.SECONDS.sleep(1);
@@ -66,7 +71,7 @@ public class 对博客网站案例代码进行重构_09 {
      * @param time    时间
      * @return boolean
      */
-    public Mono<String> publishBlog(String id, String title, String content, String author, Date time) {
+    public Mono<String> publishBlog(String id, String title, String content, String author, Date time, Set<String> tags) {
         Map<String, String> map = new HashMap<>(8);
         map.put(FIELD_ID, id);
         map.put(BlogHelper.FIELD_TITLE, title);
@@ -76,9 +81,11 @@ public class 对博客网站案例代码进行重构_09 {
         map.put(BlogHelper.FIELD_VIEW_COUNT, String.valueOf(0));
         map.put(BlogHelper.FIELD_LIKE_COUNT, String.valueOf(0));
         map.put(BlogHelper.FIELD_CONTENT_LENGTH, String.valueOf(content.length()));
-        // reactor 设置blog信息后，获取博客内容长度
 
-        reactive().incr( KEY_BLOG_COUNT).subscribe();
+        // 增长博客数
+        reactive().incr(KEY_BLOG_COUNT).subscribe();
+        // 保存博客tags
+        reactive().sadd(KEY_ARTICLE_TAGS_PREFIX(id), tags.toArray(new String[0])).subscribe();
         return reactive().hmset(KEY_ARTICLE_PREFIX(id), map);
     }
 
@@ -89,7 +96,7 @@ public class 对博客网站案例代码进行重构_09 {
      * @return
      */
     public Mono<String> publishBlog(Blog blog) {
-        return publishBlog(blog.getId(), blog.getTitle(), blog.getContent(), blog.getAuthor(), blog.getTime());
+        return publishBlog(blog.getId(), blog.getTitle(), blog.getContent(), blog.getAuthor(), blog.getTime(), blog.getTags());
     }
 
     /**
@@ -102,7 +109,7 @@ public class 对博客网站案例代码进行重构_09 {
      * @param time    时间
      * @return
      */
-    public Mono<String> updateBlog(String id, String title, String content, String author, Date time) {
+    public Mono<String> updateBlog(String id, String title, String content, String author, Date time, Set<String> tags) {
         HashMap<String, String> map = new HashMap<>(4);
         if (StrUtil.isNotBlank(title))
             map.put(FIELD_TITLE, title);
@@ -124,7 +131,7 @@ public class 对博客网站案例代码进行重构_09 {
      * @return
      */
     public Mono<String> updateBlog(Blog blog) {
-        return updateBlog(blog.getId(), blog.getTitle(), blog.getContent(), blog.getAuthor(), blog.getTime());
+        return updateBlog(blog.getId(), blog.getTitle(), blog.getContent(), blog.getAuthor(), blog.getTime(), blog.getTags());
     }
 
     /**
@@ -133,8 +140,17 @@ public class 对博客网站案例代码进行重构_09 {
      * @param id id
      * @return {@link Blog}
      */
-    public Flux<List<KeyValue<String, String>>> getBlog(String id) {
-        return reactive().hgetall(KEY_ARTICLE_PREFIX(id)).buffer();
+    public Blog getBlog(String id) {
+        Blog blog = BeanUtil.mapToBean(
+                reactive().hgetall(KEY_ARTICLE_PREFIX(id))
+                        .collectMap(KeyValue::getKey, KeyValue::getValue)
+                        .block(),
+                Blog.class, false, null);
+        blog.setTags(
+                reactive().smembers(KEY_ARTICLE_TAGS_PREFIX(id))
+                        .collect(Collectors.toSet())
+                        .block());
+        return blog;
     }
 
     /**
@@ -176,7 +192,7 @@ public class 对博客网站案例代码进行重构_09 {
         // ================ blog 存储在redis的key ================
         public static final String ARTICLE_PREFIX = "article:";
         public static final String KEY_BLOG_COUNT = "article:count";
-        public static final String FIELD_ID = "ID";
+        public static final String FIELD_ID = "id";
         public static final String FIELD_TITLE = "title";
         public static final String FIELD_CONTENT = "content";
         public static final String FIELD_AUTHOR = "author";
@@ -190,7 +206,11 @@ public class 对博客网站案例代码进行重构_09 {
         // ========================================================
 
         public static String KEY_ARTICLE_PREFIX(String id) {
-            return ARTICLE_PREFIX + id;
+            return ARTICLE_PREFIX + id + ":info";
+        }
+
+        public static String KEY_ARTICLE_TAGS_PREFIX(String id) {
+            return ARTICLE_PREFIX + id + ":tags";
         }
 
         /**
@@ -216,6 +236,7 @@ public class 对博客网站案例代码进行重构_09 {
         private String content;
         private String author;
         private Date time;
+        private Set<String> tags;
 
         private long contentLength;
         private long likeCount;
