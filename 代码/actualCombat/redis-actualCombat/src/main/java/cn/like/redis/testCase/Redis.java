@@ -6,6 +6,7 @@ import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.async.RedisAsyncCommands;
 import io.lettuce.core.api.reactive.RedisReactiveCommands;
 import io.lettuce.core.api.sync.RedisCommands;
+import io.lettuce.core.resource.DefaultClientResources;
 import org.slf4j.Logger;
 
 import java.time.Duration;
@@ -43,7 +44,8 @@ public class Redis {
                 .withPort(6379)
                 .withTimeout(Duration.of(10, ChronoUnit.SECONDS))
                 .build();
-        RedisClient redisClient = RedisClient.create(uri);
+        DefaultClientResources.Builder builder = DefaultClientResources.builder();
+        RedisClient redisClient = RedisClient.create(builder.build(), uri);
         connect = redisClient.connect();
         cmd = connect.reactive();
 
