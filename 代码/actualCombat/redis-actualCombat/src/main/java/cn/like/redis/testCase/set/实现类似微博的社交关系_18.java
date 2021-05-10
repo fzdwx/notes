@@ -76,6 +76,28 @@ public class 实现类似微博的社交关系_18 {
     }
 
     /**
+     * 共同的关注
+     *
+     * @param u1 me
+     * @param u2 myFriend
+     * @return {@link Mono<Set<String>>}
+     */
+    public Mono<Set<String>> sameStars(String u1, String u2) {
+        return reactive().sinter("user:" + u1 + ":stars", "user:" + u2 + ":stars").collect(Collectors.toSet());
+    }
+
+    /**
+     * 推荐关注（u2向u1推荐->u2中u1没有关注的）
+     *
+     * @param u1 me
+     * @param u2 myFriend
+     * @return {@link Mono<Set<String>>}
+     */
+    public Mono<Set<String>> recommendStars(String u1, String u2) {
+        return reactive().sdiff("user:" + u2 + ":stars", "user:" + u1 + ":stars").collect(Collectors.toSet());
+    }
+
+    /**
      * 查看粉丝数
      *
      * @param user 用户
@@ -103,9 +125,8 @@ public class 实现类似微博的社交关系_18 {
         test.subscribe(u4, u2);
         test.subscribe(u4, u1);
 
-        test.stars(u4).subscribe(s -> {
-            System.out.println(u4 + "关注了：" + s);
-        });
+        test.subscribe(u2, u4);
+
 
         test.fans(u4).subscribe(s -> {
             System.out.println(u4 + "的粉丝有：" + s);
@@ -115,6 +136,20 @@ public class 实现类似微博的社交关系_18 {
             System.out.println(u1 + "的粉丝有：" + s);
         });
 
+        test.sameStars(u1, u4).subscribe(s -> {
+            System.out.println(u1 + "和" + u4 + "共同关注了:" + s);
+        });
+
+        test.recommendStars(u1, u4).subscribe(s -> {
+            System.out.println(u4 + "向" + u1 + "推荐:" + s);
+        });
+
+        test.stars(u4).subscribe(s -> {
+            System.out.println(u4 + "关注了：" + s);
+        });
+        test.stars(u1).subscribe(s -> {
+            System.out.println(u1 + "关注了：" + s);
+        });
 
         try {
             TimeUnit.SECONDS.sleep(2);
