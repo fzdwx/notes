@@ -1,4 +1,4 @@
-package cn.like.redis.testCase.set;
+package cn.like.redis.testCase.zset;
 
 import io.lettuce.core.ScoredValue;
 import reactor.core.publisher.Flux;
