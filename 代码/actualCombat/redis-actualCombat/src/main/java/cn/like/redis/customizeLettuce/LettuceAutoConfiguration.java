@@ -1,5 +1,6 @@
 package cn.like.redis.customizeLettuce;
 
+import cn.hutool.core.util.StrUtil;
 import cn.like.redis.customizeLettuce.properties.LettuceProperties;
 import io.lettuce.core.ClientOptions;
 import io.lettuce.core.RedisClient;
@@ -66,7 +67,7 @@ public class LettuceAutoConfiguration {
                 .withHost(lettuceProperties.getHost())
                 .withPort(lettuceProperties.getPort())
                 .withDatabase(lettuceProperties.getDatabase());
-        if (!lettuceProperties.getPassword().isEmpty()) {
+        if (StrUtil.isNotBlank(lettuceProperties.getPassword())) {
             builder.withPassword(lettuceProperties.getPassword().toCharArray());
         }
         if (lettuceProperties.getTimeout() != null) {
@@ -216,9 +217,7 @@ public class LettuceAutoConfiguration {
         if (properties.getTimeBetweenEvictionRuns() != null) {
             config.setTimeBetweenEvictionRunsMillis(properties.getTimeBetweenEvictionRuns().toMillis());
         }
-        if (properties.getMaxWait() != null) {
-            config.setMaxWaitMillis(properties.getMaxWait().toMillis());
-        }
+        config.setMaxWaitMillis(properties.getMaxWait());
         return config;
     }
 }

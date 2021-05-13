@@ -104,7 +104,7 @@ public class LettuceProperties {
         /**
          * 当池耗尽时，在引发异常之前，连接分配应阻塞的最长时间。使用负值无限期阻止。
          */
-        private Duration maxWait = Duration.ofMillis(-1);
+        private int maxWait = -1;
 
         /**
          * 空闲对象退出线程的运行之间的时间。当为正时，空闲对象逐出线程启动，否则不执行空闲对象逐出。
