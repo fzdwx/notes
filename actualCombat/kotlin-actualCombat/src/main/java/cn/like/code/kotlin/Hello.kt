@@ -30,7 +30,7 @@ fun main() {
     println(sliceArray.contentToString())
     
     val test = "null";
-    test?.run {
+    test.run {
         println(Thread.currentThread())
         println("123")
     }
