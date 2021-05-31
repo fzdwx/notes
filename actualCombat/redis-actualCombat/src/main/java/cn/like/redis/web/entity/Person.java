@@ -1,4 +1,4 @@
-package cn.like.redis.entity;
+package cn.like.redis.web.entity;
 
 import lombok.Data;
 

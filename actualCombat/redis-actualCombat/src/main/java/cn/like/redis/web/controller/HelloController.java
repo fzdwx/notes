@@ -1,4 +1,4 @@
-package cn.like.redis.controller;
+package cn.like.redis.web.controller;
 
 import cn.like.redis.customizeLettuce.Lettuce;
 import org.springframework.beans.factory.annotation.Autowired;
