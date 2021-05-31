@@ -1,6 +1,7 @@
 # notes
 主要学习的笔记
 
+今后笔记更新于https://www.yuque.com/ekoc // 2021/05
 
 
 笔记：
