@@ -48,7 +48,6 @@ public class LettuceClientConfig {
     @Value("${spring.redis.cluster.nodes}")
     private List<String> nodes;
 
-
     /**
      * Lettuce连接配置（Redis单机版实例）
      *
@@ -82,8 +81,17 @@ public class LettuceClientConfig {
                         .stream()
                         .map(RedisURI::create)
                         .collect(Collectors.toList()));
+
         redisClusterClient.setOptions(clientOptions);
+
         return redisClusterClient;
+    }
+
+    @Bean
+    public ClusterClientOptions clientOptions(ClusterTopologyRefreshOptions clusterTopologyRefreshOptions) {
+        return ClusterClientOptions.builder()
+                                   .topologyRefreshOptions(clusterTopologyRefreshOptions)
+                                   .build();
     }
 
     @Bean
@@ -95,12 +103,5 @@ public class LettuceClientConfig {
                         ClusterTopologyRefreshOptions.RefreshTrigger.PERSISTENT_RECONNECTS)
                 .adaptiveRefreshTriggersTimeout(Duration.of(30, ChronoUnit.SECONDS))
                 .build();
-    }
-
-    @Bean
-    public ClusterClientOptions clientOptions(ClusterTopologyRefreshOptions clusterTopologyRefreshOptions) {
-        return ClusterClientOptions.builder()
-                                   .topologyRefreshOptions(clusterTopologyRefreshOptions)
-                                   .build();
     }
 }
