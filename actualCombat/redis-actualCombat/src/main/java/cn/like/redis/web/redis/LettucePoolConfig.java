@@ -16,7 +16,6 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 import java.time.Duration;
-import java.time.temporal.ChronoUnit;
 
 /**
  * lettuce 连接池配置
@@ -48,7 +47,7 @@ public class LettucePoolConfig {
 
     /** 当池耗尽时，在抛出异常之前连接分配应该阻塞的最长时间。使用负值无限期阻止。 */
     @Value("${spring.redis.lettuce.pool.max-wait}")
-    private Duration maxWait;
+    private Long maxWait;
 
     /** 空闲对象退出线程的运行之间的时间。当为正时，空闲对象逐出线程启动，否则不执行空闲对象逐出。 */
     @Value("${spring.redis.lettuce.pool.time-between-eviction-runs}")
@@ -84,7 +83,7 @@ public class LettucePoolConfig {
             redisPoolConfig.setMaxTotal(this.maxTotal);
             redisPoolConfig.setMaxIdle(this.maxIdle);
             redisPoolConfig.setMinIdle(this.minIdle);
-            redisPoolConfig.setMaxWaitMillis(this.maxWait.get(ChronoUnit.MILLIS));
+            redisPoolConfig.setMaxWaitMillis(this.maxWait);
             redisPoolConfig.setTestWhileIdle(this.testWhileIdle);
             if (this.testOnReturn != null) {
                 redisPoolConfig.setTestOnReturn(this.testOnReturn);
@@ -105,7 +104,7 @@ public class LettucePoolConfig {
             redisPoolConfig.setMaxTotal(this.maxTotal);
             redisPoolConfig.setMaxIdle(this.maxIdle);
             redisPoolConfig.setMinIdle(this.minIdle);
-            redisPoolConfig.setMaxWaitMillis(this.maxWait.get(ChronoUnit.MILLIS));
+            redisPoolConfig.setMaxWaitMillis(this.maxWait);
             redisPoolConfig.setTestWhileIdle(this.testWhileIdle);
             if (this.testOnReturn != null) {
                 redisPoolConfig.setTestOnReturn(this.testOnReturn);

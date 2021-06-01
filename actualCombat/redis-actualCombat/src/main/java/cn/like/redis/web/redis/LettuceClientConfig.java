@@ -48,6 +48,9 @@ public class LettuceClientConfig {
     @Value("${spring.redis.cluster.nodes}")
     private List<String> nodes;
 
+    @Value("${spring.redis.lettuce.cluster.fire}")
+    private Boolean fire;
+
     /**
      * Lettuce连接配置（Redis单机版实例）
      *
@@ -81,7 +84,6 @@ public class LettuceClientConfig {
                         .stream()
                         .map(RedisURI::create)
                         .collect(Collectors.toList()));
-
         redisClusterClient.setOptions(clientOptions);
 
         return redisClusterClient;
