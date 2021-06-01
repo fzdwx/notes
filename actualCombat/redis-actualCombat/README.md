@@ -1,5 +1,5 @@
 # 简介
-查看相关笔记: https://www.yuque.com/ekoc/nb/lettuce#3545075d
+查看相关笔记: https://www.yuque.com/ekoc/nb/lettuce#9994aa47
 
 **redis实战**
 
