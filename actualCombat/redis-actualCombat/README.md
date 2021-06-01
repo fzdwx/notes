@@ -7,12 +7,12 @@
 /*
  * redis中各种数据类型的一些常用案例
  */
-package cn.like.redis.testCase
-        
+package cn.like.code.testCase
+
 /*
  * spring boot 整合lettuce 并使用lettuce原生客户端
  */
-package cn.like.redis.web 
+package cn.like.code.web
 ~~~
 
 测试接口
