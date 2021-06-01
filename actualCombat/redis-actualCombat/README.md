@@ -1,5 +1,5 @@
 # 简介
-查看相关笔记: https://www.yuque.com/ekoc/nb/whsttc/edit#9994aa47
+查看相关笔记: https://www.yuque.com/ekoc/nb/lettuce#3545075d
 
 **redis实战**
 
