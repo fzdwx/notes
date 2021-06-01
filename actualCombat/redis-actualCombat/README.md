@@ -14,3 +14,9 @@ package cn.like.redis.testCase
  */
 package cn.like.redis.web 
 ~~~
+
+测试接口
+
+http://localhost:8080/set/hello/world
+http://localhost:8080/get/hello
+http://localhost:8080/hello
