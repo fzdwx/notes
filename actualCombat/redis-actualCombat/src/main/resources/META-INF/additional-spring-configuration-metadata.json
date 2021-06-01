@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "spring.redis.lettuce.cluster.fire",
+      "type": "java.lang.String",
+      "description": "集群开关 false 表示使用单机模式,true 表示使用集群模式."
+    },
+    {
+      "name": "spring.redis.lettuce.pool.test-on-return",
+      "type": "java.lang.Boolean",
+      "description": "归还Redis实例时，检查有消息，如果失败，则销毁实例."
+    },
+    {
+      "name": "spring.redis.lettuce.pool.test-while-idle",
+      "type": "java.lang.Boolean",
+      "description": "当Redis实例处于空闲时检查有效性，默认false."
+    }
+  ] }

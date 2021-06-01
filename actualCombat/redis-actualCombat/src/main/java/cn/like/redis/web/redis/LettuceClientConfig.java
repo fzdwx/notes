@@ -1,14 +1,17 @@
-package cn.like.redis.web.config.redis;
+package cn.like.redis.web.redis;
 
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
 import io.lettuce.core.cluster.ClusterClientOptions;
+import io.lettuce.core.cluster.ClusterTopologyRefreshOptions;
 import io.lettuce.core.cluster.RedisClusterClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -54,6 +57,7 @@ public class LettuceClientConfig {
     @Bean(name = "redisClient")
     @ConditionalOnProperty(value = "spring.redis.lettuce.cluster.fire", havingValue = "false")
     public RedisClient redisClient() {
+        System.out.println("初始化了单体");
         RedisURI uri = RedisURI.Builder
                 .redis(this.host, this.port)
                 .withDatabase(this.database)
@@ -61,12 +65,42 @@ public class LettuceClientConfig {
         return RedisClient.create(uri);
     }
 
+    // ===========  cluster ===========
+
+    /**
+     * redis 集群客户端
+     *
+     * @param clientOptions 客户的选择
+     * @return {@link RedisClusterClient}
+     */
     @Bean(name = "redisClient")
     @ConditionalOnProperty(value = "spring.redis.lettuce.cluster.fire", havingValue = "true")
-    public RedisClusterClient redisClusterClient() {
-        RedisClusterClient redisClusterClient = RedisClusterClient
-                .create(this.nodes.stream().map(RedisURI::create).collect(Collectors.toList()));
+    public RedisClusterClient redisClusterClient(ClusterClientOptions clientOptions) {
+        System.out.println("初始化了集群");
+        RedisClusterClient redisClusterClient =
+                RedisClusterClient.create(this.nodes
+                        .stream()
+                        .map(RedisURI::create)
+                        .collect(Collectors.toList()));
+        redisClusterClient.setOptions(clientOptions);
         return redisClusterClient;
     }
 
+    @Bean
+    public ClusterTopologyRefreshOptions clusterTopologyRefreshOptions() {
+        return ClusterTopologyRefreshOptions
+                .builder()
+                .enableAdaptiveRefreshTrigger(
+                        ClusterTopologyRefreshOptions.RefreshTrigger.MOVED_REDIRECT,
+                        ClusterTopologyRefreshOptions.RefreshTrigger.PERSISTENT_RECONNECTS)
+                .adaptiveRefreshTriggersTimeout(Duration.of(30, ChronoUnit.SECONDS))
+                .build();
+    }
+
+    @Bean
+    public ClusterClientOptions clientOptions(ClusterTopologyRefreshOptions clusterTopologyRefreshOptions) {
+        return ClusterClientOptions.builder()
+                                   .topologyRefreshOptions(clusterTopologyRefreshOptions)
+                                   .build();
+    }
 }
