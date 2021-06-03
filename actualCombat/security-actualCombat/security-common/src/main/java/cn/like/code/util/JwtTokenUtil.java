@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,11 +40,11 @@ public class JwtTokenUtil {
     /**
      * 从token中获取JWT中的负载
      */
-    private Claims getClaimsFromToken(String token) {
+    public Claims getClaimsFromToken(String token) {
         Claims claims = null;
         try {
             claims = Jwts.parser()
-                    .setSigningKey(secret)
+                    .setSigningKey(secret.getBytes(StandardCharsets.UTF_8))
                     .parseClaimsJws(token)
                     .getBody();
         } catch (Exception e) {

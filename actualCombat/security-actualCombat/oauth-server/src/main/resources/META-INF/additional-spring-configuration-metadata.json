@@ -29,6 +29,6 @@
       "name": "security.oauth2.access-token-uri",
       "type": "java.lang.Long",
       "description": "访问令牌获取 URL，自定义的."
-    }
+    },
   ]
 }

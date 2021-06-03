@@ -10,6 +10,13 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 授权服务器配置
@@ -29,16 +36,30 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private UserDetailsService userDetailsService;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @Autowired
+    private TokenStore tokenStore;
+    @Autowired
+    private JwtAccessTokenConverter jwtAccessTokenConverter;
+    @Autowired
+    private JwtTokenStoreConfig.JwtTokenEnhancer jwtTokenEnhancer;
 
     /**
      * 配置使用 AuthenticationManager 实现用户认证的功能 对应在 {@link SecurityConfig#authenticationManagerBean()}
      * 配置使用 userDetailsService 获取用户信息 对应在 {@link SecurityConfig#userDetailsService()}
-     *
+     * 配置使用 jwt 存储token
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
+        TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
+        List<TokenEnhancer> delegates = new ArrayList<>();
+        delegates.add(jwtTokenEnhancer); //配置JWT的内容增强器
+        delegates.add(jwtAccessTokenConverter);
+        enhancerChain.setTokenEnhancers(delegates);
         endpoints.authenticationManager(authenticationManager)
-                 .userDetailsService(userDetailsService);
+                 .userDetailsService(userDetailsService)
+                 .tokenStore(tokenStore) //配置令牌存储策略
+                 .accessTokenConverter(jwtAccessTokenConverter)
+                 .tokenEnhancer(enhancerChain);
     }
 
     /**

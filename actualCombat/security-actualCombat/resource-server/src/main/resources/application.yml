@@ -11,3 +11,35 @@ security:
       token-info-uri: http://127.0.0.1:9401/oauth/check_token # 获得 Token 信息的 URL
     # 访问令牌获取 URL，自定义的
     access-token-uri: http://127.0.0.1:9401/oauth/token
+
+spring:
+  application:
+    name: resource-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+  redis:
+    #    cluster:
+    #      nodes: 192.168.1.11:7001,192.168.1.11:7002,192.168.1.12:7003,192.168.1.12:7004,192.168.1.13:7005,192.168.1.13:7006
+    database: 0
+    host: 127.0.0.1
+    lettuce:
+      cluster:
+        fire: false
+      pool:
+        max-active: 500
+        max-idle: 50
+        max-wait: -1
+        min-idle: 10
+        test-on-return: true
+        test-while-idle: false
+        time-between-eviction-runs: -1
+    password: ''
+    port: 6379
+    ssl: false
+
+jwt:
+  secret: coke
+  expiration: 28800000 #1000 * 60 * 60 * 8
