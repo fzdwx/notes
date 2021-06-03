@@ -29,17 +29,17 @@ public class LoginController {
     @PostMapping("/login")
     public OAuth2AccessToken login(@RequestParam("username") String username,
                                    @RequestParam("password") String password) {
-        // <1> 创建 ResourceOwnerPasswordResourceDetails 对象
+        // 1. 创建 ResourceOwnerPasswordResourceDetails 对象
         ResourceOwnerPasswordResourceDetails resourceDetails = new ResourceOwnerPasswordResourceDetails();
         resourceDetails.setAccessTokenUri(accessTokenUri);
         resourceDetails.setClientId(oauth2ClientProperties.getClientId());
         resourceDetails.setClientSecret(oauth2ClientProperties.getClientSecret());
         resourceDetails.setUsername(username);
         resourceDetails.setPassword(password);
-        // <2> 创建 OAuth2RestTemplate 对象
+        // 2. 创建 OAuth2RestTemplate 对象
         OAuth2RestTemplate restTemplate = new OAuth2RestTemplate(resourceDetails);
-        restTemplate.setAccessTokenProvider(new ResourceOwnerPasswordAccessTokenProvider());
-        // <3> 获取访问令牌
+        restTemplate.setAccessTokenProvider(new ResourceOwnerPasswordAccessTokenProvider());  // 密码模式
+        // 3. 获取访问令牌
         return restTemplate.getAccessToken();
     }
 }

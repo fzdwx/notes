@@ -30,6 +30,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new AdminUserService();
     }
 
+    /**
+     * 身份验证管理器
+     *
+     * @return {@link AuthenticationManager}
+     * @throws Exception 异常
+     */
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -39,12 +45,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.csrf()
-                .disable()
+                .disable()// 关闭csrf
                 .authorizeRequests()
                 .antMatchers("/oauth/**", "/login/**", "/logout/**")
-                .permitAll()
+                .permitAll() // 放行
                 .anyRequest()
-                .authenticated()
+                .authenticated() // 需要认证
                 .and()
                 .formLogin()
                 .permitAll();
