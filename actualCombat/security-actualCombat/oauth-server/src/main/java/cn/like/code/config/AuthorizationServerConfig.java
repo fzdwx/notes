@@ -13,7 +13,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 
 /**
  * 授权服务器配置
- *
+ * <pre>
+ *     授权服务 都是使用 client-id + client-secret 进行的客户端认证，不要和用户认证混淆。
+ * </pre>
  * @author like
  * @date 2021/06/02
  */
@@ -29,7 +31,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private PasswordEncoder passwordEncoder;
 
     /**
-     * 使用密码模式需要配置
+     * 配置使用 AuthenticationManager 实现用户认证的功能 对应在 {@link SecurityConfig#authenticationManagerBean()}
+     * 配置使用 userDetailsService 获取用户信息 对应在 {@link SecurityConfig#userDetailsService()}
+     *
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
@@ -37,10 +41,16 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                  .userDetailsService(userDetailsService);
     }
 
+    /**
+     * 设置 /oauth/check_token 端点 所有人都可以访问
+     *
+     * @param security 安全
+     * @throws Exception 异常
+     */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.allowFormAuthenticationForClients();
-        security.checkTokenAccess("permitAll()");
+        security.checkTokenAccess("permitAll()"); //
     }
 
     @Override

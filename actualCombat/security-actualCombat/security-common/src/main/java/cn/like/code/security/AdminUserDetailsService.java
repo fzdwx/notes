@@ -7,17 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 import java.util.Objects;
 
-public class AdminUserService implements UserDetailsService {
+/**
+ * 自定义 UserDetailsService
+ *
+ * @author like
+ * @date 2021/06/03
+ */
+public class AdminUserDetailsService implements UserDetailsService {
 
     @Autowired
     private AdminMapper adminMapper;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -27,8 +30,7 @@ public class AdminUserService implements UserDetailsService {
             List<Permission> permissions = adminMapper.getAdminPermissions(admin.getId());
             return new AdminUserDetails(admin,permissions);
         } else {
-            throw new UsernameNotFoundException("用户名或密码错误123");
+            throw new UsernameNotFoundException("用户名或密码错误");
         }
     }
-
 }
