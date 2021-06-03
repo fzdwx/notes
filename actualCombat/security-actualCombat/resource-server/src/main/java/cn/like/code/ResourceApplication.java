@@ -6,18 +6,16 @@ import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
- * oauth server
- *
  * @author like
- * @date 2021/6/2 10:00
+ * @date 2021/6/3 9:57
  */
 @SpringBootApplication(scanBasePackages = {
         "cn.like.code.*"
 },exclude = RedisAutoConfiguration.class)
-public class OauthServerApplication {
+public class ResourceApplication {
 
     public static void main(String[] args) {
-        final ConfigurableApplicationContext context = SpringApplication.run(OauthServerApplication.class, args);
+        final ConfigurableApplicationContext context = SpringApplication.run(ResourceApplication.class, args);
 
     }
 }

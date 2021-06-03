@@ -1,9 +1,9 @@
 package cn.like.code.service.impl;
 
-import cn.like.code.base.BaseServiceImpl;
 import cn.like.code.entity.AdminPermissionRelation;
 import cn.like.code.mapper.AdminPermissionRelationMapper;
 import cn.like.code.service.AdminPermissionRelationService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Service;
  * @since 2021-06-02 12:23:50
  */
 @Service
-public class AdminPermissionRelationServiceImpl extends BaseServiceImpl<AdminPermissionRelationMapper, AdminPermissionRelation> implements AdminPermissionRelationService {
+public class AdminPermissionRelationServiceImpl extends ServiceImpl<AdminPermissionRelationMapper, AdminPermissionRelation> implements AdminPermissionRelationService {
 
 }

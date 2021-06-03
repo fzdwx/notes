@@ -1,4 +1,4 @@
-package cn.like.code.web.redis;
+package cn.like.code.web.lettuce;
 
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;

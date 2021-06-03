@@ -8,15 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f8176e-b14b-4f68-85c5-4c8f2e8c6c60" name="默认的" comment="私聊完成">
-      <change afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/GroupCreateRequestMessageHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/chat/ChatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/ChatRequestMessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/handler/server/ChatRequestMessageHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupCreateRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/message/GroupCreateRequestMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/GroupSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/GroupSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/impl/GroupSessionMemoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/nettyStudy/src/main/java/com/like/netty/protocol/custom/server/session/impl/GroupSessionMemoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/src/main/java/cn/like/code/kotlin/Hello.kt" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/src/main/java/cn/like/code/kotlin/Hello.kt" afterDir="false" />
     </list>
     <list id="bac6a37d-dd42-4db7-a78a-c99c267d3d34" name="nopush" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,6 +124,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1hdhC0jsbcufICB5U9GsAMLo03R" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -173,6 +171,9 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -263,7 +264,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.ChatClient">
+  <component name="RunManager" selected="Application.ChatClient">
     <configuration name="ChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.like.netty.protocol.custom.chat.ChatClient" />
       <module name="nettyStudy" />
@@ -290,29 +291,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="应用程序.ChatServer" />
-      <item itemvalue="应用程序.ChatClient" />
+      <item itemvalue="Application.ChatClient" />
+      <item itemvalue="Application.ChatServer" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="应用程序.ChatClient" />
-        <item itemvalue="应用程序.ChatServer" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -586,6 +568,7 @@
       <workItem from="1618220924960" duration="1397000" />
       <workItem from="1618222946095" duration="94000" />
       <workItem from="1618227660378" duration="4194000" />
+      <workItem from="1622448094256" duration="20000" />
     </task>
     <task id="LOCAL-00154" summary="update 整合maven">
       <created>1614493037597</created>

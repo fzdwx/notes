@@ -8,12 +8,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
 
-@Service
 public class AdminUserService implements UserDetailsService {
 
     @Autowired
@@ -29,7 +27,8 @@ public class AdminUserService implements UserDetailsService {
             List<Permission> permissions = adminMapper.getAdminPermissions(admin.getId());
             return new AdminUserDetails(admin,permissions);
         } else {
-            throw new UsernameNotFoundException("用户名或密码错误");
+            throw new UsernameNotFoundException("用户名或密码错误123");
         }
     }
+
 }

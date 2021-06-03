@@ -1,9 +1,6 @@
 package cn.like.code.kotlin
 
-import com.sun.org.apache.bcel.internal.generic.NEW
-import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.concurrent.thread
 
 /**
  *

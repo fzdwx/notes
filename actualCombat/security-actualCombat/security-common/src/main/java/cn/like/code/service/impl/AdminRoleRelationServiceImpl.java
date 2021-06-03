@@ -1,9 +1,9 @@
 package cn.like.code.service.impl;
 
-import cn.like.code.base.BaseServiceImpl;
 import cn.like.code.entity.AdminRoleRelation;
 import cn.like.code.mapper.AdminRoleRelationMapper;
 import cn.like.code.service.AdminRoleRelationService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Service;
  * @since 2021-06-02 12:23:52
  */
 @Service
-public class AdminRoleRelationServiceImpl extends BaseServiceImpl<AdminRoleRelationMapper, AdminRoleRelation> implements AdminRoleRelationService {
+public class AdminRoleRelationServiceImpl extends ServiceImpl<AdminRoleRelationMapper, AdminRoleRelation> implements AdminRoleRelationService {
 
 }

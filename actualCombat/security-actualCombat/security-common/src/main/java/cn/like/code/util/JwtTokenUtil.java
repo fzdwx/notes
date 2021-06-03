@@ -18,8 +18,10 @@ public class JwtTokenUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtTokenUtil.class);
     private static final String CLAIM_KEY_USERNAME = "sub";
     private static final String CLAIM_KEY_CREATED = "created";
+    /** jwt 秘钥 */
     @Value("${jwt.secret}")
     private String secret;
+    /** jwt 过期时间 */
     @Value("${jwt.expiration}")
     private Long expiration;
 

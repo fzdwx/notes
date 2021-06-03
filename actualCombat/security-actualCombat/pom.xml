@@ -11,6 +11,7 @@
     <modules>
         <module>oauth-server</module>
         <module>security-common</module>
+        <module>resource-server</module>
     </modules>
 
     <properties>

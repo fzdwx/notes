@@ -1,6 +1,6 @@
 package cn.like.code.web.controller;
 
-import cn.like.code.web.redis.service.RedisService;
+import cn.like.code.web.lettuce.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

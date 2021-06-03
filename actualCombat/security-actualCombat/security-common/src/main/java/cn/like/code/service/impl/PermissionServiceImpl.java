@@ -1,9 +1,9 @@
 package cn.like.code.service.impl;
 
-import cn.like.code.base.BaseServiceImpl;
 import cn.like.code.entity.Permission;
 import cn.like.code.mapper.PermissionMapper;
 import cn.like.code.service.PermissionService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Service;
  * @since 2021-06-02 12:23:54
  */
 @Service
-public class PermissionServiceImpl extends BaseServiceImpl<PermissionMapper, Permission> implements PermissionService {
+public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permission> implements PermissionService {
 
 }

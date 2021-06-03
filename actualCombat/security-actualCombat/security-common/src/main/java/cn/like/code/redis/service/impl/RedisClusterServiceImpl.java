@@ -1,8 +1,8 @@
-package cn.like.code.web.redis.service.impl;
+package cn.like.code.redis.service.impl;
 
-import cn.like.code.web.redis.LettucePoolConfig;
-import cn.like.code.web.redis.SyncCommandCallback;
-import cn.like.code.web.redis.service.RedisService;
+import cn.like.code.redis.LettucePoolConfig;
+import cn.like.code.redis.SyncCommandCallback;
+import cn.like.code.redis.service.RedisService;
 import io.lettuce.core.cluster.api.StatefulRedisClusterConnection;
 import io.lettuce.core.cluster.api.sync.RedisAdvancedClusterCommands;
 import lombok.extern.slf4j.Slf4j;

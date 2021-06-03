@@ -1,6 +1,6 @@
-package cn.like.code.web.redis.service;
+package cn.like.code.web.lettuce.service;
 
-import cn.like.code.web.redis.SyncCommandCallback;
+import cn.like.code.web.lettuce.SyncCommandCallback;
 
 /**
  * @author like

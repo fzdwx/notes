@@ -1,9 +1,9 @@
 package cn.like.code.service.impl;
 
-import cn.like.code.base.BaseServiceImpl;
 import cn.like.code.entity.Admin;
 import cn.like.code.mapper.AdminMapper;
 import cn.like.code.service.AdminService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Service;
  * @since 2021-06-02 12:23:48
  */
 @Service
-public class AdminServiceImpl extends BaseServiceImpl<AdminMapper, Admin> implements AdminService {
+public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements AdminService {
 
 }
