@@ -1,4 +1,4 @@
-package cn.like.code.config;
+package cn.like.code.config.support;
 
 import cn.hutool.json.JSON;
 import cn.hutool.json.JSONException;
