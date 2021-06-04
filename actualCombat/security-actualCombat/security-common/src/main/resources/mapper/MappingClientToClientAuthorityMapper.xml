@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.like.code.mapper.MappingClientToClientAuthorityMapper">
+
+    <resultMap id="BaseResultMap" type="cn.like.code.entity.MappingClientToClientAuthority">
+        <!--@Table -->
+        <result property="clientId" column="CLIENT_ID" jdbcType="VARCHAR"/>
+        <result property="clientAuthorityId" column="CLIENT_AUTHORITY_ID" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="queryClientAuthorities" resultType="java.lang.String">
+        SELECT ca.name
+        FROM mapping_client_to_client_authority mctca
+                 LEFT JOIN CLIENT_AUTHORITY ca ON ca.ID = mctca.CLIENT_AUTHORITY_ID
+        WHERE mctca.CLIENT_ID = #{clientId}
+    </select>
+
+</mapper>

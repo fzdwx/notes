@@ -1,16 +1,15 @@
-package cn.like.code.security;
+package cn.like.code.config.support.custom.admin;
 
-import cn.like.code.entity.Admin;
-import cn.like.code.entity.Authorities;
+import cn.like.code.entity.dto.AdminDTO;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -22,9 +21,7 @@ import java.util.stream.Collectors;
 public class AdminUserDetails implements UserDetails {
 
     /** 用户信息 */
-    private Admin admin;
-    /** 权限列表 */
-    private Set<Authorities> authorities;
+    private AdminDTO admin;
     /** 用户唯一标识 */
     private String token;
 
@@ -46,18 +43,21 @@ public class AdminUserDetails implements UserDetails {
     /** 操作系统 */
     private String os;
 
-    public AdminUserDetails(Admin admin, List<Authorities> authorities) {
+    public AdminUserDetails(AdminDTO admin) {
         this.admin = admin;
-        this.authorities = new HashSet<>(authorities);
+    }
+
+    private static Set<String> composeFrom(String raw) {
+        return Arrays.stream(StringUtils.split(raw, ","))
+                     .map(StringUtils::trimToEmpty).filter(StringUtils::isNotBlank).collect(Collectors.toSet());
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         //返回当前用户的权限
-        return authorities.stream()
-                          .filter(authorities -> authorities.getAuthority() != null)
-                          .map(authorities -> new SimpleGrantedAuthority(authorities.getAuthority()))
-                          .collect(Collectors.toList());
+        return admin.getAuthorities().stream()
+                    .map(SimpleGrantedAuthority::new)
+                    .collect(Collectors.toSet());
     }
 
     @Override

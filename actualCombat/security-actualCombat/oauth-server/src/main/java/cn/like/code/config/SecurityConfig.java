@@ -1,6 +1,6 @@
 package cn.like.code.config;
 
-import cn.like.code.security.AdminUserDetailsService;
+import cn.like.code.config.support.custom.admin.AdminUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,6 +20,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    /** 默认登录端点 */
+    public static final String DEFAULT_LOGIN_URL = "/login";
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

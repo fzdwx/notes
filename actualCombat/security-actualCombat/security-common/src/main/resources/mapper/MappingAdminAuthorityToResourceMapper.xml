@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.like.code.mapper.MappingAdminAuthorityToResourceMapper">
+
+    <resultMap id="BaseResultMap" type="cn.like.code.entity.MappingAdminAuthorityToResource">
+        <!--@Table -->
+        <result property="userAuthorityId" column="USER_AUTHORITY_ID" jdbcType="VARCHAR"/>
+        <result property="resourceId" column="RESOURCE_ID" jdbcType="VARCHAR"/>
+    </resultMap>
+
+</mapper>

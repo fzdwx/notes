@@ -27,7 +27,9 @@ spring:
     password: ''
     port: 6379
     ssl: false
-
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 jwt:
   secret: coke
   expiration: 28800000 #1000 * 60 * 60 * 8

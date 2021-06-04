@@ -2,6 +2,7 @@ package cn.like.code.service;
 
 import cn.like.code.base.BaseService;
 import cn.like.code.entity.Admin;
+import cn.like.code.entity.dto.AdminDTO;
 
 /**
  * 后台用户表(Admin)表服务接口
@@ -11,4 +12,5 @@ import cn.like.code.entity.Admin;
  */
 public interface AdminService extends BaseService<Admin> {
 
+    AdminDTO getAdmin(String username);
 }

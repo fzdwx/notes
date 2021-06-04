@@ -2,11 +2,9 @@ package cn.like.code.mapper;
 
 import cn.like.code.base.BaseMapper;
 import cn.like.code.entity.Admin;
-import cn.like.code.entity.Authorities;
+import cn.like.code.entity.dto.AdminDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 /**
  * 后台用户表(Admin)表数据库访问层
@@ -18,10 +16,12 @@ import java.util.List;
 public interface AdminMapper extends BaseMapper<Admin> {
 
     /**
-     * 获取用户的权限
+     * Description: 通过用户 ID 获取用户对象
      *
-     * @param username 用户名
-     * @return {@link List<Authorities>}
+     * @param username 用户名称
+     * @return admin
+     * @author like
+     * @date 2020-06-22 10:49:39
      */
-    List<Authorities> getAdminAuthorities(@Param("username") String username);
+    AdminDTO getAdmin(@Param("username") String username);
 }

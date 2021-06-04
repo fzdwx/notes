@@ -4,8 +4,8 @@ security:
   oauth2:
     # OAuth2 Client 配置，对应 OAuth2ClientProperties 类
     client:
-      client-id: myClient
-      client-secret: 123456
+      client-id: client
+      client-secret: client-a-p
     # OAuth2 Resource 配置，对应 ResourceServerProperties 类
     resource:
       token-info-uri: http://127.0.0.1:9401/oauth/check_token # 获得 Token 信息的 URL

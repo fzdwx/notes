@@ -15,8 +15,10 @@
         <result property="loginTime" column="login_time" jdbcType="TIMESTAMP"/>
         <result property="status" column="status" jdbcType="INTEGER"/>
     </resultMap>
-    <select id="getAdminAuthorities" resultType="cn.like.code.entity.Authorities">
-         select * from authorities where username=#{username};
+    <select id="getAdmin" resultType="cn.like.code.entity.dto.AdminDTO">
+        select *
+        from admin a
+        where username = #{username};
     </select>
 
 </mapper>
