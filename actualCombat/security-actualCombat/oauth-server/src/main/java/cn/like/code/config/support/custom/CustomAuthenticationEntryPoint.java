@@ -3,7 +3,7 @@ package cn.like.code.config.support.custom;
 
 import cn.like.code.config.AuthorizationServerConfig;
 import cn.like.code.config.SecurityConfig;
-import cn.like.code.config.support.response.ResponseWrapper;
+import cn.like.code.util.response.ResponseWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.core.AuthenticationException;

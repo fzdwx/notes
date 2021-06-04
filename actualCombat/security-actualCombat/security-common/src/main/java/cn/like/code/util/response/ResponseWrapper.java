@@ -1,5 +1,6 @@
-package cn.like.code.config.support.response;
+package cn.like.code.util.response;
 
+import org.springframework.boot.actuate.autoconfigure.cloudfoundry.SecurityResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -26,7 +27,28 @@ public final class ResponseWrapper {
         response.setStatus(httpStatus.value());
         try (final PrintWriter writer = response.getWriter()) {
             writer.write(
+                    // cn.like.code.util.response.SecurityResponse.Builder.of().httpStatus(httpStatus).message(message).build().toString()
                     new ResponseEntity<Object>(message, httpStatus).toString()
+            );
+            writer.flush();
+        }
+    }
+
+    /**
+     * Description: 包装响应
+     *
+     * @param response         {@link HttpServletResponse}
+     * @param securityResponse {@link SecurityResponse} 用来包装响应的依据
+     * @return void
+     * @author LiKe
+     * @date 2020-07-23 16:29:05
+     */
+    public static void wrapResponse(HttpServletResponse response, SecurityResponse securityResponse) throws IOException {
+        preHandle(response);
+        response.setStatus(securityResponse.getStatus().value());
+        try (final PrintWriter writer = response.getWriter()) {
+            writer.write(
+                    securityResponse.toString()
             );
             writer.flush();
         }

@@ -1,6 +1,6 @@
 package cn.like.code.config.support.custom.token;
 
-import cn.like.code.config.support.response.SecurityResponse;
+import cn.like.code.util.response.SecurityResponse;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializerProvider;

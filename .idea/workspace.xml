@@ -5,27 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38ca1cfc-4342-48e2-bfe8-8efc69960bea" name="Default Changelist" comment="1.update 表名&#10;2.添加sql">
+      <change afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/resource-server/src/main/java/cn/like/code/config/CustomAuthenticationEntryPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/doc/db/mall.sql" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/doc/db/mall.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/JwtTokenStoreConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/JwtTokenStoreConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/client/CustomClientDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/client/CustomClientDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/controller/MappingAdminToUserAuthorityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/controller/MappingAdminToAdminAuthorityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/entity/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/entity/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/entity/MappingAdminToUserAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/entity/MappingAdminToAdminAuthority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/mapper/ClientMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/mapper/ClientMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/mapper/MappingAdminToUserAuthorityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/mapper/MappingAdminToAdminAuthorityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/mapper/MappingClientToClientAuthorityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/mapper/MappingClientToClientAuthorityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/mapper/MappingClientToResourceServerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/mapper/MappingClientToResourceServerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/service/MappingAdminToUserAuthorityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/service/MappingAdminToAdminAuthorityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/service/impl/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/service/impl/ClientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/service/impl/MappingAdminToUserAuthorityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/service/impl/MappingAdminToAdminAuthorityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/resources/mapper/ClientMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/resources/mapper/ClientMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/resources/mapper/MappingAdminToUserAuthorityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/resources/mapper/MappingAdminToAdminAuthorityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/resources/mapper/MappingClientToClientAuthorityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/resources/mapper/MappingClientToClientAuthorityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/resources/mapper/MappingClientToResourceServerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/resources/mapper/MappingClientToResourceServerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/CustomAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/CustomAccessDeniedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/CustomAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/CustomAuthenticationEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/client/CustomWebResponseExceptionTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/client/CustomWebResponseExceptionTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/token/CustomAuthorizationServerTokenServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/token/CustomAuthorizationServerTokenServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/token/CustomTokenGranter.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/custom/token/CustomTokenGranter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/response/ResponseWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/util/response/ResponseWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src/main/java/cn/like/code/config/support/response/SecurityResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/security-common/src/main/java/cn/like/code/util/response/SecurityResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/security-actualCombat/resource-server/src/main/java/cn/like/code/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/security-actualCombat/resource-server/src/main/java/cn/like/code/config/ResourceServerConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +26,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="7ii49717" />
@@ -55,7 +52,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="MyBatisLogPluginindexNum" value="8" />
+    <property name="MyBatisLogPluginindexNum" value="19" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -70,6 +67,9 @@
     <property name="project.structure.side.proportion" value="0.41693038" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
@@ -131,8 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ResourceApplication" />
         <item itemvalue="Spring Boot.OauthServerApplication" />
+        <item itemvalue="Spring Boot.ResourceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -145,7 +145,7 @@
       <option name="presentableId" value="Default" />
       <updated>1622448109115</updated>
       <workItem from="1622448111914" duration="223000" />
-      <workItem from="1622807713574" duration="2787000" />
+      <workItem from="1622807713574" duration="4361000" />
     </task>
     <task id="LOCAL-00001" summary="修改目录结构">
       <created>1622448188637</created>
@@ -161,15 +161,25 @@
       <option name="project" value="LOCAL" />
       <updated>1622448295887</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1.update 表名&#10;2.添加sql">
+      <created>1622810546899</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622810546899</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="修改目录结构" />
     <MESSAGE value="update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
+    <MESSAGE value="1.update 表名&#10;2.添加sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.update 表名&#10;2.添加sql" />
   </component>
 </project>

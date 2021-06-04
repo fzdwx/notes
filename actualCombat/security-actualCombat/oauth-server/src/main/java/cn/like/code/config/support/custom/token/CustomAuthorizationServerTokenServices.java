@@ -10,10 +10,7 @@ import org.springframework.security.oauth2.common.exceptions.InvalidGrantExcepti
 import org.springframework.security.oauth2.common.exceptions.InvalidScopeException;
 import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
-import org.springframework.security.oauth2.provider.ClientDetailsService;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
-import org.springframework.security.oauth2.provider.OAuth2Request;
-import org.springframework.security.oauth2.provider.TokenRequest;
+import org.springframework.security.oauth2.provider.*;
 import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
@@ -181,6 +178,40 @@ public class CustomAuthorizationServerTokenServices extends DefaultTokenServices
     public OAuth2AccessToken getAccessToken(OAuth2Authentication authentication) {
         return tokenStore.getAccessToken(authentication);
     }
+
+    // ~ Methods implementing from ResourceServerTokenServices
+    //   当资源服务器的 ResourceServerTokenServices 是 RemoteTokenServices 的时候 (在 CheckTokenEndpoint 被请求的时候会调用)
+    // =================================================================================================================
+
+    @Override
+    public OAuth2AccessToken readAccessToken(String accessToken) {
+        return tokenStore.readAccessToken(accessToken);
+    }
+
+    @Override
+    public OAuth2Authentication loadAuthentication(String accessTokenValue) throws AuthenticationException, InvalidTokenException {
+        final OAuth2AccessToken accessToken = tokenStore.readAccessToken(accessTokenValue);
+        if (Objects.isNull(accessToken)) {
+            throw new InvalidTokenException("无效的 access_token: " + accessTokenValue);
+        } else if (accessToken.isExpired()) {
+            tokenStore.removeAccessToken(accessToken);
+            throw new InvalidTokenException("无效的 access_token (已过期): " + accessTokenValue);
+        }
+
+        final OAuth2Authentication oAuth2Authentication = tokenStore.readAuthentication(accessToken);
+        if (Objects.isNull(oAuth2Authentication)) {
+            throw new InvalidTokenException("无效的 access_token: " + accessTokenValue);
+        }
+
+        final String clientId = oAuth2Authentication.getOAuth2Request().getClientId();
+        try {
+            clientDetailsService.loadClientByClientId(clientId);
+        } catch (ClientRegistrationException e) {
+            throw new InvalidTokenException("无效的客户端: " + clientId, e);
+        }
+        return oAuth2Authentication;
+    }
+
 
     // -----------------------------------------------------------------------------------------------------------------
 

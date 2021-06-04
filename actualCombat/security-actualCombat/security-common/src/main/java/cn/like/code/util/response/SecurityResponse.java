@@ -1,4 +1,4 @@
-package cn.like.code.config.support.response;
+package cn.like.code.util.response;
 
 import cn.hutool.json.JSONObject;
 import com.fasterxml.jackson.annotation.JsonFormat;

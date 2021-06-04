@@ -1,7 +1,7 @@
 
 package cn.like.code.config.support.custom;
 
-import cn.like.code.config.support.response.ResponseWrapper;
+import cn.like.code.util.response.ResponseWrapper;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;

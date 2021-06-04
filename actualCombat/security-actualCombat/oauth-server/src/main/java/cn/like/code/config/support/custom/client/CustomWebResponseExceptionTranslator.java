@@ -1,7 +1,7 @@
 package cn.like.code.config.support.custom.client;
 
 import cn.like.code.config.HttpMessageConverterConfiguration;
-import cn.like.code.config.support.response.SecurityResponse;
+import cn.like.code.util.response.SecurityResponse;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
