@@ -44,116 +44,71 @@ INSERT INTO `admin` VALUES (4, 'like', '$2a$10$k.60GYHp7nK7GT0GxG5MVOcrvZNdnvtBo
 INSERT INTO `admin` VALUES (6, 'productAdmin', '$2a$10$6/.J.p.6Bhn7ic4GfoB5D.pGd7xSiD1a9M6ht6yO0fxzlKJPjRAGm', NULL, 'product@qq.com', '商品管理员', '只有商品权限', '2020-02-07 16:15:08', NULL, 1);
 INSERT INTO `admin` VALUES (7, 'orderAdmin', '$2a$10$UqEhA9UZXjHHA3B.L9wNG.6aerrBjC6WHTtbv1FdvYPUI.7lkL6E.', NULL, 'order@qq.com', '订单管理员', '只有订单管理权限', '2020-02-07 16:15:50', NULL, 1);
 
--- ----------------------------
--- Table structure for admin_permission_relation
--- ----------------------------
-DROP TABLE IF EXISTS `admin_permission_relation`;
-CREATE TABLE `admin_permission_relation`  (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `admin_id` bigint(20) NULL DEFAULT NULL COMMENT 'admin表主键',
-  `permission_id` bigint(20) NULL DEFAULT NULL COMMENT 'permission表主机',
-  `type` int(1) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '后台用户和权限关系表(除角色中定义的权限以外的加减权限)' ROW_FORMAT = Dynamic;
+drop table if exists client_details;
+create table client_details
+(
+    client_id               VARCHAR(45) PRIMARY KEY COMMENT '客户端id',
+    resource_ids            VARCHAR(255) COMMENT '资源服务器ids(例如后台，api接口)',
+    client_secret           VARCHAR(255) COMMENT '客户端密码',
+    scope                   VARCHAR(255) COMMENT '范围',
+    authorized_grant_types  VARCHAR(255) COMMENT '认证方式例如authorization_code,password,refresh_token',
+    web_server_redirect_uri VARCHAR(255) COMMENT '回调地址',
+    authorities             VARCHAR(255) COMMENT '权限',
+    access_token_validity   integer comment 'token有效时间',
+    refresh_token_validity  integer comment 'refresh token有效时间',
+    additional_information  VARCHAR(4096) comment '附加信息',
+    autoapprove             VARCHAR(255) comment 'auto approve'
+) ENGINE = InnoDB COMMENT = '认证客户端详情表';
 
--- ----------------------------
--- Records of admin_permission_relation
--- ----------------------------
+INSERT INTO client_details
+(client_id, client_secret, scope, authorized_grant_types,
+ web_server_redirect_uri, authorities, access_token_validity,
+ refresh_token_validity, additional_information, autoapprove)
+VALUES
+('myClient', '123456', 'read_userinfo,read_contacts',
+ 'password,authorization_code,refresh_token', 'http://127.0.0.1:9090/login', null, 3600, 864000, null, true);
 
--- ----------------------------
--- Table structure for admin_role_relation
--- ----------------------------
-DROP TABLE IF EXISTS `admin_role_relation`;
-CREATE TABLE `admin_role_relation`  (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `admin_id` bigint(20) NULL DEFAULT NULL COMMENT 'admin表主键',
-  `role_id` bigint(20) NULL DEFAULT NULL COMMENT 'role表主键',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '后台用户和角色关系表' ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of admin_role_relation
--- ----------------------------
-INSERT INTO `admin_role_relation` VALUES (26, 3, 5);
-INSERT INTO `admin_role_relation` VALUES (27, 6, 1);
-INSERT INTO `admin_role_relation` VALUES (28, 7, 2);
-INSERT INTO `admin_role_relation` VALUES (29, 1, 5);
-INSERT INTO `admin_role_relation` VALUES (30, 4, 5);
+create table if not exists client_token
+(
+    authentication_id VARCHAR(45) PRIMARY KEY comment '主键id',
+    token_id          VARCHAR(255) comment 'token ID',
+    username         VARCHAR(64) comment '用户名称',
+    client_id         VARCHAR(255) comment 'client_details 表主键'
+) ENGINE = InnoDB COMMENT = '客户token表';
 
--- ----------------------------
--- Table structure for permission
--- ----------------------------
-DROP TABLE IF EXISTS `permission`;
-CREATE TABLE `permission`  (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `pid` bigint(20) NULL DEFAULT NULL COMMENT '父级权限id',
-  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '名称',
-  `value` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限值',
-  `icon` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
-  `type` int(1) NULL DEFAULT NULL COMMENT '权限类型：0->目录；1->菜单；2->按钮（接口绑定权限）',
-  `uri` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '前端资源路径',
-  `status` int(1) NULL DEFAULT NULL COMMENT '启用状态；0->禁用；1->启用',
-  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
-  `sort` int(11) NULL DEFAULT NULL COMMENT '排序',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '后台用户权限表' ROW_FORMAT = Dynamic;
+create table if not exists token
+(
+    id VARCHAR(45) PRIMARY KEY comment '主键id',
+    access_token             VARCHAR(255) comment 'access token',
+    refresh_token     VARCHAR(255) comment  'refresh token',
+    username         VARCHAR(64) comment '用户名称',
+    client_id         VARCHAR(45) comment 'client_details 表主键',
+    authentication    LONG comment '验证'
+) ENGINE = InnoDB COMMENT = '访问令牌';
 
--- ----------------------------
--- Records of permission
--- ----------------------------
+create table if not exists code
+(
+    code           VARCHAR(5) comment '授权码模式的code',
+    authentication VARCHAR(255) comment '验证'
+)ENGINE = InnoDB COMMENT = '授权码';
 
--- ----------------------------
--- Table structure for role
--- ----------------------------
-DROP TABLE IF EXISTS `role`;
-CREATE TABLE `role`  (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '名称',
-  `description` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '描述',
-  `admin_count` int(11) NULL DEFAULT NULL COMMENT '后台用户数量',
-  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
-  `status` int(1) NULL DEFAULT 1 COMMENT '启用状态：0->禁用；1->启用',
-  `sort` int(11) NULL DEFAULT 0 COMMENT '排序',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '后台用户角色表' ROW_FORMAT = Dynamic;
+create table if not exists approvals
+(
+    username         VARCHAR(64) comment '用户名',
+    client_id       VARCHAR(45) comment '客户端表主键id',
+    scope          VARCHAR(255) comment '使用范围',
+    status         VARCHAR(10) comment '状态',
+    expiresAt      TIMESTAMP DEFAULT CURRENT_TIMESTAMP comment '过期时间',
+    lastModifiedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP comment '最后修改时间'
+) ENGINE = InnoDB COMMENT = '批准的用户';
 
--- ----------------------------
--- Records of role
--- ----------------------------
-INSERT INTO `role` VALUES (1, '商品管理员', '只能查看及操作商品', 0, '2020-02-03 16:50:37', 1, 0);
-INSERT INTO `role` VALUES (2, '订单管理员', '只能查看及操作订单', 0, '2018-09-30 15:53:45', 1, 0);
-INSERT INTO `role` VALUES (5, '超级管理员', '拥有所有查看和操作功能', 0, '2020-02-02 15:11:05', 1, 0);
+DROP TABLE IF EXISTS `authorities`;
+CREATE TABLE `authorities` (
+                               `username` varchar(45) NOT NULL comment '用户名称',
+                               `authority` varchar(50) NOT NULL comment '权限名称 ROLE_ADMIN',
+                               UNIQUE KEY `ix_auth_username` (`username`,`authority`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT = '用户权限';
 
--- ----------------------------
--- Table structure for role_permission_relation
--- ----------------------------
-DROP TABLE IF EXISTS `role_permission_relation`;
-CREATE TABLE `role_permission_relation`  (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `role_id` bigint(20) NULL DEFAULT NULL COMMENT 'role表主键',
-  `permission_id` bigint(20) NULL DEFAULT NULL COMMENT 'permission表主键',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '后台用户角色和权限关系表' ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of role_permission_relation
--- ----------------------------
-INSERT INTO `role_permission_relation` VALUES (1, 1, 1);
-INSERT INTO `role_permission_relation` VALUES (2, 1, 2);
-INSERT INTO `role_permission_relation` VALUES (3, 1, 3);
-INSERT INTO `role_permission_relation` VALUES (4, 1, 7);
-INSERT INTO `role_permission_relation` VALUES (5, 1, 8);
-INSERT INTO `role_permission_relation` VALUES (6, 2, 4);
-INSERT INTO `role_permission_relation` VALUES (7, 2, 9);
-INSERT INTO `role_permission_relation` VALUES (8, 2, 10);
-INSERT INTO `role_permission_relation` VALUES (9, 2, 11);
-INSERT INTO `role_permission_relation` VALUES (10, 3, 5);
-INSERT INTO `role_permission_relation` VALUES (11, 3, 12);
-INSERT INTO `role_permission_relation` VALUES (12, 3, 13);
-INSERT INTO `role_permission_relation` VALUES (13, 3, 14);
-INSERT INTO `role_permission_relation` VALUES (14, 4, 6);
-INSERT INTO `role_permission_relation` VALUES (15, 4, 15);
-INSERT INTO `role_permission_relation` VALUES (16, 4, 16);
-INSERT INTO `role_permission_relation` VALUES (17, 4, 17);
-
-SET FOREIGN_KEY_CHECKS = 1;
+INSERT INTO `authorities` VALUES ('like', 'ROLE_ADMIN');
