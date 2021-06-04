@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.like.code.mapper.TokenMapper">
+
+    <resultMap id="BaseResultMap" type="cn.like.code.entity.Token">
+        <!--@Table -->
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="accessToken" column="access_token" jdbcType="VARCHAR"/>
+        <result property="refreshToken" column="refresh_token" jdbcType="VARCHAR"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="clientId" column="client_id" jdbcType="VARCHAR"/>
+        <result property="authentication" column="authentication" jdbcType="OTHER"/>
+    </resultMap>
+
+</mapper>

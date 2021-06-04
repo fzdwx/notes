@@ -57,7 +57,7 @@ public class JwtTokenStoreConfig {
     /**
      * jwt牌增强
      *
-     * @author pdd20
+     * @author like
      * @date 2021/06/03
      */
     public static class JwtTokenEnhancer implements TokenEnhancer {

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
  * 后台用户表(Admin)表实体类
  *
  * @author like
- * @since 2021-06-02 12:23:47
+ * @since 2021-06-04 09:09:09
  */
 @Data
 @TableName("admin")

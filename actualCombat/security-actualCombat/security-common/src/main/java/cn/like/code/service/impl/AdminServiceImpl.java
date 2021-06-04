@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * 后台用户表(Admin)表服务实现类
  *
  * @author like
- * @since 2021-06-02 12:23:48
+ * @since 2021-06-04 09:09:11
  */
 @Service
 public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements AdminService {

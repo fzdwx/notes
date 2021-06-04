@@ -1,7 +1,7 @@
 package cn.like.code.security;
 
 import cn.like.code.entity.Admin;
-import cn.like.code.entity.Permission;
+import cn.like.code.entity.Authorities;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,7 +24,7 @@ public class AdminUserDetails implements UserDetails {
     /** 用户信息 */
     private Admin admin;
     /** 权限列表 */
-    private Set<Permission> permissions;
+    private Set<Authorities> authorities;
     /** 用户唯一标识 */
     private String token;
 
@@ -46,17 +46,17 @@ public class AdminUserDetails implements UserDetails {
     /** 操作系统 */
     private String os;
 
-    public AdminUserDetails(Admin admin, List<Permission> permissions) {
+    public AdminUserDetails(Admin admin, List<Authorities> authorities) {
         this.admin = admin;
-        this.permissions = new HashSet<>(permissions);
+        this.authorities = new HashSet<>(authorities);
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         //返回当前用户的权限
-        return permissions.stream()
-                          .filter(permission -> permission.getValue() != null)
-                          .map(permission -> new SimpleGrantedAuthority(permission.getValue()))
+        return authorities.stream()
+                          .filter(authorities -> authorities.getAuthority() != null)
+                          .map(authorities -> new SimpleGrantedAuthority(authorities.getAuthority()))
                           .collect(Collectors.toList());
     }
 

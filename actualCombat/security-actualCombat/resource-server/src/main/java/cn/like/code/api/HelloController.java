@@ -32,6 +32,6 @@ public class HelloController {
     public Object getCurrentUser(HttpServletRequest request) {
         String header = request.getHeader("Authorization");
         String token = StrUtil.subAfter(header, "bearer ", false);
-        return jwtTokenUtil.getUserNameFromToken(token);
+        return jwtTokenUtil.getClaimsFromToken(token);
     }
 }

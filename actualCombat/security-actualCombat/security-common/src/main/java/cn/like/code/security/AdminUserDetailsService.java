@@ -1,7 +1,7 @@
 package cn.like.code.security;
 
 import cn.like.code.entity.Admin;
-import cn.like.code.entity.Permission;
+import cn.like.code.entity.Authorities;
 import cn.like.code.mapper.AdminMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,8 +27,8 @@ public class AdminUserDetailsService implements UserDetailsService {
         final Admin admin =
                 adminMapper.selectOne(adminMapper.lambdaQuery().eq(Admin::getUsername, username));
         if (!Objects.isNull(admin)) {
-            List<Permission> permissions = adminMapper.getAdminPermissions(admin.getId());
-            return new AdminUserDetails(admin,permissions);
+            List<Authorities> authorities = adminMapper.getAdminAuthorities(admin.getUsername());
+            return new AdminUserDetails(admin,authorities);
         } else {
             throw new UsernameNotFoundException("用户名或密码错误");
         }

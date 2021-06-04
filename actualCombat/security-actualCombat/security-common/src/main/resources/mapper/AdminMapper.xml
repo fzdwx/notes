@@ -15,13 +15,8 @@
         <result property="loginTime" column="login_time" jdbcType="TIMESTAMP"/>
         <result property="status" column="status" jdbcType="INTEGER"/>
     </resultMap>
-
-    <select id="getAdminPermissions" resultType="cn.like.code.entity.Permission">
-        select *
-        from admin a
-                 left join admin_permission_relation apr on a.id = apr.admin_id
-                 left join permission p on p.id = apr.permission_id
-        where a.id=#{id};
+    <select id="getAdminAuthorities" resultType="cn.like.code.entity.Authorities">
+         select * from authorities where username=#{username};
     </select>
 
 </mapper>
