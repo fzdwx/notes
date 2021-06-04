@@ -72,6 +72,28 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.allowFormAuthenticationForClients();
         security.checkTokenAccess("permitAll()"); //
+        // @formatter:off
+        // ~ 为 client_id 和 client_secret 开启表单验证, 会启用一个名为 ClientCredentialsTokenEndpointFilter 的过滤器.
+        //   并会把这个过滤器放在 BasicAuthenticationFilter 之前,
+        //   这样如果在 ClientCredentialsTokenEndpointFilter 完成了校验 (SecurityContextHolder.getContext().getAuthentication()),
+        //   且请求头中即使有 Authorization: basic xxx, 也会被 BasicAuthenticationFilter 忽略.
+        //   ref: AuthorizationServerSecurityConfigurer#clientCredentialsTokenEndpointFilter, BasicAuthenticationFilter#doFilterInternal
+        // ~ 如果不配置这一行, 默认就会通过 BasicAuthenticationFilter.
+        // security.allowFormAuthenticationForClients();
+
+     /*   security
+                // ~ ExceptionTranslationFilter handling
+                //   在 Client Credentials Grant 和 Resource Owner Password Grant 模式下, 客户端凭证有误时会触发 authenticationEntryPoint
+                // -----------------------------------------------------------------------------------------------------
+
+                // ~ AuthenticationEntryPoint: called by ExceptionTranslationFilter when AuthenticationException be thrown.
+                .authenticationEntryPoint(authenticationEntryPoint)
+                // ~ AccessDeniedHandler: called by ExceptionTranslationFilter when AccessDeniedException be thrown.
+                .accessDeniedHandler(accessDeniedHandler)
+                // ~ 为 /oauth/token 端点 (TokenEndpoint) 添加自定义的过滤器
+                .addTokenEndpointAuthenticationFilter(new CustomClientCredentialsTokenEndpointFilter(passwordEncoder, userDetailsService, authenticationEntryPoint))
+        ;
+        // @formatter:on*/
     }
 
     @Override
