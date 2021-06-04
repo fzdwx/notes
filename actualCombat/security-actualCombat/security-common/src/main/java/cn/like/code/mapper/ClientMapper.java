@@ -18,10 +18,10 @@ public interface ClientMapper extends BaseMapper<Client> {
     /**
      * Description: 通过客户端 ID 获取客户端
      *
-     * @param clientId 客户端 名称
+     * @param id 客户端 id
      * @return {@link Client}
      * @author LiKe
      * @date 2020-06-15 13:17:53
      */
-    ClientDTO getClient(@Param("clientId") String clientId);
+    ClientDTO getClient(@Param("id") String id);
 }

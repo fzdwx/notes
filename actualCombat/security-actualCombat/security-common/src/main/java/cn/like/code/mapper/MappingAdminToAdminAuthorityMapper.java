@@ -1,7 +1,7 @@
 package cn.like.code.mapper;
 
 import cn.like.code.base.BaseMapper;
-import cn.like.code.entity.MappingAdminToUserAuthority;
+import cn.like.code.entity.MappingAdminToAdminAuthority;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.Set;
@@ -13,15 +13,15 @@ import java.util.Set;
  * @since 2021-06-04 13:14:01
  */
 @Mapper
-public interface MappingAdminToUserAuthorityMapper extends BaseMapper<MappingAdminToUserAuthority> {
+public interface MappingAdminToAdminAuthorityMapper extends BaseMapper<MappingAdminToAdminAuthority> {
 
     /**
      * Description: 查询用户所对应的职权
      *
-     * @param username username
+     * @param adminId adminId
      * @return java.util.Set<java.lang.String>
      * @author LiKe
      * @date 2020-06-22 11:24:59
      */
-    Set<String> getUserAuthorities(String username);
+    Set<String> getUserAuthorities(Long adminId);
 }

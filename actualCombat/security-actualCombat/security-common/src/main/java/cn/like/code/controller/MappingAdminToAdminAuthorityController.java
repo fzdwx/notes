@@ -2,8 +2,8 @@ package cn.like.code.controller;
 
 
 import cn.like.code.base.BaseController;
-import cn.like.code.entity.MappingAdminToUserAuthority;
-import cn.like.code.service.MappingAdminToUserAuthorityService;
+import cn.like.code.entity.MappingAdminToAdminAuthority;
+import cn.like.code.service.MappingAdminToAdminAuthorityService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.ApiOperation;
@@ -21,13 +21,13 @@ import java.io.Serializable;
  * @since 2021-06-04 13:13:59
  */
 @RestController
-@RequestMapping("mappingAdminToUserAuthority")
+@RequestMapping("mappingAdminToAdminAuthority")
 @RequiredArgsConstructor
-public class MappingAdminToUserAuthorityController extends BaseController {
+public class MappingAdminToAdminAuthorityController extends BaseController {
     /**
      * 服务对象
      */
-    private final MappingAdminToUserAuthorityService mappingAdminToUserAuthorityService;
+    private final MappingAdminToAdminAuthorityService mappingAdminToUserAuthorityService;
 
 
     /**
@@ -39,7 +39,7 @@ public class MappingAdminToUserAuthorityController extends BaseController {
      */
     @ApiOperation(value = "分页查询", notes = "分页查询")
     @GetMapping("/page")
-    public ResponseEntity<?> getMappingAdminToUserAuthorityPage(Page<MappingAdminToUserAuthority> page, MappingAdminToUserAuthority mappingAdminToUserAuthority) {
+    public ResponseEntity<?> getMappingAdminToUserAuthorityPage(Page<MappingAdminToAdminAuthority> page, MappingAdminToAdminAuthority mappingAdminToUserAuthority) {
         return ResponseEntity.ok((this.mappingAdminToUserAuthorityService
                 .page(page, new QueryWrapper<>(mappingAdminToUserAuthority))));
     }
@@ -66,7 +66,7 @@ public class MappingAdminToUserAuthorityController extends BaseController {
      */
     @ApiOperation(value = "新增用户和用户职权的映射表.", notes = "新增用户和用户职权的映射表.")
     @PostMapping
-    public ResponseEntity<?> insert(@RequestBody MappingAdminToUserAuthority mappingAdminToUserAuthority) {
+    public ResponseEntity<?> insert(@RequestBody MappingAdminToAdminAuthority mappingAdminToUserAuthority) {
         return ResponseEntity.ok(this.mappingAdminToUserAuthorityService.save(mappingAdminToUserAuthority));
     }
 
@@ -79,7 +79,7 @@ public class MappingAdminToUserAuthorityController extends BaseController {
      */
     @ApiOperation(value = "修改用户和用户职权的映射表.", notes = "修改用户和用户职权的映射表.")
     @PutMapping
-    public ResponseEntity<?> updateById(@RequestBody MappingAdminToUserAuthority mappingAdminToUserAuthority) {
+    public ResponseEntity<?> updateById(@RequestBody MappingAdminToAdminAuthority mappingAdminToUserAuthority) {
         return ResponseEntity.ok(this.mappingAdminToUserAuthorityService.updateById(mappingAdminToUserAuthority));
     }
 

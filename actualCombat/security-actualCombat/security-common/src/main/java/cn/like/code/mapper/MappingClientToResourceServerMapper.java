@@ -18,11 +18,11 @@ public interface MappingClientToResourceServerMapper extends BaseMapper<MappingC
     /**
      * Description: 查询匹配的资源服务器 ID
      *
-     * @param clientId 客户端 ID
+     * @param id 客户端 ID
      * @return java.util.Set<java.lang.String>
      * @author LiKe
      * @date 2020-06-17 11:39:08
      */
-    Set<String> queryResourceServerIds(String clientId);
+    Set<String> queryResourceServerIds(String id);
 
 }

@@ -18,8 +18,8 @@ public interface MappingClientToClientAuthorityMapper extends BaseMapper<Mapping
     /**
      * 查询客户端的全选
      *
-     * @param clientId 客户机id
+     * @param id 客户机id
      * @return {@link Set<String>}
      */
-    Set<String> queryClientAuthorities(String clientId);
+    Set<String> queryClientAuthorities(String id);
 }

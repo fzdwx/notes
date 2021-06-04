@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.like.code.mapper.MappingAdminToUserAuthorityMapper">
+<mapper namespace="cn.like.code.mapper.MappingAdminToAdminAuthorityMapper">
 
-    <resultMap id="BaseResultMap" type="cn.like.code.entity.MappingAdminToUserAuthority">
+    <resultMap id="BaseResultMap" type="cn.like.code.entity.MappingAdminToAdminAuthority">
         <!--@Table -->
         <result property="userId" column="USER_ID" jdbcType="VARCHAR"/>
         <result property="userAuthorityId" column="USER_AUTHORITY_ID" jdbcType="OTHER"/>
     </resultMap>
     <select id="getUserAuthorities" resultType="java.lang.String">
         SELECT aa.NAME
-        FROM mapping_admin_to_user_authority mutua
-                 LEFT JOIN admin_authority aa ON aa.ID = mutua.USER_AUTHORITY_ID
-        WHERE aa.ID = #{username}
+        FROM mapping_admin_to_admin_authority mutua
+                 LEFT JOIN admin_authority aa ON aa.ID = mutua.ADMIN_AUTHORITY_ID
+        WHERE aa.ID = #{adminId}
     </select>
 </mapper>

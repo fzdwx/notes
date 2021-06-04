@@ -11,7 +11,7 @@
         SELECT ca.name
         FROM mapping_client_to_client_authority mctca
                  LEFT JOIN CLIENT_AUTHORITY ca ON ca.ID = mctca.CLIENT_AUTHORITY_ID
-        WHERE mctca.CLIENT_ID = #{clientId}
+        WHERE mctca.CLIENT_ID = #{id}
     </select>
 
 </mapper>

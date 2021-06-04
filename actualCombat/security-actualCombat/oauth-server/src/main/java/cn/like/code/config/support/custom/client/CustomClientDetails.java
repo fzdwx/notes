@@ -34,7 +34,7 @@ public class CustomClientDetails implements ClientDetails {
 
     @Override
     public String getClientId() {
-        return clientDto.getClientId();
+        return clientDto.getId();
     }
 
     @Override

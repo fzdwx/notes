@@ -3,7 +3,7 @@ package cn.like.code.service.impl;
 import cn.like.code.entity.Admin;
 import cn.like.code.entity.dto.AdminDTO;
 import cn.like.code.mapper.AdminMapper;
-import cn.like.code.mapper.MappingAdminToUserAuthorityMapper;
+import cn.like.code.mapper.MappingAdminToAdminAuthorityMapper;
 import cn.like.code.service.AdminService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +18,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements AdminService {
     @Autowired
-    private MappingAdminToUserAuthorityMapper mappingAdminToUserAuthorityMapper;
+    private MappingAdminToAdminAuthorityMapper mappingAdminToUserAuthorityMapper;
 
     @Override
     public AdminDTO getAdmin(String username) {
         final AdminDTO admin = getBaseMapper().getAdmin(username);
-        admin.setAuthorities(mappingAdminToUserAuthorityMapper.getUserAuthorities(username));
+        admin.setAuthorities(mappingAdminToUserAuthorityMapper.getUserAuthorities(admin.getId()));
         return admin;
     }
 }

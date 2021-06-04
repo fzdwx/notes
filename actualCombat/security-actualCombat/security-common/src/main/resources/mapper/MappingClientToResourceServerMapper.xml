@@ -10,7 +10,7 @@
     <select id="queryResourceServerIds" resultType="java.lang.String">
         SELECT RESOURCE_SERVER_ID
         FROM mapping_client_to_resource_server mctrs
-        WHERE CLIENT_ID = #{clientId}
+        WHERE CLIENT_ID = #{id}
     </select>
 
 </mapper>

@@ -16,7 +16,7 @@
     </resultMap>
 
     <select id="getClient" resultType="cn.like.code.entity.dto.ClientDTO">
-        SELECT c.* FROM client c WHERE c.CLIENT_ID = #{clientId}
+        SELECT c.* FROM client c WHERE c.id = #{id}
     </select>
 
 </mapper>

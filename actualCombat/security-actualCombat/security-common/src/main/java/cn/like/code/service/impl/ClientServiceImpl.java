@@ -27,8 +27,8 @@ public class ClientServiceImpl extends ServiceImpl<ClientMapper, Client> impleme
     @Override
     public ClientDTO getClient(String clientId) {
         final ClientDTO dto = getBaseMapper().getClient(clientId);
-        dto.setAuthorities(mappingClientToClientAuthorityMapper.queryClientAuthorities(dto.getClientId()));
-        dto.setResourceIds(mappingClientToResourceServerMapper.queryResourceServerIds(dto.getClientId()));
+        dto.setAuthorities(mappingClientToClientAuthorityMapper.queryClientAuthorities(dto.getId()));
+        dto.setResourceIds(mappingClientToResourceServerMapper.queryResourceServerIds(dto.getId()));
         return dto;
     }
 }

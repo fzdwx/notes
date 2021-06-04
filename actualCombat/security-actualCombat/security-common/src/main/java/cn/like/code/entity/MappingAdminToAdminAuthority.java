@@ -10,17 +10,17 @@ import lombok.EqualsAndHashCode;
 import java.io.Serializable;
 
 /**
- * 用户和用户职权的映射表.(MappingAdminToUserAuthority)表实体类
+ * 用户和用户职权的映射表.(MappingAdminToAdminAuthority)表实体类
  *
  * @author like
  * @since 2021-06-04 13:13:59
  */
 @Data
-@TableName("mapping_admin_to_user_authority")
+@TableName("mapping_admin_to_admin_authority")
 @EqualsAndHashCode(callSuper = true)
 @ApiModel(value = "用户和用户职权的映射表.")
 @SuppressWarnings("serial")
-public class MappingAdminToUserAuthority extends BaseEntity<MappingAdminToUserAuthority> {
+public class MappingAdminToAdminAuthority extends BaseEntity<MappingAdminToAdminAuthority> {
 
     public static final String userId_col_name = "user_id";
     public static final String userAuthorityId_col_name = "user_authority_id";

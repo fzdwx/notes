@@ -22,7 +22,7 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Client extends BaseEntity<Client> {
 
-    public static final String clientId_col_name = "clientId";
+    public static final String id_col_name = "id";
     public static final String clientSecret_col_name = "client_secret";
     public static final String scope_col_name = "scope";
     public static final String authorizedGrantType_col_name = "authorized_grant_type";
@@ -36,8 +36,8 @@ public class Client extends BaseEntity<Client> {
     /**
      * 客户端 名字
      */
-    @ApiModelProperty(value = "客户端 名字")
-    private String clientId;
+    @ApiModelProperty(value = "客户端 id")
+    private String id;
 
     /**
      * 客户端 Secret (加密后)
@@ -95,6 +95,6 @@ public class Client extends BaseEntity<Client> {
      */
     @Override
     public Serializable pkVal() {
-        return this.clientId;
+        return this.id;
     }
 }
