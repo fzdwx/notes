@@ -1,17 +1,13 @@
 package cn.like.code.config;
 
+import cn.like.code.config.support.custom.token.JwtTokenEnhancer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
-import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
-import org.springframework.security.oauth2.provider.token.TokenEnhancer;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 /**
  * 使用Jwt存储token的配置
@@ -34,9 +30,11 @@ public class JwtTokenStoreConfig {
      */
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
-        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setSigningKey(secret); // JWT 秘钥
-        return converter;
+        final KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("authorization-server.jks"), "rootroot".toCharArray());
+        final JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
+        jwtAccessTokenConverter.setKeyPair(keyStoreKeyFactory.getKeyPair("authorization-server-jwt-keypair"));
+        jwtAccessTokenConverter.setSigningKey(secret); // JWT 秘钥
+        return jwtAccessTokenConverter;
     }
 
     /**
@@ -49,24 +47,13 @@ public class JwtTokenStoreConfig {
         return new JwtTokenStore(jwtAccessTokenConverter());
     }
 
+    /**
+     * jwt token 增强
+     *
+     * @return {@link JwtTokenEnhancer}
+     */
     @Bean
     public JwtTokenEnhancer jwtTokenEnhancer() {
         return new JwtTokenEnhancer();
-    }
-
-    /**
-     * jwt牌增强
-     *
-     * @author like
-     * @date 2021/06/03
-     */
-    public static class JwtTokenEnhancer implements TokenEnhancer {
-        @Override
-        public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
-            Map<String, Object> info = new HashMap<>();
-            info.put("enhance", "enhance info");
-            ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);
-            return accessToken;
-        }
     }
 }

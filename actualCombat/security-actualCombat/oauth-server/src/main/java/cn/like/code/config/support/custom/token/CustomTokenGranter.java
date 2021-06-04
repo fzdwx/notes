@@ -96,6 +96,10 @@ public class CustomTokenGranter implements TokenGranter {
 
         private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
+        public CustomOAuth2AccessToken(String accessToken) {
+            super(accessToken);
+        }
+
         public CustomOAuth2AccessToken(OAuth2AccessToken accessToken) {
             super(accessToken);
         }

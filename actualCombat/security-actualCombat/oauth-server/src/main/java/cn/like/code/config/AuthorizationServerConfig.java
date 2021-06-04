@@ -3,6 +3,7 @@ package cn.like.code.config;
 import cn.like.code.config.support.custom.client.CustomClientCredentialsTokenEndpointFilter;
 import cn.like.code.config.support.custom.client.CustomClientDetailsService;
 import cn.like.code.config.support.custom.token.CustomTokenGranter;
+import cn.like.code.config.support.custom.token.JwtTokenEnhancer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -60,7 +61,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Autowired
     private JwtAccessTokenConverter jwtAccessTokenConverter;
     @Autowired
-    private JwtTokenStoreConfig.JwtTokenEnhancer jwtTokenEnhancer;
+    private JwtTokenEnhancer jwtTokenEnhancer;
 
     // auth config
     @Autowired
@@ -110,8 +111,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
      */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        /*security.allowFormAuthenticationForClients();
-        security.checkTokenAccess("permitAll()");*/
         // ~ 为 client_id 和 client_secret 开启表单验证, 会启用一个名为 ClientCredentialsTokenEndpointFilter 的过滤器.
         //   并会把这个过滤器放在 BasicAuthenticationFilter 之前,
         //   这样如果在 ClientCredentialsTokenEndpointFilter 完成了校验 (SecurityContextHolder.getContext().getAuthentication()),
