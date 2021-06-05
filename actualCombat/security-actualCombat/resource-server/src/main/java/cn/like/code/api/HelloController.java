@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletRequest;
  * @date 2021/6/3 10:06
  */
 @RestController
-@RequestMapping("/api")
 public class HelloController {
 
     @Autowired
@@ -28,7 +27,7 @@ public class HelloController {
         return "world";
     }
 
-    @GetMapping("/getCurrentUser")
+    @GetMapping("api/getCurrentUser")
     public Object getCurrentUser(HttpServletRequest request) {
         String header = request.getHeader("Authorization");
         String token = StrUtil.subAfter(header, "bearer ", false);

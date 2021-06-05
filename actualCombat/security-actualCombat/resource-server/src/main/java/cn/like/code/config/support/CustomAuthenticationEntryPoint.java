@@ -32,5 +32,4 @@ public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint 
             ResponseWrapper.forbiddenResponse(response, authExceptionMessage);
         }
     }
-
 }

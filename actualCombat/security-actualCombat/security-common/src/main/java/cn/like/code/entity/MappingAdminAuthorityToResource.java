@@ -22,7 +22,7 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class MappingAdminAuthorityToResource extends BaseEntity<MappingAdminAuthorityToResource> {
 
-    public static final String userAuthorityId_col_name = "user_authority_id";
+    public static final String adminAuthorityId_col_name = "admin_authority_id";
     public static final String resourceId_col_name = "resource_id";
 
 
@@ -30,7 +30,7 @@ public class MappingAdminAuthorityToResource extends BaseEntity<MappingAdminAuth
      * 用户职权 ID
      */
     @ApiModelProperty(value = "用户职权 ID")
-    private String userAuthorityId;
+    private String adminAuthorityId;
 
     /**
      * 资源 ID
@@ -45,7 +45,7 @@ public class MappingAdminAuthorityToResource extends BaseEntity<MappingAdminAuth
      */
     @Override
     public Serializable pkVal() {
-        return this.userAuthorityId;
+        return this.adminAuthorityId;
     }
 
 }

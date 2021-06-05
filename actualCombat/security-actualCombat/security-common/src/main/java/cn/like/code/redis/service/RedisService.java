@@ -5,6 +5,8 @@ import cn.hutool.json.JSONUtil;
 import cn.like.code.redis.SyncCommandCallback;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Map;
+
 /**
  * @author like
  * @date 2021/6/1 9:31
@@ -40,10 +42,33 @@ public interface RedisService {
             return JSONUtil.toBean(res, clazz);
         }
     }
+
     /** setex  key val expire */
     default String setEX(String key, String val, Long expire) {
         return executeSync(cmd -> {
             return cmd.setex(key, expire, val);
+        });
+    }
+
+    /** hset key filed value */
+    default Long hset(String key, Map<String, String> map) {
+        return executeSync(cmd -> {
+            if (map.isEmpty()) return 0L;
+            return cmd.hset(key, map);
+        });
+    }
+
+    /** hset key filed value */
+    default Boolean hest(String key, String filed, String value) {
+        return executeSync(cmd -> {
+            return cmd.hset(key, filed, value);
+        });
+    }
+
+    /** hgetall key */
+    default Map<String, String> hgetall(String key) {
+        return executeSync(cmd -> {
+            return cmd.hgetall(key);
         });
     }
 }

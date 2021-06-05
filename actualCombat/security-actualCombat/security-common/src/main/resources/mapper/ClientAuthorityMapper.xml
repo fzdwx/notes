@@ -8,5 +8,14 @@
         <result property="name" column="NAME" jdbcType="VARCHAR"/>
         <result property="description" column="DESCRIPTION" jdbcType="VARCHAR"/>
     </resultMap>
+    <select id="composeClientAuthorityResourceAddressMapping"
+            resultType="cn.like.code.entity.dto.ClientAuthorityResourceAddressMapping">
+        select ca.NAME                                       as client_authority_name,
+               concat(r.ENDPOINT, '@', r.RESOURCE_SERVER_ID) as resource_address
+        from client_authority ca
+                 left join mapping_client_authority_to_resource mcatr on ca.ID = mcatr.CLIENT_AUTHORITY_ID
+                 left join resource r on r.ID = mcatr.RESOURCE_ID
+        where concat(r.ENDPOINT, '@', r.RESOURCE_SERVER_ID) is not null
+    </select>
 
 </mapper>

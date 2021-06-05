@@ -10,7 +10,7 @@
     <select id="getUserAuthorities" resultType="java.lang.String">
         SELECT aa.NAME
         FROM mapping_admin_to_admin_authority mutua
-                 LEFT JOIN admin_authority aa ON aa.ID = mutua.ADMIN_AUTHORITY_ID
+                 LEFT JOIN admin_authority aa ON aa.ID = mutua.ADMIN_ID
         WHERE aa.ID = #{adminId}
     </select>
 </mapper>

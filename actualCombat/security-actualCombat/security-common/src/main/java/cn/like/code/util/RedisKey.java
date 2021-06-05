@@ -1,5 +1,9 @@
 package cn.like.code.util;
 
+import cn.like.code.entity.dto.AdminAuthorityResourceAddressMapping;
+import cn.like.code.entity.dto.ClientAccessScopeResourceAddressMapping;
+import cn.like.code.entity.dto.ClientAuthorityResourceAddressMapping;
+
 import java.text.MessageFormat;
 
 /**
@@ -18,8 +22,17 @@ import java.text.MessageFormat;
  */
 public enum RedisKey {
 
-    /** 缓存信息 已经注册过的客户端  */ CACHE_AUTH_CLIENT_ID("cache:auth:client_id:{0}"),
-    /** 缓存信息 已经注册过的用户 */ CACHE_AUTH_USER_NAME("cache:auth:user_name:{0}"),
+    /**
+     * 缓存信息 已经注册过的客户端 cache:auth:client_id:clientName
+     */
+    CACHE_AUTH_CLIENT_ID("cache:auth:client_id:{0}"),
+    /**
+     * 缓存前缀 metadata.resource-address:CACHE_SUFFIX
+     * {@link ClientAccessScopeResourceAddressMapping#CACHE_SUFFIX} <br>
+     * {@link ClientAuthorityResourceAddressMapping#CACHE_SUFFIX}<br>
+     * {@link AdminAuthorityResourceAddressMapping#CACHE_SUFFIX}<br>
+     */
+    CACHE_PREFIX_METADATA_RESOURCE_ADDRESS("cache:metadata.resource-address:{0}"),
 
     ;
 
@@ -27,6 +40,10 @@ public enum RedisKey {
 
     RedisKey(String value) {
         this.value = value;
+    }
+
+    public String value() {
+        return value;
     }
 
     /**

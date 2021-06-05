@@ -32,6 +32,7 @@
         <guava.version>30.1.1-jre</guava.version>
         <security-oath2.version>2.5.1.RELEASE</security-oath2.version>
         <jjwt.version>0.9.1</jjwt.version>
+        <coll.version>4.4</coll.version>
     </properties>
 
     <dependencies>

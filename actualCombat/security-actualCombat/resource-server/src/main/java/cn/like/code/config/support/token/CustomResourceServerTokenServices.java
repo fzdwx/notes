@@ -1,4 +1,4 @@
-package cn.like.code.config.support;
+package cn.like.code.config.support.token;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.AuthenticationException;

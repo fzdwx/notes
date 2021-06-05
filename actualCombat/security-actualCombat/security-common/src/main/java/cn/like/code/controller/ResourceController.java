@@ -1,6 +1,7 @@
 package cn.like.code.controller;
 
 
+import cn.hutool.json.JSONUtil;
 import cn.like.code.base.BaseController;
 import cn.like.code.entity.Resource;
 import cn.like.code.service.ResourceService;
@@ -8,7 +9,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
@@ -23,12 +26,20 @@ import java.io.Serializable;
 @RestController
 @RequestMapping("resource")
 @RequiredArgsConstructor
+@Slf4j
 public class ResourceController extends BaseController {
     /**
      * 服务对象
      */
     private final ResourceService resourceService;
 
+    @GetMapping("/access")
+    public String access() {
+        final String securityContext = JSONUtil.toJsonStr(SecurityContextHolder.getContext());
+        log.debug("resource-server accessed with security context: ");
+        log.debug(securityContext);
+        return securityContext;
+    }
 
     /**
      * 分页查询所有数据

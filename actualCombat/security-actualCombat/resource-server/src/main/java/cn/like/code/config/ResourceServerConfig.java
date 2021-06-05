@@ -1,7 +1,9 @@
 package cn.like.code.config;
 
-import cn.hutool.json.JSON;
-import cn.like.code.config.support.CustomResourceServerTokenServices;
+import cn.like.code.config.support.accesscontrol.CustomAccessDecisionManager;
+import cn.like.code.config.support.accesscontrol.CustomFilterInvocationSecurityMetadataSource;
+import cn.like.code.config.support.accesscontrol.FilterSecurityInterceptorPostProcessor;
+import cn.like.code.config.support.token.CustomResourceServerTokenServices;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,8 +11,8 @@ import org.springframework.boot.autoconfigure.security.oauth2.OAuth2ClientProper
 import org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
@@ -20,13 +22,11 @@ import org.springframework.security.oauth2.provider.expression.OAuth2WebSecurity
 import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
 import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.stream.Collectors;
 
 /**
  * 资源服务器配置
@@ -40,6 +40,7 @@ import java.util.stream.Collectors;
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Value("${spring.application.name}")
+    // @Value("${security.oauth2.client.client-id}")
     private String RESOURCE_ID;
     @Value("${jwt.secret}")
     private String secret;
@@ -54,12 +55,16 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
      * </ol>
      */
     private static final String AUTHORIZATION_SERVER_TOKEN_KEY_ENDPOINT_URL = "http://localhost:18957/token-customize-authorization-server/oauth/token_key";
-    @Autowired
+
     private ResourceServerProperties resourceServerProperties;
-    @Autowired
+
     private OAuth2ClientProperties oAuth2ClientProperties;
-    @Autowired
+
     private AuthenticationEntryPoint authenticationEntryPoint;
+
+    private AccessDecisionManager accessDecisionManager;
+
+    private FilterInvocationSecurityMetadataSource filterInvocationSecurityMetadataSource;
 
     /**
      * jwt访问令牌转换器
@@ -134,12 +139,13 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-            // 设置 /login 无需权限访问
-            .antMatchers("/login").permitAll()
-            .antMatchers("/callback").permitAll()
-            // 设置其它请求，需要认证后访问
-            .anyRequest().authenticated()
-        ;
+                // 设置 /login 无需权限访问
+                .antMatchers("/login").permitAll()
+                .antMatchers("/callback").permitAll()
+                // 设置其它请求，需要认证后访问
+                .anyRequest().authenticated()
+                // ~ 动态权限设置
+                .withObjectPostProcessor(new FilterSecurityInterceptorPostProcessor(accessDecisionManager, filterInvocationSecurityMetadataSource));
     }
 
     /**
@@ -200,4 +206,33 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         return remoteTokenServices;
     }
 
+    @Autowired
+    public void setResourceServerProperties(ResourceServerProperties resourceServerProperties) {
+        this.resourceServerProperties = resourceServerProperties;
+    }
+
+    @Autowired
+    public void setoAuth2ClientProperties(OAuth2ClientProperties oAuth2ClientProperties) {
+        this.oAuth2ClientProperties = oAuth2ClientProperties;
+    }
+
+    @Autowired
+    public void setAuthenticationEntryPoint(AuthenticationEntryPoint authenticationEntryPoint) {
+        this.authenticationEntryPoint = authenticationEntryPoint;
+    }
+
+    @Autowired
+    public void setAccessDecisionManager(AccessDecisionManager accessDecisionManager) {
+        final CustomAccessDecisionManager customAccessDecisionManager = (CustomAccessDecisionManager) accessDecisionManager;
+        customAccessDecisionManager.setResourceId(RESOURCE_ID);
+        this.accessDecisionManager = accessDecisionManager;
+    }
+
+    @Autowired
+    public void setFilterInvocationSecurityMetadataSource(FilterInvocationSecurityMetadataSource filterInvocationSecurityMetadataSource) {
+        final CustomFilterInvocationSecurityMetadataSource customFilterInvocationSecurityMetadataSource = (CustomFilterInvocationSecurityMetadataSource) filterInvocationSecurityMetadataSource;
+        customFilterInvocationSecurityMetadataSource.setResourceId(RESOURCE_ID);
+
+        this.filterInvocationSecurityMetadataSource = filterInvocationSecurityMetadataSource;
+    }
 }
