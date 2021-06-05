@@ -17,6 +17,7 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import java.util.Date;
@@ -28,6 +29,7 @@ import java.util.Set;
  * @author like
  * @date 2021/6/4 16:14
  */
+// @Component
 public class CustomAuthorizationServerTokenServices extends DefaultTokenServices {
     // ~ Necessary
     // -----------------------------------------------------------------------------------------------------------------
@@ -85,7 +87,7 @@ public class CustomAuthorizationServerTokenServices extends DefaultTokenServices
         final boolean supportRefreshToken = isSupportRefreshToken(authentication);
         OAuth2RefreshToken existingRefreshToken = null;
 
-        // 如果已经存在令牌
+        // 如果已经存在令牌 todo 存放到redis中
         final OAuth2AccessToken existingAccessToken = tokenStore.getAccessToken(authentication);
         if (Objects.nonNull(existingAccessToken)) {
             if (existingAccessToken.isExpired()) {

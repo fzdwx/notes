@@ -2,6 +2,7 @@ package cn.like.code.config;
 
 import cn.like.code.config.support.custom.client.CustomClientCredentialsTokenEndpointFilter;
 import cn.like.code.config.support.custom.client.CustomClientDetailsService;
+import cn.like.code.config.support.custom.token.CustomAuthorizationServerTokenServices;
 import cn.like.code.config.support.custom.token.CustomTokenGranter;
 import cn.like.code.config.support.custom.token.JwtTokenEnhancer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,16 +92,21 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         delegates.add(jwtAccessTokenConverter);
         enhancerChain.setTokenEnhancers(delegates);
         endpoints.authenticationManager(authenticationManager)
-                 .userDetailsService(userDetailsService)
-                 // 配置令牌存储策略
-                 .tokenStore(tokenStore)
-                 .accessTokenConverter(jwtAccessTokenConverter)
-                 // ~ 自定义的 TokenGranter
-                 .tokenGranter(new CustomTokenGranter(endpoints, authenticationManager))
-                 .tokenEnhancer(enhancerChain)
-                 // ~ 自定义的 WebResponseExceptionTranslator, 默认使用 DefaultWebResponseExceptionTranslator, 在 /oauth/token 端点
-                 //   ref: TokenEndpoint
-                 .exceptionTranslator(webResponseExceptionTranslator);
+                .userDetailsService(userDetailsService)
+                // 配置令牌存储策略
+                .tokenStore(tokenStore)
+                .accessTokenConverter(jwtAccessTokenConverter)
+                // ~ 自定义的 TokenGranter
+                .tokenGranter(new CustomTokenGranter(endpoints, authenticationManager))
+                .tokenEnhancer(jwtAccessTokenConverter)
+                // ~ 自定义生成token
+                .tokenServices(new CustomAuthorizationServerTokenServices(endpoints))
+                .tokenEnhancer(enhancerChain)
+                // ~ 自定义的 WebResponseExceptionTranslator, 默认使用 DefaultWebResponseExceptionTranslator, 在 /oauth/token 端点
+                //   ref: TokenEndpoint
+                .exceptionTranslator(webResponseExceptionTranslator)
+
+                ;
     }
 
     /**

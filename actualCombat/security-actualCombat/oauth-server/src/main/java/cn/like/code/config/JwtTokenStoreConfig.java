@@ -1,5 +1,6 @@
 package cn.like.code.config;
 
+import cn.like.code.config.support.custom.token.CustomJwtTokenStore;
 import cn.like.code.config.support.custom.token.JwtTokenEnhancer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -44,7 +45,7 @@ public class JwtTokenStoreConfig {
      */
     @Bean
     public JwtTokenStore jwtTokenStore() {
-        return new JwtTokenStore(jwtAccessTokenConverter());
+        return new CustomJwtTokenStore(jwtAccessTokenConverter());
     }
 
     /**
