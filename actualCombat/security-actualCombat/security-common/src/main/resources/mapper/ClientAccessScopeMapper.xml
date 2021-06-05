@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.like.code.mapper.ClientAccessScopeMapper">
+
+    <resultMap id="BaseResultMap" type="cn.like.code.entity.ClientAccessScope">
+        <!--@Table -->
+        <result property="id" column="ID" jdbcType="VARCHAR"/>
+        <result property="scope" column="SCOPE" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="composeClientAccessScopeResourceAddressMapping"
+            resultType="cn.like.code.entity.dto.ClientAccessScopeResourceAddressMapping">
+        select cas.SCOPE                                     as client_access_scope_name,
+               concat(r.ENDPOINT, '@', r.RESOURCE_SERVER_ID) as resource_address
+        from client_access_scope cas
+                 left join mapping_client_access_scope_to_resource mcastr on cas.ID = mcastr.CLIENT_ACCESS_SCOPE_ID
+                 left join resource r on r.ID = mcastr.RESOURCE_ID
+        where concat(r.ENDPOINT, '@', r.RESOURCE_SERVER_ID) is not null;
+    </select>
+
+</mapper>
