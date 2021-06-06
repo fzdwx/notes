@@ -7,14 +7,15 @@
 
 2.以后新的代码将根据各自内容创建对应的文件夹
 
-3.正在更新:
+3.now:
 
- --- [actualCombat ]( https://github.com/likedeke/notes/tree/master/actualCombat) 整合案例以及demo
+ --- [actualCombat ]( https://github.com/likedeke/notes/tree/master/actualCombat) 各种整合案例以及demo
 
- ------ kotlin
+ ------ [kotlin]( https://github.com/likedeke/notes/tree/master/actualCombat/kotlin-actualCombat) (较少)
 
- ------ redis
-
+ ------ [redis]( https://github.com/likedeke/notes/tree/master/actualCombat/redis-actualCombat) 
+ 
+ ------ [security - oauth 2]( https://github.com/likedeke/notes/tree/master/actualCombat/security-actualCombat) 
 
 
 

@@ -1,4 +1,4 @@
-package cn.like.code.util;
+package cn.like.code.redis;
 
 import cn.like.code.entity.dto.AdminAuthorityResourceAddressMapping;
 import cn.like.code.entity.dto.ClientAccessScopeResourceAddressMapping;

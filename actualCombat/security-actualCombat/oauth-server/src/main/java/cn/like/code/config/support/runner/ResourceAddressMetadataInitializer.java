@@ -7,7 +7,7 @@ import cn.like.code.mapper.AdminAuthorityMapper;
 import cn.like.code.mapper.ClientAccessScopeMapper;
 import cn.like.code.mapper.ClientAuthorityMapper;
 import cn.like.code.redis.service.RedisService;
-import cn.like.code.util.RedisKey;
+import cn.like.code.redis.RedisKey;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;

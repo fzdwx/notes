@@ -4,7 +4,7 @@ import cn.hutool.json.JSONUtil;
 import cn.like.code.entity.dto.ClientDTO;
 import cn.like.code.redis.service.RedisService;
 import cn.like.code.service.ClientService;
-import cn.like.code.util.RedisKey;
+import cn.like.code.redis.RedisKey;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.ClientDetails;

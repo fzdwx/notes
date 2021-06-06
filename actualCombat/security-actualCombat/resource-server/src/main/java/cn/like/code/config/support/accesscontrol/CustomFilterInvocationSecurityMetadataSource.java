@@ -5,7 +5,7 @@ import cn.like.code.entity.dto.AdminAuthorityResourceAddressMapping;
 import cn.like.code.entity.dto.ClientAccessScopeResourceAddressMapping;
 import cn.like.code.entity.dto.ClientAuthorityResourceAddressMapping;
 import cn.like.code.redis.service.RedisService;
-import cn.like.code.util.RedisKey;
+import cn.like.code.redis.RedisKey;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
