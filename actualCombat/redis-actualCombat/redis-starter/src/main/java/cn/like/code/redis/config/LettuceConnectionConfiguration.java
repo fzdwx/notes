@@ -90,7 +90,6 @@ public class LettuceConnectionConfiguration {
 
         redisClusterClient.setOptions(clientOptions);
 
-
         return redisClusterClient;
     }
 
@@ -155,5 +154,4 @@ public class LettuceConnectionConfiguration {
             builder.withSsl(properties.getSsl());
         }
     }
-
 }

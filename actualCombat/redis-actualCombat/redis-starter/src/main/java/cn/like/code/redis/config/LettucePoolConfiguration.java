@@ -23,7 +23,7 @@ import javax.annotation.Resource;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
- * desc:
+ * desc: redis 客户端 连接池配置
  * details:
  *
  * @author: like
@@ -120,5 +120,4 @@ public class LettucePoolConfiguration {
         }
         redisClient.shutdown();
     }
-
 }
