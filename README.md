@@ -13,7 +13,9 @@
 
  ------ [kotlin]( https://github.com/likedeke/notes/tree/master/actualCombat/kotlin-actualCombat) (较少)
 
- ------ [redis]( https://github.com/likedeke/notes/tree/master/actualCombat/redis-actualCombat) 
+ ------ [redis]( https://github.com/likedeke/notes/tree/master/actualCombat/redis-actualCombat)
+
+ -------------- 更新了 封装一个redis starter（基于lettuce）
  
  ------ [security - oauth 2]( https://github.com/likedeke/notes/tree/master/actualCombat/security-actualCombat) 
 
