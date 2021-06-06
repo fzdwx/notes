@@ -24,3 +24,19 @@ http://localhost:8080/set/hello/world
 http://localhost:8080/get/hello
 
 http://localhost:8080/hello
+
+
+## redis-starter
+笔记:https://www.yuque.com/ekoc/nb/tk8v8p
+
+封装一个redis的boot starter 
+
+1.使用lettuce作为客户端
+
+2.使用时直接注入RedisService即可
+
+3.提供单机和集群两种模式
+
+4.具体配置查看LettuceConfigProperties
+
+
