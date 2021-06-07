@@ -262,5 +262,3 @@ CREATE TABLE `resource_server`  (
 -- Records of resource_server
 -- ----------------------------
 INSERT INTO `resource_server` VALUES ('resource-server', 'resource-server-p', '资源服务器');
-
-SET FOREIGN_KEY_CHECKS = 1;
