@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38ca1cfc-4342-48e2-bfe8-8efc69960bea" name="Default Changelist" comment="1.update 表名&#10;2.添加sql">
-      <change afterPath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/src/main/java/cn/like/code/kotlin/case_1/f2.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/src/main/java/cn/like/code/kotlin/case_1/list.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/src/main/java/cn/like/code/kotlin/Hello.kt" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/src/main/java/cn/like/code/kotlin/case_1/f1.kt" afterDir="false" />
+    <list default="true" id="38ca1cfc-4342-48e2-bfe8-8efc69960bea" name="Default Changelist" comment="update kotlin">
+      <change afterPath="$PROJECT_DIR$/actualCombat/jvm-programing-language-actualCombat/jvm-programing-language-actualCombat.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actualCombat/jvm-programing-language-actualCombat/kotlin-study-case/kotlin-study-case.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/jvm-programing-language-actualCombat/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/jvm-programing-language-actualCombat/kotlin-study-case/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/src/main/java/cn/like/code/kotlin/case_1/f1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/jvm-programing-language-actualCombat/kotlin-study-case/src/main/java/cn/like/code/kotlin/case_1/f1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/src/main/java/cn/like/code/kotlin/case_1/f2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/jvm-programing-language-actualCombat/kotlin-study-case/src/main/java/cn/like/code/kotlin/case_1/f2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/src/main/java/cn/like/code/kotlin/case_1/list.kt" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/jvm-programing-language-actualCombat/kotlin-study-case/src/main/java/cn/like/code/kotlin/case_1/list.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,14 +124,14 @@
     </configuration>
     <configuration name="F2Kt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.like.code.kotlin.case_1.F2Kt" />
-      <module name="study-case" />
+      <module name="kotlin-study-case" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ListKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.like.code.kotlin.case_1.ListKt" />
-      <module name="study-case" />
+      <module name="kotlin-study-case" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -208,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622810546899</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update kotlin">
+      <created>1623480071909</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1623480071909</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +232,7 @@
     <MESSAGE value="修改目录结构" />
     <MESSAGE value="update README.md" />
     <MESSAGE value="1.update 表名&#10;2.添加sql" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.update 表名&#10;2.添加sql" />
+    <MESSAGE value="update kotlin" />
+    <option name="LAST_COMMIT_MESSAGE" value="update kotlin" />
   </component>
 </project>
