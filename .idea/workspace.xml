@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38ca1cfc-4342-48e2-bfe8-8efc69960bea" name="Default Changelist" comment="1.update 表名&#10;2.添加sql">
-      <change afterPath="$PROJECT_DIR$/javaBasis/java-util-concurrent/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaBasis/java-util-concurrent/src/main/java/cn/like/code/concurrent/case_1/ThreadUnsafeExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaBasis/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/src/main/java/cn/like/code/kotlin/case_1/f2.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/src/main/java/cn/like/code/kotlin/case_1/list.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/src/main/java/cn/like/code/kotlin/Hello.kt" beforeDir="false" afterPath="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case/src/main/java/cn/like/code/kotlin/case_1/f1.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +24,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Kotlin Sealed Class" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Enum" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -39,11 +45,21 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="7ii49717" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Java\mvean\repository" />
+        <option name="userSettingsFile" value="D:\Java\tool\apache-maven-3.6.3-bin\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1tIEGZwDdczsfswX024yh0Bm4Ux" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
@@ -62,12 +78,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="jdk.selected.JAVA_MODULE" value="16" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/actualCombat/security-actualCombat/oauth-server/src" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.1507799" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/actualCombat/kotlin-actualCombat/study-case" />
+    <property name="project.structure.last.edited" value="模块" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.41693038" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReactorSettings">
@@ -78,6 +93,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\project\stduyproject\notes\actualCombat\kotlin-actualCombat\study-case" />
       <recent name="D:\Java\project\stduyproject\notes\actualCombat\security-actualCombat\oauth-server\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -87,25 +103,12 @@
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
-        <option value="Application" />
+        <option value="JetRunConfigurationType" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="ThreadUnsafeExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.like.code.concurrent.case_1.ThreadUnsafeExample" />
-      <module name="java-util-concurrent" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.like.code.concurrent.case_1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Kotlin.ListKt">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -117,9 +120,59 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="F2Kt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.like.code.kotlin.case_1.F2Kt" />
+      <module name="study-case" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.like.code.kotlin.case_1.ListKt" />
+      <module name="study-case" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="redis-demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.like.code.web.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OauthServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="oauth-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.like.code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.like.code.OauthServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResourceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="resource-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.like.code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.like.code.ResourceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ThreadUnsafeExample" />
+        <item itemvalue="Kotlin.ListKt" />
+        <item itemvalue="Kotlin.F2Kt (1)" />
+        <item itemvalue="Spring Boot.ResourceApplication" />
+        <item itemvalue="Spring Boot.OauthServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +186,6 @@
       <updated>1622448109115</updated>
       <workItem from="1622448111914" duration="223000" />
       <workItem from="1622807713574" duration="4361000" />
-      <workItem from="1623053504505" duration="2920000" />
     </task>
     <task id="LOCAL-00001" summary="修改目录结构">
       <created>1622448188637</created>
@@ -162,6 +214,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
@@ -169,9 +224,5 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="1.update 表名&#10;2.添加sql" />
     <option name="LAST_COMMIT_MESSAGE" value="1.update 表名&#10;2.添加sql" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
