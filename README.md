@@ -11,7 +11,7 @@
 
  --- [actualCombat ]( https://github.com/likedeke/notes/tree/master/actualCombat) 各种整合案例以及demo
 
- ------ [jvm-programing-language-actualCombat]( https://github.com/likedeke/notes/tree/master/actualCombat/jvm-programing-language-actualCombat) (较少)
+ ------ [jvm-programing-language-actualCombat]( https://github.com/likedeke/notes/tree/master/actualCombat/jvm-programing-language-actualCombat) (JVM上的编程语言)
 
 -------------- kotlin
 
