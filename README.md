@@ -15,12 +15,17 @@
 
 -------------- kotlin
 
+-------------- scala
+
  ------ [redis]( https://github.com/likedeke/notes/tree/master/actualCombat/redis-actualCombat)
 
- -------------- 更新了 封装一个redis starter（基于lettuce）
+ -------------- redis-demo
+ -------------- redis-starter
  
  ------ [security - oauth 2]( https://github.com/likedeke/notes/tree/master/actualCombat/security-actualCombat) 
 
+-------------- oauth-server
+-------------- resource-server
 
 
 
