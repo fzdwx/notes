@@ -16,7 +16,9 @@ public enum BasisErrorCode implements ErrorCode {
 	/**
 	 * 成功
 	 */
-	SUCCESS(0, "执行成功");
+	SUCCESS(0, "执行成功"),
+	
+	;
 	
 	private final long code;
 	private final String msg;
