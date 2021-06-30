@@ -1,7 +1,7 @@
 package cn.like.code.base.support;
 
 import cn.like.code.base.support.code.BasisErrorCode;
-import cn.like.code.base.support.code.ErrorCode;
+import cn.like.code.base.support.code.IErrorCode;
 import cn.like.code.base.support.exception.ApiException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModelProperty;
@@ -44,7 +44,7 @@ public class Rest<T> implements Serializable {
 		// to do nothing
 	}
 	
-	public Rest(ErrorCode errorCode) {
+	public Rest(IErrorCode errorCode) {
 		errorCode = Optional.ofNullable(errorCode).orElse(BasisErrorCode.FAILED);
 		this.code = errorCode.getCode();
 		this.msg = errorCode.getMsg();
@@ -66,13 +66,13 @@ public class Rest<T> implements Serializable {
 		return restResult(null, BasisErrorCode.FAILED.getCode(), msg);
 	}
 	
-	public static <T> Rest<T> failed(ErrorCode errorCode) {
+	public static <T> Rest<T> failed(IErrorCode errorCode) {
 		return restResult(null, errorCode);
 	}
 	
 	// ========================== restResult
 	
-	public static <T> Rest<T> restResult(T data, ErrorCode errorCode) {
+	public static <T> Rest<T> restResult(T data, IErrorCode errorCode) {
 		return restResult(data, errorCode.getCode(), errorCode.getMsg());
 	}
 	
@@ -104,7 +104,7 @@ public class Rest<T> implements Serializable {
 		return this;
 	}
 	
-	public Rest<T> errorCode(ErrorCode errorCode) {
+	public Rest<T> errorCode(IErrorCode errorCode) {
 		this.code = errorCode.getCode();
 		this.msg = errorCode.getMsg();
 		

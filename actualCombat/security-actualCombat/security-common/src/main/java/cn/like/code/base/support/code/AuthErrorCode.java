@@ -7,9 +7,9 @@ package cn.like.code.base.support.code;
  * @author like 980650920@qq.com
  * @date 2021-06-29 21:56:46
  * @see Enum
- * @see ErrorCode
+ * @see IErrorCode
  */
-public enum AuthErrorCode implements ErrorCode{
+public enum AuthErrorCode implements IErrorCode {
 	
 	
 	;

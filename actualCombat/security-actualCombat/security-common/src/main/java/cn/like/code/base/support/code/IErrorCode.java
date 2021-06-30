@@ -21,7 +21,7 @@ package cn.like.code.base.support.code;
  * @author like 980650920@qq.com
  * @date 2021-06-29 20:56:30
  */
-public interface ErrorCode {
+public interface IErrorCode {
 	
 	/**
 	 * desc:

@@ -1,6 +1,6 @@
 package cn.like.code.base.support.exception;
 
-import cn.like.code.base.support.code.ErrorCode;
+import cn.like.code.base.support.code.IErrorCode;
 
 /**
  * desc: 异常 <br>
@@ -9,7 +9,7 @@ import cn.like.code.base.support.code.ErrorCode;
  * @date 2021-06-29 21:04:16
  * @see RuntimeException
  */
-public class BaseException extends RuntimeException {
+public abstract class BaseException extends RuntimeException {
 	
 	/**
 	 * serialVersionUID
@@ -19,9 +19,9 @@ public class BaseException extends RuntimeException {
 	/**
 	 * 错误码
 	 */
-	private ErrorCode errorCode;
+	private IErrorCode errorCode;
 	
-	public BaseException(ErrorCode errorCode) {
+	public BaseException(IErrorCode errorCode) {
 		super(errorCode.getMsg());
 		this.errorCode = errorCode;
 	}
@@ -38,7 +38,7 @@ public class BaseException extends RuntimeException {
 		super(message, cause);
 	}
 	
-	public ErrorCode getErrorCode() {
+	public final IErrorCode getErrorCode() {
 		return errorCode;
 	}
 }

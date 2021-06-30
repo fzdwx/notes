@@ -1,7 +1,7 @@
 package cn.like.code.base;
 
 import cn.like.code.base.support.Rest;
-import cn.like.code.base.support.code.ErrorCode;
+import cn.like.code.base.support.code.IErrorCode;
 
 /**
  * desc: base controller <br>
@@ -39,7 +39,7 @@ public abstract class BaseController {
 	 * @param errorCode 请求错误码
 	 * @return ignore
 	 */
-	protected <T> Rest<T> failed(ErrorCode errorCode) {
+	protected <T> Rest<T> failed(IErrorCode errorCode) {
 		return Rest.failed(errorCode);
 	}
 	

@@ -1,6 +1,6 @@
 package cn.like.code.base.support.exception;
 
-import cn.like.code.base.support.code.ErrorCode;
+import cn.like.code.base.support.code.IErrorCode;
 
 /**
  * desc: Rest api 异常 <br>
@@ -12,11 +12,19 @@ import cn.like.code.base.support.code.ErrorCode;
  */
 public class ApiException extends BaseException {
 	
-	public ApiException(ErrorCode errorCode) {
+	public ApiException(IErrorCode errorCode) {
 		super(errorCode);
 	}
 	
 	public ApiException(String message) {
 		super(message);
+	}
+	
+	public ApiException(Throwable cause) {
+		super(cause);
+	}
+	
+	public ApiException(String message, Throwable cause) {
+		super(message, cause);
 	}
 }
