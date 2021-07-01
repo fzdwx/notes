@@ -99,6 +99,13 @@ public class Rest<T> implements Serializable {
 		return of;
 	}
 	
+	public static <T> Rest<T> of(T data, String msg) {
+		final Rest<T> of = of(data);
+		of.setMsg(msg);
+		
+		return of;
+	}
+	
 	public static <T> Rest<T> of(T data, long code, String msg) {
 		return restResult(data, code, msg);
 	}
@@ -110,6 +117,25 @@ public class Rest<T> implements Serializable {
 	public Rest<T> errorCode(IErrorCode errorCode) {
 		this.code = errorCode.getCode();
 		this.msg = errorCode.getMsg();
+		
+		return this;
+	}
+	
+	public Rest<T> errorCode(long code, String msg) {
+		this.code = code;
+		this.msg = msg;
+		
+		return this;
+	}
+	
+	public Rest<T> msg(String msg) {
+		this.msg = msg;
+		
+		return this;
+	}
+	
+	public Rest<T> code(long code) {
+		this.code = code;
 		
 		return this;
 	}
