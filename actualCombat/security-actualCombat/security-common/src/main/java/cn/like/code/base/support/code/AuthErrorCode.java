@@ -2,7 +2,6 @@ package cn.like.code.base.support.code;
 
 /**
  * desc: 身份验证错误代码 <br>
- * details:
  *
  * @author like 980650920@qq.com
  * @date 2021-06-29 21:56:46

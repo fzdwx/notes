@@ -15,8 +15,9 @@ import java.util.Optional;
  * desc: Rest Api返回结果 <br>
  * details:
  * <pre>
- *     注意: 使用of()的时候 不设置code就是null
+ *     of() 默认失败
  * </pre>
+ *
  * @author like 980650920@qq.com
  * @date 2021-06-29 20:28:47
  */
@@ -88,20 +89,22 @@ public class Rest<T> implements Serializable {
 	// ========================== of
 	
 	public static <T> Rest<T> of(T data) {
-		final Rest<T> rest = new Rest<>();
-		rest.setData(data);
+		return ok(data);
+	}
+	
+	public static <T> Rest<T> of(T data, long code) {
+		final Rest<T> of = of(data);
+		of.setCode(code);
 		
-		return rest;
+		return of;
 	}
 	
-	public Rest<T> msg(String msg) {
-		this.msg = msg;
-		return this;
+	public static <T> Rest<T> of(T data, long code, String msg) {
+		return restResult(data, code, msg);
 	}
 	
-	public Rest<T> code(long code) {
-		this.code = code;
-		return this;
+	public static <T> Rest<T> of(T data, IErrorCode errorCode) {
+		return restResult(data, errorCode);
 	}
 	
 	public Rest<T> errorCode(IErrorCode errorCode) {

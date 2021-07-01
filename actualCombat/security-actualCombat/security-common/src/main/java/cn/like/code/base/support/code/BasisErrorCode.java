@@ -9,6 +9,7 @@ package cn.like.code.base.support.code;
  * @see IErrorCode
  */
 public enum BasisErrorCode implements IErrorCode {
+	
 	/**
 	 * 失败
 	 */
