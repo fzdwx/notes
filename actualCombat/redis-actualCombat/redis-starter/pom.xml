@@ -12,7 +12,7 @@
         <spring-boot.version>2.5.0</spring-boot.version>
         <spring-cloud.version>2020.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
-        <hutool.version>5.6.6</hutool.version>
+        <hutool.version>5.7.3</hutool.version>
         <configuration.version>1.10</configuration.version>
         <guava.version>30.1.1-jre</guava.version>
         <coll.version>4.4</coll.version>
