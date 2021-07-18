@@ -1,19 +1,17 @@
 package cn.like.code.config.support.runner;
 
+import cn.like.code.entity.dto.AdminAuthorityResourceAddressMapping;
 import cn.like.code.entity.dto.ClientAccessScopeResourceAddressMapping;
 import cn.like.code.entity.dto.ClientAuthorityResourceAddressMapping;
-import cn.like.code.entity.dto.AdminAuthorityResourceAddressMapping;
 import cn.like.code.mapper.AdminAuthorityMapper;
 import cn.like.code.mapper.ClientAccessScopeMapper;
 import cn.like.code.mapper.ClientAuthorityMapper;
-import cn.like.code.redis.service.RedisService;
 import cn.like.code.redis.RedisKey;
+import cn.like.code.redis.service.RedisService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 
 import java.util.stream.Collectors;
 
@@ -25,9 +23,9 @@ import java.util.stream.Collectors;
  * @since: 2021/6/5 9:08
  * @email: 980650920@qq.com
  */
-@Component
+// @Component
 @Slf4j
-@Order(1)
+// @Order(1)
 public class ResourceAddressMetadataInitializer implements ApplicationRunner {
 
     private RedisService redisService;

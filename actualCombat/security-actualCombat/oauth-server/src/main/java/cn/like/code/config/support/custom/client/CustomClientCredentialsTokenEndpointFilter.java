@@ -30,8 +30,7 @@ public class CustomClientCredentialsTokenEndpointFilter extends ClientCredential
     public CustomClientCredentialsTokenEndpointFilter(
             PasswordEncoder passwordEncoder,
             ClientDetailsService clientDetailsService,
-            AuthenticationEntryPoint authenticationEntryPoint
-    ) {
+            AuthenticationEntryPoint authenticationEntryPoint) {
         super.setAllowOnlyPost(true);
         super.setAuthenticationEntryPoint(authenticationEntryPoint);
         super.setAuthenticationManager(new ClientAuthenticationManager(passwordEncoder, clientDetailsService));
