@@ -1,4 +1,6 @@
-# notes
+# notes 过于笨重 遗弃 ！！！
+
+
 主要学习的笔记
 
 今后笔记更新于https://www.yuque.com/ekoc
